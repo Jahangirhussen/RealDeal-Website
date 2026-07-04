@@ -1,1371 +1,2327 @@
-<!--
-  Single-file, pixel-close clone of the Savasaachi Marketing Agency homepage.
-  Built with semantic HTML5 + CSS3 only (no JS / no frameworks).
---><!DOCTYPE html>
-<html lang="en-GB">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Savasaachi Marketing Agency | Digital Marketing, Reels &amp; Web Design</title>
+<title>RealDeal IT Center | Premium Digital Marketing, SEO, Web &amp; eCommerce Agency</title>
+<meta name="description" content="RealDeal IT Center is a full-service digital marketing agency delivering SEO, paid ads, social media, creative, web design and marketplace growth — one accountable team, measurable results.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/site-nav.css">
 <style>
-
-/* ==========================================================================
-   1. CSS RESET & BASE
-   ========================================================================== */
-*,
-*::before,
-*::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-	--color-bg-darkest: #ffffff;
-	--color-bg-dark: #faf9f6;
-	--color-bg-section: #14212B;
-	--color-hero-start: #14212B;
-	--color-hero-end: #1c2f3d;
-	--color-purple-primary: #FE4A17;
-	--color-purple-primary-hover: #e6400f;
-	--color-purple-deep: #14212B;
-	--color-purple-mid: #14212B;
-	--color-purple-mid-2: #1c2f3d;
-	--color-purple-light: #FE4A17;
-	--color-border-purple: rgba(20,33,43,0.14);
-	--color-text-light: #14212B;
-	--color-text-muted: #55636e;
-	--color-text-faint: #8a97a1;
-	--color-pink-accent: #FE4A17;
-	--color-white: #ffffff;
-	--font-heading: 'Poppins', sans-serif;
-	--font-body: 'Inter', sans-serif;
-	--container-width: 1200px;
-	--radius-sm: 6px;
-	--radius-md: 12px;
-	--radius-lg: 20px;
+	--rd-orange: #ff4a1c;
+	--rd-orange-2: #ff7a35;
+	--rd-ink: #0e1a24;
+	--rd-ink-2: #142533;
+	--rd-teal: #0f8f88;
+	--rd-blue: #2764e6;
+	--rd-green: #13a76f;
+	--rd-cream: #fff7f1;
+	--rd-paper: #ffffff;
+	--rd-soft: #f6f8fb;
+	--rd-line: rgba(14, 26, 36, 0.12);
+	--rd-muted: #63717d;
+	--rd-faint: #92a0ab;
+	--font-heading: "Poppins", sans-serif;
+	--font-body: "Inter", sans-serif;
+	--container: 1180px;
+	--radius: 8px;
+	--radius-lg: 18px;
+	--shadow: 0 22px 60px rgba(14, 26, 36, 0.12);
+	--shadow-soft: 0 14px 40px rgba(14, 26, 36, 0.10);
 }
 
-html { scroll-behavior: smooth; }
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	font-family: var(--font-body);
-	background-color: var(--color-bg-darkest);
-	color: var(--color-text-muted);
-	line-height: 1.65;
+	background: var(--rd-paper);
+	color: var(--rd-muted);
 	font-size: 16px;
+	line-height: 1.65;
 	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
+body.menu-open {
+	overflow: hidden;
+}
 
-a { text-decoration: none; color: inherit; }
+section {
+	scroll-margin-top: 90px;
+}
 
-ul { list-style: none; }
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+ul {
+	list-style: none;
+}
 
 h1, h2, h3, h4 {
 	font-family: var(--font-heading);
-	color: var(--color-text-light);
-	line-height: 1.25;
-	font-weight: 700;
+	color: var(--rd-ink);
+	font-weight: 800;
+	line-height: 1.08;
+	letter-spacing: -0.01em;
 }
 
 .container {
-	width: 100%;
-	max-width: var(--container-width);
+	width: min(100% - 48px, var(--container));
 	margin: 0 auto;
-	padding: 0 24px;
 }
 
-.eyebrow {
-	display: inline-block;
-	font-size: 13px;
-	font-weight: 700;
-	letter-spacing: 2px;
+.container-wide {
+	width: min(100% - 48px, 1320px);
+	margin: 0 auto;
+}
+
+/* ---------- Shared bits ---------- */
+.section-kicker {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 16px;
+	color: var(--rd-orange);
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 1.8px;
 	text-transform: uppercase;
-	color: var(--color-purple-light);
-	margin-bottom: 12px;
 }
 
-.section-heading {
-	font-size: 34px;
-	text-align: center;
-	max-width: 780px;
-	margin: 0 auto 18px;
+.section-kicker::before {
+	content: "";
+	width: 26px;
+	height: 2px;
+	background: currentColor;
 }
 
-.section-sub {
-	text-align: center;
-	max-width: 720px;
-	margin: 0 auto 40px;
-	color: var(--color-text-muted);
-	font-size: 15px;
+.section-title {
+	max-width: 760px;
+	font-size: clamp(28px, 3.6vw, 46px);
+	color: var(--rd-ink);
+	margin-bottom: 18px;
+	letter-spacing: -0.02em;
 }
 
-/* Buttons
-   ========================================================================== */
+.section-copy {
+	max-width: 620px;
+	color: var(--rd-muted);
+	font-size: 16px;
+}
+
+.section-head {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 40px;
+	margin-bottom: 52px;
+}
+
 .btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding: 15px 30px;
-	font-family: var(--font-body);
-	font-size: 13px;
-	font-weight: 700;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	border-radius: var(--radius-sm);
-	border: 2px solid transparent;
+	gap: 10px;
+	min-height: 50px;
+	padding: 0 22px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 800;
 	cursor: pointer;
-	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+	transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease, border-color 200ms ease, background 200ms ease, color 200ms ease;
 	white-space: nowrap;
 }
-.btn:hover { transform: translateY(-2px); }
 
-.btn-purple {
-	background-color: var(--color-purple-primary);
-	color: var(--color-white);
-	border-color: var(--color-purple-primary);
-}
-.btn-purple:hover { background-color: var(--color-purple-primary-hover); border-color: var(--color-purple-primary-hover); }
-
-.btn-outline-white {
-	background-color: transparent;
-	color: var(--color-white);
-	border-color: rgba(255,255,255,0.5);
-}
-.btn-outline-white:hover { background-color: var(--color-white); color: var(--color-bg-dark); }
-
-.btn-ghost-proposal {
-	background-color: rgba(254,74,23,0.18);
-	color: var(--color-white);
-	border-color: rgba(254,74,23,0.55);
-	padding: 12px 26px;
-}
-.btn-ghost-proposal:hover { background-color: var(--color-purple-primary); border-color: var(--color-purple-primary); }
-
-.btn-block { width: 100%; }
-.btn-center-wrap { text-align: center; margin-top: 12px; }
-
-/* ==========================================================================
-   2. HEADER / NAVIGATION
-   ========================================================================== */
-.site-header {
-	position: relative;
-	z-index: 100;
-	width: 100%;
-	background-color: rgba(10,6,19,0.35);
-	border-bottom: 1px solid rgba(255,255,255,0.08);
+.btn:hover {
+	transform: translateY(-3px);
 }
 
-.header-inner {
-	max-width: var(--container-width);
-	margin: 0 auto;
-	padding: 20px 24px;
-	display: flex;
+.btn-primary {
+	background: linear-gradient(135deg, var(--rd-orange), var(--rd-orange-2));
+	color: #fff;
+	box-shadow: 0 16px 34px rgba(255, 74, 28, 0.28);
+}
+
+.btn-primary:hover {
+	box-shadow: 0 24px 44px rgba(255, 74, 28, 0.36);
+}
+
+.btn-ghost {
+	background: rgba(255, 255, 255, 0.06);
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.28);
+	backdrop-filter: blur(14px);
+}
+
+.btn-ghost:hover {
+	background: #fff;
+	color: var(--rd-ink);
+	border-color: #fff;
+}
+
+.btn-dark {
+	background: var(--rd-ink);
+	color: #fff;
+}
+
+.btn-dark:hover {
+	box-shadow: 0 20px 40px rgba(14, 26, 36, 0.28);
+}
+
+.btn-light {
+	background: #fff;
+	color: var(--rd-ink);
+}
+
+.text-link {
+	display: inline-flex;
 	align-items: center;
-	justify-content: space-between;
-	gap: 24px;
-}
-
-.site-logo {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	flex-shrink: 0;
-}
-.site-logo img { height: 40px; width: auto; }
-.site-logo .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-.site-logo .logo-text strong {
-	font-family: var(--font-heading);
-	font-size: 19px;
+	gap: 9px;
 	font-weight: 800;
-	color: var(--color-white);
-	letter-spacing: 1px;
-}
-.site-logo .logo-text span {
-	font-size: 9px;
-	letter-spacing: 3px;
-	color: var(--color-text-faint);
-	text-transform: uppercase;
-}
-
-/* Mobile nav toggle (CSS-only, no JS) */
-.nav-toggle-label {
-	display: none;
-	flex-direction: column;
-	gap: 5px;
-	cursor: pointer;
-	z-index: 200;
-}
-.nav-toggle-label span {
-	width: 26px;
-	height: 2px;
-	background-color: var(--color-white);
-	display: block;
-}
-#nav-toggle { display: none; }
-
-.main-nav { flex-grow: 1; display: flex; justify-content: center; }
-.main-nav ul { display: flex; align-items: center; gap: 34px; }
-.main-nav a {
-	font-size: 14.5px;
-	font-weight: 500;
-	color: var(--color-text-light);
-	padding: 8px 0;
-	position: relative;
-	display: flex;
-	align-items: center;
-	gap: 6px;
-}
-.main-nav a:hover,
-.main-nav .current a { color: var(--color-purple-light); }
-.main-nav .current a::after {
-	content: "";
-	position: absolute;
-	left: 0; right: 0; bottom: -2px;
-	height: 2px;
-	background-color: var(--color-purple-primary);
-}
-
-/* CSS-only dropdown / mega menu (static markup, hover-driven) */
-.nav-item-dropdown { position: relative; }
-.dropdown-caret { font-size: 11px; margin-left: 2px; }
-.dropdown-menu {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	min-width: 620px;
-	background-color: var(--color-bg-section);
-	border: 1px solid var(--color-border-purple);
-	border-radius: var(--radius-md);
-	padding: 24px;
-	margin-top: 18px;
-	box-shadow: 0 20px 50px rgba(0,0,0,0.45);
-	grid-template-columns: repeat(2, 1fr);
-	gap: 6px 28px;
-}
-.nav-item-dropdown:hover .dropdown-menu { display: grid; }
-.dropdown-menu a {
-	padding: 10px 12px;
-	border-radius: var(--radius-sm);
 	font-size: 14px;
-}
-.dropdown-menu a:hover { background-color: rgba(254,74,23,0.15); color: var(--color-purple-light); }
-.dropdown-menu a span.dd-desc {
-	display: block;
-	font-size: 12px;
-	color: var(--color-text-faint);
-	font-weight: 400;
-	margin-top: 2px;
+	color: var(--rd-ink);
+	transition: gap 200ms ease, color 200ms ease;
 }
 
-.header-cta { flex-shrink: 0; }
+.text-link i {
+	color: var(--rd-orange);
+	transition: transform 200ms ease;
+}
 
-/* ==========================================================================
-   3. HERO SECTION
-   ========================================================================== */
+.text-link:hover {
+	color: var(--rd-orange);
+}
+
+.text-link:hover i {
+	transform: translateX(4px);
+}
+
+/* ---------- Reveal animations ---------- */
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+	will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+[data-reveal="left"] { transform: translateX(-32px); }
+[data-reveal="right"] { transform: translateX(32px); }
+[data-reveal="zoom"] { transform: scale(0.96); }
+
+.mask-reveal {
+	clip-path: inset(0 100% 0 0);
+	transition: clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mask-reveal.is-visible {
+	clip-path: inset(0 0 0 0);
+}
+
+/* ============ HERO ============ */
 .hero {
 	position: relative;
-	background: linear-gradient(100deg, var(--color-hero-start) 0%, var(--color-hero-end) 60%, #24404f 100%),
-	            url('https://picsum.photos/seed/savasaachi-hero/1900/1000') center/cover no-repeat;
-	background-blend-mode: multiply;
-	padding: 90px 0 110px;
+	padding: 150px 0 90px;
+	background:
+		radial-gradient(1200px 600px at 78% 8%, rgba(255, 74, 28, 0.16), transparent 60%),
+		linear-gradient(180deg, #0b141d 0%, #0e1a24 60%, #0e1a24 100%);
+	color: #fff;
+	isolation: isolate;
+	overflow: hidden;
 }
+
 .hero::before {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(90deg, rgba(18,9,31,0.92) 0%, rgba(28,16,54,0.75) 45%, rgba(44,19,84,0.55) 100%);
+	background:
+		repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 96px),
+		repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 96px);
+	mask-image: radial-gradient(1000px 600px at 60% 30%, #000 30%, transparent 78%);
+	z-index: -1;
+	pointer-events: none;
 }
-.hero-inner {
-	position: relative;
-	z-index: 2;
-	max-width: var(--container-width);
-	margin: 0 auto;
-	padding: 0 24px;
-}
-.hero-content { max-width: 720px; }
-.hero h1 {
-	font-size: 46px;
-	color: var(--color-white);
-	margin-bottom: 26px;
-}
-.hero-sub {
-	font-size: 16px;
-	color: var(--color-text-muted);
-	max-width: 620px;
-	margin-bottom: 18px;
-}
-.hero-cta-text {
-	font-size: 16px;
-	color: var(--color-text-light);
-	font-weight: 600;
-	margin-bottom: 30px;
-}
-.hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; }
 
-/* ==========================================================================
-   4. SHORT VIDEOS / REELS STRIP
-   ========================================================================== */
-.short-videos {
-	background-color: var(--color-bg-dark);
-	padding: 70px 0;
-	text-align: center;
-}
-.short-videos h2 { font-size: 30px; margin-bottom: 16px; }
-.short-videos .section-sub { margin-bottom: 44px; }
-.reel-grid {
+.hero-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 24px;
-	max-width: 900px;
-	margin: 0 auto;
+	grid-template-columns: 1.05fr 0.95fr;
+	gap: 56px;
+	align-items: center;
 }
-.reel-card {
+
+.hero-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 14px;
+	margin-bottom: 26px;
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.05);
+	color: rgba(255, 255, 255, 0.88);
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: 0.3px;
+	backdrop-filter: blur(12px);
+}
+
+.hero-badge .dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--rd-green);
+	box-shadow: 0 0 0 4px rgba(19, 167, 111, 0.22);
+}
+
+.hero h1 {
+	color: #fff;
+	font-size: clamp(38px, 5.4vw, 72px);
+	font-weight: 900;
+	line-height: 1.02;
+	letter-spacing: -0.03em;
+	margin-bottom: 22px;
+}
+
+.hero h1 .accent {
+	color: transparent;
+	background: linear-gradient(120deg, var(--rd-orange), var(--rd-orange-2));
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+.hero-copy {
+	max-width: 520px;
+	font-size: clamp(16px, 1.4vw, 18px);
+	color: rgba(255, 255, 255, 0.74);
+	margin-bottom: 32px;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-bottom: 38px;
+}
+
+.hero-trust {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	flex-wrap: wrap;
+}
+
+.hero-trust .avatars {
+	display: flex;
+}
+
+.hero-trust .avatars span {
+	width: 40px;
+	height: 40px;
+	margin-left: -12px;
+	border-radius: 50%;
+	border: 2px solid #0e1a24;
+	background-size: cover;
+	background-position: center;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 800;
+	font-size: 13px;
+	color: #fff;
+}
+
+.hero-trust .avatars span:first-child { margin-left: 0; }
+.hero-trust .avatars span:nth-child(1) { background: linear-gradient(135deg, var(--rd-orange), var(--rd-orange-2)); }
+.hero-trust .avatars span:nth-child(2) { background: linear-gradient(135deg, var(--rd-teal), #0bbfb4); }
+.hero-trust .avatars span:nth-child(3) { background: linear-gradient(135deg, var(--rd-blue), #5b8bff); }
+.hero-trust .avatars span:nth-child(4) { background: linear-gradient(135deg, var(--rd-green), #2ad18c); }
+
+.hero-trust .trust-copy strong {
+	display: block;
+	color: #fff;
+	font-family: var(--font-heading);
+	font-size: 15px;
+}
+
+.hero-trust .trust-copy span {
+	font-size: 12.5px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-trust .stars {
+	color: #ffb020;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+/* Hero visual composition */
+.hero-visual {
 	position: relative;
-	aspect-ratio: 9 / 16;
-	border-radius: var(--radius-md);
-	overflow: hidden;
-	border: 1px solid var(--color-border-purple);
+	min-height: 480px;
 }
-.reel-card img { width: 100%; height: 100%; object-fit: cover; }
-.reel-card .play-icon {
+
+.hv-card {
 	position: absolute;
-	top: 50%; left: 50%;
-	transform: translate(-50%, -50%);
-	width: 52px; height: 52px;
-	background-color: rgba(255,255,255,0.9);
+	border-radius: 16px;
+	background: #fff;
+	box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+	overflow: hidden;
+}
+
+.hv-dash {
+	top: 0;
+	left: 0;
+	width: 62%;
+	padding: 18px;
+	z-index: 2;
+	animation: floatY 7s ease-in-out infinite;
+}
+
+.hv-dash-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 14px;
+}
+
+.hv-dash-head small {
+	font-size: 11px;
+	font-weight: 800;
+	color: var(--rd-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+}
+
+.hv-badge-up {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 8px;
+	border-radius: 99px;
+	background: rgba(19, 167, 111, 0.12);
+	color: var(--rd-green);
+	font-size: 11px;
+	font-weight: 800;
+}
+
+.hv-metric {
+	font-family: var(--font-heading);
+	font-size: 30px;
+	font-weight: 800;
+	color: var(--rd-ink);
+	line-height: 1;
+	margin-bottom: 2px;
+}
+
+.hv-metric-sub {
+	font-size: 11.5px;
+	color: var(--rd-muted);
+	margin-bottom: 16px;
+}
+
+.hv-chart {
+	display: flex;
+	align-items: flex-end;
+	gap: 7px;
+	height: 78px;
+}
+
+.hv-chart span {
+	flex: 1;
+	border-radius: 4px 4px 0 0;
+	background: linear-gradient(180deg, var(--rd-orange), var(--rd-orange-2));
+	opacity: 0.9;
+	transform-origin: bottom;
+	animation: barGrow 1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.hv-chart span:nth-child(1) { height: 40%; background: rgba(14,26,36,0.12); animation-delay: .05s; }
+.hv-chart span:nth-child(2) { height: 58%; background: rgba(14,26,36,0.16); animation-delay: .12s; }
+.hv-chart span:nth-child(3) { height: 46%; background: rgba(14,26,36,0.12); animation-delay: .19s; }
+.hv-chart span:nth-child(4) { height: 70%; animation-delay: .26s; }
+.hv-chart span:nth-child(5) { height: 88%; animation-delay: .33s; }
+.hv-chart span:nth-child(6) { height: 66%; background: rgba(14,26,36,0.16); animation-delay: .4s; }
+.hv-chart span:nth-child(7) { height: 100%; animation-delay: .47s; }
+
+.hv-reel {
+	right: 0;
+	top: 46px;
+	width: 40%;
+	aspect-ratio: 9 / 16;
+	max-height: 360px;
+	z-index: 3;
+	border: 6px solid #0b1017;
+	border-radius: 26px;
+	box-shadow: 0 34px 80px rgba(0, 0, 0, 0.5);
+	animation: floatY 8s ease-in-out infinite reverse;
+}
+
+.hv-reel img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.hv-reel::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+}
+
+.hv-reel .reel-play {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hv-reel .reel-play i {
+	width: 46px;
+	height: 46px;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--color-purple-primary);
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--rd-ink);
+	font-size: 14px;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hv-reel .reel-tag {
+	position: absolute;
+	left: 12px;
+	bottom: 12px;
+	z-index: 2;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 800;
+}
+
+.hv-social {
+	left: 4%;
+	bottom: 0;
+	width: 46%;
+	padding: 14px;
+	z-index: 4;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	animation: floatY 9s ease-in-out infinite;
+}
+
+.hv-social .ig {
+	width: 42px;
+	height: 42px;
+	flex-shrink: 0;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #feda75, #d62976 45%, #962fbf 75%, #4f5bd5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
 	font-size: 18px;
 }
 
-/* ==========================================================================
-   5. SERVICES
-   ========================================================================== */
-.services { background-color: var(--color-bg-darkest); padding: 90px 0 70px; text-align: center; }
-.services-grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 24px;
-	max-width: 980px;
-	margin: 0 auto 40px;
-	text-align: left;
+.hv-social strong {
+	display: block;
+	font-family: var(--font-heading);
+	font-size: 16px;
+	color: var(--rd-ink);
+	line-height: 1;
 }
-.service-card {
-	background-color: var(--color-bg-section);
-	border: 1px solid var(--color-border-purple);
-	border-radius: var(--radius-md);
-	padding: 32px;
-	display: flex;
-	gap: 20px;
-	transition: border-color 0.2s ease, transform 0.2s ease;
+
+.hv-social span {
+	font-size: 11.5px;
+	color: var(--rd-muted);
+	font-weight: 700;
 }
-.service-card:hover { border-color: var(--color-purple-primary); transform: translateY(-4px); }
-.service-icon {
-	flex-shrink: 0;
-	width: 52px; height: 52px;
-	display: flex;
+
+.hv-chip {
+	position: absolute;
+	right: 6%;
+	bottom: 20px;
+	z-index: 5;
+	display: inline-flex;
 	align-items: center;
-	justify-content: center;
-	background-color: rgba(254,74,23,0.15);
-	border-radius: var(--radius-sm);
-	color: var(--color-purple-light);
+	gap: 8px;
+	padding: 9px 13px;
+	border-radius: 99px;
+	background: #fff;
+	color: var(--rd-ink);
+	font-size: 12px;
+	font-weight: 800;
+	box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+	animation: floatY 6s ease-in-out infinite;
+}
+
+.hv-chip i { color: var(--rd-orange); }
+
+/* ============ MARQUEE / TRUST ============ */
+.trust {
+	padding: 34px 0;
+	background: var(--rd-ink);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-label {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	margin-bottom: 22px;
+}
+
+.marquee {
+	position: relative;
+	overflow: hidden;
+	mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+	display: flex;
+	gap: 56px;
+	width: max-content;
+	animation: marquee 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}
+
+.marquee-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	color: rgba(255, 255, 255, 0.72);
+	font-family: var(--font-heading);
+	font-size: 19px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.marquee-item i {
 	font-size: 22px;
+	color: rgba(255, 255, 255, 0.85);
 }
-.service-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--color-white); }
-.service-card p { font-size: 14px; color: var(--color-text-muted); }
 
-/* ==========================================================================
-   6. WHY CHOOSE / HOW WE DELIVER
-   ========================================================================== */
-.why-choose {
-	background-color: var(--color-bg-darkest);
-	padding: 20px 0 80px;
+/* ============ SERVICES (editorial rows) ============ */
+.services {
+	padding: 104px 0 60px;
+	background: linear-gradient(180deg, #fff 0%, var(--rd-soft) 100%);
 }
-.why-choose .why-block { max-width: 900px; margin: 0 auto 36px; text-align: center; }
-.why-choose h3 { font-size: 22px; margin-bottom: 14px; }
-.why-choose p { font-size: 14.5px; color: var(--color-text-muted); }
 
-/* ==========================================================================
-   7. WHO WE ARE
-   ========================================================================== */
-.who-we-are {
-	background: linear-gradient(135deg, var(--color-purple-mid) 0%, var(--color-purple-mid-2) 55%, #2c4656 100%);
-	padding: 90px 0;
-}
-.who-inner {
+.service-row {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 60px;
+	gap: 56px;
 	align-items: center;
+	padding: 44px 0;
+	border-top: 1px solid var(--rd-line);
 }
-.who-text .eyebrow { color: rgba(255,255,255,0.75); }
-.who-text h2 { font-size: 32px; color: var(--color-white); margin-bottom: 20px; }
-.who-text p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 30px; }
 
-.who-image-wrap { position: relative; }
-.who-image-card {
+.service-row:last-child { border-bottom: 1px solid var(--rd-line); }
+
+.service-row.flip .service-media { order: -1; }
+
+.service-info .svc-index {
+	font-family: var(--font-heading);
+	font-size: 13px;
+	font-weight: 800;
+	color: var(--accent);
+	letter-spacing: 1px;
+	margin-bottom: 14px;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.service-info .svc-index::before {
+	content: "";
+	width: 22px;
+	height: 2px;
+	background: var(--accent);
+}
+
+.service-info h3 {
+	font-size: clamp(24px, 2.6vw, 34px);
+	margin-bottom: 14px;
+}
+
+.service-info > p {
+	max-width: 460px;
+	font-size: 15.5px;
+	margin-bottom: 20px;
+}
+
+.svc-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 24px;
+}
+
+.svc-tags span {
+	padding: 6px 12px;
+	border: 1px solid var(--rd-line);
+	border-radius: 99px;
+	background: #fff;
+	color: var(--rd-ink);
+	font-size: 12.5px;
+	font-weight: 700;
+	transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.svc-tags span:hover {
+	border-color: color-mix(in srgb, var(--accent) 50%, white);
+	color: var(--accent);
+	background: color-mix(in srgb, var(--accent) 7%, white);
+}
+
+.service-info .text-link i { color: var(--accent); }
+.service-info .text-link:hover { color: var(--accent); }
+
+/* Service media frame */
+.service-media {
 	position: relative;
 	border-radius: var(--radius-lg);
 	overflow: hidden;
+	background: linear-gradient(135deg, var(--rd-ink), var(--rd-ink-2));
+	box-shadow: var(--shadow);
 	aspect-ratio: 4 / 3;
 }
-.who-image-card img { width: 100%; height: 100%; object-fit: cover; }
-.who-image-card .who-caption {
+
+.service-media::before {
+	content: "";
 	position: absolute;
-	left: 0; right: 0; bottom: 0;
-	background: linear-gradient(0deg, rgba(20,8,40,0.92) 20%, rgba(20,8,40,0.1) 100%);
-	padding: 30px 26px 22px;
+	inset: 0;
+	background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 32%, transparent), transparent 55%);
+	z-index: 2;
+	pointer-events: none;
 }
-.who-caption h4 { color: var(--color-white); font-size: 17px; margin-bottom: 8px; }
-.who-caption p { color: rgba(255,255,255,0.8); font-size: 13px; margin: 0; }
-.est-badge {
+
+.service-media img {
 	position: absolute;
-	top: -20px; right: 24px;
-	width: 92px; height: 92px;
-	background-color: var(--color-white);
-	border-radius: 50%;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.9;
+}
+
+.media-overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+}
+
+.media-pill {
+	align-self: flex-start;
+	display: inline-flex;
 	align-items: center;
-	justify-content: center;
-	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-	text-align: center;
+	gap: 8px;
+	padding: 7px 12px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--rd-ink);
+	font-size: 12px;
+	font-weight: 800;
 }
-.est-badge span { font-size: 10px; letter-spacing: 1px; color: #555; }
-.est-badge strong { font-size: 18px; color: var(--color-purple-primary); font-weight: 800; }
 
-/* ==========================================================================
-   8. GROWTH STATEMENT + CLIENT LOGOS
-   ========================================================================== */
-.growth-statement { background-color: var(--color-bg-dark); padding: 90px 0 0; text-align: center; }
-.growth-statement h2 { font-size: 30px; max-width: 780px; margin: 0 auto 20px; }
-.growth-statement p { max-width: 720px; margin: 0 auto 30px; font-size: 14.5px; }
+.media-pill i { color: var(--accent); }
 
-.client-logos-bar {
-	margin-top: 50px;
-	background: linear-gradient(90deg, var(--color-purple-primary), #ff7143);
-	padding: 34px 40px;
+/* Mock widgets that sit on media */
+.media-widget {
+	align-self: flex-end;
+	width: 100%;
+	max-width: 320px;
+	padding: 14px;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.96);
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(6px);
 }
-.client-logos-inner {
-	max-width: var(--container-width);
-	margin: 0 auto;
+
+.mw-row {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 24px;
+	gap: 10px;
+	margin-bottom: 10px;
 }
-.client-logos-inner img { height: 30px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
 
-/* ==========================================================================
-   9. TESTIMONIALS
-   ========================================================================== */
-.testimonials { background-color: var(--color-bg-dark); padding: 70px 0 90px; text-align: center; }
-.testimonials h2 { font-size: 30px; margin-bottom: 18px; }
-.testimonials h2 span { color: var(--color-purple-light); text-decoration: underline; text-decoration-color: var(--color-purple-primary); text-underline-offset: 8px; }
-.testimonials .section-sub { max-width: 760px; }
+.mw-row:last-child { margin-bottom: 0; }
 
-.testimonial-row-wrap { position: relative; display: flex; align-items: center; gap: 16px; max-width: 1080px; margin: 40px auto 0; }
-.carousel-arrow {
-	flex-shrink: 0;
-	width: 40px; height: 40px;
-	border-radius: 50%;
-	border: 1px solid var(--color-border-purple);
-	background-color: var(--color-bg-section);
-	color: var(--color-text-light);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 14px;
-}
-.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex-grow: 1; text-align: left; }
-.testimonial-card {
-	background-color: var(--color-white);
-	border-radius: var(--radius-md);
-	padding: 24px;
-	color: #333;
-}
-.testimonial-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.avatar-circle {
-	width: 38px; height: 38px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: var(--color-white);
+.mw-row small {
+	font-size: 11px;
 	font-weight: 700;
+	color: var(--rd-muted);
+}
+
+.mw-row strong {
+	font-family: var(--font-heading);
 	font-size: 15px;
-	flex-shrink: 0;
+	color: var(--rd-ink);
 }
-.testimonial-name-wrap { flex-grow: 1; }
-.testimonial-name-wrap strong { display: block; font-size: 14.5px; color: #1a1a1a; }
-.testimonial-name-wrap span { font-size: 12px; color: #888; }
-.testimonial-card .fa-google { color: #4285F4; font-size: 16px; }
-.testimonial-stars { color: #fbbc04; font-size: 13px; margin-bottom: 10px; }
-.testimonial-stars .fa-circle-check { color: #4285F4; font-size: 12px; margin-left: 4px; }
-.testimonial-card p.review-text { font-size: 14px; color: #444; margin: 0; }
 
-/* ==========================================================================
-   10. FRANCHISE / SERVICE AREAS
-   ========================================================================== */
-.franchise { background-color: var(--color-bg-darkest); padding: 90px 0 60px; text-align: center; }
-.franchise .franchise-logo { height: 42px; margin: 0 auto 20px; }
-.franchise h2 { font-size: 28px; margin-bottom: 14px; }
-.franchise h2 span { color: var(--color-purple-light); }
-.franchise .section-sub { margin-bottom: 40px; }
-
-.locations-grid {
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	gap: 10px 20px;
-	max-width: var(--container-width);
-	margin: 0 auto 40px;
-	text-align: left;
-	border-top: 1px solid var(--color-border-purple);
-	padding-top: 36px;
-}
-.locations-grid a {
-	font-size: 12.5px;
-	color: var(--color-text-muted);
-	display: flex;
-	align-items: center;
-	gap: 6px;
-}
-.locations-grid a i { color: var(--color-purple-light); font-size: 11px; }
-.locations-grid a:hover { color: var(--color-purple-light); }
-
-/* ==========================================================================
-   11. CONTACT CARDS
-   ========================================================================== */
-.contact-cards { background-color: var(--color-bg-darkest); padding: 30px 0 90px; text-align: center; border-top: 1px solid var(--color-border-purple); }
-.contact-cards h2 { font-size: 28px; margin-bottom: 14px; }
-.contact-cards .section-sub { margin-bottom: 44px; }
-.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: var(--container-width); margin: 0 auto; }
-.contact-card {
-	background-color: var(--color-bg-section);
-	border: 1px solid var(--color-border-purple);
-	border-radius: var(--radius-md);
-	padding: 34px 28px;
-	text-align: left;
-}
-.contact-card .contact-icon {
-	width: 48px; height: 48px;
-	border-radius: var(--radius-sm);
-	background-color: rgba(254,74,23,0.15);
-	color: var(--color-purple-light);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 20px;
-	margin-bottom: 20px;
-}
-.contact-card h3 { font-size: 17px; color: var(--color-white); margin-bottom: 10px; }
-.contact-card p { font-size: 13.5px; margin-bottom: 22px; }
-
-/* ==========================================================================
-   12. PROPOSAL FORM + FAQ
-   ========================================================================== */
-.proposal-section { background-color: var(--color-bg-dark); padding: 30px 0 90px; }
-.proposal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
-
-.proposal-form-card {
-	background-color: var(--color-bg-section);
-	border: 1px solid var(--color-border-purple);
-	border-radius: var(--radius-lg);
-	padding: 38px;
-}
-.proposal-form-card .form-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.proposal-form-card .form-logo img { height: 30px; }
-.proposal-form-card .form-logo strong { font-family: var(--font-heading); color: var(--color-white); font-size: 16px; letter-spacing: 1px; }
-.proposal-form-card h3 { font-size: 22px; margin: 14px 0 26px; color: var(--color-white); }
-
-.form-steps { display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; }
-.form-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; text-align: center; position: relative; }
-.form-step .step-dot {
-	width: 26px; height: 26px;
-	border-radius: 50%;
-	background-color: var(--color-bg-darkest);
-	border: 2px solid var(--color-border-purple);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 12px;
-	color: var(--color-text-muted);
-	font-weight: 700;
-}
-.form-step.active .step-dot { background-color: #FE4A17; border-color: #FE4A17; color: var(--color-white); }
-.form-step span.step-label { font-size: 11px; color: var(--color-text-faint); }
-.form-step-line { position: absolute; top: 13px; left: 50%; width: 100%; height: 2px; background-color: var(--color-border-purple); z-index: -1; }
-
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--color-text-light); margin-bottom: 8px; }
-.form-group input,
-.form-group select,
-.form-group textarea {
-	width: 100%;
-	padding: 13px 16px;
-	background-color: var(--color-bg-darkest);
-	border: 1px solid var(--color-border-purple);
-	border-radius: var(--radius-sm);
-	color: var(--color-text-light);
-	font-family: var(--font-body);
-	font-size: 14px;
-}
-.form-group textarea { min-height: 100px; resize: vertical; }
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: var(--color-text-faint); }
-
-.faq-accordion { display: flex; flex-direction: column; gap: 10px; }
-.faq-accordion details {
-	background-color: var(--color-bg-section);
-	border: 1px solid var(--color-border-purple);
-	border-radius: var(--radius-sm);
+.mw-bar {
+	height: 7px;
+	border-radius: 99px;
+	background: var(--rd-line);
 	overflow: hidden;
 }
-.faq-accordion summary {
-	list-style: none;
+
+.mw-bar i {
+	display: block;
+	height: 100%;
+	border-radius: 99px;
+	background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 50%, #fff));
+}
+
+.mw-chips {
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+}
+
+.mw-chips span {
+	padding: 4px 9px;
+	border-radius: 6px;
+	background: color-mix(in srgb, var(--accent) 12%, white);
+	color: var(--accent);
+	font-size: 10.5px;
+	font-weight: 800;
+}
+
+/* social grid mock */
+.mw-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 6px;
+}
+
+.mw-grid span {
+	aspect-ratio: 1;
+	border-radius: 6px;
+	background-size: cover;
+	background-position: center;
+}
+
+/* ============ METRICS ============ */
+.metrics {
+	padding: 92px 0;
+	background: var(--rd-ink);
+	color: rgba(255, 255, 255, 0.7);
+	position: relative;
+	overflow: hidden;
+}
+
+.metrics::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(700px 400px at 15% 20%, rgba(255, 74, 28, 0.16), transparent 60%);
+	pointer-events: none;
+}
+
+.metrics .container { position: relative; z-index: 1; }
+
+.metrics-head {
+	max-width: 640px;
+	margin-bottom: 50px;
+}
+
+.metrics-head h2 {
+	color: #fff;
+	font-size: clamp(26px, 3.2vw, 40px);
+	margin-bottom: 14px;
+}
+
+.metrics-head p { color: rgba(255, 255, 255, 0.66); }
+
+.metrics-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
+
+.metric {
+	padding: 28px 24px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: var(--radius-lg);
+	background: rgba(255, 255, 255, 0.04);
+	transition: transform 240ms ease, background 240ms ease, border-color 240ms ease;
+}
+
+.metric:hover {
+	transform: translateY(-6px);
+	background: rgba(255, 255, 255, 0.07);
+	border-color: rgba(255, 74, 28, 0.4);
+}
+
+.metric-value {
+	font-family: var(--font-heading);
+	font-size: clamp(34px, 4vw, 50px);
+	font-weight: 900;
+	color: #fff;
+	line-height: 1;
+	letter-spacing: -0.02em;
+}
+
+.metric-value .suffix { color: var(--rd-orange); }
+
+.metric-label {
+	margin-top: 12px;
+	font-size: 13.5px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.66);
+}
+
+/* ============ PORTFOLIO (editorial asymmetric) ============ */
+.portfolio {
+	padding: 104px 0;
+	background: #fff;
+}
+
+.work-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-auto-rows: 240px;
+	gap: 18px;
+}
+
+.work-card {
+	position: relative;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	background: var(--rd-ink);
+	box-shadow: var(--shadow-soft);
+	isolation: isolate;
+}
+
+.work-card img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-card:hover img { transform: scale(1.06); }
+
+.work-card::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(14, 26, 36, 0.12) 0%, rgba(14, 26, 36, 0.82) 100%);
+	z-index: 1;
+}
+
+.work-card .work-body {
+	position: absolute;
+	inset: auto 0 0 0;
+	z-index: 2;
+	padding: 22px;
+}
+
+.work-card .work-cat {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	margin-bottom: 8px;
+	padding: 5px 10px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.16);
+	backdrop-filter: blur(8px);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.4px;
+}
+
+.work-card h3 {
+	color: #fff;
+	font-size: 19px;
+	margin-bottom: 6px;
+}
+
+.work-card p {
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 13px;
+	max-width: 340px;
+}
+
+.work-card .work-result {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	margin-top: 12px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 800;
+}
+
+.work-card .work-result i { color: var(--rd-orange-2); }
+
+.work-a { grid-column: span 4; grid-row: span 2; }
+.work-b { grid-column: span 2; grid-row: span 1; }
+.work-c { grid-column: span 2; grid-row: span 1; }
+.work-d { grid-column: span 3; grid-row: span 1; }
+.work-e { grid-column: span 3; grid-row: span 1; }
+
+/* ============ REELS ============ */
+.showreel {
+	position: relative;
+	padding: 100px 0;
+	background: var(--rd-ink);
+	color: rgba(255, 255, 255, 0.72);
+	overflow: hidden;
+}
+
+.showreel::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(120deg, rgba(255, 74, 28, 0.18), transparent 40%),
+		radial-gradient(600px 400px at 90% 90%, rgba(39, 100, 230, 0.14), transparent 60%);
+	pointer-events: none;
+}
+
+.showreel .container { position: relative; z-index: 2; }
+.showreel .section-title { color: #fff; }
+.showreel .section-copy { color: rgba(255, 255, 255, 0.66); }
+
+.reel-scroller {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(230px, 1fr);
+	gap: 22px;
+	overflow-x: auto;
+	padding: 8px 4px 20px;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 74, 28, 0.4) transparent;
+}
+
+@media (min-width: 1024px) {
+	.reel-scroller {
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-flow: initial;
+		overflow: visible;
+	}
+}
+
+.reel-scroller::-webkit-scrollbar { height: 6px; }
+.reel-scroller::-webkit-scrollbar-thumb { background: rgba(255, 74, 28, 0.4); border-radius: 99px; }
+
+.reel {
+	position: relative;
+	scroll-snap-align: start;
+	aspect-ratio: 9 / 16;
+	border-radius: 20px;
+	overflow: hidden;
+	background: #05080c;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
 	cursor: pointer;
-	padding: 18px 22px;
-	font-size: 14.5px;
-	font-weight: 600;
-	color: var(--color-white);
+	transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reel:hover { transform: translateY(-8px); }
+
+.reel img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reel:hover img { transform: scale(1.08); }
+
+.reel::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.78));
+	z-index: 1;
+}
+
+.reel-top {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	right: 14px;
+	z-index: 3;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: rgba(254,74,23,0.12);
 }
-.faq-accordion summary::-webkit-details-marker { display: none; }
-.faq-accordion summary::after {
-	content: "\f107";
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	transition: transform 0.2s ease;
-}
-.faq-accordion details[open] summary::after { transform: rotate(180deg); }
-.faq-accordion details[open] summary { background-color: var(--color-purple-primary); }
-.faq-accordion .faq-answer { padding: 18px 22px; font-size: 13.5px; color: var(--color-text-muted); }
 
-/* ==========================================================================
-   13. CTA BAND
-   ========================================================================== */
-.cta-band {
-	background: linear-gradient(120deg, #14212B 0%, #1c2f3d 60%, #24404f 100%);
-	padding: 60px 0;
-	text-align: center;
+.reel-cat {
+	padding: 4px 9px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.16);
+	backdrop-filter: blur(8px);
+	color: #fff;
+	font-size: 10.5px;
+	font-weight: 800;
 }
-.cta-band h2 { font-size: 26px; margin-bottom: 14px; }
-.cta-band p { max-width: 640px; margin: 0 auto 30px; font-size: 14px; }
-.cta-buttons { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
 
-/* ==========================================================================
-   14. FOOTER
-   ========================================================================== */
-.site-footer { background-color: var(--color-bg-darkest); padding: 70px 0 0; }
-.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
-.footer-brand .site-logo { margin-bottom: 18px; }
-.footer-brand p { font-size: 13.5px; color: var(--color-text-muted); margin-bottom: 22px; max-width: 300px; }
-.social-icons { display: flex; gap: 12px; }
-.social-icons a {
-	width: 36px; height: 36px;
-	border-radius: 50%;
-	border: 1px solid var(--color-border-purple);
+.reel-stat {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 9px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.9);
+	color: var(--rd-ink);
+	font-size: 10.5px;
+	font-weight: 800;
+}
+
+.reel-stat i { color: var(--rd-orange); }
+
+.reel-play {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: var(--color-text-light);
-	font-size: 14px;
 }
-.social-icons a:hover { background-color: var(--color-purple-primary); border-color: var(--color-purple-primary); }
 
-.footer-col h4 { color: var(--color-pink-accent); font-size: 15px; margin-bottom: 20px; font-weight: 700; }
-.footer-col ul li { margin-bottom: 12px; }
-.footer-col ul li a { font-size: 13.5px; color: var(--color-text-muted); }
-.footer-col ul li a:hover { color: var(--color-purple-light); }
+.reel-play span {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--rd-ink);
+	font-size: 17px;
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+	transition: transform 240ms ease, background 240ms ease;
+}
+
+.reel:hover .reel-play span {
+	transform: scale(1.08);
+	background: #fff;
+}
+
+.reel-meta {
+	position: absolute;
+	left: 16px;
+	right: 16px;
+	bottom: 16px;
+	z-index: 3;
+}
+
+.reel-meta h3 {
+	color: #fff;
+	font-size: 17px;
+	margin-bottom: 4px;
+}
+
+.reel-meta p {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 12.5px;
+}
+
+/* ============ PROCESS ============ */
+.process {
+	padding: 104px 0;
+	background: var(--rd-cream);
+}
+
+.process-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	margin-top: 52px;
+}
+
+.process-step {
+	position: relative;
+	padding: 30px 26px;
+	border-radius: var(--radius-lg);
+	background: #fff;
+	border: 1px solid var(--rd-line);
+	overflow: hidden;
+	transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.process-step:hover {
+	transform: translateY(-6px);
+	box-shadow: var(--shadow);
+}
+
+.process-step::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 4px;
+	background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.step-num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	margin-bottom: 22px;
+	border-radius: 12px;
+	background: color-mix(in srgb, var(--accent) 14%, white);
+	color: var(--accent);
+	font-family: var(--font-heading);
+	font-weight: 900;
+	font-size: 16px;
+}
+
+.process-step h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.process-step p {
+	font-size: 14px;
+	color: var(--rd-muted);
+}
+
+/* ============ WHY ============ */
+.why {
+	padding: 104px 0;
+	background:
+		linear-gradient(135deg, rgba(14, 26, 36, 0.95), rgba(18, 37, 51, 0.95)),
+		url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=70") center / cover no-repeat;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.why-grid {
+	display: grid;
+	grid-template-columns: 0.9fr 1.1fr;
+	gap: 52px;
+	align-items: center;
+}
+
+.why h2, .why h3 { color: #fff; }
+.why .section-copy { color: rgba(255, 255, 255, 0.7); }
+
+.why-list {
+	display: grid;
+	gap: 14px;
+}
+
+.why-item {
+	display: grid;
+	grid-template-columns: 54px 1fr;
+	gap: 18px;
+	padding: 22px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: var(--radius-lg);
+	background: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(14px);
+	transition: transform 220ms ease, background 220ms ease;
+}
+
+.why-item:hover {
+	transform: translateX(8px);
+	background: rgba(255, 255, 255, 0.11);
+}
+
+.why-item i {
+	width: 54px;
+	height: 54px;
+	border-radius: 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 74, 28, 0.18);
+	color: var(--rd-orange-2);
+	font-size: 22px;
+}
+
+.why-item h3 { font-size: 18px; margin-bottom: 6px; }
+.why-item p { color: rgba(255, 255, 255, 0.68); font-size: 14px; }
+
+/* ============ TESTIMONIALS ============ */
+.testimonial {
+	padding: 104px 0;
+	background: var(--rd-soft);
+}
+
+.testimonial-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-top: 12px;
+}
+
+.quote-card {
+	padding: 30px;
+	border: 1px solid var(--rd-line);
+	border-radius: var(--radius-lg);
+	background: #fff;
+	transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.quote-card:hover {
+	transform: translateY(-7px);
+	box-shadow: var(--shadow);
+}
+
+.quote-card .fa-quote-left {
+	color: color-mix(in srgb, var(--rd-orange) 40%, white);
+	font-size: 26px;
+	margin-bottom: 16px;
+}
+
+.stars { color: #ffb020; font-size: 13px; margin-bottom: 14px; }
+
+.quote-card p {
+	color: var(--rd-ink);
+	font-weight: 500;
+	font-size: 15.5px;
+	margin-bottom: 24px;
+}
+
+.quote-person {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.avatar {
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--rd-ink);
+	color: #fff;
+	font-weight: 900;
+}
+
+.quote-person strong { display: block; color: var(--rd-ink); font-size: 14px; }
+.quote-person span { display: block; color: var(--rd-muted); font-size: 12px; }
+
+/* ============ CTA / CONTACT ============ */
+.cta {
+	padding: 108px 0;
+	background:
+		linear-gradient(115deg, rgba(255, 74, 28, 0.94), rgba(255, 122, 53, 0.88)),
+		url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=70") center / cover no-repeat;
+	color: #fff;
+}
+
+.cta-grid {
+	display: grid;
+	grid-template-columns: 0.95fr 1.05fr;
+	gap: 48px;
+	align-items: center;
+}
+
+.cta h2 {
+	color: #fff;
+	font-size: clamp(30px, 4.4vw, 54px);
+	margin-bottom: 18px;
+	letter-spacing: -0.02em;
+}
+
+.cta p {
+	color: rgba(255, 255, 255, 0.9);
+	max-width: 520px;
+	margin-bottom: 26px;
+}
+
+.cta-points {
+	display: grid;
+	gap: 12px;
+	margin-bottom: 28px;
+}
+
+.cta-points li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.cta-points i {
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.22);
+	font-size: 11px;
+}
+
+.proposal-form {
+	padding: 30px;
+	border-radius: var(--radius-lg);
+	background: rgba(255, 255, 255, 0.98);
+	box-shadow: 0 30px 70px rgba(14, 26, 36, 0.28);
+}
+
+.proposal-form h3 { font-size: 24px; margin-bottom: 6px; }
+.proposal-form .form-sub { font-size: 13.5px; color: var(--rd-muted); margin-bottom: 20px; }
+
+.form-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+}
+
+.field { display: grid; gap: 7px; }
+.field.full { grid-column: 1 / -1; }
+
+.field label {
+	color: var(--rd-ink);
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+	width: 100%;
+	min-height: 48px;
+	padding: 12px 13px;
+	border: 1px solid rgba(14, 26, 36, 0.16);
+	border-radius: 8px;
+	background: #fff;
+	color: var(--rd-ink);
+	outline: none;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field textarea { min-height: 108px; resize: vertical; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+	border-color: var(--rd-orange);
+	box-shadow: 0 0 0 3px rgba(255, 74, 28, 0.14);
+}
+
+.proposal-form .btn { width: 100%; margin-top: 18px; border: 0; }
+
+/* ============ FOOTER ============ */
+.site-footer {
+	padding: 72px 0 28px;
+	background: #091119;
+	color: rgba(255, 255, 255, 0.66);
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+	gap: 40px;
+	padding-bottom: 42px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.footer-brand .brand { color: #fff; }
+.footer-brand p { max-width: 320px; margin-top: 20px; font-size: 14px; }
+
+.footer-col h4 { color: #fff; font-size: 15px; margin-bottom: 18px; }
+.footer-col li { margin: 11px 0; }
+.footer-col a { color: rgba(255, 255, 255, 0.62); font-size: 14px; transition: color 160ms ease; }
+.footer-col a:hover { color: var(--rd-orange-2); }
+
+.socials { display: flex; gap: 10px; margin-top: 22px; }
+
+.socials a {
+	width: 40px;
+	height: 40px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transition: background 180ms ease, transform 180ms ease;
+}
+
+.socials a:hover { background: var(--rd-orange); transform: translateY(-3px); }
 
 .footer-bottom {
-	border-top: 1px solid rgba(255,255,255,0.08);
-	padding: 22px 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 12px;
-}
-.footer-bottom p { font-size: 12.5px; color: var(--color-text-faint); }
-.footer-legal { display: flex; gap: 20px; }
-.footer-legal a { font-size: 12.5px; color: var(--color-text-faint); }
-.footer-legal a:hover { color: var(--color-purple-light); }
-.footer-payment-icons { display: flex; gap: 10px; color: var(--color-text-faint); font-size: 16px; }
-
-/* ==========================================================================
-   15. RESPONSIVE — TABLET (<=1024px)
-   ========================================================================== */
-@media (max-width: 1024px) {
-	.container { padding: 0 20px; }
-	.hero h1 { font-size: 38px; }
-	.services-grid { grid-template-columns: 1fr; max-width: 640px; }
-	.who-inner { grid-template-columns: 1fr; gap: 40px; }
-	.locations-grid { grid-template-columns: repeat(4, 1fr); }
-	.contact-grid { grid-template-columns: 1fr; max-width: 480px; }
-	.proposal-grid { grid-template-columns: 1fr; }
-	.footer-top { grid-template-columns: 1fr 1fr; }
-	.testimonial-grid { grid-template-columns: repeat(2, 1fr); }
-	.testimonial-card:nth-child(3) { display: none; }
+	gap: 18px;
+	padding-top: 24px;
+	font-size: 13px;
 }
 
-/* ==========================================================================
-   16. RESPONSIVE — MOBILE (<=768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-	.nav-toggle-label { display: flex; }
-	.main-nav {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		background-color: var(--color-bg-section);
-		border-bottom: 1px solid var(--color-border-purple);
-		display: none;
-		padding: 10px 24px 20px;
-	}
-	.main-nav ul { flex-direction: column; align-items: flex-start; gap: 4px; width: 100%; }
-	.main-nav a { padding: 12px 0; width: 100%; }
-	#nav-toggle:checked ~ .main-nav { display: block; }
-	.dropdown-menu { position: static; transform: none; min-width: 100%; margin-top: 8px; grid-template-columns: 1fr; box-shadow: none; }
-	.header-cta { display: none; }
+.footer-bottom a { color: rgba(255, 255, 255, 0.72); }
+.footer-bottom a:hover { color: var(--rd-orange-2); }
 
-	.hero { padding: 50px 0 60px; }
-	.hero h1 { font-size: 30px; }
-	.hero-buttons { flex-direction: column; align-items: stretch; }
-	.hero-buttons .btn { width: 100%; }
+/* ============ ANIMATIONS ============ */
+@keyframes floatY {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-14px); }
+}
 
-	.reel-grid { grid-template-columns: repeat(2, 1fr); }
-	.reel-grid .reel-card:nth-child(3) { display: none; }
+@keyframes barGrow {
+	from { transform: scaleY(0); }
+	to { transform: scaleY(1); }
+}
 
-	.section-heading, .growth-statement h2, .franchise h2, .contact-cards h2, .testimonials h2 { font-size: 24px; }
+@keyframes marquee {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
+}
 
-	.services { padding: 60px 0 40px; }
-	.services-grid { grid-template-columns: 1fr; }
-	.service-card { flex-direction: column; }
-
-	.who-we-are { padding: 60px 0; }
-	.who-text h2 { font-size: 26px; }
-	.est-badge { width: 72px; height: 72px; top: -16px; right: 16px; }
-
-	.client-logos-inner { justify-content: center; }
-	.client-logos-inner img { height: 22px; }
-
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1060px) {
+	.hero-grid { grid-template-columns: 1fr; gap: 48px; }
+	.hero-visual { min-height: 420px; max-width: 520px; }
+	.metrics-grid { grid-template-columns: repeat(2, 1fr); }
 	.testimonial-grid { grid-template-columns: 1fr; }
-	.testimonial-card:nth-child(2),
-	.testimonial-card:nth-child(3) { display: none; }
-	.carousel-arrow { display: none; }
-
-	.locations-grid { grid-template-columns: repeat(2, 1fr); }
-
-	.contact-cards { padding: 20px 0 60px; }
-
-	.proposal-form-card { padding: 26px; }
-	.form-steps { flex-wrap: wrap; gap: 14px; }
-
-	.cta-buttons { flex-direction: column; align-items: stretch; }
-
-	.footer-top { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
-	.footer-bottom { flex-direction: column; align-items: flex-start; }
+	.why-grid, .cta-grid { grid-template-columns: 1fr; }
+	.process-grid { grid-template-columns: repeat(2, 1fr); }
+	.work-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+	.work-a, .work-b, .work-c, .work-d, .work-e { grid-column: span 1; grid-row: span 1; }
+	.work-a { grid-column: span 2; grid-row: span 1; }
 }
 
-/* ==========================================================================
-   17. RESPONSIVE — SMALL MOBILE (<=480px)
-   ========================================================================== */
-@media (max-width: 480px) {
-	.hero h1 { font-size: 25px; }
-	.site-logo .logo-text strong { font-size: 16px; }
-	.reel-grid { grid-template-columns: 1fr; }
-	.reel-grid .reel-card:nth-child(2) { display: none; }
-	.locations-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 760px) {
+	.hero { padding: 128px 0 70px; }
+	.section-head { flex-direction: column; align-items: flex-start; gap: 18px; }
+	.service-row { grid-template-columns: 1fr; gap: 28px; padding: 40px 0; }
+	.service-row.flip .service-media { order: 0; }
+	.form-grid { grid-template-columns: 1fr; }
+	.footer-grid { grid-template-columns: 1fr 1fr; }
+	.work-grid { grid-template-columns: 1fr; }
+	.work-a { grid-column: span 1; }
 }
 
-/* Theme contrast overrides (white variant) */
-.dropdown-menu a { color: #f4f6f7; }
-.dropdown-menu a:hover { color: #ff9d76; background-color: rgba(254,74,23,0.15); }
-.hero-sub, .hero-cta-text { color: rgba(255,255,255,0.85); }
-.cta-band p { color: rgba(255,255,255,0.8); }
-.cta-band h2 { color: #ffffff; }
-.site-footer .site-logo .logo-text strong { color: #14212B; }
-.site-footer .site-logo .logo-text span { color: #55636e; }
+@media (max-width: 520px) {
+	.hero h1 { font-size: 36px; }
+	.hero-actions { width: 100%; }
+	.hero-actions .btn { flex: 1; }
+	.metrics-grid { grid-template-columns: 1fr; }
+	.process-grid { grid-template-columns: 1fr; }
+	.footer-grid { grid-template-columns: 1fr; }
+	.hero-visual { min-height: 380px; }
+}
 
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+	[data-reveal], .mask-reveal {
+		opacity: 1 !important;
+		transform: none !important;
+		clip-path: none !important;
+	}
+	.marquee-track { animation: none !important; }
+}
 </style>
 </head>
 <body>
+<div id="rd-header-root" data-active="home" data-mode="hero"></div>
 
-<!-- ==========================================================================
-     HEADER
-     ========================================================================== -->
-<header class="site-header">
-	<div class="header-inner">
-
-		<a class="site-logo" href="index.html">
-			<img src="https://placehold.co/60x60/12091f/ffffff?text=S" alt="Savasaachi logo">
-			<span class="logo-text">
-				<strong>SAVASAACHI</strong>
-				<span>Marketing Agency</span>
-			</span>
-		</a>
-
-		<input type="checkbox" id="nav-toggle">
-		<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
-			<span></span><span></span><span></span>
-		</label>
-
-		<nav class="main-nav">
-			<ul>
-				<li class="current"><a href="index.html">Home</a></li>
-				<li><a href="#about">About Us</a></li>
-				<li class="nav-item-dropdown">
-					<a href="#services">Services <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
-					<div class="dropdown-menu">
-						<a href="#services">Reels &amp; Video Content Creation<span class="dd-desc">Scroll-stopping short-form video</span></a>
-						<a href="#services">Web Design &amp; Development<span class="dd-desc">Custom, high-converting websites</span></a>
-						<a href="#services">Social Media Marketing<span class="dd-desc">Grow your online community</span></a>
-						<a href="#services">Search Engine Optimisation<span class="dd-desc">Rank higher, get found faster</span></a>
-						<a href="#services">Digital Marketing<span class="dd-desc">Full-funnel growth strategy</span></a>
-						<a href="#services">Reputation Management<span class="dd-desc">Protect &amp; grow your brand image</span></a>
+<main id="top">
+	<!-- ============ HERO ============ -->
+	<section class="hero" aria-label="RealDeal IT Center — digital marketing agency">
+		<div class="container">
+			<div class="hero-grid">
+				<div class="hero-content" data-reveal>
+					<span class="hero-badge"><span class="dot"></span> Full-service digital growth partner</span>
+					<h1>We turn attention into <span class="accent">measurable growth.</span></h1>
+					<p class="hero-copy">RealDeal IT Center is a full-service digital marketing agency — SEO, paid ads, social, creative, web and marketplace growth, delivered by one accountable team.</p>
+					<div class="hero-actions">
+						<a class="btn btn-primary" href="realdeal-services-white.html"><i class="fa-solid fa-arrow-trend-up"></i> Explore Services</a>
+						<a class="btn btn-ghost" href="#work"><i class="fa-solid fa-play"></i> View Our Work</a>
 					</div>
-				</li>
-				<li><a href="#careers">Careers</a></li>
-				<li><a href="#packages">Packages</a></li>
-				<li><a href="#blog">Blog</a></li>
-				<li><a href="#contact">Contact Us</a></li>
-			</ul>
-		</nav>
+					<div class="hero-trust">
+						<div class="avatars" aria-hidden="true">
+							<span>R</span><span>D</span><span>+</span><span>40</span>
+						</div>
+						<div class="trust-copy">
+							<div class="stars" aria-hidden="true">★★★★★</div>
+							<strong>40+ digital services</strong>
+							<span>across 6 specialist divisions</span>
+						</div>
+					</div>
+				</div>
 
-		<div class="header-cta">
-			<a href="#proposal" class="btn btn-ghost-proposal">Get A Proposal</a>
-		</div>
+				<!-- Premium visual composition (CSS + imagery) -->
+				<div class="hero-visual" data-reveal="right" aria-hidden="true">
+					<div class="hv-card hv-dash">
+						<div class="hv-dash-head">
+							<small>Campaign performance</small>
+							<span class="hv-badge-up"><i class="fa-solid fa-arrow-up"></i> +38%</span>
+						</div>
+						<div class="hv-metric">3.4x ROAS</div>
+						<div class="hv-metric-sub">Search + social, last 30 days</div>
+						<div class="hv-chart">
+							<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+						</div>
+					</div>
 
-	</div>
-</header>
+					<div class="hv-card hv-reel">
+						<img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=500&q=70" alt="" loading="eager" decoding="async" width="300" height="533">
+						<div class="reel-play"><i class="fa-solid fa-play"></i></div>
+						<span class="reel-tag"><i class="fa-solid fa-bolt"></i> Launch reel</span>
+					</div>
 
-<main>
+					<div class="hv-card hv-social">
+						<div class="ig"><i class="fa-brands fa-instagram"></i></div>
+						<div>
+							<strong>+48K</strong>
+							<span>reach this week</span>
+						</div>
+					</div>
 
-<!-- ==========================================================================
-     HERO
-     ========================================================================== -->
-<section class="hero">
-	<div class="hero-inner">
-		<div class="hero-content">
-			<h1>Empowering Your Business With Professional Reel Videos &amp; Social Media Content That Drive Growth.</h1>
-			<p class="hero-sub">A leading full-service digital marketing agency in the UK helping brands grow through powerful video stories, stunning design, logo design, website design, app design, web development, SEO, PPC, Meta Ads (Facebook Ads), and Google Ads.</p>
-			<p class="hero-cta-text">Ready To Take Your Brand To The Next Level? Let&rsquo;s Begin.</p>
-			<div class="hero-buttons">
-				<a href="#proposal" class="btn btn-purple">Get A Free Reels Audit</a>
-				<a href="#proposal" class="btn btn-outline-white">Get A Free Website Audit</a>
+					<div class="hv-chip"><i class="fa-solid fa-magnifying-glass-chart"></i> Ranking #1–3</div>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!-- ==========================================================================
-     SHORT VIDEOS / REELS STRIP
-     ========================================================================== -->
-<section class="short-videos">
-	<div class="container">
-		<h2>Short Videos, Big Impact.</h2>
-		<p class="section-sub">We create short, story-driven videos that capture real moments and turn them into powerful content that connects, engages and grows your brand.</p>
-
-		<div class="reel-grid">
-			<div class="reel-card">
-				<img src="https://picsum.photos/seed/reel1/400/720" alt="Reel example one">
-				<span class="play-icon"><i class="fa-solid fa-play"></i></span>
-			</div>
-			<div class="reel-card">
-				<img src="https://picsum.photos/seed/reel2/400/720" alt="Reel example two">
-				<span class="play-icon"><i class="fa-solid fa-play"></i></span>
-			</div>
-			<div class="reel-card">
-				<img src="https://picsum.photos/seed/reel3/400/720" alt="Reel example three">
-				<span class="play-icon"><i class="fa-solid fa-play"></i></span>
+	<!-- ============ TRUST MARQUEE ============ -->
+	<section class="trust" aria-label="Channels and platforms we manage">
+		<div class="container-wide">
+			<p class="trust-label">Platforms &amp; channels we run growth on</p>
+			<div class="marquee">
+				<div class="marquee-track">
+					<span class="marquee-item"><i class="fa-brands fa-google"></i> Google Ads</span>
+					<span class="marquee-item"><i class="fa-brands fa-meta"></i> Meta</span>
+					<span class="marquee-item"><i class="fa-brands fa-instagram"></i> Instagram</span>
+					<span class="marquee-item"><i class="fa-brands fa-amazon"></i> Amazon</span>
+					<span class="marquee-item"><i class="fa-brands fa-shopify"></i> Shopify</span>
+					<span class="marquee-item"><i class="fa-brands fa-tiktok"></i> TikTok</span>
+					<span class="marquee-item"><i class="fa-brands fa-youtube"></i> YouTube</span>
+					<span class="marquee-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+					<span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+					<!-- duplicate for seamless loop -->
+					<span class="marquee-item"><i class="fa-brands fa-google"></i> Google Ads</span>
+					<span class="marquee-item"><i class="fa-brands fa-meta"></i> Meta</span>
+					<span class="marquee-item"><i class="fa-brands fa-instagram"></i> Instagram</span>
+					<span class="marquee-item"><i class="fa-brands fa-amazon"></i> Amazon</span>
+					<span class="marquee-item"><i class="fa-brands fa-shopify"></i> Shopify</span>
+					<span class="marquee-item"><i class="fa-brands fa-tiktok"></i> TikTok</span>
+					<span class="marquee-item"><i class="fa-brands fa-youtube"></i> YouTube</span>
+					<span class="marquee-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+					<span class="marquee-item"><i class="fa-brands fa-wordpress"></i> WordPress</span>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!-- ==========================================================================
-     SERVICES
-     ========================================================================== -->
-<section class="services" id="services">
-	<div class="container">
-		<span class="eyebrow">Our Services</span>
-		<h2 class="section-heading">Supporting The Growth Of UK Businesses Through Digital Solutions</h2>
+	<!-- ============ SERVICES (editorial visual rows) ============ -->
+	<section class="services" id="services">
+		<div class="container">
+			<div class="section-head">
+				<div data-reveal="left">
+					<span class="section-kicker">What We Do</span>
+					<h2 class="section-title">Six specialist divisions. One growth team.</h2>
+				</div>
+				<p class="section-copy" data-reveal="right">Every service is organized into clear divisions so you can see the outcome before you read a word — then combine any of them into one focused plan.</p>
+			</div>
 
-		<div class="services-grid">
-
-			<article class="service-card">
-				<div class="service-icon"><i class="fa-solid fa-clapperboard"></i></div>
-				<div>
-					<h3>Reels &amp; Videos Content Creation</h3>
-					<p>We create eye-catching reels and videos that capture attention in seconds. Our team blends storytelling with strategy to produce content that not only looks great but performs brilliantly across all social media platforms.</p>
+			<!-- 1. Digital Marketing & SEO -->
+			<article class="service-row" style="--accent: var(--rd-orange);" data-reveal>
+				<div class="service-info">
+					<span class="svc-index">01 — Search &amp; Growth</span>
+					<h3>Digital Marketing &amp; SEO</h3>
+					<p>Search visibility, analytics and strategy that compound into long-term organic growth and qualified traffic.</p>
+					<div class="svc-tags">
+						<span>SEO</span><span>Local SEO</span><span>Technical SEO</span><span>Analytics</span><span>Content</span>
+					</div>
+					<a class="text-link" href="realdeal-services-white.html#seo-marketing">Explore SEO services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=70" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="900" height="675">
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Organic growth</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Keyword rankings</small><strong>Top 3</strong></div>
+							<div class="mw-bar"><i style="width:82%"></i></div>
+							<div class="mw-row" style="margin-top:12px"><small>Organic traffic</small><strong>+64%</strong></div>
+							<div class="mw-bar"><i style="width:64%"></i></div>
+						</div>
+					</div>
 				</div>
 			</article>
 
-			<article class="service-card">
-				<div class="service-icon"><i class="fa-solid fa-globe"></i></div>
-				<div>
+			<!-- 2. Ads, Leads & Conversion -->
+			<article class="service-row flip" style="--accent: var(--rd-blue);" data-reveal>
+				<div class="service-info">
+					<span class="svc-index">02 — Performance</span>
+					<h3>Ads, Leads &amp; Conversion</h3>
+					<p>Performance marketing built for traffic, qualified leads and measurable ROI across search, social and marketplaces.</p>
+					<div class="svc-tags">
+						<span>PPC</span><span>SEM</span><span>Lead Gen</span><span>CRO</span><span>Email &amp; SMS</span>
+					</div>
+					<a class="text-link" href="realdeal-services-white.html#ads-leads">Explore ad services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=70" alt="Ad performance dashboard" loading="lazy" decoding="async" width="900" height="675">
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-bullseye"></i> Paid campaigns</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Cost per lead</small><strong>-42%</strong></div>
+							<div class="mw-row"><small>Return on ad spend</small><strong>3.4x</strong></div>
+							<div class="mw-chips"><span>Google</span><span>Meta</span><span>Retargeting</span></div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 3. Social Media & Reputation -->
+			<article class="service-row" style="--accent: var(--rd-teal);" data-reveal>
+				<div class="service-info">
+					<span class="svc-index">03 — Community</span>
+					<h3>Social Media &amp; Reputation</h3>
+					<p>Community growth, paid social and proactive reputation management that build trust and keep your brand top of mind.</p>
+					<div class="svc-tags">
+						<span>Social Marketing</span><span>Management</span><span>Paid Social</span><span>Reputation</span>
+					</div>
+					<a class="text-link" href="realdeal-services-white.html#social-reputation">Explore social services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=900&q=70" alt="Social media content" loading="lazy" decoding="async" width="900" height="675">
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-share-nodes"></i> Content that converts</span>
+						<div class="media-widget">
+							<div class="mw-grid">
+								<span style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=60')"></span>
+								<span style="background-image:url('https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=200&q=60')"></span>
+								<span style="background-image:url('https://images.unsplash.com/photo-1526178613658-3f1622045557?auto=format&fit=crop&w=200&q=60')"></span>
+								<span style="background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=200&q=60')"></span>
+								<span style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=200&q=60')"></span>
+								<span style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=60')"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 4. Graphics Design & Creative -->
+			<article class="service-row flip" style="--accent: var(--rd-green);" data-reveal>
+				<div class="service-info">
+					<span class="svc-index">04 — Creative</span>
+					<h3>Graphics Design &amp; Creative</h3>
+					<p>Visual identity, motion and campaign assets for brands that need to look sharper and sell harder.</p>
+					<div class="svc-tags">
+						<span>Brand Design</span><span>Motion Graphics</span><span>Social Design</span><span>Ad Creative</span>
+					</div>
+					<a class="text-link" href="realdeal-services-white.html#graphics-creative">Explore creative services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=70" alt="Brand and creative design" loading="lazy" decoding="async" width="900" height="675">
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-pen-nib"></i> Brand systems</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Creative concepts</small><strong>A/B ready</strong></div>
+							<div class="mw-chips"><span>Logos</span><span>Reels</span><span>Ads</span><span>Motion</span></div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 5. Web Design & Development -->
+			<article class="service-row" style="--accent: var(--rd-orange);" data-reveal>
+				<div class="service-info">
+					<span class="svc-index">05 — Web</span>
 					<h3>Web Design &amp; Development</h3>
-					<p>Stand out online with a custom website that reflects your brand and drives growth. Savasaachi designs and develops impactful, engaging sites that attract visitors and set you apart from the competition.</p>
+					<p>Conversion-focused websites, WordPress builds and ecommerce pages engineered for speed and results.</p>
+					<div class="svc-tags">
+						<span>Web Design</span><span>WordPress</span><span>eCommerce</span><span>ADA</span><span>Hosting</span>
+					</div>
+					<a class="text-link" href="realdeal-services-white.html#web-development">Explore web services <i class="fa-solid fa-arrow-right"></i></a>
 				</div>
-			</article>
-
-			<article class="service-card">
-				<div class="service-icon"><i class="fa-solid fa-comments"></i></div>
-				<div>
-					<h3>Social Media Marketing</h3>
-					<p>Savasaachi helps you build genuine connections through meaningful engagement. We create social strategies that spark conversations, strengthen trust, and grow your brand&rsquo;s online community.</p>
-				</div>
-			</article>
-
-			<article class="service-card">
-				<div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-				<div>
-					<h3>Search Engine Optimisation</h3>
-					<p>We offer the best SEO service to increase your online visibility and generate more leads and sales. Our customised SEO strategies, including keyword research, on-page optimisation, link building, and content creation, are designed to keep your website ahead of the curve.</p>
-				</div>
-			</article>
-
-			<article class="service-card">
-				<div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-				<div>
-					<h3>Digital Marketing</h3>
-					<p>We offer customised and affordable digital marketing plans for businesses, including SEO, social media, PPC, and content marketing. Our data-driven approach helps you build relationships with your audience and achieve your goals.</p>
-				</div>
-			</article>
-
-			<article class="service-card">
-				<div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-				<div>
-					<h3>Reputation Management</h3>
-					<p>Our reputation management service helps businesses maintain a positive online presence by monitoring, improving, and promoting their online reputation. We specialise in creating customised strategies that improve your brand&rsquo;s credibility.</p>
-				</div>
-			</article>
-
-		</div>
-
-		<div class="btn-center-wrap">
-			<a href="#services" class="btn btn-purple">More Services</a>
-		</div>
-	</div>
-</section>
-
-<!-- ==========================================================================
-     WHY CHOOSE / HOW WE DELIVER
-     ========================================================================== -->
-<section class="why-choose">
-	<div class="container">
-		<div class="why-block">
-			<h3>Why Choose Savasaachi Marketing Agency?</h3>
-			<p>Savasaachi is dedicated to delivering exceptional digital marketing services that go beyond expectations. We prioritise clear communication and collaboration to stay aligned with your business goals. By understanding your needs, we craft tailored strategies that deliver the best results&mdash;on time and within budget. With regular, easy-to-follow progress reports, we keep you informed and empowered to make data-driven decisions. With Savasaachi, your business is in trusted hands&mdash;committed to driving your growth every step of the way.</p>
-		</div>
-		<div class="why-block">
-			<h3>How Do We Deliver?</h3>
-			<p>Savasaachi proudly delivers exceptional digital marketing services that exceed expectations. Through clear communication and collaboration, we understand your goals and create tailored strategies to meet your needs. Our team ensures timely, budget-friendly results and provides regular updates to support informed decisions. With our commitment to quality and trust, your business is always in good hands with Savasaachi.</p>
-		</div>
-	</div>
-</section>
-
-<!-- ==========================================================================
-     WHO WE ARE
-     ========================================================================== -->
-<section class="who-we-are" id="about">
-	<div class="container">
-		<div class="who-inner">
-
-			<div class="who-text">
-				<span class="eyebrow">Who We Are</span>
-				<h2>Savasaachi Is Your All-In-One Digital Marketing Solution For Branding, SEO, PPC, And Content Marketing.</h2>
-				<p>Our expert team specialises in search engine marketing, crafting tailored strategies that drive traffic, boost conversions, and maximise ROI. By staying ahead of industry trends, we deliver measurable results for leading brands and SMEs across the UK and beyond.</p>
-				<a href="#about" class="btn btn-purple">Explore Savasaachi</a>
-			</div>
-
-			<div class="who-image-wrap">
-				<div class="who-image-card">
-					<img src="https://picsum.photos/seed/savasaachi-team/700/560" alt="Savasaachi team collaborating on a strategy board">
-					<div class="who-caption">
-						<h4>Together, We&rsquo;ll Grow Your Business</h4>
-						<p>Our team of experts will collaborate with you to develop a customised strategy that aligns with your unique goals. We&rsquo;ll take your business to new heights and achieve long-term success.</p>
+				<div class="service-media mask-reveal">
+					<img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=70" alt="Website design mockup" loading="lazy" decoding="async" width="900" height="675">
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-laptop-code"></i> Built to convert</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Page speed</small><strong>98 / 100</strong></div>
+							<div class="mw-bar"><i style="width:96%"></i></div>
+							<div class="mw-row" style="margin-top:12px"><small>Mobile ready</small><strong>100%</strong></div>
+							<div class="mw-bar"><i style="width:100%"></i></div>
+						</div>
 					</div>
 				</div>
-				<div class="est-badge">
-					<span>EST.</span>
-					<strong>2015</strong>
+			</article>
+
+			<!-- 6. eCommerce & Marketplace -->
+			<article class="service-row flip" style="--accent: var(--rd-blue);" data-reveal>
+				<div class="service-info">
+					<span class="svc-index">06 — Commerce</span>
+					<h3>eCommerce &amp; Marketplace</h3>
+					<p>Online store growth across search, paid media, Shopify, Amazon, Walmart and Target marketplaces.</p>
+					<div class="svc-tags">
+						<span>Shopify SEO</span><span>Amazon</span><span>Walmart</span><span>eCommerce PPC</span><span>Storefronts</span>
+					</div>
+					<a class="text-link" href="realdeal-services-white.html#ecommerce-marketplace">Explore commerce services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=70" alt="eCommerce and marketplace growth" loading="lazy" decoding="async" width="900" height="675">
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-store"></i> Marketplace growth</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Store revenue</small><strong>+2.1x</strong></div>
+							<div class="mw-bar"><i style="width:74%"></i></div>
+							<div class="mw-chips"><span>Amazon</span><span>Shopify</span><span>Walmart</span></div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<!-- ============ METRICS ============ -->
+	<!-- NOTE: Metric values below are structured placeholders. Replace with verified company data. -->
+	<section class="metrics" aria-label="Agency results and scale">
+		<div class="container">
+			<div class="metrics-head" data-reveal>
+				<span class="section-kicker" style="color: var(--rd-orange-2);">By The Numbers</span>
+				<h2>Built to deliver measurable outcomes.</h2>
+				<p>A snapshot of how we structure growth. Swap these placeholders for your verified performance data anytime.</p>
+			</div>
+			<div class="metrics-grid">
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="40" data-suffix="+"><span class="num">40</span><span class="suffix">+</span></div>
+					<div class="metric-label">Digital services offered</div>
+				</div>
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="6"><span class="num">6</span></div>
+					<div class="metric-label">Specialist service divisions</div>
+				</div>
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="360" data-suffix="°"><span class="num">360</span><span class="suffix">°</span></div>
+					<div class="metric-label">Creative, web &amp; reputation</div>
+				</div>
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="1"><span class="num">1</span></div>
+					<div class="metric-label">Accountable growth partner</div>
 				</div>
 			</div>
-
 		</div>
-	</div>
-</section>
+	</section>
 
-<!-- ==========================================================================
-     GROWTH STATEMENT + CLIENT LOGOS
-     ========================================================================== -->
-<section class="growth-statement">
-	<div class="container">
-		<h2>We Help Clients Generate More Sales, Leads, And Growth Opportunities For Their Business.</h2>
-		<p>Our goal is to help you grow your customer base and boost sales with strategies tailored to your business needs. We create customised plans that align with your goals and drive long-term success. By building a strong online presence and attracting your target audience, we help generate high-quality leads, increase visibility, and take your business to the next level.</p>
-		<a href="#proposal" class="btn btn-purple">Discover More</a>
-	</div>
+	<!-- ============ PORTFOLIO / WORK ============ -->
+	<section class="portfolio" id="work">
+		<div class="container">
+			<div class="section-head">
+				<div data-reveal="left">
+					<span class="section-kicker">Selected Work</span>
+					<h2 class="section-title">Visual proof across every division.</h2>
+				</div>
+				<p class="section-copy" data-reveal="right">A visual-first look at campaigns, search growth, brand systems and websites — the outcomes behind each service.</p>
+			</div>
 
-	<div class="client-logos-bar">
-		<div class="client-logos-inner">
-			<img src="https://placehold.co/160x40/transparent/ffffff?text=Spice+Lounge" alt="Spice Lounge logo">
-			<img src="https://placehold.co/160x40/transparent/ffffff?text=Radhuni" alt="Radhuni Lounge Restaurant logo">
-			<img src="https://placehold.co/160x40/transparent/ffffff?text=SolarCharge" alt="SolarCharge logo">
-			<img src="https://placehold.co/160x40/transparent/ffffff?text=The+India" alt="The India logo">
+			<div class="work-grid">
+				<article class="work-card work-a" data-reveal>
+					<img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1000&q=70" alt="Restaurant growth campaign" loading="lazy" decoding="async" width="1000" height="700">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-bullhorn"></i> Marketing Campaign</span>
+						<h3>Restaurant growth package</h3>
+						<p>Reels, paid ads, offer design and weekly reporting for a local food brand.</p>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> +48K monthly reach</span>
+					</div>
+				</article>
+
+				<article class="work-card work-b" data-reveal>
+					<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=70" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="700" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-chart-line"></i> SEO &amp; Analytics</span>
+						<h3>Search visibility dashboard</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> Top 3 rankings</span>
+					</div>
+				</article>
+
+				<article class="work-card work-c" data-reveal>
+					<img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=700&q=70" alt="Brand creative system" loading="lazy" decoding="async" width="700" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-pen-nib"></i> Graphic Design</span>
+						<h3>Brand creative system</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> One consistent look</span>
+					</div>
+				</article>
+
+				<article class="work-card work-d" data-reveal>
+					<img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=70" alt="WordPress ecommerce build" loading="lazy" decoding="async" width="800" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-laptop-code"></i> Web Design</span>
+						<h3>WordPress &amp; ecommerce build</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> 98 page-speed score</span>
+					</div>
+				</article>
+
+				<article class="work-card work-e" data-reveal>
+					<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=70" alt="Marketplace storefront growth" loading="lazy" decoding="async" width="800" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-store"></i> Marketplace</span>
+						<h3>Amazon storefront &amp; ads</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> +2.1x store revenue</span>
+					</div>
+				</article>
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!-- ==========================================================================
-     TESTIMONIALS
-     ========================================================================== -->
-<section class="testimonials">
-	<div class="container">
-		<h2>Grow Your Business With <span>Savasaachi</span></h2>
-		<p class="section-sub">Savasaachi Marketing Agency helps your business thrive with results-driven digital marketing. As one of the UK&rsquo;s leading agencies, we focus on boosting visibility, reaching the right audience, and driving real growth. Our clients&rsquo; success stories reflect our dedication, care, and impactful results. Stand out in a crowded market &mdash; Savasaachi is committed to your success.</p>
+	<!-- ============ REELS ============ -->
+	<section class="showreel" id="reels">
+		<div class="container">
+			<div class="section-head">
+				<div data-reveal="left">
+					<span class="section-kicker">Project Demos</span>
+					<h2 class="section-title">Short-form content that keeps selling.</h2>
+				</div>
+				<p class="section-copy" data-reveal="right">Vertical reel previews from real campaign styles — swipe on mobile, hover on desktop. Drop in your own video files anytime.</p>
+			</div>
 
-		<div class="testimonial-row-wrap">
-			<span class="carousel-arrow"><i class="fa-solid fa-chevron-left"></i></span>
+			<div class="reel-scroller" data-reveal>
+				<article class="reel" tabindex="0" role="button" aria-label="Play cafe launch reel">
+					<img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=500&q=70" alt="Cafe launch campaign reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">Cafe launch</span><span class="reel-stat"><i class="fa-solid fa-heart"></i> 48K</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Local brand buzz</h3><p>Launch reels, food shots &amp; retargeting.</p></div>
+				</article>
+
+				<article class="reel" tabindex="0" role="button" aria-label="Play service ad reel">
+					<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=70" alt="Service ad creative reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">Ad creative</span><span class="reel-stat"><i class="fa-solid fa-arrow-trend-up"></i> +31%</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Trust in seconds</h3><p>Fast hooks and bold motion design.</p></div>
+				</article>
+
+				<article class="reel" tabindex="0" role="button" aria-label="Play product demo reel">
+					<img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=500&q=70" alt="Product demo reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">Product demo</span><span class="reel-stat"><i class="fa-solid fa-message"></i> Leads</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Explain &amp; convert</h3><p>Simple demos that pre-sell the offer.</p></div>
+				</article>
+
+				<article class="reel" tabindex="0" role="button" aria-label="Play ecommerce reel">
+					<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=70" alt="eCommerce product reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">eCommerce</span><span class="reel-stat"><i class="fa-solid fa-cart-shopping"></i> +2.1x</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Products in motion</h3><p>Shoppable reels for store growth.</p></div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ PROCESS ============ -->
+	<section class="process" id="process">
+		<div class="container">
+			<div data-reveal>
+				<span class="section-kicker">How We Work</span>
+				<h2 class="section-title">A simple system that keeps every project moving.</h2>
+				<p class="section-copy">Clear planning, transparent progress and practical execution — from the first call to launch and ongoing improvement.</p>
+			</div>
+
+			<div class="process-grid">
+				<article class="process-step" style="--accent: var(--rd-orange);" data-reveal>
+					<span class="step-num">01</span>
+					<h3>Discover</h3>
+					<p>We map your goals, audience, current channels and growth blockers.</p>
+				</article>
+				<article class="process-step" style="--accent: var(--rd-teal);" data-reveal>
+					<span class="step-num">02</span>
+					<h3>Design</h3>
+					<p>We shape a focused plan across campaigns, creative, SEO, web or commerce.</p>
+				</article>
+				<article class="process-step" style="--accent: var(--rd-blue);" data-reveal>
+					<span class="step-num">03</span>
+					<h3>Deliver</h3>
+					<p>We execute with visible milestones, approvals and clean communication.</p>
+				</article>
+				<article class="process-step" style="--accent: var(--rd-green);" data-reveal>
+					<span class="step-num">04</span>
+					<h3>Improve</h3>
+					<p>We track results, refine the work and keep your business moving smarter.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ WHY ============ -->
+	<section class="why">
+		<div class="container">
+			<div class="why-grid">
+				<div data-reveal="left">
+					<span class="section-kicker" style="color: var(--rd-orange-2);">Why RealDeal</span>
+					<h2 class="section-title">The best partner feels like part of your team.</h2>
+					<p class="section-copy">Built for owners who want one reliable partner — instead of juggling separate SEO teams, ad buyers, designers, web teams and marketplace specialists.</p>
+				</div>
+
+				<div class="why-list">
+					<article class="why-item" data-reveal="right">
+						<i class="fa-solid fa-handshake-angle"></i>
+						<div>
+							<h3>One accountable team</h3>
+							<p>Strategy, creative, search, social, web and ecommerce stay connected.</p>
+						</div>
+					</article>
+					<article class="why-item" data-reveal="right">
+						<i class="fa-solid fa-gauge-high"></i>
+						<div>
+							<h3>Fast execution</h3>
+							<p>Launch pages, campaigns, reports and automations without slow handoffs.</p>
+						</div>
+					</article>
+					<article class="why-item" data-reveal="right">
+						<i class="fa-solid fa-chart-pie"></i>
+						<div>
+							<h3>Clear reporting</h3>
+							<p>See what happened, what it means and what we recommend next.</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ TESTIMONIALS ============ -->
+	<!-- NOTE: Replace placeholder quotes with real, verified client testimonials. -->
+	<section class="testimonial">
+		<div class="container">
+			<div class="section-head">
+				<div data-reveal="left">
+					<span class="section-kicker">Client Words</span>
+					<h2 class="section-title">Trusted for responsive service and clean delivery.</h2>
+				</div>
+				<p class="section-copy" data-reveal="right">Placeholder quotes — swap in real client testimonials once approved.</p>
+			</div>
 
 			<div class="testimonial-grid">
-				<article class="testimonial-card">
-					<div class="testimonial-head">
-						<span class="avatar-circle" style="background-color:#e0457b;">K</span>
-						<div class="testimonial-name-wrap">
-							<strong>Kazi Mahi</strong>
-							<span>8 months ago</span>
-						</div>
-						<i class="fa-brands fa-google"></i>
-					</div>
-					<div class="testimonial-stars">
-						<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-circle-check"></i>
-					</div>
-					<p class="review-text">Good service.</p>
+				<article class="quote-card" data-reveal>
+					<i class="fa-solid fa-quote-left"></i>
+					<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+					<p>"RealDeal helped us organize our content plan and gave our service pages a much stronger conversion flow."</p>
+					<div class="quote-person"><span class="avatar">AK</span><div><strong>Agency Client</strong><span>Marketing package</span></div></div>
 				</article>
 
-				<article class="testimonial-card">
-					<div class="testimonial-head">
-						<span class="avatar-circle" style="background-color:#5b7fe0;">M</span>
-						<div class="testimonial-name-wrap">
-							<strong>Md taj uddin</strong>
-							<span>8 months ago</span>
-						</div>
-						<i class="fa-brands fa-google"></i>
-					</div>
-					<div class="testimonial-stars">
-						<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-circle-check"></i>
-					</div>
-					<p class="review-text">Good food nice restaurant excellent service</p>
+				<article class="quote-card" data-reveal>
+					<i class="fa-solid fa-quote-left"></i>
+					<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+					<p>"The SEO and content support made our monthly visibility clearer and helped us plan with confidence."</p>
+					<div class="quote-person"><span class="avatar">SR</span><div><strong>Business Owner</strong><span>SEO package</span></div></div>
 				</article>
 
-				<article class="testimonial-card">
-					<div class="testimonial-head">
-						<span class="avatar-circle" style="background-color:#FE4A17;">G</span>
-						<div class="testimonial-name-wrap">
-							<strong>Gulam Osman</strong>
-							<span>8 months ago</span>
-						</div>
-						<i class="fa-brands fa-google"></i>
-					</div>
-					<div class="testimonial-stars">
-						<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-						<i class="fa-solid fa-circle-check"></i>
-					</div>
-					<p class="review-text">Lovely staff and very responsive</p>
+				<article class="quote-card" data-reveal>
+					<i class="fa-solid fa-quote-left"></i>
+					<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+					<p>"Their web design team understood the offer quickly and shipped pages our customers actually use."</p>
+					<div class="quote-person"><span class="avatar">JM</span><div><strong>Operations Lead</strong><span>Web design project</span></div></div>
 				</article>
 			</div>
-
-			<span class="carousel-arrow"><i class="fa-solid fa-chevron-right"></i></span>
 		</div>
-	</div>
-</section>
+	</section>
 
-<!-- ==========================================================================
-     FRANCHISE / SERVICE AREAS
-     ========================================================================== -->
-<section class="franchise">
-	<div class="container">
-		<img class="franchise-logo" src="https://placehold.co/160x42/transparent/ffffff?text=SAVASAACHI" alt="Savasaachi logo">
-		<h2>Powering Growth Through <span>Franchises.</span></h2>
-		<p class="section-sub">We partner with franchises to expand their customer base and increase sales through customised, goal-driven strategies.</p>
-
-		<div class="locations-grid">
-			<a href="#"><i class="fa-solid fa-location-dot"></i>London</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Isle Of Wight</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Newcastle</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Slough</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Wigan</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Bedford</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Scunthorpe</a>
-
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Luton</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Milton Keynes</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Birmingham</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Southampton</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Wrexham</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Huddersfield</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Winchester</a>
-
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Bradford</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Cambridge</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Warrington</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Halifax</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Wirral</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Northampton</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>France</a>
-
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Oxford</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Coventry</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Leeds</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Tameside</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Bath</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Nottingham</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Portugal</a>
-
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Norwich</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Trafford</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Manchester</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Bicester</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Stoke-on-Trent</a>
-			<a href="#"><i class="fa-solid fa-location-dot"></i>Doncaster</a>
-			<a href="#"></a>
-		</div>
-	</div>
-</section>
-
-<!-- ==========================================================================
-     CONTACT CARDS
-     ========================================================================== -->
-<section class="contact-cards" id="contact">
-	<div class="container">
-		<h2>Reach Us Through Our Contact Details</h2>
-		<p class="section-sub">If you&rsquo;re interested in learning more about our services or have any questions, please don&rsquo;t hesitate to contact us through our contact details.</p>
-
-		<div class="contact-grid">
-			<div class="contact-card">
-				<div class="contact-icon"><i class="fa-solid fa-headset"></i></div>
-				<h3>Communicate With Us</h3>
-				<p>Chat with us now for instant expert support.</p>
-				<a href="#contact" class="btn btn-purple btn-block">Chat Now</a>
-			</div>
-
-			<div class="contact-card">
-				<div class="contact-icon"><i class="fa-solid fa-comment-dots"></i></div>
-				<h3>Send Us A Message</h3>
-				<p>Fill out our contact form or email us for a quick response from our experts.</p>
-				<a href="#proposal" class="btn btn-purple btn-block">Talk To Us</a>
-			</div>
-
-			<div class="contact-card">
-				<div class="contact-icon"><i class="fa-solid fa-user-headset"></i></div>
-				<h3>24/7 Customer Support</h3>
-				<p>Our team is ready to answer your questions, offer guidance, and help you make informed decisions.</p>
-				<a href="#contact" class="btn btn-purple btn-block">Contact Support</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- ==========================================================================
-     GET A FREE PROPOSAL + FAQ
-     ========================================================================== -->
-<section class="proposal-section" id="proposal">
-	<div class="container">
-		<div class="proposal-grid">
-
-			<div class="proposal-form-card">
-				<div class="form-logo">
-					<img src="https://placehold.co/60x60/12091f/ffffff?text=S" alt="Savasaachi logo">
-					<strong>SAVASAACHI</strong>
-				</div>
-				<h3>Get A Free Proposal</h3>
-
-				<div class="form-steps">
-					<div class="form-step active">
-						<span class="step-dot">1</span>
-						<span class="step-label">Business<br>Info</span>
-					</div>
-					<div class="form-step">
-						<span class="step-dot">2</span>
-						<span class="step-label">Choose<br>Time/Date</span>
-					</div>
-					<div class="form-step">
-						<span class="step-dot">3</span>
-						<span class="step-label">Contact<br>Info</span>
-					</div>
+	<!-- ============ CTA / CONTACT ============ -->
+	<section class="cta" id="contact">
+		<div class="container">
+			<div class="cta-grid">
+				<div data-reveal="left">
+					<h2>Ready to build your next RealDeal project?</h2>
+					<p>Tell us what you need — SEO, PPC, social, graphics, web, ecommerce, Amazon, reputation, email or SMS — and we'll shape a focused plan.</p>
+					<ul class="cta-points">
+						<li><i class="fa-solid fa-check"></i> Free strategy consultation</li>
+						<li><i class="fa-solid fa-check"></i> Clear deliverables &amp; timeline</li>
+						<li><i class="fa-solid fa-check"></i> One accountable team</li>
+					</ul>
+					<a class="btn btn-light" href="mailto:hello@realdealitcenter.com"><i class="fa-solid fa-envelope"></i> hello@realdealitcenter.com</a>
 				</div>
 
-				<form action="" method="post">
-					<div class="form-group">
-						<label for="business-name">Business Name</label>
-						<input type="text" id="business-name" name="business_name" placeholder="Your Business Name">
+				<form class="proposal-form" id="proposalForm" data-reveal="right">
+					<h3>Request a free proposal</h3>
+					<p class="form-sub">We usually reply within one business day.</p>
+					<div class="form-grid">
+						<div class="field">
+							<label for="name">Name</label>
+							<input id="name" name="name" type="text" placeholder="Your name">
+						</div>
+						<div class="field">
+							<label for="phone">Phone</label>
+							<input id="phone" name="phone" type="tel" placeholder="Phone number">
+						</div>
+						<div class="field full">
+							<label for="service">Service</label>
+							<select id="service" name="service">
+								<option>Digital Marketing</option>
+								<optgroup label="Digital Marketing &amp; SEO">
+									<option>Search Engine Optimization (SEO)</option>
+									<option>Local SEO</option>
+									<option>Technical SEO</option>
+									<option>Digital Marketing Strategy</option>
+									<option>Franchise SEO</option>
+									<option>Google Analytics Service</option>
+									<option>SEO Content Writing Services</option>
+								</optgroup>
+								<optgroup label="Ads, Leads &amp; Conversion">
+									<option>Pay Per Click (PPC) Marketing</option>
+									<option>Search Engine Marketing (SEM)</option>
+									<option>Lead Generation Service</option>
+									<option>Conversion Rate Optimization</option>
+									<option>Link Building Services</option>
+									<option>HARO Link Building Services</option>
+									<option>White Label Services</option>
+									<option>Video Production</option>
+									<option>Email Marketing Services</option>
+									<option>SMS Marketing Services</option>
+								</optgroup>
+								<optgroup label="Social Media &amp; Reputation">
+									<option>Social Media Marketing</option>
+									<option>Social Media Management</option>
+									<option>Social Media Advertising</option>
+									<option>Social Media Brand Management</option>
+									<option>Reputation Management</option>
+									<option>Reputation Management Software</option>
+									<option>Online Reputation Repair</option>
+									<option>Franchise Reputation Management</option>
+								</optgroup>
+								<optgroup label="Graphics Design &amp; Creative">
+									<option>Graphics Design</option>
+									<option>Brand Design</option>
+									<option>Illustration Design</option>
+									<option>Motion Graphics</option>
+									<option>Social Media Design</option>
+									<option>Advertisement Design</option>
+								</optgroup>
+								<optgroup label="Web Design &amp; Development">
+									<option>Web Design</option>
+									<option>Custom Website Design</option>
+									<option>WordPress Website Design</option>
+									<option>WordPress Development</option>
+									<option>eCommerce Web Design</option>
+									<option>ADA Compliance Services</option>
+									<option>Website Hosting</option>
+								</optgroup>
+								<optgroup label="eCommerce &amp; Marketplace">
+									<option>eCommerce Marketing</option>
+									<option>eCommerce Optimization</option>
+									<option>eCommerce SEO</option>
+									<option>eCommerce PPC</option>
+									<option>eCommerce Web Design</option>
+									<option>Shopify SEO</option>
+									<option>Walmart Marketplace</option>
+									<option>Target Plus Marketplace</option>
+									<option>Amazon Marketing</option>
+									<option>Amazon SEO</option>
+									<option>Amazon Advertising/PPC</option>
+									<option>Amazon Storefront &amp; Branding</option>
+									<option>Amazon Seller Consulting</option>
+									<option>Amazon Post Management</option>
+									<option>Amazon DSP Advertising Management</option>
+								</optgroup>
+								<option>Custom Package</option>
+							</select>
+						</div>
+						<div class="field full">
+							<label for="message">Project Details</label>
+							<textarea id="message" name="message" placeholder="Tell us about your business and what you want to improve."></textarea>
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="website-url">Website URL</label>
-						<input type="text" id="website-url" name="website_url" placeholder="Your Website URL">
-					</div>
-					<div class="form-group">
-						<label for="looking-for">What you are looking for?</label>
-						<select id="looking-for" name="looking_for">
-							<option value="">Please Select</option>
-							<option value="reels">Reels &amp; Video Content</option>
-							<option value="web-design">Web Design &amp; Development</option>
-							<option value="seo">Search Engine Optimisation</option>
-							<option value="social">Social Media Marketing</option>
-							<option value="digital-marketing">Digital Marketing</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="about-business">Tell Us About Your Business?</label>
-						<textarea id="about-business" name="about_business" placeholder="We'd love to learn more about your business! Tell us about what you do."></textarea>
-					</div>
-					<button type="submit" class="btn btn-purple btn-block">Next Step</button>
+					<button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Project Request</button>
 				</form>
 			</div>
-
-			<div class="faq-accordion">
-
-				<details open>
-					<summary>What Services Does Savasaachi Offer?</summary>
-					<div class="faq-answer">Savasaachi provides a full range of digital marketing services, including web design, SEO, social media, reputation management, e-commerce, and Amazon marketing.</div>
-				</details>
-
-				<details>
-					<summary>How Can Savasaachi Help My Business?</summary>
-					<div class="faq-answer">We build tailored, data-driven strategies across video, web, SEO and paid ads that increase visibility, generate leads and grow revenue for your business.</div>
-				</details>
-
-				<details>
-					<summary>What Makes Savasaachi Different From Other Digital Marketing Agencies?</summary>
-					<div class="faq-answer">Our all-in-one approach, transparent reporting, and dedicated account management mean you get a single trusted partner rather than juggling multiple vendors.</div>
-				</details>
-
-				<details>
-					<summary>What Is The Process For Working With Savasaachi?</summary>
-					<div class="faq-answer">We start with a free audit and discovery call, build a customised strategy, then launch, monitor, and optimise campaigns with regular progress reports.</div>
-				</details>
-
-				<details>
-					<summary>How Can I See The Results Of Working With Savasaachi?</summary>
-					<div class="faq-answer">You&rsquo;ll receive regular, easy-to-follow performance reports covering traffic, engagement, leads and ROI so you always know how your campaigns are performing.</div>
-				</details>
-
-			</div>
-
 		</div>
-	</div>
-</section>
-
-<!-- ==========================================================================
-     CTA BAND
-     ========================================================================== -->
-<section class="cta-band">
-	<div class="container">
-		<h2>Expand your business with the help of Savasaachi Marketing Agency</h2>
-		<p>Ready to grow your business? Savasaachi Marketing Agency creates customised strategies that align with your goals and deliver proven results. Contact us today to get started.</p>
-		<div class="cta-buttons">
-			<a href="#proposal" class="btn btn-outline-white">Free Audit Website</a>
-			<a href="#proposal" class="btn btn-purple">Book Free Consultant</a>
-		</div>
-	</div>
-</section>
-
+	</section>
 </main>
 
-<!-- ==========================================================================
-     FOOTER
-     ========================================================================== -->
 <footer class="site-footer">
 	<div class="container">
-		<div class="footer-top">
-
+		<div class="footer-grid">
 			<div class="footer-brand">
-				<a class="site-logo" href="index.html">
-					<img src="https://placehold.co/60x60/12091f/ffffff?text=S" alt="Savasaachi logo">
-					<span class="logo-text">
-						<strong>SAVASAACHI</strong>
-						<span>Marketing Agency</span>
+				<a class="brand" href="#top" aria-label="RealDeal IT Center home">
+					<span class="brand-mark" aria-hidden="true">
+						<span class="brand-letter">R</span>
+						<span class="brand-letter">D</span>
+					</span>
+					<span class="brand-text">
+						<strong>RealDeal</strong>
+						<span>IT Center</span>
 					</span>
 				</a>
-				<p>Savasaachi is a marketing communications agency dedicated to keeping you one step ahead. We act as your marketing team, delivering strategic campaigns across all platforms to help your business thrive.</p>
-				<div class="social-icons">
+				<p>RealDeal IT Center helps businesses grow with SEO, paid ads, social media, graphics, web design, ecommerce, marketplace and reputation services delivered by one focused team.</p>
+				<div class="socials">
 					<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 					<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-					<a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
 					<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+					<a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 				</div>
 			</div>
 
 			<div class="footer-col">
-				<h4>Service</h4>
+				<h4>Services</h4>
 				<ul>
-					<li><a href="#">Digital Marketing</a></li>
-					<li><a href="#">Social Media Marketing</a></li>
-					<li><a href="#">Graphic Design</a></li>
-					<li><a href="#">Web Development</a></li>
-					<li><a href="#">Social Media Management</a></li>
-					<li><a href="#">Search Engine Optimisation (SEO)</a></li>
-					<li><a href="#">E-Commerce Marketing</a></li>
-				</ul>
-			</div>
-
-			<div class="footer-col">
-				<h4>Quick Links</h4>
-				<ul>
-					<li><a href="#">All Services</a></li>
-					<li><a href="#">Packages</a></li>
-					<li><a href="#">Free Website Audit</a></li>
-					<li><a href="#">Book Free Consultation</a></li>
-					<li><a href="#">Our Service Areas</a></li>
+					<li><a href="realdeal-services-white.html#seo-marketing">Digital Marketing &amp; SEO</a></li>
+					<li><a href="realdeal-services-white.html#ads-leads">Ads, Leads &amp; Conversion</a></li>
+					<li><a href="realdeal-services-white.html#social-reputation">Social &amp; Reputation</a></li>
+					<li><a href="realdeal-services-white.html#graphics-creative">Graphics &amp; Creative</a></li>
+					<li><a href="realdeal-services-white.html#web-development">Web Design</a></li>
+					<li><a href="realdeal-services-white.html#ecommerce-marketplace">eCommerce &amp; Amazon</a></li>
 				</ul>
 			</div>
 
 			<div class="footer-col">
 				<h4>Company</h4>
 				<ul>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Career</a></li>
-					<li><a href="#">Article &amp; News</a></li>
-					<li><a href="#">Contact Us</a></li>
-					<li><a href="#">Sitemap</a></li>
+					<li><a href="realdeal-services-white.html">Services</a></li>
+					<li><a href="realdeal-packages-white.html">Packages</a></li>
+					<li><a href="realdeal-about-white.html">About us</a></li>
+					<li><a href="realdeal-career-white.html">Career</a></li>
+					<li><a href="realdeal-contact-white.html">Contact us</a></li>
 				</ul>
 			</div>
 
+			<div class="footer-col">
+				<h4>Contact</h4>
+				<ul>
+					<li><a href="mailto:hello@realdealitcenter.com">hello@realdealitcenter.com</a></li>
+					<li><a href="tel:+10000000000">+1 000 000 0000</a></li>
+					<li><a href="realdeal-contact-white.html">Book a free consultation</a></li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="footer-bottom">
-			<p>Copyright &copy; 2026 | Savasaachi | All rights reserved. | Developed by Savasaachi Developers.</p>
-			<div class="footer-legal">
-				<a href="#">Privacy Policy</a>
-				<a href="#">Cookie Policy</a>
-			</div>
-			<div class="footer-payment-icons">
-				<i class="fa-solid fa-link"></i>
-				<i class="fa-solid fa-camera"></i>
-				<i class="fa-solid fa-film"></i>
-				<i class="fa-regular fa-image"></i>
-				<i class="fa-solid fa-gear"></i>
-			</div>
+			<p>Copyright &copy; 2026 RealDeal IT Center. All rights reserved.</p>
+			<a href="#top">Back to top</a>
 		</div>
 	</div>
 </footer>
 
+<script>
+(function () {
+	"use strict";
+
+	// Reveal on scroll
+	const revealItems = document.querySelectorAll("[data-reveal], .mask-reveal");
+	if ("IntersectionObserver" in window) {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("is-visible");
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.14, rootMargin: "0px 0px -40px 0px" });
+
+		revealItems.forEach((item, index) => {
+			if (item.hasAttribute("data-reveal")) {
+				item.style.transitionDelay = (Math.min(index % 4, 3) * 80) + "ms";
+			}
+			observer.observe(item);
+		});
+	} else {
+		revealItems.forEach((item) => item.classList.add("is-visible"));
+	}
+
+	// Count-up metrics (respects reduced motion)
+	const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	const counters = document.querySelectorAll(".metric-value[data-count]");
+	if (counters.length && "IntersectionObserver" in window && !reduceMotion) {
+		const countObserver = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) return;
+				const el = entry.target;
+				const numEl = el.querySelector(".num");
+				const target = parseInt(el.getAttribute("data-count"), 10) || 0;
+				const duration = 1200;
+				const start = performance.now();
+				function tick(now) {
+					const p = Math.min((now - start) / duration, 1);
+					const eased = 1 - Math.pow(1 - p, 3);
+					numEl.textContent = Math.round(target * eased).toLocaleString();
+					if (p < 1) requestAnimationFrame(tick);
+				}
+				requestAnimationFrame(tick);
+				countObserver.unobserve(el);
+			});
+		}, { threshold: 0.5 });
+		counters.forEach((c) => countObserver.observe(c));
+	}
+
+	// Reel play affordance (placeholder — ready for real <video> embeds)
+	document.querySelectorAll(".reel").forEach((reel) => {
+		function activate() { reel.classList.add("is-playing"); }
+		reel.addEventListener("click", activate);
+		reel.addEventListener("keydown", (e) => {
+			if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); }
+		});
+	});
+
+	// Proposal form feedback (front-end only; no backend change)
+	const proposalForm = document.getElementById("proposalForm");
+	if (proposalForm) {
+		proposalForm.addEventListener("submit", (event) => {
+			event.preventDefault();
+			const button = proposalForm.querySelector("button");
+			const original = button.innerHTML;
+			button.innerHTML = '<i class="fa-solid fa-check"></i> Request Ready To Send';
+			setTimeout(() => { button.innerHTML = original; }, 2400);
+		});
+	}
+})();
+</script>
+<script src="assets/site-nav.js" defer></script>
 </body>
 </html>
