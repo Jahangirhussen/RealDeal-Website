@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Deal IT Center — Enterprise Technology Platform</title>
+<style>
+  :root{
+    --primary:#FE4A17;
+    --secondary:#14212B;
+    --white:#FFFFFF;
+    --bg:#0b141c;
+    --bg2:#101c26;
+    --glass:rgba(255,255,255,.045);
+    --glass-brd:rgba(255,255,255,.09);
+    --muted:#8fa0ad;
+    --maxw:1280px;
+    --sans:"Inter","Segoe UI",-apple-system,sans-serif;
+    --display:"Segoe UI Semibold","Inter",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    position:relative;
+  }
+  body::before{
+    content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px circle at 15% 10%, rgba(254,74,23,.10), transparent 55%),
+      radial-gradient(900px circle at 85% 30%, rgba(96,140,180,.10), transparent 55%),
+      radial-gradient(700px circle at 50% 90%, rgba(254,74,23,.07), transparent 60%);
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(18px,5vw,64px);position:relative;z-index:1;}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--primary);font-weight:600;margin-bottom:16px;
+  }
+  .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 12px var(--primary);}
+  .glass{
+    background:var(--glass);border:1px solid var(--glass-brd);border-radius:22px;
+    backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:16px 32px;border-radius:100px;font-size:14.5px;font-weight:600;cursor:pointer;
+    border:1px solid transparent;transition:all .4s cubic-bezier(.2,.8,.2,1);white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,#FE4A17,#ff7143);color:var(--white);box-shadow:0 8px 30px -8px rgba(254,74,23,.6);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(254,74,23,.75);}
+  .btn-ghost{background:rgba(255,255,255,.04);color:var(--white);border-color:rgba(255,255,255,.15);backdrop-filter:blur(10px);}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08);}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .4s;}
+  header.scrolled{background:rgba(11,20,28,.7);backdrop-filter:blur(18px);border-bottom:1px solid var(--glass-brd);}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px clamp(18px,5vw,64px);max-width:var(--maxw);margin:0 auto;}
+  .logo{font-family:var(--display);font-size:clamp(17px,2vw,20px);font-weight:700;letter-spacing:-.01em;}
+  .logo span{color:var(--primary);}
+  .nav-links{display:flex;gap:clamp(20px,3vw,38px);align-items:center;}
+  .nav-links a{font-size:14px;font-weight:500;color:#c6d0d8;position:relative;transition:color .3s;}
+  .nav-links a:hover{color:var(--white);}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;z-index:1200;}
+  .hamburger span{width:24px;height:2px;background:var(--white);transition:.3s;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{position:fixed;inset:0;background:rgba(11,20,28,.98);backdrop-filter:blur(20px);z-index:1100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;visibility:hidden;transition:opacity .4s;}
+  .mobile-menu.open{opacity:1;visibility:visible;}
+  .mobile-menu a{font-size:24px;font-weight:500;}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:170px clamp(18px,5vw,64px) 100px;}
+  .hero-grid{max-width:var(--maxw);margin:0 auto;width:100%;position:relative;z-index:2;text-align:center;}
+  .hero h1{font-size:clamp(36px,6vw,80px);line-height:1.08;max-width:1000px;margin:0 auto 26px;}
+  .hero h1 .grad{background:linear-gradient(135deg,#FE4A17,#ff9d76);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p.sub{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:600px;margin:0 auto 42px;line-height:1.7;}
+  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:60px;}
+  .hero-panel{max-width:900px;margin:0 auto;padding:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .hero-panel .hp-item{padding:14px 10px;text-align:center;border-right:1px solid var(--glass-brd);}
+  .hero-panel .hp-item:last-child{border-right:none;}
+  .hp-item strong{display:block;font-size:clamp(22px,2.6vw,30px);color:var(--white);font-weight:700;}
+  .hp-item span{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+
+  .float-orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;}
+  .fo1{width:380px;height:380px;background:rgba(254,74,23,.25);top:100px;left:-100px;animation:drift 9s ease-in-out infinite;}
+  .fo2{width:300px;height:300px;background:rgba(120,160,200,.18);bottom:0;right:-80px;animation:drift 11s ease-in-out infinite reverse;}
+  @keyframes drift{0%,100%{transform:translate(0,0);}50%{transform:translate(30px,-30px);}}
+
+  section{padding:clamp(70px,9vw,140px) 0;position:relative;z-index:1;}
+  .section-head{max-width:680px;margin:0 auto 64px;text-align:center;}
+  .section-head h2{font-size:clamp(28px,4vw,48px);line-height:1.2;}
+  .section-head p{color:var(--muted);margin-top:16px;font-size:15.5px;line-height:1.7;}
+
+  /* TRUSTED */
+  .trusted{padding:44px 0;border-top:1px solid var(--glass-brd);border-bottom:1px solid var(--glass-brd);}
+  .trusted-label{text-align:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:30px;}
+  .logo-row{display:flex;justify-content:center;gap:clamp(24px,5vw,64px);flex-wrap:wrap;opacity:.5;}
+  .logo-row span{font-size:clamp(16px,2vw,22px);font-weight:600;letter-spacing:.01em;}
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{
+    padding:32px 26px;transition:all .45s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden;
+    opacity:0;transform:translateY(26px);
+  }
+  .service-card.reveal{opacity:1;transform:translateY(0);}
+  .service-card:hover{border-color:rgba(254,74,23,.4);background:rgba(254,74,23,.05);transform:translateY(-6px);}
+  .service-icon{width:46px;height:46px;border-radius:14px;background:rgba(254,74,23,.12);display:flex;align-items:center;justify-content:center;margin-bottom:22px;border:1px solid rgba(254,74,23,.25);}
+  .service-icon svg{width:20px;height:20px;stroke:var(--primary);}
+  .service-card h3{font-size:17px;margin-bottom:10px;font-weight:600;}
+  .service-card p{font-size:13.5px;color:var(--muted);line-height:1.65;}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .about-visual{aspect-ratio:4/5;padding:20px;position:relative;overflow:hidden;}
+  .about-visual svg{width:100%;height:100%;}
+  .about-copy h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:22px;}
+  .about-copy p{color:var(--muted);line-height:1.8;margin-bottom:18px;font-size:15px;}
+  .about-stats{display:flex;gap:36px;margin-top:32px;flex-wrap:wrap;}
+  .about-stats div strong{display:block;font-size:30px;font-weight:700;color:var(--primary);}
+  .about-stats div span{font-size:12.5px;color:var(--muted);}
+
+  /* WHY - glass cards grid */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .why-card{padding:32px 26px;}
+  .why-icon{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:18px;}
+  .why-card h3{font-size:17px;margin-bottom:10px;}
+  .why-card p{color:var(--muted);font-size:13.5px;line-height:1.7;}
+
+  /* STATS */
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .stat-box{padding:36px 20px;text-align:center;}
+  .stat-num{font-size:clamp(34px,4.6vw,52px);font-weight:700;background:linear-gradient(135deg,#FE4A17,#ff9d76);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat-label{font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.04em;}
+
+  /* PORTFOLIO */
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .portfolio-card{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:4/5;cursor:pointer;border:1px solid var(--glass-brd);}
+  .portfolio-card .pf-bg{position:absolute;inset:0;transition:transform .6s cubic-bezier(.2,.8,.2,1);}
+  .portfolio-card:hover .pf-bg{transform:scale(1.08);}
+  .pf-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:26px;background:linear-gradient(0deg,rgba(11,20,28,.92),transparent 55%);}
+  .pf-overlay h3{font-size:18px;margin-bottom:6px;}
+  .pf-overlay span{color:var(--primary);font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+
+  /* ERP */
+  .erp{padding:clamp(36px,6vw,70px);display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+  .erp h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:20px;}
+  .erp p{color:var(--muted);line-height:1.8;margin-bottom:26px;font-size:15px;}
+  .erp-list{display:flex;flex-direction:column;gap:14px;margin-bottom:30px;}
+  .erp-list div{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#dbe3e9;}
+  .erp-list svg{flex-shrink:0;width:17px;height:17px;stroke:var(--primary);margin-top:2px;}
+  .erp-visual{aspect-ratio:1;position:relative;overflow:hidden;border-radius:20px;}
+
+  /* TIMELINE */
+  .timeline{position:relative;max-width:900px;margin:0 auto;}
+  .timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:var(--glass-brd);}
+  .tl-item{position:relative;padding-left:60px;margin-bottom:44px;opacity:0;transform:translateX(-20px);transition:all .6s;}
+  .tl-item.reveal{opacity:1;transform:translateX(0);}
+  .tl-dot{position:absolute;left:11px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:2px solid var(--primary);box-shadow:0 0 14px rgba(254,74,23,.6);}
+  .tl-item h3{font-size:19px;margin-bottom:6px;}
+  .tl-item span.yr{color:var(--primary);font-size:12.5px;font-weight:700;letter-spacing:.06em;}
+  .tl-item p{color:var(--muted);font-size:14px;margin-top:8px;line-height:1.7;}
+
+  /* TESTIMONIALS */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .test-card{padding:32px;}
+  .test-stars{color:var(--primary);font-size:14px;margin-bottom:16px;letter-spacing:2px;}
+  .test-card p{font-size:14.5px;line-height:1.75;color:#dbe3e9;margin-bottom:22px;}
+  .test-person{display:flex;align-items:center;gap:12px;}
+  .test-avatar{width:42px;height:42px;border-radius:12px;background:rgba(254,74,23,.15);display:flex;align-items:center;justify-content:center;color:var(--primary);font-weight:700;font-size:15px;border:1px solid rgba(254,74,23,.3);}
+  .test-person strong{display:block;font-size:13.5px;}
+  .test-person span{font-size:12px;color:var(--muted);}
+
+  /* PRICING */
+  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+  .price-card{padding:38px 30px;display:flex;flex-direction:column;transition:all .4s;}
+  .price-card.featured{border-color:rgba(254,74,23,.5);background:linear-gradient(180deg,rgba(254,74,23,.09),rgba(255,255,255,.03));position:relative;}
+  .price-card.featured::before{content:'Most Popular';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--primary);font-size:11px;font-weight:700;text-transform:uppercase;padding:6px 16px;border-radius:100px;letter-spacing:.05em;}
+  .price-card:hover{transform:translateY(-6px);}
+  .price-name{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-bottom:16px;}
+  .price-amt{font-size:42px;font-weight:700;margin-bottom:4px;}
+  .price-period{color:var(--muted);font-size:12.5px;margin-bottom:26px;}
+  .price-feat{display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex:1;}
+  .price-feat div{display:flex;gap:10px;font-size:13.5px;align-items:flex-start;color:#dbe3e9;}
+  .price-feat svg{width:15px;height:15px;stroke:var(--primary);flex-shrink:0;margin-top:2px;}
+
+  /* FAQ */
+  .faq-list{max-width:800px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--glass-brd);}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;padding:24px 6px;cursor:pointer;font-size:16px;font-weight:500;}
+  .faq-q .plus{font-size:20px;color:var(--primary);transition:transform .3s;flex-shrink:0;margin-left:20px;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .faq-item.open .faq-a{max-height:200px;}
+  .faq-a p{padding:0 6px 24px;color:var(--muted);font-size:14px;line-height:1.7;}
+
+  /* CONTACT */
+  .contact-box{padding:clamp(36px,6vw,70px);display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  .contact-box h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:18px;}
+  .contact-box p{color:var(--muted);line-height:1.8;margin-bottom:28px;font-size:14.5px;}
+  .contact-info div{display:flex;gap:14px;margin-bottom:18px;font-size:14px;align-items:flex-start;color:#dbe3e9;}
+  .contact-info svg{width:18px;height:18px;stroke:var(--primary);margin-top:2px;flex-shrink:0;}
+  .form-field{margin-bottom:16px;}
+  .form-field input,.form-field textarea{
+    width:100%;padding:15px 18px;border-radius:12px;border:1px solid var(--glass-brd);
+    background:rgba(255,255,255,.03);color:var(--white);font-size:14px;font-family:var(--sans);
+  }
+  .form-field input::placeholder,.form-field textarea::placeholder{color:#5f7080;}
+  .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--primary);}
+  .contact-box .btn-primary{width:100%;margin-top:6px;}
+
+  /* FOOTER */
+  footer{padding:80px 0 28px;border-top:1px solid var(--glass-brd);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:56px;}
+  .footer-brand p{color:var(--muted);font-size:13.5px;line-height:1.8;margin-top:16px;max-width:280px;}
+  .footer-col h4{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;color:var(--muted);}
+  .footer-col a{display:block;font-size:14px;margin-bottom:12px;color:#dbe3e9;}
+  .footer-col a:hover{color:var(--primary);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--glass-brd);font-size:12.5px;color:var(--muted);flex-wrap:wrap;gap:12px;}
+
+  .reveal-el{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.2,.8,.2,1);}
+  .reveal-el.reveal{opacity:1;transform:translateY(0);}
+
+  @media (max-width:1024px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .about{grid-template-columns:1fr;gap:44px;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+    .erp{grid-template-columns:1fr;}
+    .test-grid{grid-template-columns:1fr;}
+    .pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
+    .contact-box{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .hero-panel{grid-template-columns:repeat(2,1fr);gap:16px;}
+    .hp-item{border-right:none !important;}
+  }
+  @media (max-width:768px){
+    .nav-links{display:none;}
+    .nav-cta .btn-ghost{display:none;}
+    .hamburger{display:flex;}
+    .why-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column;text-align:center;}
+  }
+  @media (max-width:480px){
+    .services-grid{grid-template-columns:1fr;}
+    .portfolio-grid{grid-template-columns:1fr;}
+    .hero-btns{flex-direction:column;width:100%;}
+    .hero-btns .btn{width:100%;}
+    .hero-panel{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav>
+    <a href="#home" class="logo">Real Deal <span>IT</span> Center</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#solutions">Solutions</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary">Get Started</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="float-orb fo1"></div>
+  <div class="float-orb fo2"></div>
+  <div class="hero-grid">
+    <span class="eyebrow">Enterprise Technology Platform</span>
+    <h1>Transforming Businesses Through <span class="grad">Technology</span> &amp; Digital Excellence</h1>
+    <p class="sub">We provide complete IT, Accounting, Marketing, ERP and Digital Solutions that help businesses grow faster.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+      <a href="#services" class="btn btn-ghost">Explore Services</a>
+    </div>
+    <div class="hero-panel glass">
+      <div class="hp-item"><strong>240+</strong><span>Businesses Served</span></div>
+      <div class="hp-item"><strong>480+</strong><span>Projects Delivered</span></div>
+      <div class="hp-item"><strong>9 Yrs</strong><span>In Operation</span></div>
+      <div class="hp-item"><strong>98%</strong><span>Client Retention</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="trusted">
+  <div class="wrap">
+    <p class="trusted-label">Trusted by growing enterprises across Bangladesh &amp; beyond</p>
+    <div class="logo-row">
+      <span>Meridian Group</span>
+      <span>Orbit Retail</span>
+      <span>Lumen Foods</span>
+      <span>Northbay Textiles</span>
+      <span>Vantage Pharma</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal-el">
+      <span class="eyebrow">What We Do</span>
+      <h2>A full technology stack for serious growth</h2>
+      <p>From daily bookkeeping to enterprise ERP, our specialists handle the systems so you can focus on scale.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 10h18M7 15h2M13 15h4M5 21h14a2 2 0 002-2V7l-4-4H7L3 7v12a2 2 0 002 2z"/></svg></div><h3>Accounting &amp; Bookkeeping</h3><p>Accurate books and tax-ready reports handled by certified accountants.</p></div>
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div><h3>Web &amp; E-Commerce</h3><p>High-performance websites and stores engineered to convert.</p></div>
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>SEO Services</h3><p>Search strategy that puts your brand in front of ready buyers.</p></div>
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div><h3>Graphic Design</h3><p>Brand identities and creative assets that stand out everywhere.</p></div>
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg></div><h3>E-Commerce Marketing</h3><p>Full-funnel campaigns across marketplaces that lift revenue.</p></div>
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 9h6v6H9z"/></svg></div><h3>Social Media Marketing</h3><p>Content and community strategy that builds real audiences.</p></div>
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M6 20h12M9 12l2 2 4-4"/></svg></div><h3>IT &amp; Business Solutions</h3><p>Infrastructure and support that keep operations secure and online.</p></div>
+      <div class="service-card glass"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l9 4.5v9L12 20l-9-4.5v-9L12 2z"/><path d="M12 8v8M8 10l8 4M16 10l-8 4"/></svg></div><h3>Odoo ERP Solution</h3><p>End-to-end Odoo implementation unifying sales, stock, HR and finance.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-visual glass reveal-el">
+        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FE4A17" stop-opacity="0.35"/><stop offset="100%" stop-color="#14212B" stop-opacity="0"/></linearGradient></defs>
+          <rect width="400" height="500" fill="url(#g1)"/>
+          <circle cx="200" cy="200" r="110" fill="none" stroke="#FE4A17" stroke-width="1" opacity="0.5"/>
+          <circle cx="200" cy="200" r="70" fill="none" stroke="#ffffff" stroke-width="0.6" opacity="0.3"/>
+          <rect x="110" y="330" width="180" height="110" rx="16" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.15)"/>
+        </svg>
+      </div>
+      <div class="about-copy reveal-el">
+        <span class="eyebrow">About Real Deal IT Center</span>
+        <h2>A technology partner built for measurable results</h2>
+        <p>Real Deal IT Center combines IT engineering, financial expertise and marketing craft into one accountable team, so technology decisions translate directly into business outcomes.</p>
+        <p>Based in Uttara, Dhaka, we work with retailers, manufacturers and service companies across Bangladesh and internationally, delivering systems that pay for themselves within months.</p>
+        <div class="about-stats">
+          <div><strong>240+</strong><span>Businesses served</span></div>
+          <div><strong>9</strong><span>Years in operation</span></div>
+          <div><strong>98%</strong><span>Client retention</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal-el">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Engineered for enterprise reliability</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card glass reveal-el"><div class="why-icon">🔗</div><h3>One accountable team</h3><p>IT, accounting and marketing under one contract and one point of contact.</p></div>
+      <div class="why-card glass reveal-el"><div class="why-icon">💠</div><h3>Transparent pricing</h3><p>Fixed monthly retainers with no hidden fees or surprise invoices.</p></div>
+      <div class="why-card glass reveal-el"><div class="why-icon">🛡️</div><h3>Senior specialists only</h3><p>Experienced consultants staffed on every engagement, never trainees.</p></div>
+      <div class="why-card glass reveal-el"><div class="why-icon">⚙️</div><h3>Deep ERP expertise</h3><p>Certified Odoo implementation experience across multiple industries.</p></div>
+      <div class="why-card glass reveal-el"><div class="why-icon">📈</div><h3>Data-backed marketing</h3><p>Every campaign measured against revenue, never vanity metrics.</p></div>
+      <div class="why-card glass reveal-el"><div class="why-icon">🌐</div><h3>Local support, global standard</h3><p>Dhaka-based team benchmarked against international agency quality.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-box glass reveal-el"><div class="stat-num" data-target="240">0</div><div class="stat-label">Clients Served</div></div>
+      <div class="stat-box glass reveal-el"><div class="stat-num" data-target="480">0</div><div class="stat-label">Projects Delivered</div></div>
+      <div class="stat-box glass reveal-el"><div class="stat-num" data-target="9">0</div><div class="stat-label">Years of Experience</div></div>
+      <div class="stat-box glass reveal-el"><div class="stat-num" data-target="35">0</div><div class="stat-label">Team Specialists</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="wrap">
+    <div class="section-head reveal-el">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Recent enterprise deployments</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal-el">
+        <svg class="pf-bg" viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#101c26"/><circle cx="300" cy="120" r="150" fill="#FE4A17" opacity="0.25"/></svg>
+        <div class="pf-overlay"><div><span>E-Commerce</span><h3>Northbay Textiles Storefront</h3></div></div>
+      </div>
+      <div class="portfolio-card reveal-el">
+        <svg class="pf-bg" viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#0e1922"/><rect x="60" y="60" width="280" height="180" rx="16" fill="rgba(255,255,255,0.06)"/></svg>
+        <div class="pf-overlay"><div><span>ERP Implementation</span><h3>Vantage Pharma Odoo Rollout</h3></div></div>
+      </div>
+      <div class="portfolio-card reveal-el">
+        <svg class="pf-bg" viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="400" height="500" fill="#101c26"/><path d="M0 350 Q200 250 400 350 L400 500 L0 500 Z" fill="#FE4A17" opacity="0.2"/></svg>
+        <div class="pf-overlay"><div><span>Brand &amp; Marketing</span><h3>Meridian Group Rebrand</h3></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="solutions">
+  <div class="wrap">
+    <div class="erp glass reveal-el">
+      <div class="erp-copy">
+        <span class="eyebrow">ERP &amp; Business Solutions</span>
+        <h2>One connected system for the entire business</h2>
+        <p>We design and implement Odoo ERP environments that unify sales, inventory, accounting, HR and customer service into a single source of truth.</p>
+        <div class="erp-list">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Real-time inventory and sales dashboards</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Automated invoicing and financial reporting</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> HR, payroll and workflow automation</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Custom modules built for your industry</div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Talk to an ERP Specialist</a>
+      </div>
+      <div class="erp-visual">
+        <svg viewBox="0 0 300 300" width="100%" height="100%"><circle cx="150" cy="150" r="90" fill="none" stroke="#FE4A17" stroke-width="1" opacity="0.6"/><circle cx="150" cy="150" r="55" fill="rgba(254,74,23,0.15)"/><circle cx="150" cy="150" r="20" fill="#FE4A17" opacity="0.5"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timeline-section">
+  <div class="wrap">
+    <div class="section-head reveal-el">
+      <span class="eyebrow">Our Journey</span>
+      <h2>Growth built one milestone at a time</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><span class="yr">2016</span><h3>Founded in Uttara, Dhaka</h3><p>Started as a two-person IT support desk serving local retailers.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="yr">2018</span><h3>Accounting division launched</h3><p>Expanded into bookkeeping and tax advisory for SMEs across Dhaka.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="yr">2020</span><h3>Odoo ERP partnership</h3><p>Became a certified Odoo implementation partner for regional businesses.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="yr">2022</span><h3>Full digital marketing suite</h3><p>Added SEO, social and e-commerce marketing to serve clients end-to-end.</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="yr">2025</span><h3>240+ businesses served</h3><p>Crossed 240 active clients across seven industries nationwide.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal-el">
+      <span class="eyebrow">Testimonials</span>
+      <h2>Trusted by industry leaders</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card glass reveal-el"><div class="test-stars">★★★★★</div><p>Real Deal rebuilt our accounting from spreadsheets into a proper system. We finally know our numbers in real time.</p><div class="test-person"><div class="test-avatar">R</div><div><strong>Rafiq Hasan</strong><span>Director, Northbay Textiles</span></div></div></div>
+      <div class="test-card glass reveal-el"><div class="test-stars">★★★★★</div><p>The Odoo rollout took our five disconnected tools down to one dashboard. Our team actually uses it every day.</p><div class="test-person"><div class="test-avatar">S</div><div><strong>Sara Islam</strong><span>Operations Lead, Vantage Pharma</span></div></div></div>
+      <div class="test-card glass reveal-el"><div class="test-stars">★★★★★</div><p>Our online sales doubled within four months of their marketing team taking over our ad accounts.</p><div class="test-person"><div class="test-avatar">T</div><div><strong>Tanvir Ahmed</strong><span>Founder, Orbit Retail</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal-el">
+      <span class="eyebrow">Pricing</span>
+      <h2>Plans built for enterprise scale</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card glass reveal-el">
+        <div class="price-name">Starter</div>
+        <div class="price-amt">$249</div>
+        <div class="price-period">per month</div>
+        <div class="price-feat">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Bookkeeping &amp; monthly reports</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Website maintenance</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Basic SEO setup</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Email support</div>
+        </div>
+        <a href="#contact" class="btn btn-ghost">Choose Starter</a>
+      </div>
+      <div class="price-card glass featured reveal-el">
+        <div class="price-name">Growth</div>
+        <div class="price-amt">$599</div>
+        <div class="price-period">per month</div>
+        <div class="price-feat">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Full accounting &amp; payroll</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> E-commerce &amp; SEO management</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Social media marketing</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Priority IT support</div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Choose Growth</a>
+      </div>
+      <div class="price-card glass reveal-el">
+        <div class="price-name">Enterprise</div>
+        <div class="price-amt">Custom</div>
+        <div class="price-period">tailored quote</div>
+        <div class="price-feat">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Full Odoo ERP implementation</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Dedicated account team</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Custom integrations</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> 24/7 dedicated support</div>
+        </div>
+        <a href="#contact" class="btn btn-ghost">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal-el">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions we hear often</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q"><span>How quickly can we get started?</span><span class="plus">+</span></div><div class="faq-a"><p>Most engagements begin within 5-7 business days of signing, starting with a discovery session to map your current systems.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>Do you work with businesses outside Dhaka?</span><span class="plus">+</span></div><div class="faq-a"><p>Yes, we support clients across Bangladesh and internationally through remote onboarding and periodic on-site visits.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>Can we start with one service and add more later?</span><span class="plus">+</span></div><div class="faq-a"><p>Absolutely. Many clients start with accounting or IT support and expand into marketing or ERP as they grow.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>What does the Odoo ERP setup include?</span><span class="plus">+</span></div><div class="faq-a"><p>It includes requirements mapping, module configuration, data migration, staff training and 90 days of post-launch support.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span>Is there a long-term contract requirement?</span><span class="plus">+</span></div><div class="faq-a"><p>No. Plans are month-to-month with a 30-day notice period, so you're never locked in.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box glass reveal-el">
+      <div class="contact-copy">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Let's build something real together</h2>
+        <p>Tell us about your business and one of our specialists will get back to you within one business day with a free consultation.</p>
+        <div class="contact-info">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> 103, Hossain's Tower, 2nd Floor, Sector 07, Uttara Model Town, Dhaka-1230</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg> info@realdealitcenter.com</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .6 3a2 2 0 01-.5 2L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012-.5c1 .3 2 .5 3 .6a2 2 0 011.7 2z"/></svg> +8801733162490</div>
+        </div>
+      </div>
+      <form id="contactForm">
+        <div class="form-field"><input type="text" placeholder="Full name" required></div>
+        <div class="form-field"><input type="email" placeholder="Email address" required></div>
+        <div class="form-field"><input type="tel" placeholder="Phone number"></div>
+        <div class="form-field"><textarea rows="4" placeholder="Tell us about your project"></textarea></div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">Real Deal <span>IT</span> Center</a>
+        <p>Complete IT, Accounting, Marketing and ERP solutions built for real business growth.</p>
+      </div>
+      <div class="footer-col"><h4>Company</h4><a href="#about">About Us</a><a href="#portfolio">Portfolio</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="#services">Accounting</a><a href="#services">Web &amp; E-Commerce</a><a href="#services">SEO</a><a href="#solutions">Odoo ERP</a></div>
+      <div class="footer-col"><h4>Contact</h4>
+        <a href="mailto:info@realdealitcenter.com">info@realdealitcenter.com</a>
+        <a href="tel:+8801733162490">+8801733162490</a>
+        <a href="#contact">103, Hossain's Tower, Uttara, Dhaka-1230</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Real Deal IT Center. All rights reserved.</span>
+      <span>Dhaka, Bangladesh</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', ()=>{ header.classList.toggle('scrolled', window.scrollY > 20); });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', ()=>{
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+
+  const revealTargets = document.querySelectorAll('.reveal-el, .service-card, .why-card, .portfolio-card, .test-card, .price-card, .tl-item, .stat-box');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('reveal'); io.unobserve(e.target); } });
+  },{threshold:0.14});
+  revealTargets.forEach(el=>io.observe(el));
+
+  const counters = document.querySelectorAll('.stat-num');
+  const counterIO = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'),10);
+        let cur = 0;
+        const step = Math.max(1, Math.floor(target/60));
+        const tick = ()=>{
+          cur += step;
+          if(cur >= target){ el.textContent = target + '+'; }
+          else { el.textContent = cur; requestAnimationFrame(tick); }
+        };
+        tick();
+        counterIO.unobserve(el);
+      }
+    });
+  },{threshold:0.5});
+  counters.forEach(c=>counterIO.observe(c));
+
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Message Sent ✓';
+    this.reset();
+    setTimeout(()=>{ btn.textContent = original; }, 2500);
+  });
+
+  document.addEventListener('mousemove', (e)=>{
+    const x = (e.clientX / window.innerWidth - 0.5) * 40;
+    const y = (e.clientY / window.innerHeight - 0.5) * 40;
+    document.querySelectorAll('.float-orb').forEach((orb,i)=>{
+      const factor = i === 0 ? 1 : -1;
+      orb.style.transform = `translate(${x*factor}px, ${y*factor}px)`;
+    });
+  });
+</script>
+</body>
+</html>

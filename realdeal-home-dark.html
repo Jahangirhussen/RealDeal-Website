@@ -1,0 +1,1362 @@
+<!--
+  Single-file, pixel-close clone of the Savasaachi Marketing Agency homepage.
+  Built with semantic HTML5 + CSS3 only (no JS / no frameworks).
+--><!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savasaachi Marketing Agency | Digital Marketing, Reels &amp; Web Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+/* ==========================================================================
+   1. CSS RESET & BASE
+   ========================================================================== */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+	--color-bg-darkest: #0b141c;
+	--color-bg-dark: #101c26;
+	--color-bg-section: #16232d;
+	--color-hero-start: #14212B;
+	--color-hero-end: #1c2f3d;
+	--color-purple-primary: #FE4A17;
+	--color-purple-primary-hover: #e6400f;
+	--color-purple-deep: #0d1820;
+	--color-purple-mid: #1c2f3d;
+	--color-purple-mid-2: #223948;
+	--color-purple-light: #ff9d76;
+	--color-border-purple: rgba(254,74,23,0.25);
+	--color-text-light: #f4f6f7;
+	--color-text-muted: #b7c2ca;
+	--color-text-faint: #8593a0;
+	--color-pink-accent: #ff9d76;
+	--color-white: #ffffff;
+	--font-heading: 'Poppins', sans-serif;
+	--font-body: 'Inter', sans-serif;
+	--container-width: 1200px;
+	--radius-sm: 6px;
+	--radius-md: 12px;
+	--radius-lg: 20px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+	font-family: var(--font-body);
+	background-color: var(--color-bg-darkest);
+	color: var(--color-text-muted);
+	line-height: 1.65;
+	font-size: 16px;
+	overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+ul { list-style: none; }
+
+h1, h2, h3, h4 {
+	font-family: var(--font-heading);
+	color: var(--color-text-light);
+	line-height: 1.25;
+	font-weight: 700;
+}
+
+.container {
+	width: 100%;
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.eyebrow {
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--color-purple-light);
+	margin-bottom: 12px;
+}
+
+.section-heading {
+	font-size: 34px;
+	text-align: center;
+	max-width: 780px;
+	margin: 0 auto 18px;
+}
+
+.section-sub {
+	text-align: center;
+	max-width: 720px;
+	margin: 0 auto 40px;
+	color: var(--color-text-muted);
+	font-size: 15px;
+}
+
+/* Buttons
+   ========================================================================== */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 30px;
+	font-family: var(--font-body);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border-radius: var(--radius-sm);
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+	white-space: nowrap;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn-purple {
+	background-color: var(--color-purple-primary);
+	color: var(--color-white);
+	border-color: var(--color-purple-primary);
+}
+.btn-purple:hover { background-color: var(--color-purple-primary-hover); border-color: var(--color-purple-primary-hover); }
+
+.btn-outline-white {
+	background-color: transparent;
+	color: var(--color-white);
+	border-color: rgba(255,255,255,0.5);
+}
+.btn-outline-white:hover { background-color: var(--color-white); color: var(--color-bg-dark); }
+
+.btn-ghost-proposal {
+	background-color: rgba(254,74,23,0.18);
+	color: var(--color-white);
+	border-color: rgba(254,74,23,0.55);
+	padding: 12px 26px;
+}
+.btn-ghost-proposal:hover { background-color: var(--color-purple-primary); border-color: var(--color-purple-primary); }
+
+.btn-block { width: 100%; }
+.btn-center-wrap { text-align: center; margin-top: 12px; }
+
+/* ==========================================================================
+   2. HEADER / NAVIGATION
+   ========================================================================== */
+.site-header {
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	background-color: rgba(10,6,19,0.35);
+	border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-inner {
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 20px 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.site-logo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-shrink: 0;
+}
+.site-logo img { height: 40px; width: auto; }
+.site-logo .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.site-logo .logo-text strong {
+	font-family: var(--font-heading);
+	font-size: 19px;
+	font-weight: 800;
+	color: var(--color-white);
+	letter-spacing: 1px;
+}
+.site-logo .logo-text span {
+	font-size: 9px;
+	letter-spacing: 3px;
+	color: var(--color-text-faint);
+	text-transform: uppercase;
+}
+
+/* Mobile nav toggle (CSS-only, no JS) */
+.nav-toggle-label {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+	z-index: 200;
+}
+.nav-toggle-label span {
+	width: 26px;
+	height: 2px;
+	background-color: var(--color-white);
+	display: block;
+}
+#nav-toggle { display: none; }
+
+.main-nav { flex-grow: 1; display: flex; justify-content: center; }
+.main-nav ul { display: flex; align-items: center; gap: 34px; }
+.main-nav a {
+	font-size: 14.5px;
+	font-weight: 500;
+	color: var(--color-text-light);
+	padding: 8px 0;
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+.main-nav a:hover,
+.main-nav .current a { color: var(--color-purple-light); }
+.main-nav .current a::after {
+	content: "";
+	position: absolute;
+	left: 0; right: 0; bottom: -2px;
+	height: 2px;
+	background-color: var(--color-purple-primary);
+}
+
+/* CSS-only dropdown / mega menu (static markup, hover-driven) */
+.nav-item-dropdown { position: relative; }
+.dropdown-caret { font-size: 11px; margin-left: 2px; }
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 620px;
+	background-color: var(--color-bg-section);
+	border: 1px solid var(--color-border-purple);
+	border-radius: var(--radius-md);
+	padding: 24px;
+	margin-top: 18px;
+	box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+	grid-template-columns: repeat(2, 1fr);
+	gap: 6px 28px;
+}
+.nav-item-dropdown:hover .dropdown-menu { display: grid; }
+.dropdown-menu a {
+	padding: 10px 12px;
+	border-radius: var(--radius-sm);
+	font-size: 14px;
+}
+.dropdown-menu a:hover { background-color: rgba(254,74,23,0.15); color: var(--color-purple-light); }
+.dropdown-menu a span.dd-desc {
+	display: block;
+	font-size: 12px;
+	color: var(--color-text-faint);
+	font-weight: 400;
+	margin-top: 2px;
+}
+
+.header-cta { flex-shrink: 0; }
+
+/* ==========================================================================
+   3. HERO SECTION
+   ========================================================================== */
+.hero {
+	position: relative;
+	background: linear-gradient(100deg, var(--color-hero-start) 0%, var(--color-hero-end) 60%, #24404f 100%),
+	            url('https://picsum.photos/seed/savasaachi-hero/1900/1000') center/cover no-repeat;
+	background-blend-mode: multiply;
+	padding: 90px 0 110px;
+}
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, rgba(18,9,31,0.92) 0%, rgba(28,16,54,0.75) 45%, rgba(44,19,84,0.55) 100%);
+}
+.hero-inner {
+	position: relative;
+	z-index: 2;
+	max-width: var(--container-width);
+	margin: 0 auto;
+	padding: 0 24px;
+}
+.hero-content { max-width: 720px; }
+.hero h1 {
+	font-size: 46px;
+	color: var(--color-white);
+	margin-bottom: 26px;
+}
+.hero-sub {
+	font-size: 16px;
+	color: var(--color-text-muted);
+	max-width: 620px;
+	margin-bottom: 18px;
+}
+.hero-cta-text {
+	font-size: 16px;
+	color: var(--color-text-light);
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+.hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; }
+
+/* ==========================================================================
+   4. SHORT VIDEOS / REELS STRIP
+   ========================================================================== */
+.short-videos {
+	background-color: var(--color-bg-dark);
+	padding: 70px 0;
+	text-align: center;
+}
+.short-videos h2 { font-size: 30px; margin-bottom: 16px; }
+.short-videos .section-sub { margin-bottom: 44px; }
+.reel-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	max-width: 900px;
+	margin: 0 auto;
+}
+.reel-card {
+	position: relative;
+	aspect-ratio: 9 / 16;
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	border: 1px solid var(--color-border-purple);
+}
+.reel-card img { width: 100%; height: 100%; object-fit: cover; }
+.reel-card .play-icon {
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
+	width: 52px; height: 52px;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-purple-primary);
+	font-size: 18px;
+}
+
+/* ==========================================================================
+   5. SERVICES
+   ========================================================================== */
+.services { background-color: var(--color-bg-darkest); padding: 90px 0 70px; text-align: center; }
+.services-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+	max-width: 980px;
+	margin: 0 auto 40px;
+	text-align: left;
+}
+.service-card {
+	background-color: var(--color-bg-section);
+	border: 1px solid var(--color-border-purple);
+	border-radius: var(--radius-md);
+	padding: 32px;
+	display: flex;
+	gap: 20px;
+	transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.service-card:hover { border-color: var(--color-purple-primary); transform: translateY(-4px); }
+.service-icon {
+	flex-shrink: 0;
+	width: 52px; height: 52px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(254,74,23,0.15);
+	border-radius: var(--radius-sm);
+	color: var(--color-purple-light);
+	font-size: 22px;
+}
+.service-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--color-white); }
+.service-card p { font-size: 14px; color: var(--color-text-muted); }
+
+/* ==========================================================================
+   6. WHY CHOOSE / HOW WE DELIVER
+   ========================================================================== */
+.why-choose {
+	background-color: var(--color-bg-darkest);
+	padding: 20px 0 80px;
+}
+.why-choose .why-block { max-width: 900px; margin: 0 auto 36px; text-align: center; }
+.why-choose h3 { font-size: 22px; margin-bottom: 14px; }
+.why-choose p { font-size: 14.5px; color: var(--color-text-muted); }
+
+/* ==========================================================================
+   7. WHO WE ARE
+   ========================================================================== */
+.who-we-are {
+	background: linear-gradient(135deg, var(--color-purple-mid) 0%, var(--color-purple-mid-2) 55%, #2c4656 100%);
+	padding: 90px 0;
+}
+.who-inner {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	align-items: center;
+}
+.who-text .eyebrow { color: rgba(255,255,255,0.75); }
+.who-text h2 { font-size: 32px; color: var(--color-white); margin-bottom: 20px; }
+.who-text p { color: rgba(255,255,255,0.85); font-size: 15px; margin-bottom: 30px; }
+
+.who-image-wrap { position: relative; }
+.who-image-card {
+	position: relative;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	aspect-ratio: 4 / 3;
+}
+.who-image-card img { width: 100%; height: 100%; object-fit: cover; }
+.who-image-card .who-caption {
+	position: absolute;
+	left: 0; right: 0; bottom: 0;
+	background: linear-gradient(0deg, rgba(20,8,40,0.92) 20%, rgba(20,8,40,0.1) 100%);
+	padding: 30px 26px 22px;
+}
+.who-caption h4 { color: var(--color-white); font-size: 17px; margin-bottom: 8px; }
+.who-caption p { color: rgba(255,255,255,0.8); font-size: 13px; margin: 0; }
+.est-badge {
+	position: absolute;
+	top: -20px; right: 24px;
+	width: 92px; height: 92px;
+	background-color: var(--color-white);
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+	text-align: center;
+}
+.est-badge span { font-size: 10px; letter-spacing: 1px; color: #555; }
+.est-badge strong { font-size: 18px; color: var(--color-purple-primary); font-weight: 800; }
+
+/* ==========================================================================
+   8. GROWTH STATEMENT + CLIENT LOGOS
+   ========================================================================== */
+.growth-statement { background-color: var(--color-bg-dark); padding: 90px 0 0; text-align: center; }
+.growth-statement h2 { font-size: 30px; max-width: 780px; margin: 0 auto 20px; }
+.growth-statement p { max-width: 720px; margin: 0 auto 30px; font-size: 14.5px; }
+
+.client-logos-bar {
+	margin-top: 50px;
+	background: linear-gradient(90deg, var(--color-purple-primary), #ff7143);
+	padding: 34px 40px;
+}
+.client-logos-inner {
+	max-width: var(--container-width);
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 24px;
+}
+.client-logos-inner img { height: 30px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
+
+/* ==========================================================================
+   9. TESTIMONIALS
+   ========================================================================== */
+.testimonials { background-color: var(--color-bg-dark); padding: 70px 0 90px; text-align: center; }
+.testimonials h2 { font-size: 30px; margin-bottom: 18px; }
+.testimonials h2 span { color: var(--color-purple-light); text-decoration: underline; text-decoration-color: var(--color-purple-primary); text-underline-offset: 8px; }
+.testimonials .section-sub { max-width: 760px; }
+
+.testimonial-row-wrap { position: relative; display: flex; align-items: center; gap: 16px; max-width: 1080px; margin: 40px auto 0; }
+.carousel-arrow {
+	flex-shrink: 0;
+	width: 40px; height: 40px;
+	border-radius: 50%;
+	border: 1px solid var(--color-border-purple);
+	background-color: var(--color-bg-section);
+	color: var(--color-text-light);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex-grow: 1; text-align: left; }
+.testimonial-card {
+	background-color: var(--color-white);
+	border-radius: var(--radius-md);
+	padding: 24px;
+	color: #333;
+}
+.testimonial-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.avatar-circle {
+	width: 38px; height: 38px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-white);
+	font-weight: 700;
+	font-size: 15px;
+	flex-shrink: 0;
+}
+.testimonial-name-wrap { flex-grow: 1; }
+.testimonial-name-wrap strong { display: block; font-size: 14.5px; color: #1a1a1a; }
+.testimonial-name-wrap span { font-size: 12px; color: #888; }
+.testimonial-card .fa-google { color: #4285F4; font-size: 16px; }
+.testimonial-stars { color: #fbbc04; font-size: 13px; margin-bottom: 10px; }
+.testimonial-stars .fa-circle-check { color: #4285F4; font-size: 12px; margin-left: 4px; }
+.testimonial-card p.review-text { font-size: 14px; color: #444; margin: 0; }
+
+/* ==========================================================================
+   10. FRANCHISE / SERVICE AREAS
+   ========================================================================== */
+.franchise { background-color: var(--color-bg-darkest); padding: 90px 0 60px; text-align: center; }
+.franchise .franchise-logo { height: 42px; margin: 0 auto 20px; }
+.franchise h2 { font-size: 28px; margin-bottom: 14px; }
+.franchise h2 span { color: var(--color-purple-light); }
+.franchise .section-sub { margin-bottom: 40px; }
+
+.locations-grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 10px 20px;
+	max-width: var(--container-width);
+	margin: 0 auto 40px;
+	text-align: left;
+	border-top: 1px solid var(--color-border-purple);
+	padding-top: 36px;
+}
+.locations-grid a {
+	font-size: 12.5px;
+	color: var(--color-text-muted);
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+.locations-grid a i { color: var(--color-purple-light); font-size: 11px; }
+.locations-grid a:hover { color: var(--color-purple-light); }
+
+/* ==========================================================================
+   11. CONTACT CARDS
+   ========================================================================== */
+.contact-cards { background-color: var(--color-bg-darkest); padding: 30px 0 90px; text-align: center; border-top: 1px solid var(--color-border-purple); }
+.contact-cards h2 { font-size: 28px; margin-bottom: 14px; }
+.contact-cards .section-sub { margin-bottom: 44px; }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: var(--container-width); margin: 0 auto; }
+.contact-card {
+	background-color: var(--color-bg-section);
+	border: 1px solid var(--color-border-purple);
+	border-radius: var(--radius-md);
+	padding: 34px 28px;
+	text-align: left;
+}
+.contact-card .contact-icon {
+	width: 48px; height: 48px;
+	border-radius: var(--radius-sm);
+	background-color: rgba(254,74,23,0.15);
+	color: var(--color-purple-light);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.contact-card h3 { font-size: 17px; color: var(--color-white); margin-bottom: 10px; }
+.contact-card p { font-size: 13.5px; margin-bottom: 22px; }
+
+/* ==========================================================================
+   12. PROPOSAL FORM + FAQ
+   ========================================================================== */
+.proposal-section { background-color: var(--color-bg-dark); padding: 30px 0 90px; }
+.proposal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
+
+.proposal-form-card {
+	background-color: var(--color-bg-section);
+	border: 1px solid var(--color-border-purple);
+	border-radius: var(--radius-lg);
+	padding: 38px;
+}
+.proposal-form-card .form-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.proposal-form-card .form-logo img { height: 30px; }
+.proposal-form-card .form-logo strong { font-family: var(--font-heading); color: var(--color-white); font-size: 16px; letter-spacing: 1px; }
+.proposal-form-card h3 { font-size: 22px; margin: 14px 0 26px; color: var(--color-white); }
+
+.form-steps { display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; }
+.form-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; text-align: center; position: relative; }
+.form-step .step-dot {
+	width: 26px; height: 26px;
+	border-radius: 50%;
+	background-color: var(--color-bg-darkest);
+	border: 2px solid var(--color-border-purple);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	color: var(--color-text-muted);
+	font-weight: 700;
+}
+.form-step.active .step-dot { background-color: #FE4A17; border-color: #FE4A17; color: var(--color-white); }
+.form-step span.step-label { font-size: 11px; color: var(--color-text-faint); }
+.form-step-line { position: absolute; top: 13px; left: 50%; width: 100%; height: 2px; background-color: var(--color-border-purple); z-index: -1; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--color-text-light); margin-bottom: 8px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+	width: 100%;
+	padding: 13px 16px;
+	background-color: var(--color-bg-darkest);
+	border: 1px solid var(--color-border-purple);
+	border-radius: var(--radius-sm);
+	color: var(--color-text-light);
+	font-family: var(--font-body);
+	font-size: 14px;
+}
+.form-group textarea { min-height: 100px; resize: vertical; }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--color-text-faint); }
+
+.faq-accordion { display: flex; flex-direction: column; gap: 10px; }
+.faq-accordion details {
+	background-color: var(--color-bg-section);
+	border: 1px solid var(--color-border-purple);
+	border-radius: var(--radius-sm);
+	overflow: hidden;
+}
+.faq-accordion summary {
+	list-style: none;
+	cursor: pointer;
+	padding: 18px 22px;
+	font-size: 14.5px;
+	font-weight: 600;
+	color: var(--color-white);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(254,74,23,0.12);
+}
+.faq-accordion summary::-webkit-details-marker { display: none; }
+.faq-accordion summary::after {
+	content: "\f107";
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	transition: transform 0.2s ease;
+}
+.faq-accordion details[open] summary::after { transform: rotate(180deg); }
+.faq-accordion details[open] summary { background-color: var(--color-purple-primary); }
+.faq-accordion .faq-answer { padding: 18px 22px; font-size: 13.5px; color: var(--color-text-muted); }
+
+/* ==========================================================================
+   13. CTA BAND
+   ========================================================================== */
+.cta-band {
+	background: linear-gradient(120deg, #0d1820 0%, #14212B 60%, #1c2f3d 100%);
+	padding: 60px 0;
+	text-align: center;
+}
+.cta-band h2 { font-size: 26px; margin-bottom: 14px; }
+.cta-band p { max-width: 640px; margin: 0 auto 30px; font-size: 14px; }
+.cta-buttons { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
+
+/* ==========================================================================
+   14. FOOTER
+   ========================================================================== */
+.site-footer { background-color: var(--color-bg-darkest); padding: 70px 0 0; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 44px; }
+.footer-brand .site-logo { margin-bottom: 18px; }
+.footer-brand p { font-size: 13.5px; color: var(--color-text-muted); margin-bottom: 22px; max-width: 300px; }
+.social-icons { display: flex; gap: 12px; }
+.social-icons a {
+	width: 36px; height: 36px;
+	border-radius: 50%;
+	border: 1px solid var(--color-border-purple);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text-light);
+	font-size: 14px;
+}
+.social-icons a:hover { background-color: var(--color-purple-primary); border-color: var(--color-purple-primary); }
+
+.footer-col h4 { color: var(--color-pink-accent); font-size: 15px; margin-bottom: 20px; font-weight: 700; }
+.footer-col ul li { margin-bottom: 12px; }
+.footer-col ul li a { font-size: 13.5px; color: var(--color-text-muted); }
+.footer-col ul li a:hover { color: var(--color-purple-light); }
+
+.footer-bottom {
+	border-top: 1px solid rgba(255,255,255,0.08);
+	padding: 22px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+.footer-bottom p { font-size: 12.5px; color: var(--color-text-faint); }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-size: 12.5px; color: var(--color-text-faint); }
+.footer-legal a:hover { color: var(--color-purple-light); }
+.footer-payment-icons { display: flex; gap: 10px; color: var(--color-text-faint); font-size: 16px; }
+
+/* ==========================================================================
+   15. RESPONSIVE — TABLET (<=1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+	.container { padding: 0 20px; }
+	.hero h1 { font-size: 38px; }
+	.services-grid { grid-template-columns: 1fr; max-width: 640px; }
+	.who-inner { grid-template-columns: 1fr; gap: 40px; }
+	.locations-grid { grid-template-columns: repeat(4, 1fr); }
+	.contact-grid { grid-template-columns: 1fr; max-width: 480px; }
+	.proposal-grid { grid-template-columns: 1fr; }
+	.footer-top { grid-template-columns: 1fr 1fr; }
+	.testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+	.testimonial-card:nth-child(3) { display: none; }
+}
+
+/* ==========================================================================
+   16. RESPONSIVE — MOBILE (<=768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+	.nav-toggle-label { display: flex; }
+	.main-nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: var(--color-bg-section);
+		border-bottom: 1px solid var(--color-border-purple);
+		display: none;
+		padding: 10px 24px 20px;
+	}
+	.main-nav ul { flex-direction: column; align-items: flex-start; gap: 4px; width: 100%; }
+	.main-nav a { padding: 12px 0; width: 100%; }
+	#nav-toggle:checked ~ .main-nav { display: block; }
+	.dropdown-menu { position: static; transform: none; min-width: 100%; margin-top: 8px; grid-template-columns: 1fr; box-shadow: none; }
+	.header-cta { display: none; }
+
+	.hero { padding: 50px 0 60px; }
+	.hero h1 { font-size: 30px; }
+	.hero-buttons { flex-direction: column; align-items: stretch; }
+	.hero-buttons .btn { width: 100%; }
+
+	.reel-grid { grid-template-columns: repeat(2, 1fr); }
+	.reel-grid .reel-card:nth-child(3) { display: none; }
+
+	.section-heading, .growth-statement h2, .franchise h2, .contact-cards h2, .testimonials h2 { font-size: 24px; }
+
+	.services { padding: 60px 0 40px; }
+	.services-grid { grid-template-columns: 1fr; }
+	.service-card { flex-direction: column; }
+
+	.who-we-are { padding: 60px 0; }
+	.who-text h2 { font-size: 26px; }
+	.est-badge { width: 72px; height: 72px; top: -16px; right: 16px; }
+
+	.client-logos-inner { justify-content: center; }
+	.client-logos-inner img { height: 22px; }
+
+	.testimonial-grid { grid-template-columns: 1fr; }
+	.testimonial-card:nth-child(2),
+	.testimonial-card:nth-child(3) { display: none; }
+	.carousel-arrow { display: none; }
+
+	.locations-grid { grid-template-columns: repeat(2, 1fr); }
+
+	.contact-cards { padding: 20px 0 60px; }
+
+	.proposal-form-card { padding: 26px; }
+	.form-steps { flex-wrap: wrap; gap: 14px; }
+
+	.cta-buttons { flex-direction: column; align-items: stretch; }
+
+	.footer-top { grid-template-columns: 1fr; gap: 30px; padding-bottom: 30px; }
+	.footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+/* ==========================================================================
+   17. RESPONSIVE — SMALL MOBILE (<=480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+	.hero h1 { font-size: 25px; }
+	.site-logo .logo-text strong { font-size: 16px; }
+	.reel-grid { grid-template-columns: 1fr; }
+	.reel-grid .reel-card:nth-child(2) { display: none; }
+	.locations-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ==========================================================================
+     HEADER
+     ========================================================================== -->
+<header class="site-header">
+	<div class="header-inner">
+
+		<a class="site-logo" href="index.html">
+			<img src="https://placehold.co/60x60/12091f/ffffff?text=S" alt="Savasaachi logo">
+			<span class="logo-text">
+				<strong>SAVASAACHI</strong>
+				<span>Marketing Agency</span>
+			</span>
+		</a>
+
+		<input type="checkbox" id="nav-toggle">
+		<label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+			<span></span><span></span><span></span>
+		</label>
+
+		<nav class="main-nav">
+			<ul>
+				<li class="current"><a href="index.html">Home</a></li>
+				<li><a href="#about">About Us</a></li>
+				<li class="nav-item-dropdown">
+					<a href="#services">Services <i class="fa-solid fa-chevron-down dropdown-caret"></i></a>
+					<div class="dropdown-menu">
+						<a href="#services">Reels &amp; Video Content Creation<span class="dd-desc">Scroll-stopping short-form video</span></a>
+						<a href="#services">Web Design &amp; Development<span class="dd-desc">Custom, high-converting websites</span></a>
+						<a href="#services">Social Media Marketing<span class="dd-desc">Grow your online community</span></a>
+						<a href="#services">Search Engine Optimisation<span class="dd-desc">Rank higher, get found faster</span></a>
+						<a href="#services">Digital Marketing<span class="dd-desc">Full-funnel growth strategy</span></a>
+						<a href="#services">Reputation Management<span class="dd-desc">Protect &amp; grow your brand image</span></a>
+					</div>
+				</li>
+				<li><a href="#careers">Careers</a></li>
+				<li><a href="#packages">Packages</a></li>
+				<li><a href="#blog">Blog</a></li>
+				<li><a href="#contact">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<div class="header-cta">
+			<a href="#proposal" class="btn btn-ghost-proposal">Get A Proposal</a>
+		</div>
+
+	</div>
+</header>
+
+<main>
+
+<!-- ==========================================================================
+     HERO
+     ========================================================================== -->
+<section class="hero">
+	<div class="hero-inner">
+		<div class="hero-content">
+			<h1>Empowering Your Business With Professional Reel Videos &amp; Social Media Content That Drive Growth.</h1>
+			<p class="hero-sub">A leading full-service digital marketing agency in the UK helping brands grow through powerful video stories, stunning design, logo design, website design, app design, web development, SEO, PPC, Meta Ads (Facebook Ads), and Google Ads.</p>
+			<p class="hero-cta-text">Ready To Take Your Brand To The Next Level? Let&rsquo;s Begin.</p>
+			<div class="hero-buttons">
+				<a href="#proposal" class="btn btn-purple">Get A Free Reels Audit</a>
+				<a href="#proposal" class="btn btn-outline-white">Get A Free Website Audit</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     SHORT VIDEOS / REELS STRIP
+     ========================================================================== -->
+<section class="short-videos">
+	<div class="container">
+		<h2>Short Videos, Big Impact.</h2>
+		<p class="section-sub">We create short, story-driven videos that capture real moments and turn them into powerful content that connects, engages and grows your brand.</p>
+
+		<div class="reel-grid">
+			<div class="reel-card">
+				<img src="https://picsum.photos/seed/reel1/400/720" alt="Reel example one">
+				<span class="play-icon"><i class="fa-solid fa-play"></i></span>
+			</div>
+			<div class="reel-card">
+				<img src="https://picsum.photos/seed/reel2/400/720" alt="Reel example two">
+				<span class="play-icon"><i class="fa-solid fa-play"></i></span>
+			</div>
+			<div class="reel-card">
+				<img src="https://picsum.photos/seed/reel3/400/720" alt="Reel example three">
+				<span class="play-icon"><i class="fa-solid fa-play"></i></span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     SERVICES
+     ========================================================================== -->
+<section class="services" id="services">
+	<div class="container">
+		<span class="eyebrow">Our Services</span>
+		<h2 class="section-heading">Supporting The Growth Of UK Businesses Through Digital Solutions</h2>
+
+		<div class="services-grid">
+
+			<article class="service-card">
+				<div class="service-icon"><i class="fa-solid fa-clapperboard"></i></div>
+				<div>
+					<h3>Reels &amp; Videos Content Creation</h3>
+					<p>We create eye-catching reels and videos that capture attention in seconds. Our team blends storytelling with strategy to produce content that not only looks great but performs brilliantly across all social media platforms.</p>
+				</div>
+			</article>
+
+			<article class="service-card">
+				<div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+				<div>
+					<h3>Web Design &amp; Development</h3>
+					<p>Stand out online with a custom website that reflects your brand and drives growth. Savasaachi designs and develops impactful, engaging sites that attract visitors and set you apart from the competition.</p>
+				</div>
+			</article>
+
+			<article class="service-card">
+				<div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+				<div>
+					<h3>Social Media Marketing</h3>
+					<p>Savasaachi helps you build genuine connections through meaningful engagement. We create social strategies that spark conversations, strengthen trust, and grow your brand&rsquo;s online community.</p>
+				</div>
+			</article>
+
+			<article class="service-card">
+				<div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+				<div>
+					<h3>Search Engine Optimisation</h3>
+					<p>We offer the best SEO service to increase your online visibility and generate more leads and sales. Our customised SEO strategies, including keyword research, on-page optimisation, link building, and content creation, are designed to keep your website ahead of the curve.</p>
+				</div>
+			</article>
+
+			<article class="service-card">
+				<div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+				<div>
+					<h3>Digital Marketing</h3>
+					<p>We offer customised and affordable digital marketing plans for businesses, including SEO, social media, PPC, and content marketing. Our data-driven approach helps you build relationships with your audience and achieve your goals.</p>
+				</div>
+			</article>
+
+			<article class="service-card">
+				<div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+				<div>
+					<h3>Reputation Management</h3>
+					<p>Our reputation management service helps businesses maintain a positive online presence by monitoring, improving, and promoting their online reputation. We specialise in creating customised strategies that improve your brand&rsquo;s credibility.</p>
+				</div>
+			</article>
+
+		</div>
+
+		<div class="btn-center-wrap">
+			<a href="#services" class="btn btn-purple">More Services</a>
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     WHY CHOOSE / HOW WE DELIVER
+     ========================================================================== -->
+<section class="why-choose">
+	<div class="container">
+		<div class="why-block">
+			<h3>Why Choose Savasaachi Marketing Agency?</h3>
+			<p>Savasaachi is dedicated to delivering exceptional digital marketing services that go beyond expectations. We prioritise clear communication and collaboration to stay aligned with your business goals. By understanding your needs, we craft tailored strategies that deliver the best results&mdash;on time and within budget. With regular, easy-to-follow progress reports, we keep you informed and empowered to make data-driven decisions. With Savasaachi, your business is in trusted hands&mdash;committed to driving your growth every step of the way.</p>
+		</div>
+		<div class="why-block">
+			<h3>How Do We Deliver?</h3>
+			<p>Savasaachi proudly delivers exceptional digital marketing services that exceed expectations. Through clear communication and collaboration, we understand your goals and create tailored strategies to meet your needs. Our team ensures timely, budget-friendly results and provides regular updates to support informed decisions. With our commitment to quality and trust, your business is always in good hands with Savasaachi.</p>
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     WHO WE ARE
+     ========================================================================== -->
+<section class="who-we-are" id="about">
+	<div class="container">
+		<div class="who-inner">
+
+			<div class="who-text">
+				<span class="eyebrow">Who We Are</span>
+				<h2>Savasaachi Is Your All-In-One Digital Marketing Solution For Branding, SEO, PPC, And Content Marketing.</h2>
+				<p>Our expert team specialises in search engine marketing, crafting tailored strategies that drive traffic, boost conversions, and maximise ROI. By staying ahead of industry trends, we deliver measurable results for leading brands and SMEs across the UK and beyond.</p>
+				<a href="#about" class="btn btn-purple">Explore Savasaachi</a>
+			</div>
+
+			<div class="who-image-wrap">
+				<div class="who-image-card">
+					<img src="https://picsum.photos/seed/savasaachi-team/700/560" alt="Savasaachi team collaborating on a strategy board">
+					<div class="who-caption">
+						<h4>Together, We&rsquo;ll Grow Your Business</h4>
+						<p>Our team of experts will collaborate with you to develop a customised strategy that aligns with your unique goals. We&rsquo;ll take your business to new heights and achieve long-term success.</p>
+					</div>
+				</div>
+				<div class="est-badge">
+					<span>EST.</span>
+					<strong>2015</strong>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     GROWTH STATEMENT + CLIENT LOGOS
+     ========================================================================== -->
+<section class="growth-statement">
+	<div class="container">
+		<h2>We Help Clients Generate More Sales, Leads, And Growth Opportunities For Their Business.</h2>
+		<p>Our goal is to help you grow your customer base and boost sales with strategies tailored to your business needs. We create customised plans that align with your goals and drive long-term success. By building a strong online presence and attracting your target audience, we help generate high-quality leads, increase visibility, and take your business to the next level.</p>
+		<a href="#proposal" class="btn btn-purple">Discover More</a>
+	</div>
+
+	<div class="client-logos-bar">
+		<div class="client-logos-inner">
+			<img src="https://placehold.co/160x40/transparent/ffffff?text=Spice+Lounge" alt="Spice Lounge logo">
+			<img src="https://placehold.co/160x40/transparent/ffffff?text=Radhuni" alt="Radhuni Lounge Restaurant logo">
+			<img src="https://placehold.co/160x40/transparent/ffffff?text=SolarCharge" alt="SolarCharge logo">
+			<img src="https://placehold.co/160x40/transparent/ffffff?text=The+India" alt="The India logo">
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     TESTIMONIALS
+     ========================================================================== -->
+<section class="testimonials">
+	<div class="container">
+		<h2>Grow Your Business With <span>Savasaachi</span></h2>
+		<p class="section-sub">Savasaachi Marketing Agency helps your business thrive with results-driven digital marketing. As one of the UK&rsquo;s leading agencies, we focus on boosting visibility, reaching the right audience, and driving real growth. Our clients&rsquo; success stories reflect our dedication, care, and impactful results. Stand out in a crowded market &mdash; Savasaachi is committed to your success.</p>
+
+		<div class="testimonial-row-wrap">
+			<span class="carousel-arrow"><i class="fa-solid fa-chevron-left"></i></span>
+
+			<div class="testimonial-grid">
+				<article class="testimonial-card">
+					<div class="testimonial-head">
+						<span class="avatar-circle" style="background-color:#e0457b;">K</span>
+						<div class="testimonial-name-wrap">
+							<strong>Kazi Mahi</strong>
+							<span>8 months ago</span>
+						</div>
+						<i class="fa-brands fa-google"></i>
+					</div>
+					<div class="testimonial-stars">
+						<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-circle-check"></i>
+					</div>
+					<p class="review-text">Good service.</p>
+				</article>
+
+				<article class="testimonial-card">
+					<div class="testimonial-head">
+						<span class="avatar-circle" style="background-color:#5b7fe0;">M</span>
+						<div class="testimonial-name-wrap">
+							<strong>Md taj uddin</strong>
+							<span>8 months ago</span>
+						</div>
+						<i class="fa-brands fa-google"></i>
+					</div>
+					<div class="testimonial-stars">
+						<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-circle-check"></i>
+					</div>
+					<p class="review-text">Good food nice restaurant excellent service</p>
+				</article>
+
+				<article class="testimonial-card">
+					<div class="testimonial-head">
+						<span class="avatar-circle" style="background-color:#FE4A17;">G</span>
+						<div class="testimonial-name-wrap">
+							<strong>Gulam Osman</strong>
+							<span>8 months ago</span>
+						</div>
+						<i class="fa-brands fa-google"></i>
+					</div>
+					<div class="testimonial-stars">
+						<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+						<i class="fa-solid fa-circle-check"></i>
+					</div>
+					<p class="review-text">Lovely staff and very responsive</p>
+				</article>
+			</div>
+
+			<span class="carousel-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     FRANCHISE / SERVICE AREAS
+     ========================================================================== -->
+<section class="franchise">
+	<div class="container">
+		<img class="franchise-logo" src="https://placehold.co/160x42/transparent/ffffff?text=SAVASAACHI" alt="Savasaachi logo">
+		<h2>Powering Growth Through <span>Franchises.</span></h2>
+		<p class="section-sub">We partner with franchises to expand their customer base and increase sales through customised, goal-driven strategies.</p>
+
+		<div class="locations-grid">
+			<a href="#"><i class="fa-solid fa-location-dot"></i>London</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Isle Of Wight</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Newcastle</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Slough</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Wigan</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Bedford</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Scunthorpe</a>
+
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Luton</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Milton Keynes</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Birmingham</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Southampton</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Wrexham</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Huddersfield</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Winchester</a>
+
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Bradford</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Cambridge</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Warrington</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Halifax</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Wirral</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Northampton</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>France</a>
+
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Oxford</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Coventry</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Leeds</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Tameside</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Bath</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Nottingham</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Portugal</a>
+
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Norwich</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Trafford</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Manchester</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Bicester</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Stoke-on-Trent</a>
+			<a href="#"><i class="fa-solid fa-location-dot"></i>Doncaster</a>
+			<a href="#"></a>
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     CONTACT CARDS
+     ========================================================================== -->
+<section class="contact-cards" id="contact">
+	<div class="container">
+		<h2>Reach Us Through Our Contact Details</h2>
+		<p class="section-sub">If you&rsquo;re interested in learning more about our services or have any questions, please don&rsquo;t hesitate to contact us through our contact details.</p>
+
+		<div class="contact-grid">
+			<div class="contact-card">
+				<div class="contact-icon"><i class="fa-solid fa-headset"></i></div>
+				<h3>Communicate With Us</h3>
+				<p>Chat with us now for instant expert support.</p>
+				<a href="#contact" class="btn btn-purple btn-block">Chat Now</a>
+			</div>
+
+			<div class="contact-card">
+				<div class="contact-icon"><i class="fa-solid fa-comment-dots"></i></div>
+				<h3>Send Us A Message</h3>
+				<p>Fill out our contact form or email us for a quick response from our experts.</p>
+				<a href="#proposal" class="btn btn-purple btn-block">Talk To Us</a>
+			</div>
+
+			<div class="contact-card">
+				<div class="contact-icon"><i class="fa-solid fa-user-headset"></i></div>
+				<h3>24/7 Customer Support</h3>
+				<p>Our team is ready to answer your questions, offer guidance, and help you make informed decisions.</p>
+				<a href="#contact" class="btn btn-purple btn-block">Contact Support</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     GET A FREE PROPOSAL + FAQ
+     ========================================================================== -->
+<section class="proposal-section" id="proposal">
+	<div class="container">
+		<div class="proposal-grid">
+
+			<div class="proposal-form-card">
+				<div class="form-logo">
+					<img src="https://placehold.co/60x60/12091f/ffffff?text=S" alt="Savasaachi logo">
+					<strong>SAVASAACHI</strong>
+				</div>
+				<h3>Get A Free Proposal</h3>
+
+				<div class="form-steps">
+					<div class="form-step active">
+						<span class="step-dot">1</span>
+						<span class="step-label">Business<br>Info</span>
+					</div>
+					<div class="form-step">
+						<span class="step-dot">2</span>
+						<span class="step-label">Choose<br>Time/Date</span>
+					</div>
+					<div class="form-step">
+						<span class="step-dot">3</span>
+						<span class="step-label">Contact<br>Info</span>
+					</div>
+				</div>
+
+				<form action="" method="post">
+					<div class="form-group">
+						<label for="business-name">Business Name</label>
+						<input type="text" id="business-name" name="business_name" placeholder="Your Business Name">
+					</div>
+					<div class="form-group">
+						<label for="website-url">Website URL</label>
+						<input type="text" id="website-url" name="website_url" placeholder="Your Website URL">
+					</div>
+					<div class="form-group">
+						<label for="looking-for">What you are looking for?</label>
+						<select id="looking-for" name="looking_for">
+							<option value="">Please Select</option>
+							<option value="reels">Reels &amp; Video Content</option>
+							<option value="web-design">Web Design &amp; Development</option>
+							<option value="seo">Search Engine Optimisation</option>
+							<option value="social">Social Media Marketing</option>
+							<option value="digital-marketing">Digital Marketing</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="about-business">Tell Us About Your Business?</label>
+						<textarea id="about-business" name="about_business" placeholder="We'd love to learn more about your business! Tell us about what you do."></textarea>
+					</div>
+					<button type="submit" class="btn btn-purple btn-block">Next Step</button>
+				</form>
+			</div>
+
+			<div class="faq-accordion">
+
+				<details open>
+					<summary>What Services Does Savasaachi Offer?</summary>
+					<div class="faq-answer">Savasaachi provides a full range of digital marketing services, including web design, SEO, social media, reputation management, e-commerce, and Amazon marketing.</div>
+				</details>
+
+				<details>
+					<summary>How Can Savasaachi Help My Business?</summary>
+					<div class="faq-answer">We build tailored, data-driven strategies across video, web, SEO and paid ads that increase visibility, generate leads and grow revenue for your business.</div>
+				</details>
+
+				<details>
+					<summary>What Makes Savasaachi Different From Other Digital Marketing Agencies?</summary>
+					<div class="faq-answer">Our all-in-one approach, transparent reporting, and dedicated account management mean you get a single trusted partner rather than juggling multiple vendors.</div>
+				</details>
+
+				<details>
+					<summary>What Is The Process For Working With Savasaachi?</summary>
+					<div class="faq-answer">We start with a free audit and discovery call, build a customised strategy, then launch, monitor, and optimise campaigns with regular progress reports.</div>
+				</details>
+
+				<details>
+					<summary>How Can I See The Results Of Working With Savasaachi?</summary>
+					<div class="faq-answer">You&rsquo;ll receive regular, easy-to-follow performance reports covering traffic, engagement, leads and ROI so you always know how your campaigns are performing.</div>
+				</details>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<!-- ==========================================================================
+     CTA BAND
+     ========================================================================== -->
+<section class="cta-band">
+	<div class="container">
+		<h2>Expand your business with the help of Savasaachi Marketing Agency</h2>
+		<p>Ready to grow your business? Savasaachi Marketing Agency creates customised strategies that align with your goals and deliver proven results. Contact us today to get started.</p>
+		<div class="cta-buttons">
+			<a href="#proposal" class="btn btn-outline-white">Free Audit Website</a>
+			<a href="#proposal" class="btn btn-purple">Book Free Consultant</a>
+		</div>
+	</div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="site-footer">
+	<div class="container">
+		<div class="footer-top">
+
+			<div class="footer-brand">
+				<a class="site-logo" href="index.html">
+					<img src="https://placehold.co/60x60/12091f/ffffff?text=S" alt="Savasaachi logo">
+					<span class="logo-text">
+						<strong>SAVASAACHI</strong>
+						<span>Marketing Agency</span>
+					</span>
+				</a>
+				<p>Savasaachi is a marketing communications agency dedicated to keeping you one step ahead. We act as your marketing team, delivering strategic campaigns across all platforms to help your business thrive.</p>
+				<div class="social-icons">
+					<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+					<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+				</div>
+			</div>
+
+			<div class="footer-col">
+				<h4>Service</h4>
+				<ul>
+					<li><a href="#">Digital Marketing</a></li>
+					<li><a href="#">Social Media Marketing</a></li>
+					<li><a href="#">Graphic Design</a></li>
+					<li><a href="#">Web Development</a></li>
+					<li><a href="#">Social Media Management</a></li>
+					<li><a href="#">Search Engine Optimisation (SEO)</a></li>
+					<li><a href="#">E-Commerce Marketing</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="#">All Services</a></li>
+					<li><a href="#">Packages</a></li>
+					<li><a href="#">Free Website Audit</a></li>
+					<li><a href="#">Book Free Consultation</a></li>
+					<li><a href="#">Our Service Areas</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-col">
+				<h4>Company</h4>
+				<ul>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Career</a></li>
+					<li><a href="#">Article &amp; News</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Sitemap</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="footer-bottom">
+			<p>Copyright &copy; 2026 | Savasaachi | All rights reserved. | Developed by Savasaachi Developers.</p>
+			<div class="footer-legal">
+				<a href="#">Privacy Policy</a>
+				<a href="#">Cookie Policy</a>
+			</div>
+			<div class="footer-payment-icons">
+				<i class="fa-solid fa-link"></i>
+				<i class="fa-solid fa-camera"></i>
+				<i class="fa-solid fa-film"></i>
+				<i class="fa-regular fa-image"></i>
+				<i class="fa-solid fa-gear"></i>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
