@@ -4,39 +4,437 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About us | RealDeal IT Center</title>
+<meta name="description" content="RealDeal IT Center is a full-service digital marketing agency — one accountable team behind SEO, ads, creative, web and marketplace growth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="assets/site-nav.css">
 <style>
 :root {
-	--rd-orange:#ff4a1c;--rd-orange-2:#ff7a35;--rd-ink:#0e1a24;--rd-muted:#63717d;--rd-soft:#f6f8fb;--rd-line:rgba(14,26,36,.12);
-	--font-heading:"Poppins",sans-serif;--font-body:"Inter",sans-serif;--container:1180px;--radius:8px;
+	--rd-orange: #ff4a1c; --rd-orange-2: #ff7a35; --rd-ink: #0e1a24; --rd-ink-2: #142533; --rd-teal: #0f8f88;
+	--rd-blue: #2764e6; --rd-green: #13a76f; --rd-soft: #f6f8fb; --rd-line: rgba(14, 26, 36, 0.12);
+	--rd-muted: #63717d; --font-heading: "Poppins", sans-serif; --font-body: "Inter", sans-serif;
+	--container: 1180px; --radius: 8px; --shadow: 0 22px 60px rgba(14, 26, 36, 0.12);
+	--accent: var(--rd-orange);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-body);color:var(--rd-muted);background:#fff;line-height:1.65}
-.container{width:min(100% - 48px,var(--container));margin:0 auto}
-h1,h2{font-family:var(--font-heading);color:var(--rd-ink);font-weight:800}
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border-radius:6px;font-size:14px;font-weight:800;text-decoration:none;border:none;cursor:pointer}
-.btn-primary{background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2));color:#fff;box-shadow:0 16px 34px rgba(255,74,28,.25)}
-.page-hero{padding:138px 0 72px;background:linear-gradient(135deg,rgba(14,26,36,.96),rgba(20,37,51,.9)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1700&q=80') center/cover;color:#fff}
-.page-hero h1{color:#fff;font-size:clamp(34px,5vw,54px);margin-bottom:14px}
-.page-hero p{max-width:640px;font-size:18px;color:rgba(255,255,255,.82);margin-bottom:24px}
-.content{padding:72px 0}
-.card{padding:28px;border:1px solid var(--rd-line);border-radius:var(--radius);background:var(--rd-soft)}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--font-body); background:#fff; color:var(--rd-muted); font-size:16px; line-height:1.65; }
+a { color:inherit; text-decoration:none; } ul { list-style:none; }
+h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:800; line-height:1.1; }
+.container { width:min(100% - 48px, var(--container)); margin:0 auto; }
+.section-kicker { display:inline-flex; align-items:center; gap:10px; margin-bottom:14px; color:var(--rd-orange); font-size:12px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; }
+.section-kicker::before { content:""; width:26px; height:2px; background:currentColor; }
+.section-title { font-size:clamp(28px,4vw,42px); margin-bottom:16px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:0 20px; border-radius:6px; font-size:14px; font-weight:800; border:1px solid transparent; transition:transform .18s ease, box-shadow .18s ease; }
+.btn:hover { transform:translateY(-3px); }
+.btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
+.btn-dark { background:var(--rd-ink); color:#fff; }
+.btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
+.detail-section { padding:80px 0; }
+.detail-section.alt { background:linear-gradient(180deg,#fff,var(--rd-soft)); }
+
+/* Hero */
+.about-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1700&q=80") center/cover; color:#fff; }
+.about-hero .inner { max-width:920px; margin:0 auto; padding:44px 48px; border:1px solid rgba(255,255,255,.14); border-radius:16px; background:rgba(255,255,255,.05); backdrop-filter:blur(10px); }
+.about-hero h1 { color:#fff; font-size:clamp(30px,4.4vw,44px); margin-bottom:22px; }
+.about-hero p { color:rgba(255,255,255,.78); font-size:15.5px; margin-bottom:16px; }
+.about-hero p:last-child { margin-bottom:0; }
+.about-hero strong, .about-hero a { color:#fff; text-decoration:underline; }
+
+/* Vision / Mission / Motto */
+.vmm-head { text-align:center; max-width:680px; margin:0 auto 40px; }
+.vmm-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.vmm-card { padding:32px 26px; border:1px solid var(--rd-line); border-radius:14px; background:#fff; text-align:center; transition:transform 220ms ease, box-shadow 220ms ease; }
+.vmm-card:hover { transform:translateY(-6px); box-shadow:var(--shadow); }
+.vmm-icon { width:64px; height:64px; margin:0 auto 20px; border-radius:16px; display:flex; align-items:center; justify-content:center; background:rgba(255,74,28,.1); color:var(--rd-orange); font-size:26px; }
+.vmm-card h3 { font-size:19px; margin-bottom:10px; }
+.vmm-card p { font-size:14px; }
+
+/* Who we are */
+.who-grid { display:grid; grid-template-columns:0.95fr 1.05fr; gap:48px; align-items:center; }
+.who-grid h2 { font-size:clamp(26px,3.4vw,36px); margin-bottom:16px; }
+.who-grid > div > p { font-size:15px; margin-bottom:24px; }
+.who-media { position:relative; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/3; }
+.who-media img { width:100%; height:100%; object-fit:cover; }
+.who-media::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(14,26,36,.75), transparent 55%); }
+.who-badge { position:absolute; top:18px; right:18px; width:92px; height:92px; border-radius:50%; background:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; box-shadow:var(--shadow); font-size:11px; font-weight:800; color:var(--rd-muted); text-transform:uppercase; letter-spacing:.5px; }
+.who-badge strong { font-family:var(--font-heading); font-size:20px; color:var(--rd-orange); text-transform:none; letter-spacing:0; }
+.who-caption { position:absolute; left:20px; right:20px; bottom:20px; color:#fff; }
+.who-caption h4 { color:#fff; font-size:18px; margin-bottom:6px; }
+.who-caption p { font-size:13px; color:rgba(255,255,255,.8); }
+
+/* Services grid */
+.svc-head { text-align:center; max-width:720px; margin:0 auto 40px; }
+.svc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-bottom:32px; }
+.svc-card { display:flex; gap:20px; padding:26px; border:1px solid var(--rd-line); border-radius:14px; background:#fff; transition:transform 220ms ease, box-shadow 220ms ease; }
+.svc-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+.svc-icon { flex-shrink:0; width:52px; height:52px; border-radius:12px; display:flex; align-items:center; justify-content:center; background:rgba(255,74,28,.1); color:var(--rd-orange); font-size:20px; }
+.svc-card h3 { font-size:18px; margin-bottom:8px; }
+.svc-card p { font-size:14px; }
+.svc-more { text-align:center; }
+
+/* Approach / Partners */
+.approach-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:56px; }
+.approach-col { padding:32px 28px; border:1px solid var(--rd-line); border-radius:14px; background:#fff; transition:transform 220ms ease, box-shadow 220ms ease; }
+.approach-col:hover { transform:translateY(-6px); box-shadow:var(--shadow); }
+.approach-col h3 { font-size:20px; margin-bottom:12px; }
+.approach-col p { font-size:14.5px; margin-bottom:14px; }
+.approach-col p:last-child { margin-bottom:0; }
+
+/* Client logo strip (scrolling marquee) */
+.logo-strip { position:relative; overflow:hidden; margin-top:48px; padding:28px 0; border:1px solid var(--rd-line); border-radius:14px; background:var(--rd-soft); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.logo-strip-track { display:flex; align-items:center; gap:56px; width:max-content; animation:logoMarquee 22s linear infinite; }
+.logo-strip:hover .logo-strip-track { animation-play-state:paused; }
+.logo-strip-track span { font-family:var(--font-heading); font-weight:800; font-size:19px; color:var(--rd-ink); opacity:.55; letter-spacing:.3px; white-space:nowrap; transition:opacity 180ms ease; }
+.logo-strip-track span:hover { opacity:1; color:var(--rd-orange); }
+@keyframes logoMarquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+.cta-band { padding:72px 0; background:linear-gradient(110deg,rgba(255,74,28,.92),rgba(255,122,53,.88)); color:#fff; text-align:center; }
+.cta-band h2 { color:#fff; font-size:clamp(28px,4vw,44px); margin-bottom:14px; }
+.cta-band p { max-width:560px; margin:0 auto 24px; color:rgba(255,255,255,.9); }
+.cta-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:14px; }
+
+.site-footer { padding:56px 0 24px; background:var(--rd-ink); color:rgba(255,255,255,.65); }
+.footer-grid { display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:32px; margin-bottom:32px; }
+.footer-col h4 { color:#fff; margin-bottom:14px; font-size:14px; }
+.footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
+.footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
+
+@media(max-width:960px) { .vmm-grid,.svc-grid,.approach-grid,.footer-grid { grid-template-columns:1fr 1fr; } .who-grid { grid-template-columns:1fr; } }
+@media(max-width:640px) { .vmm-grid,.svc-grid,.approach-grid { grid-template-columns:1fr; } .about-hero .inner { padding:28px 24px; } }
 </style>
+<link rel="stylesheet" href="assets/site-nav.css">
 </head>
 <body>
-<div id="rd-header-root" data-active="about" data-mode="solid"></div>
+<header class="site-header" id="siteHeader">
+	<div class="header-inner">
+		<a class="brand" href="realdeal-home-white.html#top" aria-label="RealDeal IT Center home">
+			<span class="brand-mark" aria-hidden="true"><span class="brand-letter">R</span><span class="brand-letter">D</span></span>
+			<span class="brand-text"><strong>RealDeal</strong><span>IT Center</span></span>
+		</a>
+		<nav class="main-nav" id="mainNav" aria-label="Primary navigation"><ul>
+			<li><a href="realdeal-home-white.html">Home</a></li>
+			<li class="nav-dropdown" id="servicesDropdown">
+				<a class="nav-dropdown-toggle" href="realdeal-services-white.html" aria-haspopup="true" aria-expanded="false" id="servicesDropdownToggle">
+					Services<i class="fa-solid fa-chevron-down nav-chevron" aria-hidden="true"></i>
+				</a><div class="nav-mega-menu" id="servicesMegaMenu" role="region" aria-label="Services submenu">
+					<div class="mega-menu-top">
+						<div><span class="section-kicker">Our Services</span><h3>40+ digital services for growth</h3></div>
+						<a class="mega-view-all" href="realdeal-services-white.html">View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
+					<div class="mega-menu-body"><div class="mega-menu-grid">
+						<div class="mega-col" style="--col-accent: var(--rd-teal);">
+							<div class="mega-col-head"><a href="realdeal-services-white.html#accounting-bookkeeping"><span class="mega-col-icon"><i class="fa-solid fa-calculator"></i></span><span class="mega-col-title">Accounting &amp; Bookkeeping</span></a></div>
+							<div class="mega-service-list">
+								<a class="mega-service-link" href="realdeal-service-accounting-services.html">Accounting Services</a>
+								<a class="mega-service-link" href="realdeal-service-bookkeeping-services.html">Bookkeeping Services</a>
+								<a class="mega-service-link" href="realdeal-service-financial-reporting.html">Financial Reporting</a>
+								<a class="mega-service-link" href="realdeal-service-payroll-services.html">Payroll Services</a>
+								<a class="mega-service-link" href="realdeal-service-tax-preparation.html">Tax Preparation</a>
+								<a class="mega-service-link" href="realdeal-service-accounts-payable-receivable.html">Accounts Payable &amp; Receivable</a>
+								<a class="mega-service-link" href="realdeal-service-business-accounting-support.html">Business Accounting Support</a>
+							</div>
+						</div>
+						<div class="mega-col" style="--col-accent: var(--rd-orange);">
+							<div class="mega-col-head"><a href="realdeal-services-white.html#web-development"><span class="mega-col-icon"><i class="fa-solid fa-laptop-code"></i></span><span class="mega-col-title">Web Design &amp; Development</span></a></div>
+							<div class="mega-service-list">
+								<a class="mega-service-link" href="realdeal-service-web-design.html">Web Design</a>
+								<a class="mega-service-link" href="realdeal-service-custom-website-design.html">Custom Website Design</a>
+								<a class="mega-service-link" href="realdeal-service-wordpress-website-design.html">WordPress Website Design</a>
+								<a class="mega-service-link" href="realdeal-service-wordpress-development.html">WordPress Development</a>
+								<a class="mega-service-link" href="realdeal-service-ecommerce-web-design.html">eCommerce Web Design</a>
+								<a class="mega-service-link" href="realdeal-service-ada-compliance.html">ADA Compliance Services</a>
+								<a class="mega-service-link" href="realdeal-service-website-hosting.html">Website Hosting</a>
+							</div>
+						</div>
+						<div class="mega-col" style="--col-accent: var(--rd-orange);">
+							<div class="mega-col-head"><a href="realdeal-services-white.html#seo-marketing"><span class="mega-col-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><span class="mega-col-title">Digital Marketing &amp; SEO</span></a></div>
+							<div class="mega-service-list">
+								<a class="mega-service-link" href="realdeal-service-digital-marketing.html">Digital Marketing</a>
+								<a class="mega-service-link" href="realdeal-service-seo.html">Search Engine Optimization (SEO)</a>
+								<a class="mega-service-link" href="realdeal-service-local-seo.html">Local SEO</a>
+								<a class="mega-service-link" href="realdeal-service-technical-seo.html">Technical SEO</a>
+								<a class="mega-service-link" href="realdeal-service-digital-marketing-strategy.html">Digital Marketing Strategy</a>
+								<a class="mega-service-link" href="realdeal-service-franchise-seo.html">Franchise SEO</a>
+								<a class="mega-service-link" href="realdeal-service-google-analytics.html">Google Analytics Service</a>
+								<a class="mega-service-link" href="realdeal-service-seo-content-writing.html">SEO Content Writing Services</a>
+							</div>
+						</div>
+						<div class="mega-col" style="--col-accent: var(--rd-blue);">
+							<div class="mega-col-head"><a href="realdeal-services-white.html#ads-leads"><span class="mega-col-icon"><i class="fa-solid fa-bullseye"></i></span><span class="mega-col-title">Ads, Leads &amp; Conversion</span></a></div>
+							<div class="mega-service-list">
+								<a class="mega-service-link" href="realdeal-service-ppc-marketing.html">Pay Per Click (PPC) Marketing</a>
+								<a class="mega-service-link" href="realdeal-service-sem.html">Search Engine Marketing (SEM)</a>
+								<a class="mega-service-link" href="realdeal-service-lead-generation.html">Lead Generation Service</a>
+								<a class="mega-service-link" href="realdeal-service-conversion-rate-optimization.html">Conversion Rate Optimization</a>
+								<a class="mega-service-link" href="realdeal-service-link-building.html">Link Building Services</a>
+								<a class="mega-service-link" href="realdeal-service-haro-link-building.html">HARO Link Building Services</a>
+								<a class="mega-service-link" href="realdeal-service-white-label-services.html">White Label Services</a>
+								<a class="mega-service-link" href="realdeal-service-video-production.html">Video Production</a>
+								<a class="mega-service-link" href="realdeal-service-email-marketing.html">Email Marketing Services</a>
+								<a class="mega-service-link" href="realdeal-service-sms-marketing.html">SMS Marketing Services</a>
+							</div>
+						</div>
+						<div class="mega-col" style="--col-accent: var(--rd-teal);">
+							<div class="mega-col-head"><a href="realdeal-services-white.html#social-reputation"><span class="mega-col-icon"><i class="fa-solid fa-share-nodes"></i></span><span class="mega-col-title">Social Media &amp; Reputation</span></a></div>
+							<div class="mega-service-list">
+								<a class="mega-service-link" href="realdeal-service-social-media-marketing.html">Social Media Marketing</a>
+								<a class="mega-service-link" href="realdeal-service-social-media-management.html">Social Media Management</a>
+								<a class="mega-service-link" href="realdeal-service-social-media-advertising.html">Social Media Advertising</a>
+								<a class="mega-service-link" href="realdeal-service-social-media-brand-management.html">Social Media Brand Management</a>
+								<a class="mega-service-link" href="realdeal-service-reputation-management.html">Reputation Management</a>
+								<a class="mega-service-link" href="realdeal-service-reputation-management-software.html">Reputation Management Software</a>
+								<a class="mega-service-link" href="realdeal-service-online-reputation-repair.html">Online Reputation Repair</a>
+								<a class="mega-service-link" href="realdeal-service-franchise-reputation-management.html">Franchise Reputation Management</a>
+							</div>
+						</div>
+						<div class="mega-col" style="--col-accent: var(--rd-green);">
+							<div class="mega-col-head"><a href="realdeal-services-white.html#graphics-creative"><span class="mega-col-icon"><i class="fa-solid fa-pen-nib"></i></span><span class="mega-col-title">Graphics Design &amp; Creative</span></a></div>
+							<div class="mega-service-list">
+								<a class="mega-service-link" href="realdeal-service-graphics-design.html">Graphics Design</a>
+								<a class="mega-service-link" href="realdeal-service-brand-design.html">Brand Design</a>
+								<a class="mega-service-link" href="realdeal-service-illustration-design.html">Illustration Design</a>
+								<a class="mega-service-link" href="realdeal-service-motion-graphics.html">Motion Graphics</a>
+								<a class="mega-service-link" href="realdeal-service-social-media-design.html">Social Media Design</a>
+								<a class="mega-service-link" href="realdeal-service-advertisement-design.html">Advertisement Design</a>
+							</div>
+						</div>
+						<div class="mega-col" style="--col-accent: var(--rd-blue);">
+							<div class="mega-col-head"><a href="realdeal-services-white.html#ecommerce-marketplace"><span class="mega-col-icon"><i class="fa-solid fa-store"></i></span><span class="mega-col-title">eCommerce &amp; Marketplace</span></a></div>
+							<div class="mega-service-list">
+								<a class="mega-service-link" href="realdeal-service-ecommerce-marketing.html">eCommerce Marketing</a>
+								<a class="mega-service-link" href="realdeal-service-ecommerce-optimization.html">eCommerce Optimization</a>
+								<a class="mega-service-link" href="realdeal-service-ecommerce-seo.html">eCommerce SEO</a>
+								<a class="mega-service-link" href="realdeal-service-ecommerce-ppc.html">eCommerce PPC</a>
+								<a class="mega-service-link" href="realdeal-service-ecommerce-web-design.html">eCommerce Web Design</a>
+								<a class="mega-service-link" href="realdeal-service-shopify-seo.html">Shopify SEO</a>
+								<a class="mega-service-link" href="realdeal-service-walmart-marketplace.html">Walmart Marketplace</a>
+								<a class="mega-service-link" href="realdeal-service-target-plus-marketplace.html">Target Plus Marketplace</a>
+								<a class="mega-service-link" href="realdeal-service-amazon-marketing.html">Amazon Marketing</a>
+								<a class="mega-service-link" href="realdeal-service-amazon-seo.html">Amazon SEO</a>
+								<a class="mega-service-link" href="realdeal-service-amazon-advertising-ppc.html">Amazon Advertising/PPC</a>
+								<a class="mega-service-link" href="realdeal-service-amazon-storefront-branding.html">Amazon Storefront &amp; Branding</a>
+								<a class="mega-service-link" href="realdeal-service-amazon-seller-consulting.html">Amazon Seller Consulting</a>
+								<a class="mega-service-link" href="realdeal-service-amazon-post-management.html">Amazon Post Management</a>
+								<a class="mega-service-link" href="realdeal-service-amazon-dsp-advertising.html">Amazon DSP Advertising Management</a>
+							</div>
+						</div>
+					</div></div>
+					<div class="mega-menu-foot">
+						<p><span>40+ services</span> — combine any into one custom growth package.</p>
+						<a class="mega-view-all" href="realdeal-services-white.html">View Full Services Catalog <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
+				</div></li>
+			<li><a href="realdeal-packages-white.html">Packages</a></li>
+			<li><a href="realdeal-about-white.html" class="is-active" aria-current="page">About us</a></li>
+			<li><a href="realdeal-career-white.html">Career</a></li>
+			<li><a href="realdeal-contact-white.html">Contact us</a></li>
+		</ul></nav>
+		<div class="header-actions">
+			<a class="btn btn-primary" href="realdeal-contact-white.html"><i class="fa-solid fa-calendar-check"></i> Book Strategy Call</a>
+			<button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><i class="fa-solid fa-bars"></i></button>
+		</div>
+	</div>
+</header>
+
 <main>
-<section class="page-hero"><div class="container">
-<h1>A digital team focused on measurable growth</h1>
-<p>RealDeal IT Center helps businesses grow with SEO, paid ads, social media, graphics, web design, ecommerce and marketplace services — delivered by one accountable team.</p>
-<a class="btn btn-primary" href="realdeal-contact-white.html"><i class="fa-solid fa-calendar-check"></i> Get in Touch</a>
-</div></section>
-<section class="content"><div class="container"><div class="card"><h2 style="margin-bottom:12px">More content coming soon</h2><p>This page is ready for your WordPress / Elementor content. Navigation is fully connected across the site.</p></div></div></section>
+	<section class="about-hero">
+		<div class="container">
+			<div class="inner">
+				<h1>RealDeal IT Center: A Full-Service Digital Growth Partner</h1>
+				<p>Welcome to <strong>RealDeal IT Center</strong>, a full-service digital marketing agency built around one idea: growth should be measurable, and one team should be accountable for it. Our passion for execution and commitment to exceptional results set us apart.</p>
+				<p>We're proud of our track record helping businesses across industries succeed in the digital space.</p>
+				<p>We believe in the uniqueness of every business, which is why we tailor our services to meet your specific needs. Whether it's raising brand awareness, generating leads, improving conversions, or enhancing customer engagement, our comprehensive range of digital marketing services can be customized to align with your objectives. From SEO and social media marketing to content creation and online advertising, we have the expertise to drive measurable results and maximize your ROI.</p>
+				<p>What sets us apart is our unwavering commitment to delivering excellence. We take the time to understand your business, industry and target market, enabling us to develop strategies that resonate with your audience and deliver meaningful outcomes. Our data-driven approach ensures every decision is backed by insights, allowing us to optimize campaigns, track performance and continuously refine our strategies for optimal results.</p>
+				<p>Experience the power of digital marketing with RealDeal, your trusted partner for comprehensive and results-driven solutions. <a href="realdeal-contact-white.html">Contact us</a> today to elevate your online presence to new heights.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="detail-section">
+		<div class="container">
+			<div class="vmm-head">
+				<span class="section-kicker" style="justify-content:center;">Why RealDeal</span>
+				<h2 class="section-title">Empowering Businesses for Digital Success</h2>
+				<p>We believe every business deserves the opportunity to thrive online, and we're committed to providing the tools and expertise necessary to make that happen.</p>
+			</div>
+			<div class="vmm-grid">
+				<article class="vmm-card">
+					<div class="vmm-icon"><i class="fa-solid fa-rocket"></i></div>
+					<h3>Our Vision</h3>
+					<p>Our vision at RealDeal IT Center is to be the leading digital growth partner known for innovative, effective solutions that help businesses thrive. We aim to exceed client expectations and be recognized as a trusted partner in their success.</p>
+				</article>
+				<article class="vmm-card">
+					<div class="vmm-icon"><i class="fa-solid fa-bullseye"></i></div>
+					<h3>Our Mission</h3>
+					<p>Our mission is to empower businesses with the tools and expertise they need to succeed in the ever-changing world of digital marketing — delivering high-quality, results-driven solutions that help clients grow.</p>
+				</article>
+				<article class="vmm-card">
+					<div class="vmm-icon"><i class="fa-solid fa-quote-left"></i></div>
+					<h3>Our Motto</h3>
+					<p>"Measurable Growth, One Accountable Team." We provide businesses with the right tools and expertise, and help you achieve your goals and reach new heights of success.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="detail-section alt">
+		<div class="container">
+			<div class="who-grid">
+				<div>
+					<span class="section-kicker">Who We Are</span>
+					<h2>RealDeal IT Center: Your Partner for Digital Success</h2>
+					<p>Choosing RealDeal as your digital growth partner means transparency, professionalism and a collaborative approach. We believe in building strong relationships with our clients, working closely to understand their vision and objectives. Our team becomes an extension of your business, dedicated to achieving your digital marketing goals and surpassing your expectations.</p>
+					<a class="btn btn-primary" href="realdeal-contact-white.html">Get a Free Consultation</a>
+				</div>
+				<div class="who-media">
+					<img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=75" alt="RealDeal team collaborating">
+					<div class="who-badge"><span>EST.</span><strong>2018</strong></div>
+					<div class="who-caption">
+						<h4>Together, We'll Grow Your Business</h4>
+						<p>Our team of experts collaborates with you on a customized strategy that aligns with your unique goals — built for long-term success.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="detail-section">
+		<div class="container">
+			<div class="svc-head">
+				<span class="section-kicker" style="justify-content:center;">Our Services</span>
+				<h2 class="section-title">Supporting Business Growth Through Digital Innovation</h2>
+			</div>
+			<div class="svc-grid">
+				<article class="svc-card">
+					<div class="svc-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+					<div><h3>Digital Marketing &amp; SEO</h3><p>Build lasting search visibility with strategy, technical foundations, local presence and content that ranks — and converts.</p></div>
+				</article>
+				<article class="svc-card">
+					<div class="svc-icon"><i class="fa-solid fa-bullseye"></i></div>
+					<div><h3>Ads, Leads &amp; Conversion</h3><p>Performance marketing built for traffic, qualified leads and measurable ROI — from first click to closed deal.</p></div>
+				</article>
+				<article class="svc-card">
+					<div class="svc-icon"><i class="fa-solid fa-share-nodes"></i></div>
+					<div><h3>Social Media &amp; Reputation</h3><p>Grow communities, run paid social and protect brand trust with proactive reputation management.</p></div>
+				</article>
+				<article class="svc-card">
+					<div class="svc-icon"><i class="fa-solid fa-pen-nib"></i></div>
+					<div><h3>Graphics Design &amp; Creative</h3><p>Visual identity and campaign assets that make your brand look sharper and sell harder.</p></div>
+				</article>
+				<article class="svc-card">
+					<div class="svc-icon"><i class="fa-solid fa-laptop-code"></i></div>
+					<div><h3>Web Design &amp; Development</h3><p>Conversion-focused websites, WordPress builds, ecommerce pages and reliable hosting.</p></div>
+				</article>
+				<article class="svc-card">
+					<div class="svc-icon"><i class="fa-solid fa-store"></i></div>
+					<div><h3>eCommerce &amp; Marketplace</h3><p>Scale online store revenue across search, paid media, Shopify, Walmart, Target and Amazon.</p></div>
+				</article>
+				<article class="svc-card">
+					<div class="svc-icon"><i class="fa-solid fa-calculator"></i></div>
+					<div><h3>Accounting &amp; Bookkeeping</h3><p>Accurate books, payroll, tax filing and financial reporting handled by one dedicated team.</p></div>
+				</article>
+			</div>
+			<div class="svc-more"><a class="btn btn-primary" href="realdeal-services-white.html">More Services</a></div>
+		</div>
+	</section>
+
+	<section class="detail-section alt">
+		<div class="container">
+			<div class="approach-grid">
+				<div class="approach-col">
+					<h3>Our Unique Approach</h3>
+					<p>We start by thoroughly analyzing each client's business, industry and target audience. Then we develop a comprehensive marketing strategy based on our findings, with specific goals, tactics and metrics for success.</p>
+					<p>We track and analyze data throughout the implementation process to ensure our strategies achieve the desired results, and provide regular reports so clients can see progress and make informed decisions about future marketing efforts.</p>
+				</div>
+				<div class="approach-col">
+					<h3>Our Valued Partners</h3>
+					<p>We work with businesses of all sizes and industries, from startups to established enterprises. Our clients come from various industries, including hospitality, healthcare, technology, retail and more.</p>
+					<p>We believe in building long-term relationships with our clients and strive to become a trusted partner in their success. We're proud of our work and look forward to helping even more businesses achieve their goals through effective marketing strategies.</p>
+				</div>
+			</div>
+			<div class="logo-strip">
+				<div class="logo-strip-track">
+					<span>BrightPeak</span>
+					<span>Cedar &amp; Co</span>
+					<span>NovaRetail</span>
+					<span>Urban Bloom</span>
+					<span>BrightPeak</span>
+					<span>Cedar &amp; Co</span>
+					<span>NovaRetail</span>
+					<span>Urban Bloom</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta-band">
+		<div class="container">
+			<h2>Expand your business with the help of RealDeal IT Center</h2>
+			<p>Ready to grow your business? RealDeal creates customized strategies that align with your goals and deliver proven results. Contact us today to get started.</p>
+			<div class="cta-actions">
+				<a class="btn btn-outline" href="realdeal-services-white.html" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4);">Free Audit Website</a>
+				<a class="btn btn-dark" href="realdeal-contact-white.html">Book Free Consultation</a>
+			</div>
+		</div>
+	</section>
 </main>
+<footer class="site-footer">
+	<div class="container">
+		<div class="footer-grid">
+			<div class="footer-brand">
+				<a class="brand" href="realdeal-home-white.html" aria-label="RealDeal IT Center home">
+					<span class="brand-mark" aria-hidden="true"><span class="brand-letter">R</span><span class="brand-letter">D</span></span>
+					<span class="brand-text"><strong>RealDeal</strong><span>IT Center</span></span>
+				</a>
+				<p>RealDeal IT Center helps businesses grow with SEO, paid ads, social media, graphics, web design, ecommerce, marketplace and reputation services delivered by one focused team.</p>
+				<div class="socials">
+					<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+					<a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+				</div>
+			</div>
+			<div class="footer-col">
+				<h4>Services</h4>
+				<ul>
+					<li><a href="realdeal-services-white.html#accounting-bookkeeping">Accounting &amp; Bookkeeping</a></li>
+					<li><a href="realdeal-services-white.html#web-development">Web Design</a></li>
+					<li><a href="realdeal-services-white.html#seo-marketing">Digital Marketing &amp; SEO</a></li>
+					<li><a href="realdeal-services-white.html#ads-leads">Ads &amp; Leads</a></li>
+					<li><a href="realdeal-services-white.html#social-reputation">Social &amp; Reputation</a></li>
+					<li><a href="realdeal-services-white.html#graphics-creative">Graphics &amp; Creative</a></li>
+					<li><a href="realdeal-services-white.html#ecommerce-marketplace">eCommerce &amp; Amazon</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Company</h4>
+				<ul>
+					<li><a href="realdeal-about-white.html">About us</a></li>
+					<li><a href="realdeal-career-white.html">Career</a></li>
+					<li><a href="realdeal-packages-white.html">Packages</a></li>
+					<li><a href="realdeal-contact-white.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="footer-col">
+				<h4>Contact</h4>
+				<ul>
+					<li><a href="mailto:contactrealdealteam@gmail.com">contactrealdealteam@gmail.com</a></li>
+					<li><a href="tel:+8801733162490">01733162490</a></li>
+					<li><a href="realdeal-contact-white.html">Book a free consultation</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>Copyright &copy; 2026 RealDeal IT Center. All rights reserved.</p>
+			<a href="realdeal-home-white.html#top">Back to top</a>
+		</div>
+	</div>
+</footer>
+
+<script>
+</script>
 <script src="assets/site-nav.js" defer></script>
 </body>
 </html>
