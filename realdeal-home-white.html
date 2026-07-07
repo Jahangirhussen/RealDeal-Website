@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="assets/site-nav.css">
+<link rel="stylesheet" href="assets/site-nav.css?v=2">
 <style>
 :root {
 	--rd-orange: #ff4a1c;
@@ -97,11 +97,13 @@ h1, h2, h3, h4 {
 .container {
 	width: min(100% - 48px, var(--container));
 	margin: 0 auto;
+	padding: 25px;
 }
 
 .container-wide {
 	width: min(100% - 48px, 1320px);
 	margin: 0 auto;
+	padding: 25px;
 }
 
 /* ---------- Shared bits ---------- */
@@ -1530,6 +1532,12 @@ h1, h2, h3, h4 {
 	background: var(--rd-ink);
 	box-shadow: var(--shadow-soft);
 	isolation: isolate;
+	border: 2px solid transparent;
+	transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+.work-card:hover {
+	border-color: var(--rd-orange);
+	box-shadow: 0 20px 45px rgba(255, 74, 28, 0.3);
 }
 
 .work-card img {
@@ -1905,7 +1913,8 @@ h1, h2, h3, h4 {
 
 .quote-card:hover {
 	transform: translateY(-7px);
-	box-shadow: var(--shadow);
+	border-color: var(--rd-orange);
+	box-shadow: 0 20px 45px rgba(255, 74, 28, 0.18);
 }
 
 .quote-card .fa-quote-left {
@@ -2164,6 +2173,12 @@ h1, h2, h3, h4 {
 	.hero { padding: 128px 0 70px; }
 	.section-head { flex-direction: column; align-items: flex-start; gap: 18px; }
 	.services-strip { grid-template-columns: repeat(2, 1fr); }
+	.services-hub { min-height: 440px; }
+	.services-hub-orbit { width: 160px; height: 160px; margin: -80px 0 0 -80px; }
+	.services-hub-core { width: 76px; height: 76px; }
+	.services-hub-core strong { font-size: 18px; }
+	.hub-node { width: 44px; height: 44px; margin: -22px 0 0 -22px; font-size: 16px; transform: rotate(var(--angle)) translateY(-86px) rotate(calc(-1 * var(--angle))); }
+	.hub-node:hover { transform: rotate(var(--angle)) translateY(-92px) rotate(calc(-1 * var(--angle))) scale(1.08); }
 	.hub-preview { grid-template-columns: repeat(3, 1fr); }
 	.service-row { grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
 	.service-row.flip .service-media { order: 0; }
@@ -2179,7 +2194,7 @@ h1, h2, h3, h4 {
 @media (max-width: 520px) {
 	.hero h1 { font-size: 36px; }
 	.hero-actions { width: 100%; }
-	.hero-actions .btn { flex: 1; }
+	.hero-actions .btn { flex: 1; min-width: 0; padding: 0 12px; font-size: 13px; gap: 6px; }
 	.services-strip { grid-template-columns: 1fr 1fr; }
 	.svc-thumb-row { grid-template-columns: repeat(2, 1fr); }
 	.metrics-grid { grid-template-columns: 1fr; }
@@ -2465,13 +2480,13 @@ h1, h2, h3, h4 {
 			</div>
 
 			<div class="services-strip" data-reveal>
-				<div class="strip-card" style="--accent: var(--rd-teal);"><i class="fa-solid fa-calculator"></i><strong>Accounting</strong></div>
-				<div class="strip-card" style="--accent: var(--rd-orange);"><i class="fa-solid fa-laptop-code"></i><strong>Web &amp; Dev</strong></div>
-				<div class="strip-card" style="--accent: var(--rd-orange);"><i class="fa-solid fa-magnifying-glass-chart"></i><strong>SEO &amp; Marketing</strong></div>
-				<div class="strip-card" style="--accent: var(--rd-blue);"><i class="fa-solid fa-bullseye"></i><strong>Ads &amp; Leads</strong></div>
-				<div class="strip-card" style="--accent: var(--rd-teal);"><i class="fa-solid fa-share-nodes"></i><strong>Social &amp; Reputation</strong></div>
-				<div class="strip-card" style="--accent: var(--rd-green);"><i class="fa-solid fa-pen-nib"></i><strong>Graphics &amp; Creative</strong></div>
-				<div class="strip-card" style="--accent: var(--rd-blue);"><i class="fa-solid fa-store"></i><strong>eCommerce</strong></div>
+				<a class="strip-card" href="realdeal-services-white.html#accounting-bookkeeping" style="--accent: var(--rd-teal);"><i class="fa-solid fa-calculator"></i><strong>Accounting</strong></a>
+				<a class="strip-card" href="realdeal-services-white.html#web-development" style="--accent: var(--rd-orange);"><i class="fa-solid fa-laptop-code"></i><strong>Web &amp; Dev</strong></a>
+				<a class="strip-card" href="realdeal-services-white.html#seo-marketing" style="--accent: var(--rd-orange);"><i class="fa-solid fa-magnifying-glass-chart"></i><strong>SEO &amp; Marketing</strong></a>
+				<a class="strip-card" href="realdeal-services-white.html#ads-leads" style="--accent: var(--rd-blue);"><i class="fa-solid fa-bullseye"></i><strong>Ads &amp; Leads</strong></a>
+				<a class="strip-card" href="realdeal-services-white.html#social-reputation" style="--accent: var(--rd-teal);"><i class="fa-solid fa-share-nodes"></i><strong>Social &amp; Reputation</strong></a>
+				<a class="strip-card" href="realdeal-services-white.html#graphics-creative" style="--accent: var(--rd-green);"><i class="fa-solid fa-pen-nib"></i><strong>Graphics &amp; Creative</strong></a>
+				<a class="strip-card" href="realdeal-services-white.html#ecommerce-marketplace" style="--accent: var(--rd-blue);"><i class="fa-solid fa-store"></i><strong>eCommerce</strong></a>
 			</div>
 
 			<div class="services-journey" id="servicesJourney">
@@ -3128,8 +3143,8 @@ h1, h2, h3, h4 {
 				</a>
 				<p>RealDeal IT Center helps businesses grow with SEO, paid ads, social media, graphics, web design, ecommerce, marketplace and reputation services delivered by one focused team.</p>
 				<div class="socials">
-					<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-					<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+					<a href="https://www.facebook.com/realdealitcenter" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
 					<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
 					<a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
 				</div>
@@ -3194,6 +3209,17 @@ h1, h2, h3, h4 {
 			}
 			observer.observe(item);
 		});
+
+		// Safety net: never leave content permanently hidden if the observer
+		// misses an element (fast scroll, nested transforms, etc.).
+		setTimeout(() => {
+			revealItems.forEach((item) => {
+				if (!item.classList.contains("is-visible")) {
+					item.classList.add("is-visible");
+					observer.unobserve(item);
+				}
+			});
+		}, 2500);
 	} else {
 		revealItems.forEach((item) => item.classList.add("is-visible"));
 	}
@@ -3457,6 +3483,6 @@ h1, h2, h3, h4 {
 	}
 })();
 </script>
-<script src="assets/site-nav.js" defer></script>
+<script src="assets/site-nav.js?v=2" defer></script>
 </body>
 </html>

@@ -42,16 +42,9 @@
 			dropdowns.forEach(closeMegaMenu);
 		}
 
-		function anyMegaMenuOpen() {
-			return dropdowns.some((d) => d.dropdown.classList.contains("is-open"));
-		}
-
 		function setHeaderState() {
 			if (heroMode) {
 				header.classList.toggle("scrolled", window.scrollY > 24);
-			}
-			if (!isMobileNav() && anyMegaMenuOpen()) {
-				closeAllMegaMenus();
 			}
 		}
 

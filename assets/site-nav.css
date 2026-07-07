@@ -59,6 +59,8 @@ body.menu-open { overflow: hidden; }
 
 @media (max-width: 560px) {
 	.footer-grid { grid-template-columns: 1fr; }
+	.header-actions .btn-primary { padding: 0; width: 44px; min-height: 44px; font-size: 0; gap: 0; }
+	.header-actions .btn-primary i { font-size: 16px; }
 }
 
 /* RealDeal shared site navigation */
