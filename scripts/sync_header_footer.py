@@ -31,6 +31,8 @@ NAV_LINKS = {
     "home": ('a', 'realdeal-home-white.html', "Home"),
     "services": ('dropdown', 'realdeal-services-white.html', None),
     "packages": ('a', 'realdeal-packages-white.html', "Packages"),
+    "portfolio": ('a', 'realdeal-portfolio-white.html', "Portfolio"),
+    "blog": ('a', 'realdeal-blog-white.html', "Blog"),
     "about": ('a', 'realdeal-about-white.html', "About us"),
     "career": ('a', 'realdeal-career-white.html', "Career"),
     "contact": ('a', 'realdeal-contact-white.html', "Contact us"),

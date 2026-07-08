@@ -97,7 +97,7 @@ h1, h2, h3, h4 {
 .container {
 	width: min(100% - 48px, var(--container));
 	margin: 0 auto;
-	padding: 25px;
+	padding: 0 25px;
 }
 
 .container-wide {
@@ -211,7 +211,7 @@ h1, h2, h3, h4 {
 	gap: 9px;
 	font-weight: 800;
 	font-size: 14px;
-	color: var(--rd-ink);
+	color: var(--rd-orange);
 	transition: gap 200ms ease, color 200ms ease;
 }
 
@@ -1104,6 +1104,12 @@ h1, h2, h3, h4 {
 	background: linear-gradient(180deg, var(--accent), transparent);
 }
 
+.service-info-link {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
 .service-info::after {
 	content: "";
 	position: absolute;
@@ -1196,10 +1202,11 @@ h1, h2, h3, h4 {
 	gap: 7px;
 	margin-bottom: 18px;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 
-.svc-tags span {
+.svc-tags span,
+.svc-tags a {
 	padding: 5px 11px;
 	border: 1px solid var(--rd-line);
 	border-radius: 99px;
@@ -1210,7 +1217,8 @@ h1, h2, h3, h4 {
 	transition: border-color 180ms ease, color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
-.svc-tags span:hover {
+.svc-tags span:hover,
+.svc-tags a:hover {
 	border-color: color-mix(in srgb, var(--accent) 50%, white);
 	color: var(--accent);
 	background: color-mix(in srgb, var(--accent) 7%, white);
@@ -1219,7 +1227,7 @@ h1, h2, h3, h4 {
 
 .service-info .text-link {
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 }
 
 .service-info .text-link i { color: var(--accent); }
@@ -1232,22 +1240,39 @@ h1, h2, h3, h4 {
 	overflow: visible;
 	background: linear-gradient(135deg, var(--rd-ink), var(--rd-ink-2));
 	box-shadow: var(--shadow);
-	aspect-ratio: 4 / 3;
-	min-height: 300px;
+	aspect-ratio: 16 / 11;
+	min-height: 240px;
+	border: 2px solid transparent;
+	transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.media-link {
+	position: absolute;
+	inset: 0;
+	z-index: 6;
+}
+
+.service-row:hover .service-info,
+.service-row:hover .service-media {
+	border-color: var(--rd-orange);
+}
+
+.service-row:hover .service-media {
+	box-shadow: 0 20px 45px rgba(255, 74, 28, 0.22);
 }
 
 .service-media-inner {
 	position: absolute;
-	inset: 0;
-	border-radius: var(--radius-lg);
+	inset: 32px;
+	border-radius: 10px;
 	overflow: hidden;
 }
 
 .service-media::before {
 	content: "";
 	position: absolute;
-	inset: 0;
-	border-radius: var(--radius-lg);
+	inset: 32px;
+	border-radius: 10px;
 	background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 32%, transparent), transparent 55%);
 	z-index: 2;
 	pointer-events: none;
@@ -1278,24 +1303,24 @@ h1, h2, h3, h4 {
 .media-deco-a {
 	top: -14px;
 	right: -10px;
-	width: 88px;
-	height: 88px;
-	padding: 6px;
+	width: 68px;
+	height: 68px;
+	padding: 5px;
 	animation-delay: 0s;
 }
 
 .media-deco-b {
 	bottom: 24px;
 	left: -16px;
-	width: 110px;
-	padding: 8px;
+	width: 86px;
+	padding: 6px;
 	animation-delay: 1.2s;
 }
 
 .media-deco img {
 	position: static;
 	width: 100%;
-	height: 72px;
+	height: 54px;
 	object-fit: cover;
 	border-radius: 8px;
 	opacity: 1;
@@ -1334,6 +1359,31 @@ h1, h2, h3, h4 {
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: var(--radius-lg);
+}
+
+.media-title {
+	position: absolute;
+	inset: 0;
+	z-index: 4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+	pointer-events: none;
+}
+
+.media-title span {
+	display: inline-block;
+	font-family: var(--font-heading);
+	font-size: clamp(15px, 1.6vw, 19px);
+	font-weight: 800;
+	color: #fff;
+	letter-spacing: 0.3px;
+	background: var(--rd-orange);
+	padding: 10px 22px;
+	border-radius: 99px;
+	box-shadow: 0 12px 28px rgba(255, 74, 28, 0.4);
 }
 
 .media-pill {
@@ -2293,6 +2343,8 @@ h1, h2, h3, h4 {
 					</div>
 				</div></li>
 			<li><a href="realdeal-packages-white.html">Packages</a></li>
+			<li><a href="realdeal-portfolio-white.html">Portfolio</a></li>
+			<li><a href="realdeal-blog-white.html">Blog</a></li>
 			<li><a href="realdeal-about-white.html">About us</a></li>
 			<li><a href="realdeal-career-white.html">Career</a></li>
 			<li><a href="realdeal-contact-white.html">Contact us</a></li>
@@ -2484,6 +2536,7 @@ h1, h2, h3, h4 {
 			<!-- 1. Bookkeeping -->
 			<article class="service-row" style="--accent: var(--rd-teal);" data-reveal>
 				<div class="service-info">
+					<a class="service-info-link" href="realdeal-services-white.html#bookkeeping" aria-label="Explore bookkeeping services"></a>
 					<span class="svc-index">01 — Bookkeeping</span>
 					<h3>Bookkeeping</h3>
 					<p>Accurate books, payroll, tax filing and financial reporting handled by one dedicated team, alongside your growth work.</p>
@@ -2493,14 +2546,16 @@ h1, h2, h3, h4 {
 						<div class="svc-thumb"><img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=300&q=60" alt="" loading="lazy" width="200" height="125"><span>Tax Prep</span></div>
 					</div>
 					<div class="svc-tags">
-						<span>Financial Records</span><span>Payable</span><span>Receivable</span><span>Reconciliation</span><span>Reporting</span><span>Payroll</span>
+						<a href="realdeal-bookkeeping-financial-record-keeping.html">Financial Records</a><a href="realdeal-bookkeeping-accounts-payable.html">Payable</a><a href="realdeal-bookkeeping-accounts-receivable.html">Receivable</a><a href="realdeal-bookkeeping-bank-reconciliation.html">Reconciliation</a><a href="realdeal-bookkeeping-financial-reporting.html">Reporting</a><a href="realdeal-bookkeeping-payroll-management.html">Payroll</a>
 					</div>
 					<a class="text-link" href="realdeal-services-white.html#bookkeeping">Explore bookkeeping services <i class="fa-solid fa-arrow-right"></i></a>
 				</div>
 				<div class="service-media mask-reveal">
+					<a class="media-link" href="realdeal-services-white.html#bookkeeping" aria-label="Explore bookkeeping services"></a>
 					<div class="service-media-inner">
 						<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=70" alt="Bookkeeping and financial reporting" loading="lazy" decoding="async" width="900" height="675">
 					</div>
+					<div class="media-title"><span>Bookkeeping</span></div>
 					<div class="media-deco media-deco-a"><img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=200&q=60" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-calculator"></i></div>
 					<div class="media-deco media-deco-b"><strong>100% audit-ready</strong><img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=220&q=60" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
@@ -2517,6 +2572,7 @@ h1, h2, h3, h4 {
 			<!-- 2. Web Design & Development -->
 			<article class="service-row flip" style="--accent: var(--rd-orange);" data-reveal>
 				<div class="service-info">
+					<a class="service-info-link" href="realdeal-services-white.html#web-design-development" aria-label="Explore web services"></a>
 					<span class="svc-index">02 — Web</span>
 					<h3>Web Design &amp; Development</h3>
 					<p>Conversion-focused websites, custom builds and ecommerce pages engineered for speed and results.</p>
@@ -2526,14 +2582,16 @@ h1, h2, h3, h4 {
 						<div class="svc-thumb"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=60" alt="" loading="lazy" width="200" height="125"><span>Ecommerce</span></div>
 					</div>
 					<div class="svc-tags">
-						<span>Website Design</span><span>Website Development</span><span>Ecommerce Website Development</span>
+						<a href="realdeal-web-design-website-design.html">Website Design</a><a href="realdeal-web-design-website-development.html">Website Development</a><a href="realdeal-web-design-ecommerce-website-development.html">Ecommerce Website Development</a>
 					</div>
 					<a class="text-link" href="realdeal-services-white.html#web-design-development">Explore web services <i class="fa-solid fa-arrow-right"></i></a>
 				</div>
 				<div class="service-media mask-reveal">
+					<a class="media-link" href="realdeal-services-white.html#web-design-development" aria-label="Explore web services"></a>
 					<div class="service-media-inner">
 						<img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=70" alt="Website design mockup" loading="lazy" decoding="async" width="900" height="675">
 					</div>
+					<div class="media-title"><span>Web Design &amp; Development</span></div>
 					<div class="media-deco media-deco-a"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=200&q=60" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-mobile-screen"></i></div>
 					<div class="media-deco media-deco-b"><strong>98 speed</strong><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=220&q=60" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
@@ -2551,6 +2609,7 @@ h1, h2, h3, h4 {
 			<!-- 3. Digital Marketing -->
 			<article class="service-row" style="--accent: var(--rd-blue);" data-reveal>
 				<div class="service-info">
+					<a class="service-info-link" href="realdeal-services-white.html#digital-marketing" aria-label="Explore digital marketing services"></a>
 					<span class="svc-index">03 — Social Growth</span>
 					<h3>Digital Marketing</h3>
 					<p>Platform-native content and community management across every social channel that moves your audience.</p>
@@ -2560,14 +2619,16 @@ h1, h2, h3, h4 {
 						<div class="svc-thumb"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=300&q=60" alt="" loading="lazy" width="200" height="125"><span>Community</span></div>
 					</div>
 					<div class="svc-tags">
-						<span>Facebook</span><span>Instagram</span><span>LinkedIn</span><span>Twitter (X)</span><span>Pinterest</span><span>YouTube</span>
+						<a href="realdeal-marketing-facebook-marketing.html">Facebook</a><a href="realdeal-marketing-instagram-marketing.html">Instagram</a><a href="realdeal-marketing-linkedin-marketing.html">LinkedIn</a><a href="realdeal-marketing-twitter-x-marketing.html">Twitter (X)</a><a href="realdeal-marketing-pinterest-marketing.html">Pinterest</a><a href="realdeal-marketing-youtube-marketing.html">YouTube</a>
 					</div>
 					<a class="text-link" href="realdeal-services-white.html#digital-marketing">Explore digital marketing services <i class="fa-solid fa-arrow-right"></i></a>
 				</div>
 				<div class="service-media mask-reveal">
+					<a class="media-link" href="realdeal-services-white.html#digital-marketing" aria-label="Explore digital marketing services"></a>
 					<div class="service-media-inner">
 						<img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=900&q=70" alt="Social media marketing" loading="lazy" decoding="async" width="900" height="675">
 					</div>
+					<div class="media-title"><span>Digital Marketing</span></div>
 					<div class="media-deco media-deco-a"><img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=200&q=60" alt="" loading="lazy" width="76" height="72"><i class="fa-brands fa-instagram"></i></div>
 					<div class="media-deco media-deco-b"><strong>48K reach</strong><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=220&q=60" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
@@ -2589,6 +2650,7 @@ h1, h2, h3, h4 {
 			<!-- 4. Search Engine Optimization (SEO) -->
 			<article class="service-row flip" style="--accent: var(--rd-green);" data-reveal>
 				<div class="service-info">
+					<a class="service-info-link" href="realdeal-services-white.html#seo" aria-label="Explore SEO services"></a>
 					<span class="svc-index">04 — Search &amp; Growth</span>
 					<h3>Search Engine Optimization (SEO)</h3>
 					<p>Search visibility, analytics and strategy that compound into long-term organic growth and qualified traffic.</p>
@@ -2598,14 +2660,16 @@ h1, h2, h3, h4 {
 						<div class="svc-thumb"><img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=300&q=60" alt="" loading="lazy" width="200" height="125"><span>Content</span></div>
 					</div>
 					<div class="svc-tags">
-						<span>On-Page SEO</span><span>Off-Page SEO</span><span>Local SEO</span><span>Technical SEO</span>
+						<a href="realdeal-seo-on-page-seo.html">On-Page SEO</a><a href="realdeal-seo-off-page-seo.html">Off-Page SEO</a><a href="realdeal-seo-local-seo.html">Local SEO</a><a href="realdeal-seo-technical-seo.html">Technical SEO</a>
 					</div>
 					<a class="text-link" href="realdeal-services-white.html#seo">Explore SEO services <i class="fa-solid fa-arrow-right"></i></a>
 				</div>
 				<div class="service-media mask-reveal">
+					<a class="media-link" href="realdeal-services-white.html#seo" aria-label="Explore SEO services"></a>
 					<div class="service-media-inner">
 						<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=70" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="900" height="675">
 					</div>
+					<div class="media-title"><span>Search Engine Optimization (SEO)</span></div>
 					<div class="media-deco media-deco-a"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=200&q=60" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-chart-line"></i></div>
 					<div class="media-deco media-deco-b"><strong>Rankings up</strong><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=220&q=60" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
@@ -2968,6 +3032,8 @@ h1, h2, h3, h4 {
 				<h4>Company</h4>
 				<ul>
 					<li><a href="realdeal-about-white.html">About us</a></li>
+					<li><a href="realdeal-portfolio-white.html">Portfolio</a></li>
+					<li><a href="realdeal-blog-white.html">Blog</a></li>
 					<li><a href="realdeal-career-white.html">Career</a></li>
 					<li><a href="realdeal-packages-white.html">Packages</a></li>
 					<li><a href="realdeal-contact-white.html">Contact</a></li>
