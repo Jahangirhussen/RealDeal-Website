@@ -1,42 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const ROOT = path.join(__dirname, '..');
-
-const MAP = JSON.parse(fs.readFileSync(path.join(__dirname, 'file_map.json'), 'utf-8'));
-
-function relPrefix(newPath) {
-  const depth = newPath.split('/').length - 1;
-  if (depth === 0) return '.';
-  return Array(depth).fill('..').join('/');
-}
-
-function rewriteContent(html, newPath) {
-  const base = relPrefix(newPath);
-  html = html.replace(/(href|src)="((?:realdeal-[a-zA-Z0-9\-]+\.html))(#[a-zA-Z0-9\-]*)?"/g, (m, attr, fname, frag) => {
-    const target = MAP[fname];
-    if (!target) return m;
-    const newHref = (base === '.' ? '' : base + '/') + target;
-    return `${attr}="${newHref}${frag || ''}"`;
-  });
-  html = html.replace(/(href|src)="assets\//g, (m, attr) => `${attr}="${base === '.' ? '' : base + '/'}assets/`);
-  html = html.replace(/detailUrl:"(realdeal-[a-zA-Z0-9\-]+\.html)"/g, (m, fname) => {
-    const target = MAP[fname];
-    if (!target) return m;
-    const dirTarget = target.endsWith('/index.html') ? target.slice(0, -'index.html'.length) : target;
-    return `detailUrl:"${dirTarget}"`;
-  });
-  html = html.replace(/https:\/\/jahangirhussen\.github\.io\/RealDeal_Home\/(realdeal-[a-zA-Z0-9\-]+\.html)/g, (m, fname) => {
-    const target = MAP[fname];
-    if (!target) return m;
-    const dirTarget = target.endsWith('/index.html') ? target.slice(0, -'index.html'.length) : target;
-    return `https://jahangirhussen.github.io/RealDeal_Home/${dirTarget}`;
-  });
-  return html;
-}
+const ROOT = require('path').join(__dirname, '..');
 
 const HEADER_SRC = fs.readFileSync(path.join(ROOT, 'header.html'), 'utf-8');
 const FOOTER_SRC = fs.readFileSync(path.join(ROOT, 'footer.html'), 'utf-8');
-
 const HEADER_BLOCK_RE = /<header class="site-header[^"]*" id="siteHeader">[\s\S]*?<\/header>\n?/;
 const FOOTER_BLOCK_RE = /<footer class="site-footer">[\s\S]*?<\/footer>\n?/;
 
@@ -44,8 +11,8 @@ const NAV_LINKS = {
   home: ['a', 'realdeal-home-white.html', 'Home'],
   services: ['dropdown', 'realdeal-services-white.html', null],
   packages: ['a', 'realdeal-packages-white.html', 'Packages'],
-  portfolio: ['a', 'realdeal-portfolio-white.html', 'Portfolio'],
-  blog: ['a', 'realdeal-blog-white.html', 'Blog'],
+  portfolio: ['a', '__PORTFOLIO__', 'Portfolio'],
+  blog: ['a', '__BLOG__', 'Blog'],
   about: ['a', 'realdeal-about-white.html', 'About us'],
   career: ['a', 'realdeal-career-white.html', 'Career'],
   contact: ['a', 'realdeal-contact-white.html', 'Contact us'],
@@ -54,14 +21,14 @@ const NAV_LINKS = {
 function detectState(headerBlock) {
   const mode = headerBlock.slice(0, 120).includes('header-solid') ? 'solid' : 'hero';
   let active = 'home';
+  // detect via title text since href is now a token; fall back scanning is-active near labels
   for (const [key, [kind, href, label]] of Object.entries(NAV_LINKS)) {
-    let re;
     if (kind === 'a') {
-      re = new RegExp(`<a href="${href.replace(/\./g, '\\.')}" class="is-active"[^>]*>${label}</a>`);
+      const re = new RegExp(`<a href="[^"]*" class="is-active"[^>]*>${label}</a>`);
+      if (re.test(headerBlock)) { active = key; break; }
     } else {
-      re = new RegExp(`<a class="nav-dropdown-toggle is-active"[^>]*href="${href.replace(/\./g, '\\.')}"`);
+      if (/<a class="nav-dropdown-toggle is-active"/.test(headerBlock)) { active = key; break; }
     }
-    if (re.test(headerBlock)) { active = key; break; }
   }
   return { active, mode };
 }
@@ -89,41 +56,45 @@ function buildHeader(active, mode) {
   return header;
 }
 
-function walk(dir, out = []) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) walk(full, out);
-    else if (entry.name.endsWith('.html')) out.push(full);
-  }
+// depth: 0 = root, 1 = inside portfolio/ or blogs/
+function rewrite(html, depth, folder) {
+  const prefix = depth === 0 ? '' : '../';
+  html = html.replace(/(href|src)="(realdeal-[a-zA-Z0-9\-]+\.html)((?:[#?][^"]*)?)"/g, (m, attr, fname, frag) => {
+    return `${attr}="${prefix}${fname}${frag}"`;
+  });
+  html = html.replace(/(href|src)="assets\//g, (m, attr) => `${attr}="${prefix}assets/`);
+  const portfolioTarget = depth === 0 ? 'portfolio/index.html' : (folder === 'portfolio' ? 'index.html' : '../portfolio/index.html');
+  const blogTarget = depth === 0 ? 'blogs/index.html' : (folder === 'blogs' ? 'index.html' : '../blogs/index.html');
+  html = html.split('__PORTFOLIO__').join(portfolioTarget);
+  html = html.split('__BLOG__').join(blogTarget);
+  return html;
 }
 
-const targets = [];
-for (const sub of ['pages', 'portfolio', 'blogs']) {
-  const dir = path.join(ROOT, sub);
-  if (fs.existsSync(dir)) walk(dir, targets);
-}
-
-let changed = 0;
-for (const fullPath of targets) {
-  const newPath = path.relative(ROOT, fullPath).split(path.sep).join('/');
+function bakeInto(fullPath, depth, folder) {
   let content = fs.readFileSync(fullPath, 'utf-8');
-
   const headerMatch = content.match(HEADER_BLOCK_RE);
-  if (!headerMatch) { console.log('SKIP (no header found):', newPath); continue; }
+  if (!headerMatch) { console.log('SKIP (no header):', fullPath); return; }
   const { active, mode } = detectState(headerMatch[0]);
-
-  let newHeader = buildHeader(active, mode);
-  newHeader = rewriteContent(newHeader, newPath);
-  let newFooter = rewriteContent(FOOTER_SRC, newPath);
-
-  const before = content;
+  let newHeader = rewrite(buildHeader(active, mode), depth, folder);
+  let newFooter = rewrite(FOOTER_SRC, depth, folder);
   content = content.replace(HEADER_BLOCK_RE, () => newHeader);
   content = content.replace(FOOTER_BLOCK_RE, () => newFooter);
-
-  if (content !== before) {
-    fs.writeFileSync(fullPath, content, 'utf-8');
-    changed++;
-  }
+  fs.writeFileSync(fullPath, content, 'utf-8');
 }
 
-console.log('changed:', changed, '/', targets.length);
+// root files
+for (const f of fs.readdirSync(ROOT)) {
+  if (f.endsWith('.html') && !['header.html', 'footer.html'].includes(f)) {
+    if (f === 'index.html') continue; // redirect stub, no header/footer
+    bakeInto(path.join(ROOT, f), 0, null);
+  }
+}
+// portfolio/, blogs/
+for (const folder of ['portfolio', 'blogs']) {
+  const dir = path.join(ROOT, folder);
+  if (!fs.existsSync(dir)) continue;
+  for (const f of fs.readdirSync(dir)) {
+    if (f.endsWith('.html')) bakeInto(path.join(dir, f), 1, folder);
+  }
+}
+console.log('bake complete');

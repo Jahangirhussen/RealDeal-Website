@@ -97,14 +97,13 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 @media(max-width:960px) { .detail-grid,.benefit-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 @media(max-width:820px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .main-nav { display:none; position:fixed; inset:78px 16px auto; padding:14px; background:#fff; border:1px solid var(--rd-line); border-radius:var(--radius); box-shadow:var(--shadow); } .main-nav.is-open { display:block; } .main-nav ul { flex-direction:column; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=2">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
 </head>
 <body>
 <header class="site-header" id="siteHeader">
 	<div class="header-inner">
-		<a class="brand" href="realdeal-home-white.html#top" aria-label="RealDeal IT Center home">
-			<span class="brand-mark" aria-hidden="true"><span class="brand-letter">R</span><span class="brand-letter">D</span></span>
-			<span class="brand-text"><strong>RealDeal</strong><span>IT Center</span></span>
+		<a class="brand brand-logo" href="realdeal-home-white.html#top" aria-label="RealDeal IT Center home">
+			<img src="assets/logo/logo-dark-navy.png" alt="RealDeal IT Center" class="brand-logo-img">
 		</a>
 		<nav class="main-nav" id="mainNav" aria-label="Primary navigation"><ul>
 			<li><a href="realdeal-home-white.html" class="is-active" aria-current="page">Home</a></li>
@@ -118,7 +117,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<div class="mega-menu-body"><div class="mega-menu-grid">
 						<div class="mega-col" style="--col-accent: var(--rd-teal);">
-							<div class="mega-col-head"><a href="realdeal-services-white.html#bookkeeping"><span class="mega-col-icon"><i class="fa-solid fa-calculator"></i></span><span class="mega-col-title">Bookkeeping</span></a></div>
+							<div class="mega-col-head"><a href="realdeal-category-bookkeeping.html"><span class="mega-col-icon"><i class="fa-solid fa-calculator"></i></span><span class="mega-col-title">Bookkeeping</span></a></div>
 							<div class="mega-service-list">
 								<a class="mega-service-link" href="realdeal-bookkeeping-financial-record-keeping.html">Financial Record Keeping</a>
 								<a class="mega-service-link" href="realdeal-bookkeeping-accounts-payable.html">Accounts Payable</a>
@@ -130,7 +129,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 							</div>
 						</div>
 						<div class="mega-col" style="--col-accent: var(--rd-orange);">
-							<div class="mega-col-head"><a href="realdeal-services-white.html#web-design-development"><span class="mega-col-icon"><i class="fa-solid fa-laptop-code"></i></span><span class="mega-col-title">Web Design &amp; Development</span></a></div>
+							<div class="mega-col-head"><a href="realdeal-category-web-design-development.html"><span class="mega-col-icon"><i class="fa-solid fa-laptop-code"></i></span><span class="mega-col-title">Web Design &amp; Development</span></a></div>
 							<div class="mega-service-list">
 								<a class="mega-service-link" href="realdeal-web-design-website-design.html">Website Design</a>
 								<a class="mega-service-link" href="realdeal-web-design-website-development.html">Website Development</a>
@@ -140,7 +139,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 							</div>
 						</div>
 						<div class="mega-col" style="--col-accent: var(--rd-blue);">
-							<div class="mega-col-head"><a href="realdeal-services-white.html#digital-marketing"><span class="mega-col-icon"><i class="fa-solid fa-bullhorn"></i></span><span class="mega-col-title">Digital Marketing</span></a></div>
+							<div class="mega-col-head"><a href="realdeal-category-digital-marketing.html"><span class="mega-col-icon"><i class="fa-solid fa-bullhorn"></i></span><span class="mega-col-title">Digital Marketing</span></a></div>
 							<div class="mega-service-list">
 								<a class="mega-service-link" href="realdeal-marketing-facebook-marketing.html">Facebook Marketing</a>
 								<a class="mega-service-link" href="realdeal-marketing-instagram-marketing.html">Instagram Marketing</a>
@@ -151,17 +150,23 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 							</div>
 						</div>
 						<div class="mega-col" style="--col-accent: var(--rd-green);">
-							<div class="mega-col-head"><a href="realdeal-services-white.html#seo"><span class="mega-col-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><span class="mega-col-title">Search Engine Optimization (SEO)</span></a></div>
+							<div class="mega-col-head"><a href="realdeal-category-seo.html"><span class="mega-col-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span><span class="mega-col-title">Search Engine Optimization (SEO)</span></a></div>
 							<div class="mega-service-list">
 								<a class="mega-service-link" href="realdeal-seo-on-page-seo.html">On-Page SEO</a>
 								<a class="mega-service-link" href="realdeal-seo-off-page-seo.html">Off-Page SEO</a>
-								<a class="mega-service-link" href="realdeal-seo-local-seo.html">Local SEO</a>
 								<a class="mega-service-link" href="realdeal-seo-technical-seo.html">Technical SEO</a>
+								<a class="mega-service-link" href="realdeal-seo-local-seo.html">Local SEO</a>
+								<a class="mega-service-link" href="realdeal-seo-ecommerce-seo.html">Ecommerce SEO</a>
+								<a class="mega-service-link" href="realdeal-seo-wordpress-seo.html">WordPress SEO</a>
+								<a class="mega-service-link" href="realdeal-seo-woocommerce-seo.html">WooCommerce SEO</a>
+								<a class="mega-service-link" href="realdeal-seo-shopify-seo.html">Shopify SEO</a>
+								<a class="mega-service-link" href="realdeal-seo-seo-audit.html">SEO Audit</a>
+								<a class="mega-service-link" href="realdeal-seo-link-building.html">Link Building</a>
 							</div>
 						</div>
 					</div></div>
 					<div class="mega-menu-foot">
-						<p><span>20 services</span> — combine any into one custom growth package.</p>
+						<p><span>28 services</span> — combine any into one custom growth package.</p>
 						<a class="mega-view-all" href="realdeal-services-white.html">View Full Services Catalog <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 					</div>
 				</div></li>
@@ -185,7 +190,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="realdeal-home-white.html">Home</a><span>/</span>
 				<a href="realdeal-services-white.html">Services</a><span>/</span>
-				<a href="realdeal-services-white.html#digital-marketing">Digital Marketing</a><span>/</span>
+				<a href="realdeal-category-digital-marketing.html">Digital Marketing</a><span>/</span>
 				<span>Instagram Marketing</span>
 			</nav>
 			<div class="hero-badge"><i class="fa-solid fa-hashtag"></i> Digital Marketing</div>
@@ -193,7 +198,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<p class="lead">Profile optimization, scroll-stopping content and growth strategy built for Instagram's visual, hashtag-driven audience.</p>
 			<div class="hero-actions">
 				<a class="btn btn-primary" href="realdeal-contact-white.html"><i class="fa-solid fa-paper-plane"></i> Request Proposal</a>
-				<a class="btn btn-outline" href="realdeal-services-white.html#digital-marketing" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3);">All Digital Marketing Services</a>
+				<a class="btn btn-outline" href="realdeal-category-digital-marketing.html" style="background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3);">All Digital Marketing Services</a>
 			</div>
 		</div>
 	</section>
@@ -258,9 +263,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<div class="container">
 		<div class="footer-grid">
 			<div class="footer-brand">
-				<a class="brand" href="realdeal-home-white.html" aria-label="RealDeal IT Center home">
-					<span class="brand-mark" aria-hidden="true"><span class="brand-letter">R</span><span class="brand-letter">D</span></span>
-					<span class="brand-text"><strong>RealDeal</strong><span>IT Center</span></span>
+				<a class="brand brand-logo" href="realdeal-home-white.html" aria-label="RealDeal IT Center home">
+					<img src="assets/logo/logo-dark-navy.png" alt="RealDeal IT Center" class="brand-logo-img">
 				</a>
 				<p>RealDeal IT Center helps businesses grow with bookkeeping, web design &amp; development, digital marketing and SEO services delivered by one focused team.</p>
 				<div class="socials">
@@ -273,10 +277,10 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<div class="footer-col">
 				<h4>Services</h4>
 				<ul>
-					<li><a href="realdeal-services-white.html#bookkeeping">Bookkeeping</a></li>
-					<li><a href="realdeal-services-white.html#web-design-development">Web Design &amp; Development</a></li>
-					<li><a href="realdeal-services-white.html#digital-marketing">Digital Marketing</a></li>
-					<li><a href="realdeal-services-white.html#seo">Search Engine Optimization (SEO)</a></li>
+					<li><a href="realdeal-category-bookkeeping.html">Bookkeeping</a></li>
+					<li><a href="realdeal-category-web-design-development.html">Web Design &amp; Development</a></li>
+					<li><a href="realdeal-category-digital-marketing.html">Digital Marketing</a></li>
+					<li><a href="realdeal-category-seo.html">Search Engine Optimization (SEO)</a></li>
 				</ul>
 			</div>
 			<div class="footer-col">
@@ -308,6 +312,6 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 
 <script>
 </script>
-<script src="assets/site-nav.js?v=2" defer></script>
+<script src="assets/site-nav.js?v=3" defer></script>
 </body>
 </html>
