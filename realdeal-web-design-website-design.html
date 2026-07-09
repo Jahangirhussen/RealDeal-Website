@@ -31,7 +31,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.site-header { position:fixed; inset:0 0 auto; z-index:50; background:rgba(255,255,255,.96); border-bottom:1px solid var(--rd-line); box-shadow:0 8px 24px rgba(14,26,36,.06); }
+.site-header { position:fixed; inset:0 0 auto; z-index:50; background:var(--rd-ink); border-bottom:1px solid rgba(255,255,255,.12); box-shadow:0 8px 24px rgba(14,26,36,.2); }
 .header-inner { width:min(100% - 48px,var(--container)); min-height:78px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; }
 .brand { display:inline-flex; align-items:center; gap:12px; }
 .brand-mark { position:relative; width:58px; height:44px; display:grid; grid-template-columns:1fr 1fr; }
@@ -39,13 +39,13 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .brand-letter { height:44px; display:flex; align-items:center; justify-content:center; font-family:var(--font-heading); font-size:28px; font-weight:800; transform:skewX(-10deg); color:#fff; }
 .brand-letter:first-child { background:var(--rd-orange); clip-path:polygon(12% 0,100% 0,88% 100%,0 100%); }
 .brand-letter:last-child { background:var(--rd-ink); clip-path:polygon(12% 0,100% 0,88% 100%,0 100%); margin-left:-5px; }
-.brand-text { display:grid; gap:1px; color:var(--rd-ink); }
+.brand-text { display:grid; gap:1px; color:#fff; }
 .brand-text strong { font-family:var(--font-heading); font-size:16px; }
-.brand-text span { font-size:10px; font-weight:800; letter-spacing:2.3px; text-transform:uppercase; color:var(--rd-muted); }
+.brand-text span { font-size:10px; font-weight:800; letter-spacing:2.3px; text-transform:uppercase; color:rgba(255,255,255,.65); }
 .main-nav ul { display:flex; gap:8px; }
-.main-nav a { display:inline-flex; align-items:center; height:42px; padding:0 12px; border-radius:6px; color:var(--rd-ink); font-size:14px; font-weight:700; }
-.main-nav a:hover { background:rgba(255,74,28,.1); color:var(--rd-orange); }
-.main-nav a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
+.main-nav > ul > li > a { display:inline-flex; align-items:center; height:42px; padding:0 12px; border-radius:6px; color:rgba(255,255,255,.86); font-size:14px; font-weight:700; }
+.main-nav > ul > li > a:hover { background:rgba(255,255,255,.1); color:#fff; }
+.main-nav > ul > li > a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
 .menu-toggle { display:none; width:44px; height:44px; border:1px solid var(--rd-line); border-radius:6px; background:#fff; cursor:pointer; }
 .service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1700&q=80") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
@@ -107,9 +107,9 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<span class="brand-text"><strong>RealDeal</strong><span>IT Center</span></span>
 		</a>
 		<nav class="main-nav" id="mainNav" aria-label="Primary navigation"><ul>
-			<li><a href="realdeal-home-white.html">Home</a></li>
+			<li><a href="realdeal-home-white.html" class="is-active" aria-current="page">Home</a></li>
 			<li class="nav-dropdown" id="servicesDropdown">
-				<a class="nav-dropdown-toggle is-active" aria-current="page" href="realdeal-services-white.html" aria-haspopup="true" aria-expanded="false" id="servicesDropdownToggle">
+				<a class="nav-dropdown-toggle" href="realdeal-services-white.html" aria-haspopup="true" aria-expanded="false" id="servicesDropdownToggle">
 					Services<i class="fa-solid fa-chevron-down nav-chevron" aria-hidden="true"></i>
 				</a><div class="nav-mega-menu" id="servicesMegaMenu" role="region" aria-label="Services submenu">
 					<div class="mega-menu-top">
@@ -135,6 +135,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 								<a class="mega-service-link" href="realdeal-web-design-website-design.html">Website Design</a>
 								<a class="mega-service-link" href="realdeal-web-design-website-development.html">Website Development</a>
 								<a class="mega-service-link" href="realdeal-web-design-ecommerce-website-development.html">Ecommerce Website Development</a>
+								<a class="mega-service-link" href="realdeal-web-design-woocommerce-development.html">WooCommerce Development</a>
+								<a class="mega-service-link" href="realdeal-web-design-shopify-development.html">Shopify Development</a>
 							</div>
 						</div>
 						<div class="mega-col" style="--col-accent: var(--rd-blue);">
@@ -164,8 +166,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 				</div></li>
 			<li><a href="realdeal-packages-white.html">Packages</a></li>
-			<li><a href="realdeal-portfolio-white.html">Portfolio</a></li>
-			<li><a href="realdeal-blog-white.html">Blog</a></li>
+			<li><a href="portfolio/index.html">Portfolio</a></li>
+			<li><a href="blogs/index.html">Blog</a></li>
 			<li><a href="realdeal-about-white.html">About us</a></li>
 			<li><a href="realdeal-career-white.html">Career</a></li>
 			<li><a href="realdeal-contact-white.html">Contact us</a></li>
@@ -280,8 +282,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<h4>Company</h4>
 				<ul>
 					<li><a href="realdeal-about-white.html">About us</a></li>
-					<li><a href="realdeal-portfolio-white.html">Portfolio</a></li>
-					<li><a href="realdeal-blog-white.html">Blog</a></li>
+					<li><a href="portfolio/index.html">Portfolio</a></li>
+					<li><a href="blogs/index.html">Blog</a></li>
 					<li><a href="realdeal-career-white.html">Career</a></li>
 					<li><a href="realdeal-packages-white.html">Packages</a></li>
 					<li><a href="realdeal-contact-white.html">Contact</a></li>
