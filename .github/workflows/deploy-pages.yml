@@ -2,7 +2,7 @@ name: Deploy 3 branches to GitHub Pages
 
 on:
   push:
-    branches: [realdeal_minimal_service, final_4, final_5]
+    branches: [realdeal_minimal_service, final_4, final_5, realdeal_wp]
   workflow_dispatch:
 
 permissions:
@@ -28,6 +28,8 @@ jobs:
         with: { ref: final_4, path: final_4 }
       - uses: actions/checkout@v4
         with: { ref: final_5, path: final_5 }
+      - uses: actions/checkout@v4
+        with: { ref: realdeal_wp, path: realdeal_wp }
       - name: Assemble site
         run: |
           mkdir -p site
@@ -36,6 +38,7 @@ jobs:
           cp -r realdeal_minimal_service site/realdeal_minimal_service
           cp -r final_4 site/final_4
           cp -r final_5 site/final_5
+          cp -r realdeal_wp site/realdeal_wp
           cat > site/index.html << 'HTML'
           <!doctype html>
           <html><head><meta charset="utf-8"><title>RealDeal_Home — Branch Previews</title>
@@ -48,6 +51,7 @@ jobs:
           <a href="realdeal_minimal_service/realdeal-home-white.html"><strong>realdeal_minimal_service</strong> — cleaned 4-category service structure</a>
           <a href="final_4/realdeal-home-white.html"><strong>final_4</strong> — Portfolio, Blog and mobile fixes</a>
           <a href="final_5/realdeal-home-white.html"><strong>final_5</strong> — 230 blog posts, 6 new SEO pages, logo, header fixes</a>
+          <a href="realdeal_wp/realdeal-home-white.html"><strong>realdeal_wp</strong> — WP brand build</a>
           </body></html>
           HTML
       - uses: actions/upload-pages-artifact@v3
