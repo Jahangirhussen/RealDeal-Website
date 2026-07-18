@@ -1,0 +1,5087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RealDeal IT Center | Accounting and Bookkeeping, Web Design &amp; Development, Digital Marketing &amp; SEO Agency</title>
+<meta name="description" content="RealDeal IT Center delivers bookkeeping, web design &amp; development, digital marketing and SEO — one accountable team, measurable results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<style>
+:root {
+	--rd-orange: #ff4a1c;
+	--rd-orange-2: #ff7a35;
+	--rd-ink: #0e1a24;
+	--rd-ink-2: #142533;
+	--rd-teal: #0f8f88;
+	--rd-blue: #2764e6;
+	--rd-green: #13a76f;
+	--rd-cream: #fff7f1;
+	--rd-paper: #ffffff;
+	--rd-soft: #f6f8fb;
+	--rd-line: rgba(14, 26, 36, 0.12);
+	--rd-muted: #63717d;
+	--rd-faint: #92a0ab;
+	--font-heading: "Poppins", sans-serif;
+	--font-body: "Inter", sans-serif;
+	--container: 1180px;
+	--radius: 8px;
+	--radius-lg: 18px;
+	--shadow: 0 22px 60px rgba(14, 26, 36, 0.12);
+	--shadow-soft: 0 14px 40px rgba(14, 26, 36, 0.10);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--font-body);
+	background: var(--rd-paper);
+	color: var(--rd-muted);
+	font-size: 16px;
+	line-height: 1.65;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+
+body.menu-open {
+	overflow: hidden;
+}
+
+section {
+	scroll-margin-top: 90px;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+h1, h2, h3, h4 {
+	font-family: var(--font-heading);
+	color: var(--rd-ink);
+	font-weight: 800;
+	line-height: 1.08;
+	letter-spacing: -0.01em;
+}
+
+.container {
+	width: min(100% - 48px, var(--container));
+	margin: 0 auto;
+	padding: 0 25px;
+}
+
+.container-wide {
+	width: min(100% - 48px, 1320px);
+	margin: 0 auto;
+	padding: 25px;
+}
+
+/* ---------- Shared bits ---------- */
+.section-kicker {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 16px;
+	color: var(--rd-orange);
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 1.8px;
+	text-transform: uppercase;
+}
+
+.section-kicker::before {
+	content: "";
+	width: 26px;
+	height: 2px;
+	background: currentColor;
+}
+
+.section-title {
+	max-width: 760px;
+	font-size: clamp(28px, 3.6vw, 46px);
+	color: var(--rd-ink);
+	margin-bottom: 18px;
+	letter-spacing: -0.02em;
+}
+
+.section-copy {
+	max-width: 620px;
+	color: var(--rd-muted);
+	font-size: 16px;
+}
+
+.section-head {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 40px;
+	margin-bottom: 52px;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	min-height: 50px;
+	padding: 0 22px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 800;
+	cursor: pointer;
+	transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms ease, border-color 200ms ease, background 200ms ease, color 200ms ease;
+	white-space: nowrap;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, var(--rd-orange), var(--rd-orange-2));
+	color: #fff;
+	box-shadow: 0 16px 34px rgba(255, 74, 28, 0.28);
+}
+
+.btn-primary:hover {
+	box-shadow: 0 24px 44px rgba(255, 74, 28, 0.36);
+}
+
+.btn-ghost {
+	background: rgba(255, 255, 255, 0.06);
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.28);
+	backdrop-filter: blur(14px);
+}
+
+.btn-ghost:hover {
+	background: #fff;
+	color: var(--rd-ink);
+	border-color: #fff;
+}
+
+.btn-dark {
+	background: var(--rd-ink);
+	color: #fff;
+}
+
+.btn-dark:hover {
+	box-shadow: 0 20px 40px rgba(14, 26, 36, 0.28);
+}
+
+.btn-light {
+	background: #fff;
+	color: var(--rd-ink);
+}
+
+.text-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+	font-weight: 800;
+	font-size: 14px;
+	color: var(--rd-orange);
+	transition: gap 200ms ease, color 200ms ease;
+}
+
+.text-link i {
+	color: var(--rd-orange);
+	transition: transform 200ms ease;
+}
+
+.text-link:hover {
+	color: var(--rd-orange);
+}
+
+.text-link:hover i {
+	transform: translateX(4px);
+}
+
+/* ---------- Reveal animations ---------- */
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+	will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+[data-reveal="left"] { transform: translateX(-32px); }
+[data-reveal="right"] { transform: translateX(32px); }
+[data-reveal="zoom"] { transform: scale(0.96); }
+
+.mask-reveal {
+	clip-path: inset(0 100% 0 0);
+	transition: clip-path 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mask-reveal.is-visible {
+	clip-path: inset(0 0 0 0);
+}
+
+/* ============ HERO ============ */
+.hero {
+	position: relative;
+	padding: 150px 0 90px;
+	background:
+		radial-gradient(1200px 600px at 78% 8%, rgba(255, 74, 28, 0.16), transparent 60%),
+		linear-gradient(180deg, #0b141d 0%, #0e1a24 60%, #0e1a24 100%);
+	color: #fff;
+	isolation: isolate;
+	overflow: hidden;
+}
+
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 96px),
+		repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 96px);
+	mask-image: radial-gradient(1000px 600px at 60% 30%, #000 30%, transparent 78%);
+	z-index: -1;
+	pointer-events: none;
+}
+
+.hero-grid {
+	display: grid;
+	grid-template-columns: 1.05fr 0.95fr;
+	gap: 56px;
+	align-items: center;
+}
+
+.hero-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 8px 14px;
+	margin-bottom: 26px;
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.05);
+	color: rgba(255, 255, 255, 0.88);
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: 0.3px;
+	backdrop-filter: blur(12px);
+}
+
+.hero-badge .dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--rd-green);
+	box-shadow: 0 0 0 4px rgba(19, 167, 111, 0.22);
+}
+
+.hero h1 {
+	color: #fff;
+	font-size: clamp(38px, 5.4vw, 72px);
+	font-weight: 900;
+	line-height: 1.02;
+	letter-spacing: -0.03em;
+	margin-bottom: 22px;
+}
+
+.hero h1 .accent {
+	color: transparent;
+	background: linear-gradient(120deg, var(--rd-orange), var(--rd-orange-2));
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+.hero-copy {
+	max-width: 520px;
+	font-size: clamp(16px, 1.4vw, 18px);
+	color: rgba(255, 255, 255, 0.74);
+	margin-bottom: 32px;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-bottom: 38px;
+}
+
+.hero-trust {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	flex-wrap: wrap;
+}
+
+.hero-trust .avatars {
+	display: flex;
+}
+
+.hero-trust .avatars span {
+	width: 40px;
+	height: 40px;
+	margin-left: -12px;
+	border-radius: 50%;
+	border: 2px solid #0e1a24;
+	background-size: cover;
+	background-position: center;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 800;
+	font-size: 13px;
+	color: #fff;
+}
+
+.hero-trust .avatars span:first-child { margin-left: 0; }
+.hero-trust .avatars span:nth-child(1) { background: linear-gradient(135deg, var(--rd-orange), var(--rd-orange-2)); }
+.hero-trust .avatars span:nth-child(2) { background: linear-gradient(135deg, var(--rd-teal), #0bbfb4); }
+.hero-trust .avatars span:nth-child(3) { background: linear-gradient(135deg, var(--rd-blue), #5b8bff); }
+.hero-trust .avatars span:nth-child(4) { background: linear-gradient(135deg, var(--rd-green), #2ad18c); }
+
+.hero-trust .trust-copy strong {
+	display: block;
+	color: #fff;
+	font-family: var(--font-heading);
+	font-size: 15px;
+}
+
+.hero-trust .trust-copy span {
+	font-size: 12.5px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-trust .stars {
+	color: #ffb020;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+/* Hero visual composition */
+.hero-visual {
+	position: relative;
+	min-height: 480px;
+}
+
+.hv-card {
+	position: absolute;
+	border-radius: 16px;
+	background: #fff;
+	box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
+	overflow: hidden;
+}
+
+.hv-dash {
+	top: 0;
+	left: 0;
+	width: 62%;
+	padding: 18px;
+	z-index: 2;
+	animation: floatY 7s ease-in-out infinite;
+}
+
+.hv-dash-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 14px;
+}
+
+.hv-dash-head small {
+	font-size: 11px;
+	font-weight: 800;
+	color: var(--rd-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+}
+
+.hv-badge-up {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 8px;
+	border-radius: 99px;
+	background: rgba(19, 167, 111, 0.12);
+	color: var(--rd-green);
+	font-size: 11px;
+	font-weight: 800;
+}
+
+.hv-metric {
+	font-family: var(--font-heading);
+	font-size: 30px;
+	font-weight: 800;
+	color: var(--rd-ink);
+	line-height: 1;
+	margin-bottom: 2px;
+}
+
+.hv-metric-sub {
+	font-size: 11.5px;
+	color: var(--rd-muted);
+	margin-bottom: 16px;
+}
+
+.hv-chart {
+	display: flex;
+	align-items: flex-end;
+	gap: 7px;
+	height: 78px;
+}
+
+.hv-chart span {
+	flex: 1;
+	border-radius: 4px 4px 0 0;
+	background: linear-gradient(180deg, var(--rd-orange), var(--rd-orange-2));
+	opacity: 0.9;
+	transform-origin: bottom;
+	animation: barGrow 1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.hv-chart span:nth-child(1) { height: 40%; background: rgba(14,26,36,0.12); animation-delay: .05s; }
+.hv-chart span:nth-child(2) { height: 58%; background: rgba(14,26,36,0.16); animation-delay: .12s; }
+.hv-chart span:nth-child(3) { height: 46%; background: rgba(14,26,36,0.12); animation-delay: .19s; }
+.hv-chart span:nth-child(4) { height: 70%; animation-delay: .26s; }
+.hv-chart span:nth-child(5) { height: 88%; animation-delay: .33s; }
+.hv-chart span:nth-child(6) { height: 66%; background: rgba(14,26,36,0.16); animation-delay: .4s; }
+.hv-chart span:nth-child(7) { height: 100%; animation-delay: .47s; }
+
+.hv-reel {
+	right: 0;
+	top: 46px;
+	width: 40%;
+	aspect-ratio: 9 / 16;
+	max-height: 360px;
+	z-index: 3;
+	border: 6px solid #0b1017;
+	border-radius: 26px;
+	box-shadow: 0 34px 80px rgba(0, 0, 0, 0.5);
+	animation: floatY 8s ease-in-out infinite reverse;
+}
+
+.hv-reel img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.hv-reel::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
+}
+
+.hv-reel .reel-play {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.hv-reel .reel-play i {
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--rd-ink);
+	font-size: 14px;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.hv-reel .reel-tag {
+	position: absolute;
+	left: 12px;
+	bottom: 12px;
+	z-index: 2;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 800;
+}
+
+.hv-social {
+	left: 4%;
+	bottom: 0;
+	width: 46%;
+	padding: 14px;
+	z-index: 4;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	animation: floatY 9s ease-in-out infinite;
+}
+
+.hv-social .ig {
+	width: 42px;
+	height: 42px;
+	flex-shrink: 0;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #feda75, #d62976 45%, #962fbf 75%, #4f5bd5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 18px;
+}
+
+.hv-social strong {
+	display: block;
+	font-family: var(--font-heading);
+	font-size: 16px;
+	color: var(--rd-ink);
+	line-height: 1;
+}
+
+.hv-social span {
+	font-size: 11.5px;
+	color: var(--rd-muted);
+	font-weight: 700;
+}
+
+.hv-chip {
+	position: absolute;
+	right: 6%;
+	bottom: 20px;
+	z-index: 5;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 13px;
+	border-radius: 99px;
+	background: #fff;
+	color: var(--rd-ink);
+	font-size: 12px;
+	font-weight: 800;
+	box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+	animation: floatY 6s ease-in-out infinite;
+}
+
+.hv-chip i { color: var(--rd-orange); }
+
+/* ============ MARQUEE / TRUST ============ */
+.trust {
+	padding: 34px 0;
+	background: var(--rd-ink);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.trust-label {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	margin-bottom: 22px;
+}
+
+.marquee {
+	position: relative;
+	overflow: hidden;
+	mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-track {
+	display: flex;
+	gap: 56px;
+	width: max-content;
+	animation: marquee 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}
+
+.marquee-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	color: rgba(255, 255, 255, 0.72);
+	font-family: var(--font-heading);
+	font-size: 19px;
+	font-weight: 700;
+	white-space: nowrap;
+}
+
+.marquee-item i {
+	font-size: 22px;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============ SERVICES (editorial rows) ============ */
+.services {
+	position: relative;
+	padding: 104px 0 60px;
+	background:
+		radial-gradient(900px 420px at 8% 0%, rgba(255, 74, 28, 0.07), transparent 55%),
+		radial-gradient(700px 380px at 92% 18%, rgba(39, 100, 230, 0.06), transparent 55%),
+		linear-gradient(180deg, #fff 0%, var(--rd-soft) 100%);
+	overflow: hidden;
+}
+
+.services::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		repeating-linear-gradient(90deg, rgba(14, 26, 36, 0.025) 0 1px, transparent 1px 72px),
+		repeating-linear-gradient(0deg, rgba(14, 26, 36, 0.02) 0 1px, transparent 1px 72px);
+	mask-image: linear-gradient(180deg, #000 0%, transparent 92%);
+	pointer-events: none;
+}
+
+.services .container { position: relative; z-index: 1; }
+
+.services-intro {
+	display: grid;
+	grid-template-columns: 1.05fr 0.95fr;
+	gap: 40px;
+	align-items: center;
+	margin-bottom: 36px;
+}
+
+.services-intro .section-title { margin-bottom: 14px; }
+
+.services-hub {
+	position: relative;
+	min-height: 400px;
+	padding-bottom: 88px;
+	border: 1px solid var(--rd-line);
+	border-radius: var(--radius-lg);
+	background:
+		linear-gradient(145deg, #fff 0%, var(--rd-soft) 100%);
+	box-shadow: var(--shadow-soft);
+	overflow: hidden;
+}
+
+.services-hub::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(circle at 50% 50%, rgba(255, 74, 28, 0.08), transparent 52%),
+		repeating-linear-gradient(45deg, rgba(14, 26, 36, 0.02) 0 1px, transparent 1px 18px);
+}
+
+.services-hub-orbit {
+	position: absolute;
+	top: 38%;
+	left: 50%;
+	width: 220px;
+	height: 220px;
+	margin: -110px 0 0 -110px;
+	border: 1px dashed rgba(14, 26, 36, 0.14);
+	border-radius: 50%;
+	animation: hubSpin 48s linear infinite;
+}
+
+.services-hub-core {
+	position: absolute;
+	top: 38%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+	width: 92px;
+	height: 92px;
+	border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2px;
+	background: linear-gradient(135deg, var(--rd-orange), var(--rd-orange-2));
+	color: #fff;
+	box-shadow: 0 18px 40px rgba(255, 74, 28, 0.35);
+	animation: hubPulse 4s ease-in-out infinite;
+}
+
+.services-hub-core strong {
+	font-family: var(--font-heading);
+	font-size: 22px;
+	line-height: 1;
+}
+
+.services-hub-core span {
+	font-size: 9px;
+	font-weight: 800;
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	opacity: 0.9;
+}
+
+.hub-node {
+	position: absolute;
+	top: 38%;
+	left: 50%;
+	width: 54px;
+	height: 54px;
+	margin: -27px 0 0 -27px;
+	border-radius: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	color: #fff;
+	box-shadow: 0 12px 28px rgba(14, 26, 36, 0.22);
+	transform: rotate(var(--angle)) translateY(-118px) rotate(calc(-1 * var(--angle)));
+	transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 400ms ease;
+	animation: hubNodeIn 700ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+	animation-delay: var(--delay, 0ms);
+}
+
+.hub-node:hover {
+	transform: rotate(var(--angle)) translateY(-128px) rotate(calc(-1 * var(--angle))) scale(1.08);
+	box-shadow: 0 18px 36px rgba(14, 26, 36, 0.28);
+}
+
+.hub-node:nth-of-type(1) { --angle: 0deg;   --delay: 80ms;  background: var(--rd-orange); }
+.hub-node:nth-of-type(2) { --angle: 60deg;  --delay: 140ms; background: var(--rd-blue); }
+.hub-node:nth-of-type(3) { --angle: 120deg; --delay: 200ms; background: var(--rd-teal); }
+.hub-node:nth-of-type(4) { --angle: 180deg; --delay: 260ms; background: var(--rd-green); }
+.hub-node:nth-of-type(5) { --angle: 240deg; --delay: 320ms; background: var(--rd-orange); }
+.hub-node:nth-of-type(6) { --angle: 300deg; --delay: 380ms; background: var(--rd-blue); }
+
+.hub-preview {
+	position: absolute;
+	inset: auto 14px 14px 14px;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 8px;
+}
+
+.hub-thumb {
+	position: relative;
+	aspect-ratio: 1;
+	border-radius: 10px;
+	overflow: hidden;
+	border: 2px solid #fff;
+	box-shadow: 0 8px 20px rgba(14, 26, 36, 0.14);
+	animation: hubThumbIn 600ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.hub-thumb:nth-child(1) { animation-delay: 200ms; }
+.hub-thumb:nth-child(2) { animation-delay: 280ms; }
+.hub-thumb:nth-child(3) { animation-delay: 360ms; }
+.hub-thumb:nth-child(4) { animation-delay: 440ms; }
+.hub-thumb:nth-child(5) { animation-delay: 520ms; }
+.hub-thumb:nth-child(6) { animation-delay: 600ms; }
+
+.hub-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 500ms ease;
+}
+
+.hub-thumb:hover img { transform: scale(1.12); }
+
+.hub-thumb i {
+	position: absolute;
+	inset: auto 5px 5px auto;
+	width: 22px;
+	height: 22px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--rd-ink);
+	font-size: 10px;
+}
+
+.services-strip {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 10px;
+	margin-bottom: 28px;
+}
+
+.strip-card {
+	position: relative;
+	padding: 14px 12px;
+	border: 1px solid var(--rd-line);
+	border-radius: 12px;
+	background: #fff;
+	text-align: center;
+	overflow: hidden;
+	transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.strip-card::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 3px;
+	background: var(--accent);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 300ms ease;
+}
+
+.strip-card:hover {
+	transform: translateY(-4px);
+	border-color: color-mix(in srgb, var(--accent) 40%, white);
+	box-shadow: 0 14px 30px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.strip-card:hover::before { transform: scaleX(1); }
+
+.strip-card i {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	margin-bottom: 8px;
+	border-radius: 10px;
+	background: color-mix(in srgb, var(--accent) 12%, white);
+	color: var(--accent);
+	font-size: 16px;
+}
+
+.strip-card strong {
+	display: block;
+	font-family: var(--font-heading);
+	font-size: 11.5px;
+	color: var(--rd-ink);
+	line-height: 1.3;
+}
+
+/* Services scroll rocket journey */
+.services-journey {
+	position: relative;
+}
+
+.svc-rocket-track {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	overflow: visible;
+}
+
+.svc-rocket-svg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+.svc-path-bg {
+	stroke: rgba(14, 26, 36, 0.1);
+	stroke-width: 2;
+	stroke-linecap: round;
+	fill: none;
+}
+
+.svc-path-progress {
+	stroke: url(#svcPathGrad);
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	fill: none;
+	filter: drop-shadow(0 0 6px rgba(255, 74, 28, 0.35));
+}
+
+.svc-path-dot {
+	fill: #fff;
+	stroke: var(--rd-orange);
+	stroke-width: 2;
+	opacity: 0;
+	transition: opacity 400ms ease;
+}
+
+.services-journey.is-active .svc-path-dot.is-lit {
+	opacity: 1;
+}
+
+.svc-rocket {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 58px;
+	margin: -29px 0 0 -20px;
+	will-change: transform;
+	transform: translate3d(0, 0, 0);
+	transition: opacity 400ms ease;
+	filter: drop-shadow(0 5px 14px rgba(14, 26, 36, 0.2));
+}
+
+.svc-rocket svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+.svc-rocket-body {
+	fill: url(#rocketBodyGrad);
+	stroke: rgba(14, 26, 36, 0.08);
+	stroke-width: 0.4;
+}
+
+.svc-rocket-nose {
+	fill: url(#rocketNoseGrad);
+}
+
+.svc-rocket-stripe {
+	stroke: var(--rd-orange);
+	stroke-width: 1.6;
+	stroke-linecap: round;
+	opacity: 0.75;
+}
+
+.svc-rocket-window {
+	fill: rgba(255, 255, 255, 0.95);
+	stroke: rgba(39, 100, 230, 0.35);
+	stroke-width: 0.6;
+}
+
+.svc-rocket-nozzle {
+	fill: var(--rd-ink);
+}
+
+.svc-rocket-fin {
+	fill: var(--rd-ink);
+	opacity: 0.9;
+}
+
+.svc-rocket-fin-tip {
+	fill: var(--rd-orange);
+}
+
+.svc-flame {
+	transform-origin: 16px 38px;
+	transition: transform 280ms ease, opacity 280ms ease;
+}
+
+.svc-flame-glow {
+	fill: url(#flameGlowGrad);
+	opacity: 0.65;
+}
+
+.svc-flame-outer {
+	fill: var(--rd-orange);
+	opacity: 0.92;
+}
+
+.svc-flame-mid {
+	fill: var(--rd-orange-2);
+	opacity: 0.95;
+}
+
+.svc-flame-inner {
+	fill: #ffb347;
+	opacity: 0.98;
+}
+
+.svc-flame-core {
+	fill: #fff8ee;
+	opacity: 1;
+}
+
+.svc-rocket.is-idle .svc-flame {
+	transform: scaleY(0.48) scaleX(0.88);
+	opacity: 0.38;
+}
+
+.svc-rocket.is-idle .svc-flame-glow {
+	opacity: 0.2;
+}
+
+.svc-rocket.is-moving .svc-flame {
+	animation: svcFlameFlicker 0.09s ease-in-out infinite alternate;
+}
+
+.svc-rocket.is-moving .svc-flame-mid,
+.svc-rocket.is-moving .svc-flame-inner,
+.svc-rocket.is-moving .svc-flame-core {
+	animation: svcFlameCore 0.07s ease-in-out infinite alternate;
+}
+
+.svc-rocket.is-moving .svc-flame-glow {
+	animation: svcFlameGlow 0.11s ease-in-out infinite alternate;
+}
+
+.services-journey .service-row {
+	position: relative;
+	z-index: 1;
+}
+
+.svc-rocket-track.is-reduced .svc-rocket {
+	display: none;
+}
+
+.svc-rocket-track.is-reduced .svc-path-progress {
+	opacity: 0.35;
+}
+
+@keyframes svcFlameFlicker {
+	from { transform: scaleY(0.88) scaleX(0.9); }
+	to { transform: scaleY(1.42) scaleX(1.1); }
+}
+
+@keyframes svcFlameCore {
+	from { opacity: 0.8; transform: scaleY(0.92); }
+	to { opacity: 1; transform: scaleY(1.18); }
+}
+
+@keyframes svcFlameGlow {
+	from { opacity: 0.5; transform: scale(0.92); }
+	to { opacity: 0.88; transform: scale(1.12); }
+}
+
+.service-row {
+	display: grid;
+	grid-template-columns: 1fr 1.08fr;
+	gap: 44px;
+	align-items: stretch;
+	padding: 36px 0;
+	border-top: 1px solid var(--rd-line);
+}
+
+.service-row:last-child { border-bottom: 1px solid var(--rd-line); }
+
+.service-row.flip .service-media { order: -1; }
+
+.service-info {
+	position: relative;
+	padding: 28px 26px;
+	border: 1px solid var(--rd-line);
+	border-radius: var(--radius-lg);
+	background: #fff;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.service-info::before {
+	content: "";
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: 4px;
+	background: linear-gradient(180deg, var(--accent), transparent);
+}
+
+.service-info-link {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
+.service-info::after {
+	content: "";
+	position: absolute;
+	right: -24px;
+	bottom: -24px;
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	background: radial-gradient(circle, color-mix(in srgb, var(--accent) 14%, white), transparent 68%);
+	pointer-events: none;
+}
+
+.service-info .svc-index {
+	font-family: var(--font-heading);
+	font-size: 13px;
+	font-weight: 800;
+	color: var(--accent);
+	letter-spacing: 1px;
+	margin-bottom: 14px;
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	position: relative;
+	z-index: 1;
+}
+
+.service-info .svc-index::before {
+	content: "";
+	width: 22px;
+	height: 2px;
+	background: var(--accent);
+}
+
+.service-info h3 {
+	font-size: clamp(22px, 2.4vw, 30px);
+	margin-bottom: 12px;
+	position: relative;
+	z-index: 1;
+}
+
+.service-info > p {
+	max-width: 100%;
+	font-size: 15px;
+	margin-bottom: 16px;
+	position: relative;
+	z-index: 1;
+}
+
+.svc-thumb-row {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+	margin-bottom: 16px;
+	position: relative;
+	z-index: 1;
+}
+
+.svc-thumb {
+	position: relative;
+	aspect-ratio: 16 / 10;
+	border-radius: 8px;
+	overflow: hidden;
+	border: 1px solid var(--rd-line);
+}
+
+.svc-thumb img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 500ms ease;
+}
+
+.service-row:hover .svc-thumb img { transform: scale(1.06); }
+
+.svc-thumb span {
+	position: absolute;
+	inset: auto 0 0 0;
+	padding: 4px 7px;
+	background: linear-gradient(0deg, rgba(14, 26, 36, 0.72), transparent);
+	color: #fff;
+	font-size: 9px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+}
+
+.svc-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+	margin-bottom: 18px;
+	position: relative;
+	z-index: 2;
+}
+
+.svc-tags span,
+.svc-tags a {
+	padding: 5px 11px;
+	border: 1px solid var(--rd-line);
+	border-radius: 99px;
+	background: var(--rd-soft);
+	color: var(--rd-ink);
+	font-size: 12px;
+	font-weight: 700;
+	transition: border-color 180ms ease, color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.svc-tags span:hover,
+.svc-tags a:hover {
+	border-color: color-mix(in srgb, var(--accent) 50%, white);
+	color: var(--accent);
+	background: color-mix(in srgb, var(--accent) 7%, white);
+	transform: translateY(-2px);
+}
+
+.service-info .text-link {
+	position: relative;
+	z-index: 2;
+}
+
+.service-info .text-link i { color: var(--accent); }
+.service-info .text-link:hover { color: var(--accent); }
+
+/* Service media frame */
+.service-media {
+	position: relative;
+	border-radius: var(--radius-lg);
+	overflow: visible;
+	background: linear-gradient(135deg, var(--rd-ink), var(--rd-ink-2));
+	box-shadow: var(--shadow);
+	aspect-ratio: 16 / 11;
+	min-height: 240px;
+	border: 2px solid transparent;
+	transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.media-link {
+	position: absolute;
+	inset: 0;
+	z-index: 6;
+}
+
+.service-row:hover .service-info,
+.service-row:hover .service-media {
+	border-color: var(--rd-orange);
+}
+
+.service-row:hover .service-media {
+	box-shadow: 0 20px 45px rgba(255, 74, 28, 0.22);
+}
+
+.service-media-inner {
+	position: absolute;
+	inset: 32px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.service-media::before {
+	content: "";
+	position: absolute;
+	inset: 32px;
+	border-radius: 10px;
+	background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 32%, transparent), transparent 55%);
+	z-index: 2;
+	pointer-events: none;
+}
+
+.service-media img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.92;
+	transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-row:hover .service-media img { transform: scale(1.05); }
+
+.media-deco {
+	position: absolute;
+	z-index: 5;
+	border-radius: 12px;
+	background: #fff;
+	box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+	overflow: hidden;
+	animation: mediaFloat 6s ease-in-out infinite;
+}
+
+.media-deco-a {
+	top: -14px;
+	right: -10px;
+	width: 68px;
+	height: 68px;
+	padding: 5px;
+	animation-delay: 0s;
+}
+
+.media-deco-b {
+	bottom: 24px;
+	left: -16px;
+	width: 86px;
+	padding: 6px;
+	animation-delay: 1.2s;
+}
+
+.media-deco img {
+	position: static;
+	width: 100%;
+	height: 54px;
+	object-fit: cover;
+	border-radius: 8px;
+	opacity: 1;
+}
+
+.media-deco strong {
+	display: block;
+	margin-top: 5px;
+	font-family: var(--font-heading);
+	font-size: 11px;
+	color: var(--rd-ink);
+	line-height: 1.2;
+}
+
+.media-deco i {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 22px;
+	height: 22px;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--accent);
+	color: #fff;
+	font-size: 10px;
+}
+
+.media-overlay {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: var(--radius-lg);
+}
+
+.media-title {
+	position: absolute;
+	inset: 0;
+	z-index: 4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+	pointer-events: none;
+}
+
+.media-title span {
+	display: inline-block;
+	font-family: var(--font-heading);
+	font-size: clamp(15px, 1.6vw, 19px);
+	font-weight: 800;
+	color: #fff;
+	letter-spacing: 0.3px;
+	background: var(--rd-orange);
+	padding: 10px 22px;
+	border-radius: 99px;
+	box-shadow: 0 12px 28px rgba(255, 74, 28, 0.4);
+}
+
+.media-pill {
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 7px 12px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--rd-ink);
+	font-size: 12px;
+	font-weight: 800;
+}
+
+.media-pill i { color: var(--accent); }
+
+/* Mock widgets that sit on media */
+.media-widget {
+	align-self: flex-end;
+	width: 100%;
+	max-width: 320px;
+	padding: 14px;
+	border-radius: 12px;
+	background: rgba(255, 255, 255, 0.96);
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(6px);
+	transform: translateY(8px);
+	opacity: 0;
+	transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), opacity 600ms ease;
+}
+
+.service-row.is-visible .media-widget {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.mw-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+
+.mw-row:last-child { margin-bottom: 0; }
+
+.mw-row small {
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--rd-muted);
+}
+
+.mw-row strong {
+	font-family: var(--font-heading);
+	font-size: 15px;
+	color: var(--rd-ink);
+}
+
+.mw-bar {
+	height: 7px;
+	border-radius: 99px;
+	background: var(--rd-line);
+	overflow: hidden;
+}
+
+.mw-bar i {
+	display: block;
+	height: 100%;
+	width: 0;
+	border-radius: 99px;
+	background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 50%, #fff));
+	transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-row.is-visible .mw-bar i {
+	width: var(--w, 70%);
+}
+
+.mw-chips {
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+}
+
+.mw-chips span {
+	padding: 4px 9px;
+	border-radius: 6px;
+	background: color-mix(in srgb, var(--accent) 12%, white);
+	color: var(--accent);
+	font-size: 10.5px;
+	font-weight: 800;
+}
+
+/* social grid mock */
+.mw-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 6px;
+}
+
+.mw-grid span {
+	aspect-ratio: 1;
+	border-radius: 6px;
+	background-size: cover;
+	background-position: center;
+}
+
+/* ============ METRICS ============ */
+.metrics {
+	padding: 92px 0;
+	background: var(--rd-ink);
+	color: rgba(255, 255, 255, 0.7);
+	position: relative;
+	overflow: hidden;
+}
+
+.metrics::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(700px 400px at 15% 20%, rgba(255, 74, 28, 0.16), transparent 60%);
+	pointer-events: none;
+}
+
+.metrics .container { position: relative; z-index: 1; }
+
+.metrics-head {
+	max-width: 640px;
+	margin-bottom: 50px;
+}
+
+.metrics-head h2 {
+	color: #fff;
+	font-size: clamp(26px, 3.2vw, 40px);
+	margin-bottom: 14px;
+}
+
+.metrics-head p { color: rgba(255, 255, 255, 0.66); }
+
+.metrics-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
+
+.metric {
+	padding: 28px 24px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: var(--radius-lg);
+	background: rgba(255, 255, 255, 0.04);
+	transition: transform 240ms ease, background 240ms ease, border-color 240ms ease;
+}
+
+.metric:hover {
+	transform: translateY(-6px);
+	background: rgba(255, 255, 255, 0.07);
+	border-color: rgba(255, 74, 28, 0.4);
+}
+
+.metric-value {
+	font-family: var(--font-heading);
+	font-size: clamp(34px, 4vw, 50px);
+	font-weight: 900;
+	color: #fff;
+	line-height: 1;
+	letter-spacing: -0.02em;
+}
+
+.metric-value .suffix { color: var(--rd-orange); }
+
+.metric-label {
+	margin-top: 12px;
+	font-size: 13.5px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.66);
+}
+
+/* ============ PORTFOLIO (editorial asymmetric) ============ */
+.portfolio {
+	padding: 104px 0;
+	background: #fff;
+}
+
+.work-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-auto-rows: 240px;
+	gap: 18px;
+}
+
+.work-card {
+	position: relative;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	background: var(--rd-ink);
+	box-shadow: var(--shadow-soft);
+	isolation: isolate;
+	border: 2px solid transparent;
+	transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+.work-card:hover {
+	border-color: var(--rd-orange);
+	box-shadow: 0 20px 45px rgba(255, 74, 28, 0.3);
+}
+
+.work-card img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-card:hover img { transform: scale(1.06); }
+
+.work-card::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(14, 26, 36, 0.12) 0%, rgba(14, 26, 36, 0.82) 100%);
+	z-index: 1;
+}
+
+.work-card .work-body {
+	position: absolute;
+	inset: auto 0 0 0;
+	z-index: 2;
+	padding: 22px;
+}
+
+.work-card .work-cat {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	margin-bottom: 8px;
+	padding: 5px 10px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.16);
+	backdrop-filter: blur(8px);
+	color: #fff;
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.4px;
+}
+
+.work-card h3 {
+	color: #fff;
+	font-size: 19px;
+	margin-bottom: 6px;
+}
+
+.work-card p {
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 13px;
+	max-width: 340px;
+}
+
+.work-card .work-result {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	margin-top: 12px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 800;
+}
+
+.work-card .work-result i { color: var(--rd-orange-2); }
+
+.work-a { grid-column: span 4; grid-row: span 2; }
+.work-b { grid-column: span 2; grid-row: span 1; }
+.work-c { grid-column: span 2; grid-row: span 1; }
+.work-d { grid-column: span 3; grid-row: span 1; }
+.work-e { grid-column: span 3; grid-row: span 1; }
+
+/* ============ REELS ============ */
+.showreel {
+	position: relative;
+	padding: 100px 0;
+	background: var(--rd-ink);
+	color: rgba(255, 255, 255, 0.72);
+	overflow: hidden;
+}
+
+.showreel::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(120deg, rgba(255, 74, 28, 0.18), transparent 40%),
+		radial-gradient(600px 400px at 90% 90%, rgba(39, 100, 230, 0.14), transparent 60%);
+	pointer-events: none;
+}
+
+.showreel .container { position: relative; z-index: 2; }
+.showreel .section-title { color: #fff; }
+.showreel .section-copy { color: rgba(255, 255, 255, 0.66); }
+
+.reel-scroller {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(230px, 1fr);
+	gap: 22px;
+	overflow-x: auto;
+	padding: 8px 4px 20px;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 74, 28, 0.4) transparent;
+}
+
+@media (min-width: 1024px) {
+	.reel-scroller {
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-flow: initial;
+		overflow: visible;
+	}
+}
+
+.reel-scroller::-webkit-scrollbar { height: 6px; }
+.reel-scroller::-webkit-scrollbar-thumb { background: rgba(255, 74, 28, 0.4); border-radius: 99px; }
+
+.reel {
+	position: relative;
+	scroll-snap-align: start;
+	aspect-ratio: 9 / 16;
+	border-radius: 20px;
+	overflow: hidden;
+	background: #05080c;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reel:hover { transform: translateY(-8px); }
+
+.reel img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reel:hover img { transform: scale(1.08); }
+
+.reel::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.78));
+	z-index: 1;
+}
+
+.reel-top {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	right: 14px;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.reel-cat {
+	padding: 4px 9px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.16);
+	backdrop-filter: blur(8px);
+	color: #fff;
+	font-size: 10.5px;
+	font-weight: 800;
+}
+
+.reel-stat {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 9px;
+	border-radius: 99px;
+	background: rgba(255, 255, 255, 0.9);
+	color: var(--rd-ink);
+	font-size: 10.5px;
+	font-weight: 800;
+}
+
+.reel-stat i { color: var(--rd-orange); }
+
+.reel-play {
+	position: absolute;
+	inset: 0;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.reel-play span {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--rd-ink);
+	font-size: 17px;
+	box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+	transition: transform 240ms ease, background 240ms ease;
+}
+
+.reel:hover .reel-play span {
+	transform: scale(1.08);
+	background: #fff;
+}
+
+.reel-meta {
+	position: absolute;
+	left: 16px;
+	right: 16px;
+	bottom: 16px;
+	z-index: 3;
+}
+
+.reel-meta h3 {
+	color: #fff;
+	font-size: 17px;
+	margin-bottom: 4px;
+}
+
+.reel-meta p {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 12.5px;
+}
+
+/* ============ PROCESS ============ */
+.process {
+	padding: 104px 0;
+	background: var(--rd-cream);
+}
+
+.process-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	margin-top: 52px;
+}
+
+.process-step {
+	position: relative;
+	padding: 30px 26px;
+	border-radius: var(--radius-lg);
+	background: #fff;
+	border: 1px solid var(--rd-line);
+	overflow: hidden;
+	transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.process-step:hover {
+	transform: translateY(-6px);
+	box-shadow: var(--shadow);
+}
+
+.process-step::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 4px;
+	background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.step-num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	margin-bottom: 22px;
+	border-radius: 12px;
+	background: color-mix(in srgb, var(--accent) 14%, white);
+	color: var(--accent);
+	font-family: var(--font-heading);
+	font-weight: 900;
+	font-size: 16px;
+}
+
+.process-step h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.process-step p {
+	font-size: 14px;
+	color: var(--rd-muted);
+}
+
+/* ============ WHY ============ */
+.why {
+	padding: 104px 0;
+	background:
+		linear-gradient(135deg, rgba(14, 26, 36, 0.95), rgba(18, 37, 51, 0.95)),
+		url("images/index-image.jpg") center / cover no-repeat;
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.why-grid {
+	display: grid;
+	grid-template-columns: 0.9fr 1.1fr;
+	gap: 52px;
+	align-items: center;
+}
+
+.why h2, .why h3 { color: #fff; }
+.why .section-copy { color: rgba(255, 255, 255, 0.7); }
+
+.why-list {
+	display: grid;
+	gap: 14px;
+}
+
+.why-item {
+	display: grid;
+	grid-template-columns: 54px 1fr;
+	gap: 18px;
+	padding: 22px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: var(--radius-lg);
+	background: rgba(255, 255, 255, 0.06);
+	backdrop-filter: blur(14px);
+	transition: transform 220ms ease, background 220ms ease;
+}
+
+.why-item:hover {
+	transform: translateX(8px);
+	background: rgba(255, 255, 255, 0.11);
+}
+
+.why-item i {
+	width: 54px;
+	height: 54px;
+	border-radius: 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 74, 28, 0.18);
+	color: var(--rd-orange-2);
+	font-size: 22px;
+}
+
+.why-item h3 { font-size: 18px; margin-bottom: 6px; }
+.why-item p { color: rgba(255, 255, 255, 0.68); font-size: 14px; }
+
+/* ============ TESTIMONIALS ============ */
+.testimonial {
+	padding: 104px 0;
+	background: var(--rd-soft);
+}
+
+.testimonial-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	margin-top: 12px;
+}
+
+.quote-card {
+	padding: 30px;
+	border: 1px solid var(--rd-line);
+	border-radius: var(--radius-lg);
+	background: #fff;
+	transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.quote-card:hover {
+	transform: translateY(-7px);
+	border-color: var(--rd-orange);
+	box-shadow: 0 20px 45px rgba(255, 74, 28, 0.18);
+}
+
+.quote-card .fa-quote-left {
+	color: color-mix(in srgb, var(--rd-orange) 40%, white);
+	font-size: 26px;
+	margin-bottom: 16px;
+}
+
+.stars { color: #ffb020; font-size: 13px; margin-bottom: 14px; }
+
+.quote-card p {
+	color: var(--rd-ink);
+	font-weight: 500;
+	font-size: 15.5px;
+	margin-bottom: 24px;
+}
+
+.quote-person {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.avatar {
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--rd-ink);
+	color: #fff;
+	font-weight: 900;
+}
+
+.quote-person strong { display: block; color: var(--rd-ink); font-size: 14px; }
+.quote-person span { display: block; color: var(--rd-muted); font-size: 12px; }
+
+/* ============ CTA / CONTACT ============ */
+.cta {
+	padding: 108px 0;
+	background:
+		linear-gradient(115deg, rgba(255, 74, 28, 0.94), rgba(255, 122, 53, 0.88)),
+		url("images/index-image-2.jpg") center / cover no-repeat;
+	color: #fff;
+}
+
+.cta-grid {
+	display: grid;
+	grid-template-columns: 0.95fr 1.05fr;
+	gap: 48px;
+	align-items: center;
+}
+
+.cta h2 {
+	color: #fff;
+	font-size: clamp(30px, 4.4vw, 54px);
+	margin-bottom: 18px;
+	letter-spacing: -0.02em;
+}
+
+.cta p {
+	color: rgba(255, 255, 255, 0.9);
+	max-width: 520px;
+	margin-bottom: 26px;
+}
+
+.cta-points {
+	display: grid;
+	gap: 12px;
+	margin-bottom: 28px;
+}
+
+.cta-points li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.cta-points i {
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.22);
+	font-size: 11px;
+}
+
+.proposal-form {
+	padding: 30px;
+	border-radius: var(--radius-lg);
+	background: rgba(255, 255, 255, 0.98);
+	box-shadow: 0 30px 70px rgba(14, 26, 36, 0.28);
+}
+
+.proposal-form h3 { font-size: 24px; margin-bottom: 6px; }
+.proposal-form .form-sub { font-size: 13.5px; color: var(--rd-muted); margin-bottom: 20px; }
+
+.form-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 14px;
+}
+
+.field { display: grid; gap: 7px; }
+.field.full { grid-column: 1 / -1; }
+
+.field label {
+	color: var(--rd-ink);
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+	width: 100%;
+	min-height: 48px;
+	padding: 12px 13px;
+	border: 1px solid rgba(14, 26, 36, 0.16);
+	border-radius: 8px;
+	background: #fff;
+	color: var(--rd-ink);
+	outline: none;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.field textarea { min-height: 108px; resize: vertical; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+	border-color: var(--rd-orange);
+	box-shadow: 0 0 0 3px rgba(255, 74, 28, 0.14);
+}
+
+.proposal-form .btn { width: 100%; margin-top: 18px; border: 0; }
+
+/* ============ FOOTER ============ */
+.site-footer {
+	padding: 72px 0 28px;
+	background: #091119;
+	color: rgba(255, 255, 255, 0.66);
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+	gap: 40px;
+	padding-bottom: 42px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.footer-brand .brand { color: #fff; }
+.footer-brand p { max-width: 320px; margin-top: 20px; font-size: 14px; }
+
+.footer-col h4 { color: #fff; font-size: 15px; margin-bottom: 18px; }
+.footer-col li { margin: 11px 0; }
+.footer-col a { color: rgba(255, 255, 255, 0.62); font-size: 14px; transition: color 160ms ease; }
+.footer-col a:hover { color: var(--rd-orange-2); }
+
+.socials { display: flex; gap: 10px; margin-top: 22px; }
+
+.socials a {
+	width: 40px;
+	height: 40px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transition: background 180ms ease, transform 180ms ease;
+}
+
+.socials a:hover { background: var(--rd-orange); transform: translateY(-3px); }
+
+.footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	padding-top: 24px;
+	font-size: 13px;
+}
+
+.footer-bottom a { color: rgba(255, 255, 255, 0.72); }
+.footer-bottom a:hover { color: var(--rd-orange-2); }
+
+/* ============ ANIMATIONS ============ */
+@keyframes floatY {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-14px); }
+}
+
+@keyframes barGrow {
+	from { transform: scaleY(0); }
+	to { transform: scaleY(1); }
+}
+
+@keyframes marquee {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
+}
+
+.testimonial .section-head {
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 14px;
+}
+.testimonial .section-copy {
+	max-width: 560px;
+	margin: 0 auto;
+	text-align: center;
+}
+.quote-marquee {
+	position: relative;
+	overflow: hidden;
+	margin-top: 40px;
+}
+.quote-track {
+	display: flex;
+	gap: 20px;
+	width: max-content;
+	animation: marquee 220s linear infinite;
+}
+.quote-marquee:hover .quote-track {
+	animation-play-state: paused;
+}
+.quote-card-mini {
+	position: relative;
+	flex-shrink: 0;
+	width: 320px;
+	padding: 20px;
+	border-radius: 14px;
+	background: #1a2733;
+	box-shadow: 0 12px 30px rgba(0,0,0,.2);
+}
+.quote-card-mini .gr-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.quote-card-mini .avatar {
+	width: 42px; height: 42px; border-radius: 50%;
+	display: flex; align-items: center; justify-content: center;
+	font-family: var(--font-heading); font-weight: 800; font-size: 15px; color: #fff;
+	flex-shrink: 0;
+}
+.quote-card-mini .gr-head-info { flex: 1; min-width: 0; }
+.quote-card-mini .gr-head-info strong { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #fff; }
+.quote-card-mini .gr-head-info strong .google-badge { width: 15px; height: 15px; border-radius: 50%; background: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; color: #4285F4; flex-shrink: 0; }
+.quote-card-mini .gr-meta { font-size: 11.5px; color: rgba(255,255,255,.5); margin-top: 2px; }
+.quote-card-mini .gr-dots { color: rgba(255,255,255,.4); font-size: 16px; line-height: 1; }
+.quote-card-mini .stars { display: flex; gap: 2px; margin-bottom: 4px; }
+.quote-card-mini .stars i { color: #fbbc04; font-size: 12px; }
+.quote-card-mini .gr-time { font-size: 11.5px; color: rgba(255,255,255,.45); margin-bottom: 10px; display: block; }
+.quote-card-mini p { font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.82); margin-bottom: 0; }
+.quote-card-mini p .more-link { color: #8ab4f8; font-weight: 700; }
+
+@keyframes hubSpin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+@keyframes hubPulse {
+	0%, 100% { box-shadow: 0 18px 40px rgba(255, 74, 28, 0.35); transform: translate(-50%, -50%) scale(1); }
+	50% { box-shadow: 0 22px 50px rgba(255, 74, 28, 0.48); transform: translate(-50%, -50%) scale(1.04); }
+}
+
+@keyframes hubNodeIn {
+	from { opacity: 0; transform: rotate(var(--angle)) translateY(-90px) rotate(calc(-1 * var(--angle))) scale(0.7); }
+	to { opacity: 1; transform: rotate(var(--angle)) translateY(-118px) rotate(calc(-1 * var(--angle))) scale(1); }
+}
+
+@keyframes hubThumbIn {
+	from { opacity: 0; transform: translateY(12px) scale(0.92); }
+	to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes mediaFloat {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-10px); }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1060px) {
+	.hero-grid { grid-template-columns: 1fr; gap: 48px; }
+	.hero-visual { min-height: 420px; max-width: 520px; }
+	.services-intro { grid-template-columns: 1fr; }
+	.services-hub { min-height: 300px; }
+	.services-strip { grid-template-columns: repeat(3, 1fr); }
+	.svc-rocket-track.is-mobile .svc-rocket { width: 32px; height: 46px; margin: -23px 0 0 -16px; }
+	.metrics-grid { grid-template-columns: repeat(2, 1fr); }
+	.testimonial-grid { grid-template-columns: 1fr; }
+	.why-grid, .cta-grid { grid-template-columns: 1fr; }
+	.process-grid { grid-template-columns: repeat(2, 1fr); }
+	.work-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+	.work-a, .work-b, .work-c, .work-d, .work-e { grid-column: span 1; grid-row: span 1; }
+	.work-a { grid-column: span 2; grid-row: span 1; }
+}
+
+@media (max-width: 760px) {
+	.hero { padding: 128px 0 70px; }
+	.section-head { flex-direction: column; align-items: flex-start; gap: 18px; }
+	.services-strip { grid-template-columns: repeat(2, 1fr); }
+	.services-hub { min-height: 440px; }
+	.services-hub-orbit { width: 160px; height: 160px; margin: -80px 0 0 -80px; }
+	.services-hub-core { width: 76px; height: 76px; }
+	.services-hub-core strong { font-size: 18px; }
+	.hub-node { width: 44px; height: 44px; margin: -22px 0 0 -22px; font-size: 16px; transform: rotate(var(--angle)) translateY(-86px) rotate(calc(-1 * var(--angle))); }
+	.hub-node:hover { transform: rotate(var(--angle)) translateY(-92px) rotate(calc(-1 * var(--angle))) scale(1.08); }
+	.hub-preview { grid-template-columns: repeat(3, 1fr); }
+	.service-row { grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
+	.service-row.flip .service-media { order: 0; }
+	.media-deco-a, .media-deco-b { display: none; }
+	.svc-rocket-track.is-mobile .svc-path-bg,
+	.svc-rocket-track.is-mobile .svc-path-progress { stroke-width: 1.5; }
+	.form-grid { grid-template-columns: 1fr; }
+	.footer-grid { grid-template-columns: 1fr 1fr; }
+	.work-grid { grid-template-columns: 1fr; }
+	.work-a { grid-column: span 1; }
+}
+
+@media (max-width: 520px) {
+	.hero h1 { font-size: 36px; }
+	.hero-actions { width: 100%; }
+	.hero-actions .btn { flex: 1; min-width: 0; padding: 0 12px; font-size: 13px; gap: 6px; }
+	.services-strip { grid-template-columns: 1fr 1fr; }
+	.svc-thumb-row { grid-template-columns: repeat(2, 1fr); }
+	.metrics-grid { grid-template-columns: 1fr; }
+	.process-grid { grid-template-columns: 1fr; }
+	.footer-grid { grid-template-columns: 1fr; }
+	.hero-visual { min-height: 380px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+	[data-reveal], .mask-reveal {
+		opacity: 1 !important;
+		transform: none !important;
+		clip-path: none !important;
+	}
+	.marquee-track { animation: none !important; }
+	.quote-track { animation: none !important; }
+	.services-hub-orbit { animation: none !important; }
+	.services-hub-core { animation: none !important; }
+	.hub-node, .hub-thumb, .media-deco { animation: none !important; }
+	.svc-rocket.is-moving .svc-flame,
+	.svc-rocket.is-moving .svc-flame-mid,
+	.svc-rocket.is-moving .svc-flame-inner,
+	.svc-rocket.is-moving .svc-flame-core,
+	.svc-rocket.is-moving .svc-flame-glow { animation: none !important; }
+	.svc-rocket { display: none; }
+}
+</style>
+</head>
+<body>
+<?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
+
+
+
+<main id="top">
+	<!-- ============ HERO ============ -->
+	<section class="hero" aria-label="RealDeal IT Center — digital marketing agency">
+		<div class="container">
+			<div class="hero-grid">
+				<div class="hero-content" data-reveal>
+					<span class="hero-badge"><span class="dot"></span> Full-service digital growth partner</span>
+					<h1>We turn attention into <span class="accent">measurable growth.</span></h1>
+					<p class="hero-copy">RealDeal IT Center is a full-service digital growth partner — bookkeeping, web design &amp; development, digital marketing and SEO, delivered by one accountable team.</p>
+					<div class="hero-actions">
+						<a class="btn btn-primary" href="services.php"><i class="fa-solid fa-arrow-trend-up"></i> Explore Services</a>
+						<a class="btn btn-ghost" href="#work"><i class="fa-solid fa-play"></i> View Our Work</a>
+					</div>
+					<div class="hero-trust">
+						<div class="avatars" aria-hidden="true">
+							<span>R</span><span>D</span><span>+</span><span>20</span>
+						</div>
+						<div class="trust-copy">
+							<div class="stars" aria-hidden="true">★★★★★</div>
+							<strong>20+ digital services</strong>
+							<span>across 4 specialist divisions</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Premium visual composition (CSS + imagery) -->
+				<div class="hero-visual" data-reveal="right" aria-hidden="true">
+					<div class="hv-card hv-dash">
+						<div class="hv-dash-head">
+							<small>Campaign performance</small>
+							<span class="hv-badge-up"><i class="fa-solid fa-arrow-up"></i> +38%</span>
+						</div>
+						<div class="hv-metric">3.4x ROAS</div>
+						<div class="hv-metric-sub">Search + social, last 30 days</div>
+						<div class="hv-chart">
+							<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+						</div>
+					</div>
+
+					<div class="hv-card hv-reel">
+						<img src="images/index-image-3.jpg" alt="" loading="eager" decoding="async" width="300" height="533">
+						<div class="reel-play"><i class="fa-solid fa-play"></i></div>
+						<span class="reel-tag"><i class="fa-solid fa-bolt"></i> Launch reel</span>
+					</div>
+
+					<div class="hv-card hv-social">
+						<div class="ig"><i class="fa-brands fa-instagram"></i></div>
+						<div>
+							<strong>+48K</strong>
+							<span>reach this week</span>
+						</div>
+					</div>
+
+					<div class="hv-chip"><i class="fa-solid fa-magnifying-glass-chart"></i> Ranking #1–3</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ TRUST MARQUEE ============ -->
+	<section class="trust" aria-label="Channels and platforms we manage">
+		<div class="container-wide">
+			<p class="trust-label">Platforms &amp; channels we run growth on</p>
+			<div class="marquee">
+				<div class="marquee-track">
+					<span class="marquee-item"><i class="fa-brands fa-google"></i> Google Ads</span>
+					<span class="marquee-item"><i class="fa-brands fa-facebook"></i> Facebook</span>
+					<span class="marquee-item"><i class="fa-brands fa-instagram"></i> Instagram</span>
+					<span class="marquee-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+					<span class="marquee-item"><i class="fa-brands fa-x-twitter"></i> Twitter (X)</span>
+					<span class="marquee-item"><i class="fa-brands fa-pinterest"></i> Pinterest</span>
+					<span class="marquee-item"><i class="fa-brands fa-youtube"></i> YouTube</span>
+					<span class="marquee-item"><i class="fa-solid fa-calculator"></i> Accounting and Bookkeeping</span>
+					<span class="marquee-item"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</span>
+					<!-- duplicate for seamless loop -->
+					<span class="marquee-item"><i class="fa-brands fa-google"></i> Google Ads</span>
+					<span class="marquee-item"><i class="fa-brands fa-facebook"></i> Facebook</span>
+					<span class="marquee-item"><i class="fa-brands fa-instagram"></i> Instagram</span>
+					<span class="marquee-item"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+					<span class="marquee-item"><i class="fa-brands fa-x-twitter"></i> Twitter (X)</span>
+					<span class="marquee-item"><i class="fa-brands fa-pinterest"></i> Pinterest</span>
+					<span class="marquee-item"><i class="fa-brands fa-youtube"></i> YouTube</span>
+					<span class="marquee-item"><i class="fa-solid fa-calculator"></i> Accounting and Bookkeeping</span>
+					<span class="marquee-item"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ SERVICES (editorial visual rows) ============ -->
+	<section class="services" id="services">
+		<div class="container">
+			<div class="services-intro">
+				<div data-reveal="left">
+					<span class="section-kicker">What We Do</span>
+					<h2 class="section-title">Four specialist divisions. One growth team.</h2>
+					<p class="section-copy">Every service is organized into clear divisions so you can see the outcome before you read a word — then combine any of them into one focused plan.</p>
+				</div>
+				<div class="services-hub" data-reveal="right" aria-hidden="true">
+					<div class="services-hub-orbit"></div>
+					<div class="services-hub-core"><strong>1</strong><span>Team</span></div>
+					<span class="hub-node"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+					<span class="hub-node"><i class="fa-solid fa-bullseye"></i></span>
+					<span class="hub-node"><i class="fa-solid fa-share-nodes"></i></span>
+					<span class="hub-node"><i class="fa-solid fa-pen-nib"></i></span>
+					<span class="hub-node"><i class="fa-solid fa-laptop-code"></i></span>
+					<span class="hub-node"><i class="fa-solid fa-store"></i></span>
+					<div class="hub-preview">
+						<div class="hub-thumb"><img src="images/seo-image.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-chart-line"></i></div>
+						<div class="hub-thumb"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-bullseye"></i></div>
+						<div class="hub-thumb"><img src="images/index-social-media-marketing.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-hashtag"></i></div>
+						<div class="hub-thumb"><img src="images/index-image-4.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-palette"></i></div>
+						<div class="hub-thumb"><img src="images/index-image-5.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-code"></i></div>
+						<div class="hub-thumb"><img src="images/index-image-6.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-cart-shopping"></i></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="services-strip" data-reveal>
+				<a class="strip-card" href="bookkeeping.php" style="--accent: var(--rd-teal);"><i class="fa-solid fa-calculator"></i><strong>Accounting and Bookkeeping</strong></a>
+				<a class="strip-card" href="web-design-development.php" style="--accent: var(--rd-orange);"><i class="fa-solid fa-laptop-code"></i><strong>Web Design &amp; Dev</strong></a>
+				<a class="strip-card" href="digital-marketing.php" style="--accent: var(--rd-blue);"><i class="fa-solid fa-share-nodes"></i><strong>Digital Marketing</strong></a>
+				<a class="strip-card" href="seo.php" style="--accent: var(--rd-green);"><i class="fa-solid fa-magnifying-glass-chart"></i><strong>SEO</strong></a>
+			</div>
+
+			<div class="services-journey" id="servicesJourney">
+				<div class="svc-rocket-track" id="svcRocketTrack" aria-hidden="true">
+					<svg class="svc-rocket-svg" id="svcRocketSvg" preserveAspectRatio="none">
+						<defs>
+							<linearGradient id="svcPathGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+								<stop offset="0%" stop-color="#ff7a35"/>
+								<stop offset="100%" stop-color="#ff4a1c"/>
+							</linearGradient>
+							<linearGradient id="rocketBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+								<stop offset="0%" stop-color="#ffffff"/>
+								<stop offset="45%" stop-color="#f0f4f8"/>
+								<stop offset="100%" stop-color="#dfe6ed"/>
+							</linearGradient>
+						</defs>
+						<path id="svcPathBg" class="svc-path-bg"></path>
+						<path id="svcPathProgress" class="svc-path-progress"></path>
+						<g id="svcPathDots"></g>
+					</svg>
+					<div class="svc-rocket is-idle" id="svcRocket">
+						<svg viewBox="0 0 32 52" aria-hidden="true">
+							<defs>
+								<linearGradient id="rocketNoseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+									<stop offset="0%" stop-color="#ff7a35"/>
+									<stop offset="100%" stop-color="#ff4a1c"/>
+								</linearGradient>
+								<radialGradient id="flameGlowGrad" cx="50%" cy="35%" r="65%">
+									<stop offset="0%" stop-color="#ff7a35" stop-opacity="0.95"/>
+									<stop offset="55%" stop-color="#ff4a1c" stop-opacity="0.55"/>
+									<stop offset="100%" stop-color="#ff4a1c" stop-opacity="0"/>
+								</radialGradient>
+							</defs>
+							<path class="svc-rocket-fin" d="M3 26 L8 36 L8 28 Z"/>
+							<path class="svc-rocket-fin" d="M29 26 L24 36 L24 28 Z"/>
+							<path class="svc-rocket-fin-tip" d="M5 28 L8 33 L8 30 Z"/>
+							<path class="svc-rocket-fin-tip" d="M27 28 L24 33 L24 30 Z"/>
+							<path class="svc-rocket-body" d="M16 4 C21 12 26 22 26 32 C26 36 21 38 16 38 C11 38 6 36 6 32 C6 22 11 12 16 4 Z"/>
+							<path class="svc-rocket-nose" d="M16 4 C20 11 23 17 22 21 C19 15 13 15 10 21 C9 17 12 11 16 4 Z"/>
+							<line class="svc-rocket-stripe" x1="9" y1="25" x2="23" y2="25"/>
+							<ellipse class="svc-rocket-window" cx="16" cy="19" rx="4.2" ry="5.2"/>
+							<rect class="svc-rocket-nozzle" x="12" y="36" width="8" height="3.2" rx="1.2"/>
+							<g class="svc-flame">
+								<ellipse class="svc-flame-glow" cx="16" cy="43" rx="9" ry="11"/>
+								<path class="svc-flame-outer" d="M16 38 C10 42 6 48 8 51 C11 52 16 51 16 51 C16 51 21 52 24 51 C26 48 22 42 16 38 Z"/>
+								<path class="svc-flame-mid" d="M16 39 C12.5 42 10.5 46 12 49 C14 50 16 49.5 16 49.5 C16 49.5 18 50 20 49 C21.5 46 19.5 42 16 39 Z"/>
+								<path class="svc-flame-inner" d="M16 40.5 C14 43 13 45.5 14 47.5 C15 48.2 16 48 16 48 C16 48 17 48.2 18 47.5 C19 45.5 18 43 16 40.5 Z"/>
+								<path class="svc-flame-core" d="M16 41.5 C15.2 43 15 44.5 16 46 C17 44.5 16.8 43 16 41.5 Z"/>
+							</g>
+						</svg>
+					</div>
+				</div>
+
+			<!-- 1. Accounting and Bookkeeping -->
+			<article class="service-row" style="--accent: var(--rd-teal);" data-reveal>
+				<div class="service-info">
+					<a class="service-info-link" href="bookkeeping.php" aria-label="Explore bookkeeping services"></a>
+					<span class="svc-index">01 — Accounting and Bookkeeping</span>
+					<h3>Accounting and Bookkeeping</h3>
+					<p>Accurate books, payroll, tax filing and financial reporting handled by one dedicated team, alongside your growth work.</p>
+					<div class="svc-thumb-row">
+						<div class="svc-thumb"><img src="images/index-image.jpg" alt="" loading="lazy" width="200" height="125"><span>Accounting and Bookkeeping</span></div>
+						<div class="svc-thumb"><img src="images/index-image-8.jpg" alt="" loading="lazy" width="200" height="125"><span>Payroll</span></div>
+						<div class="svc-thumb"><img src="images/index-image-7.jpg" alt="" loading="lazy" width="200" height="125"><span>Tax Prep</span></div>
+					</div>
+					<div class="svc-tags">
+						<a href="financial-record-keeping.php">Financial Records</a><a href="accounts-payable.php">Payable</a><a href="accounts-receivable.php">Receivable</a><a href="bank-reconciliation.php">Reconciliation</a><a href="financial-reporting.php">Reporting</a><a href="payroll-management.php">Payroll</a>
+					</div>
+					<a class="text-link" href="bookkeeping.php">Explore bookkeeping services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<a class="media-link" href="bookkeeping.php" aria-label="Explore bookkeeping services"></a>
+					<div class="service-media-inner">
+						<img src="images/index-image.jpg" alt="Accounting and Bookkeeping and financial reporting" loading="lazy" decoding="async" width="900" height="675">
+					</div>
+					<div class="media-title"><span>Accounting and Bookkeeping</span></div>
+					<div class="media-deco media-deco-a"><img src="images/index-image-7.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-calculator"></i></div>
+					<div class="media-deco media-deco-b"><strong>100% audit-ready</strong><img src="images/index-image-8.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-calculator"></i> Accounting and Bookkeeping</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Books closed on time</small><strong>100%</strong></div>
+							<div class="mw-bar"><i style="--w:96%"></i></div>
+							<div class="mw-chips"><span>AP/AR</span><span>Payroll</span><span>Tax Prep</span></div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 2. Web Design & Development -->
+			<article class="service-row flip" style="--accent: var(--rd-orange);" data-reveal>
+				<div class="service-info">
+					<a class="service-info-link" href="web-design-development.php" aria-label="Explore web services"></a>
+					<span class="svc-index">02 — Web</span>
+					<h3>Web Design &amp; Development</h3>
+					<p>Conversion-focused websites, custom builds and ecommerce pages engineered for speed and results.</p>
+					<div class="svc-thumb-row">
+						<div class="svc-thumb"><img src="images/index-image-5.jpg" alt="" loading="lazy" width="200" height="125"><span>Desktop</span></div>
+						<div class="svc-thumb"><img src="images/index-image-9.jpg" alt="" loading="lazy" width="200" height="125"><span>Mobile</span></div>
+						<div class="svc-thumb"><img src="images/index-image-10.jpg" alt="" loading="lazy" width="200" height="125"><span>Ecommerce</span></div>
+					</div>
+					<div class="svc-tags">
+						<a href="website-design.php">Website Design</a><a href="website-development.php">Website Development</a><a href="ecommerce-website-development.php">Ecommerce Website Development</a>
+					</div>
+					<a class="text-link" href="web-design-development.php">Explore web services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<a class="media-link" href="web-design-development.php" aria-label="Explore web services"></a>
+					<div class="service-media-inner">
+						<img src="images/index-image-5.jpg" alt="Website design mockup" loading="lazy" decoding="async" width="900" height="675">
+					</div>
+					<div class="media-title"><span>Web Design &amp; Development</span></div>
+					<div class="media-deco media-deco-a"><img src="images/index-image-9.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-mobile-screen"></i></div>
+					<div class="media-deco media-deco-b"><strong>98 speed</strong><img src="images/index-image-10.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-laptop-code"></i> Built to convert</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Page speed</small><strong>98 / 100</strong></div>
+							<div class="mw-bar"><i style="--w:96%"></i></div>
+							<div class="mw-row" style="margin-top:12px"><small>Mobile ready</small><strong>100%</strong></div>
+							<div class="mw-bar"><i style="--w:100%"></i></div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 3. Digital Marketing -->
+			<article class="service-row" style="--accent: var(--rd-blue);" data-reveal>
+				<div class="service-info">
+					<a class="service-info-link" href="digital-marketing.php" aria-label="Explore digital marketing services"></a>
+					<span class="svc-index">03 — Social Growth</span>
+					<h3>Digital Marketing</h3>
+					<p>Platform-native content and community management across every social channel that moves your audience.</p>
+					<div class="svc-thumb-row">
+						<div class="svc-thumb"><img src="images/index-image-11.jpg" alt="" loading="lazy" width="200" height="125"><span>Reels</span></div>
+						<div class="svc-thumb"><img src="images/index-image-12.jpg" alt="" loading="lazy" width="200" height="125"><span>Posts</span></div>
+						<div class="svc-thumb"><img src="images/index-image-15.jpg" alt="" loading="lazy" width="200" height="125"><span>Community</span></div>
+					</div>
+					<div class="svc-tags">
+						<a href="facebook-marketing.php">Facebook</a><a href="instagram-marketing.php">Instagram</a><a href="linkedin-marketing.php">LinkedIn</a><a href="twitter-x-marketing.php">Twitter (X)</a><a href="pinterest-marketing.php">Pinterest</a><a href="youtube-marketing.php">YouTube</a>
+					</div>
+					<a class="text-link" href="digital-marketing.php">Explore digital marketing services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<a class="media-link" href="digital-marketing.php" aria-label="Explore digital marketing services"></a>
+					<div class="service-media-inner">
+						<img src="images/index-social-media-marketing.jpg" alt="Social media marketing" loading="lazy" decoding="async" width="900" height="675">
+					</div>
+					<div class="media-title"><span>Digital Marketing</span></div>
+					<div class="media-deco media-deco-a"><img src="images/index-image-11.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-brands fa-instagram"></i></div>
+					<div class="media-deco media-deco-b"><strong>48K reach</strong><img src="images/index-image-12.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-share-nodes"></i> Content that converts</span>
+						<div class="media-widget">
+							<div class="mw-grid">
+								<span style="background-image:url('images/index-image-12.jpg')"></span>
+								<span style="background-image:url('images/index-image-14.jpg')"></span>
+								<span style="background-image:url('images/index-image-15.jpg')"></span>
+								<span style="background-image:url('images/index-image-16.jpg')"></span>
+								<span style="background-image:url('images/index-image-17.jpg')"></span>
+								<span style="background-image:url('images/index-image-18.jpg')"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<!-- 4. Search Engine Optimization (SEO) -->
+			<article class="service-row flip" style="--accent: var(--rd-green);" data-reveal>
+				<div class="service-info">
+					<a class="service-info-link" href="seo.php" aria-label="Explore SEO services"></a>
+					<span class="svc-index">04 — Search &amp; Growth</span>
+					<h3>Search Engine Optimization (SEO)</h3>
+					<p>Search visibility, analytics and strategy that compound into long-term organic growth and qualified traffic.</p>
+					<div class="svc-thumb-row">
+						<div class="svc-thumb"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="200" height="125"><span>Analytics</span></div>
+						<div class="svc-thumb"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="200" height="125"><span>Keywords</span></div>
+						<div class="svc-thumb"><img src="images/local-seo-trends-image.jpg" alt="" loading="lazy" width="200" height="125"><span>Content</span></div>
+					</div>
+					<div class="svc-tags">
+						<a href="on-page-seo.php">On-Page SEO</a><a href="off-page-seo.php">Off-Page SEO</a><a href="local-seo.php">Local SEO</a><a href="technical-seo.php">Technical SEO</a>
+					</div>
+					<a class="text-link" href="seo.php">Explore SEO services <i class="fa-solid fa-arrow-right"></i></a>
+				</div>
+				<div class="service-media mask-reveal">
+					<a class="media-link" href="seo.php" aria-label="Explore SEO services"></a>
+					<div class="service-media-inner">
+						<img src="images/seo-image.jpg" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="900" height="675">
+					</div>
+					<div class="media-title"><span>Search Engine Optimization (SEO)</span></div>
+					<div class="media-deco media-deco-a"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-chart-line"></i></div>
+					<div class="media-deco media-deco-b"><strong>Rankings up</strong><img src="images/index-image-20.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-overlay">
+						<span class="media-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Organic growth</span>
+						<div class="media-widget">
+							<div class="mw-row"><small>Keyword rankings</small><strong>Top 3</strong></div>
+							<div class="mw-bar"><i style="--w:82%"></i></div>
+							<div class="mw-row" style="margin-top:12px"><small>Organic traffic</small><strong>+64%</strong></div>
+							<div class="mw-bar"><i style="--w:64%"></i></div>
+						</div>
+					</div>
+				</div>
+			</article>
+			</div><!-- /.services-journey -->
+		</div>
+	</section>
+
+	<!-- ============ METRICS ============ -->
+	<!-- NOTE: Metric values below are structured placeholders. Replace with verified company data. -->
+	<section class="metrics" aria-label="Agency results and scale">
+		<div class="container">
+			<div class="metrics-head" data-reveal>
+				<span class="section-kicker" style="color: var(--rd-orange-2);">By The Numbers</span>
+				<h2>Built to deliver measurable outcomes.</h2>
+				<p>A snapshot of how we structure growth. Swap these placeholders for your verified performance data anytime.</p>
+			</div>
+			<div class="metrics-grid">
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="20" data-suffix="+"><span class="num">20</span><span class="suffix">+</span></div>
+					<div class="metric-label">Digital services offered</div>
+				</div>
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="4"><span class="num">4</span></div>
+					<div class="metric-label">Specialist service divisions</div>
+				</div>
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="360" data-suffix="°"><span class="num">360</span><span class="suffix">°</span></div>
+					<div class="metric-label">Accounting and Bookkeeping, web &amp; marketing</div>
+				</div>
+				<div class="metric" data-reveal>
+					<div class="metric-value" data-count="1"><span class="num">1</span></div>
+					<div class="metric-label">Accountable growth partner</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ PORTFOLIO / WORK ============ -->
+	<section class="portfolio" id="work">
+		<div class="container">
+			<div class="section-head">
+				<div data-reveal="left">
+					<span class="section-kicker">Selected Work</span>
+					<h2 class="section-title">Visual proof across every division.</h2>
+				</div>
+				<p class="section-copy" data-reveal="right">A visual-first look at campaigns, search growth, brand systems and websites — the outcomes behind each service.</p>
+			</div>
+
+			<div class="work-grid">
+				<article class="work-card work-a" data-reveal>
+					<img src="images/index-restaurant-growth-campaign.jpg" alt="Restaurant growth campaign" loading="lazy" decoding="async" width="1000" height="700">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-bullhorn"></i> Marketing Campaign</span>
+						<h3>Restaurant growth package</h3>
+						<p>Reels, paid ads, offer design and weekly reporting for a local food brand.</p>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> +48K monthly reach</span>
+					</div>
+				</article>
+
+				<article class="work-card work-b" data-reveal>
+					<img src="images/index-image-2.jpg" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="700" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-chart-line"></i> SEO &amp; Analytics</span>
+						<h3>Search visibility dashboard</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> Top 3 rankings</span>
+					</div>
+				</article>
+
+				<article class="work-card work-c" data-reveal>
+					<img src="images/index-image-8.jpg" alt="Accounting and Bookkeeping and payroll reporting" loading="lazy" decoding="async" width="700" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-calculator"></i> Accounting and Bookkeeping</span>
+						<h3>Financial reporting &amp; payroll</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> 100% books closed on time</span>
+					</div>
+				</article>
+
+				<article class="work-card work-d" data-reveal>
+					<img src="images/index-image-5.jpg" alt="WordPress ecommerce build" loading="lazy" decoding="async" width="800" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-laptop-code"></i> Web Design</span>
+						<h3>WordPress &amp; ecommerce build</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> 98 page-speed score</span>
+					</div>
+				</article>
+
+				<article class="work-card work-e" data-reveal>
+					<img src="images/index-social-media-marketing.jpg" alt="Multi-platform social growth" loading="lazy" decoding="async" width="800" height="400">
+					<div class="work-body">
+						<span class="work-cat"><i class="fa-solid fa-share-nodes"></i> Digital Marketing</span>
+						<h3>Multi-platform social growth</h3>
+						<span class="work-result"><i class="fa-solid fa-arrow-trend-up"></i> +3.4x engagement</span>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ REELS ============ -->
+	<section class="showreel" id="reels">
+		<div class="container">
+			<div class="section-head">
+				<div data-reveal="left">
+					<span class="section-kicker">Project Demos</span>
+					<h2 class="section-title">Short-form content that keeps selling.</h2>
+				</div>
+				<p class="section-copy" data-reveal="right">Vertical reel previews from real campaign styles — swipe on mobile, hover on desktop. Drop in your own video files anytime.</p>
+			</div>
+
+			<div class="reel-scroller" data-reveal>
+				<article class="reel" tabindex="0" role="button" aria-label="Play cafe launch reel">
+					<img src="images/index-image-11.jpg" alt="Cafe launch campaign reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">Cafe launch</span><span class="reel-stat"><i class="fa-solid fa-heart"></i> 48K</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Local brand buzz</h3><p>Launch reels, food shots &amp; retargeting.</p></div>
+				</article>
+
+				<article class="reel" tabindex="0" role="button" aria-label="Play service ad reel">
+					<img src="images/index-service-ad-creative-reel.jpg" alt="Service ad creative reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">Ad creative</span><span class="reel-stat"><i class="fa-solid fa-arrow-trend-up"></i> +31%</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Trust in seconds</h3><p>Fast hooks and bold motion design.</p></div>
+				</article>
+
+				<article class="reel" tabindex="0" role="button" aria-label="Play product demo reel">
+					<img src="images/index-product-demo-reel.jpg" alt="Product demo reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">Product demo</span><span class="reel-stat"><i class="fa-solid fa-message"></i> Leads</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Explain &amp; convert</h3><p>Simple demos that pre-sell the offer.</p></div>
+				</article>
+
+				<article class="reel" tabindex="0" role="button" aria-label="Play SEO growth reel">
+					<img src="images/index-image-2.jpg" alt="SEO growth reel" loading="lazy" decoding="async" width="300" height="533">
+					<div class="reel-top"><span class="reel-cat">SEO growth</span><span class="reel-stat"><i class="fa-solid fa-magnifying-glass-chart"></i> +64%</span></div>
+					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
+					<div class="reel-meta"><h3>Ranking that compounds</h3><p>Search dashboards and keyword wins, shown in seconds.</p></div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ PROCESS ============ -->
+	<section class="process" id="process">
+		<div class="container">
+			<div data-reveal>
+				<span class="section-kicker">How We Work</span>
+				<h2 class="section-title">A simple system that keeps every project moving.</h2>
+				<p class="section-copy">Clear planning, transparent progress and practical execution — from the first call to launch and ongoing improvement.</p>
+			</div>
+
+			<div class="process-grid">
+				<article class="process-step" style="--accent: var(--rd-orange);" data-reveal>
+					<span class="step-num">01</span>
+					<h3>Discover</h3>
+					<p>We map your goals, audience, current channels and growth blockers.</p>
+				</article>
+				<article class="process-step" style="--accent: var(--rd-teal);" data-reveal>
+					<span class="step-num">02</span>
+					<h3>Design</h3>
+					<p>We shape a focused plan across campaigns, creative, SEO, web or commerce.</p>
+				</article>
+				<article class="process-step" style="--accent: var(--rd-blue);" data-reveal>
+					<span class="step-num">03</span>
+					<h3>Deliver</h3>
+					<p>We execute with visible milestones, approvals and clean communication.</p>
+				</article>
+				<article class="process-step" style="--accent: var(--rd-green);" data-reveal>
+					<span class="step-num">04</span>
+					<h3>Improve</h3>
+					<p>We track results, refine the work and keep your business moving smarter.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ WHY ============ -->
+	<section class="why">
+		<div class="container">
+			<div class="why-grid">
+				<div data-reveal="left">
+					<span class="section-kicker" style="color: var(--rd-orange-2);">Why RealDeal</span>
+					<h2 class="section-title">The best partner feels like part of your team.</h2>
+					<p class="section-copy">Built for owners who want one reliable partner — instead of juggling separate bookkeepers, web teams, marketers and SEO specialists.</p>
+				</div>
+
+				<div class="why-list">
+					<article class="why-item" data-reveal="right">
+						<i class="fa-solid fa-handshake-angle"></i>
+						<div>
+							<h3>One accountable team</h3>
+							<p>Accounting and Bookkeeping, web, social and search all stay connected under one team.</p>
+						</div>
+					</article>
+					<article class="why-item" data-reveal="right">
+						<i class="fa-solid fa-gauge-high"></i>
+						<div>
+							<h3>Fast execution</h3>
+							<p>Launch pages, campaigns, reports and automations without slow handoffs.</p>
+						</div>
+					</article>
+					<article class="why-item" data-reveal="right">
+						<i class="fa-solid fa-chart-pie"></i>
+						<div>
+							<h3>Clear reporting</h3>
+							<p>See what happened, what it means and what we recommend next.</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ TESTIMONIALS ============ -->
+	<section class="testimonial">
+		<div class="container">
+			<div class="section-head">
+				<div data-reveal="left">
+					<span class="section-kicker">Client Words</span>
+					<h2 class="section-title">Trusted for responsive service and clean delivery.</h2>
+				</div>
+				<p class="section-copy" data-reveal="right">A few of the businesses we've worked with, across accounting, web, marketing and SEO.</p>
+			</div>
+
+			<div class="quote-marquee" aria-label="Client testimonials, auto-scrolling">
+				<div class="quote-track">
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">A</span>
+							<div class="gr-head-info">
+								<strong>Al Haayaat Limited <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Website, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">Z</span>
+							<div class="gr-head-info">
+								<strong>Zaam Zaam Limited <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Website, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">B</span>
+							<div class="gr-head-info">
+								<strong>Bros Slice &amp; Grill <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Website, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">M</span>
+							<div class="gr-head-info">
+								<strong>Miranda's English Club <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Digital Marketing</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">T</span>
+							<div class="gr-head-info">
+								<strong>TRB Home Decor <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Digital Marketing</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">T</span>
+							<div class="gr-head-info">
+								<strong>TRB Fashion <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Digital Marketing</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">A</span>
+							<div class="gr-head-info">
+								<strong>AAHM <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">A</span>
+							<div class="gr-head-info">
+								<strong>Ahmed Hassan <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">M</span>
+							<div class="gr-head-info">
+								<strong>Muhammad Imran <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Abdullah Al Noman <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 5 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">O</span>
+							<div class="gr-head-info">
+								<strong>Omar Farooq <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">Y</span>
+							<div class="gr-head-info">
+								<strong>Yusuf Ibrahim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">J</span>
+							<div class="gr-head-info">
+								<strong>John Smith <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 18 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">M</span>
+							<div class="gr-head-info">
+								<strong>Michael Johnson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">D</span>
+							<div class="gr-head-info">
+								<strong>David Wilson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">D</span>
+							<div class="gr-head-info">
+								<strong>Daniel Brown <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 47 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">C</span>
+							<div class="gr-head-info">
+								<strong>Christopher Miller <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">R</span>
+							<div class="gr-head-info">
+								<strong>Rajesh Kumar <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">A</span>
+							<div class="gr-head-info">
+								<strong>Amit Sharma <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 8 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Arjun Patel <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">S</span>
+							<div class="gr-head-info">
+								<strong>Suresh Reddy <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">V</span>
+							<div class="gr-head-info">
+								<strong>Vivek Mishra <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 24 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">G</span>
+							<div class="gr-head-info">
+								<strong>Gurpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">H</span>
+							<div class="gr-head-info">
+								<strong>Harpreet Kaur <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">M</span>
+							<div class="gr-head-info">
+								<strong>Manpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 3 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">T</span>
+							<div class="gr-head-info">
+								<strong>Tenzin Dorje <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">S</span>
+							<div class="gr-head-info">
+								<strong>Sonam Wangchuk <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">K</span>
+							<div class="gr-head-info">
+								<strong>Karma Tshering <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 12 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">L</span>
+							<div class="gr-head-info">
+								<strong>Li Wei <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">Z</span>
+							<div class="gr-head-info">
+								<strong>Zhang Hao <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">K</span>
+							<div class="gr-head-info">
+								<strong>Kenji Tanaka <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 33 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">H</span>
+							<div class="gr-head-info">
+								<strong>Hiroshi Sato <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">M</span>
+							<div class="gr-head-info">
+								<strong>Min-Jun Kim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">N</span>
+							<div class="gr-head-info">
+								<strong>Nguyen Van An <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 5 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">I</span>
+							<div class="gr-head-info">
+								<strong>Ivan Petrov <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">C</span>
+							<div class="gr-head-info">
+								<strong>Carlos Rodriguez <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">J</span>
+							<div class="gr-head-info">
+								<strong>Jean Dupont <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 18 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">A</span>
+							<div class="gr-head-info">
+								<strong>Ahmed Hassan <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">M</span>
+							<div class="gr-head-info">
+								<strong>Muhammad Imran <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Abdullah Al Noman <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 47 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">O</span>
+							<div class="gr-head-info">
+								<strong>Omar Farooq <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">Y</span>
+							<div class="gr-head-info">
+								<strong>Yusuf Ibrahim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">J</span>
+							<div class="gr-head-info">
+								<strong>John Smith <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 8 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">M</span>
+							<div class="gr-head-info">
+								<strong>Michael Johnson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">D</span>
+							<div class="gr-head-info">
+								<strong>David Wilson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">D</span>
+							<div class="gr-head-info">
+								<strong>Daniel Brown <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 24 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">C</span>
+							<div class="gr-head-info">
+								<strong>Christopher Miller <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">R</span>
+							<div class="gr-head-info">
+								<strong>Rajesh Kumar <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">A</span>
+							<div class="gr-head-info">
+								<strong>Amit Sharma <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 3 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Arjun Patel <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">S</span>
+							<div class="gr-head-info">
+								<strong>Suresh Reddy <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">V</span>
+							<div class="gr-head-info">
+								<strong>Vivek Mishra <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 12 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">G</span>
+							<div class="gr-head-info">
+								<strong>Gurpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">H</span>
+							<div class="gr-head-info">
+								<strong>Harpreet Kaur <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">M</span>
+							<div class="gr-head-info">
+								<strong>Manpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 33 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">T</span>
+							<div class="gr-head-info">
+								<strong>Tenzin Dorje <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">S</span>
+							<div class="gr-head-info">
+								<strong>Sonam Wangchuk <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">K</span>
+							<div class="gr-head-info">
+								<strong>Karma Tshering <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 5 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">L</span>
+							<div class="gr-head-info">
+								<strong>Li Wei <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">Z</span>
+							<div class="gr-head-info">
+								<strong>Zhang Hao <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">K</span>
+							<div class="gr-head-info">
+								<strong>Kenji Tanaka <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 18 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">H</span>
+							<div class="gr-head-info">
+								<strong>Hiroshi Sato <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">M</span>
+							<div class="gr-head-info">
+								<strong>Min-Jun Kim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">N</span>
+							<div class="gr-head-info">
+								<strong>Nguyen Van An <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 47 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">I</span>
+							<div class="gr-head-info">
+								<strong>Ivan Petrov <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">C</span>
+							<div class="gr-head-info">
+								<strong>Carlos Rodriguez <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">J</span>
+							<div class="gr-head-info">
+								<strong>Jean Dupont <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 8 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">A</span>
+							<div class="gr-head-info">
+								<strong>Ahmed Hassan <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">M</span>
+							<div class="gr-head-info">
+								<strong>Muhammad Imran <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Abdullah Al Noman <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 24 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<!-- duplicate set for seamless loop -->
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">A</span>
+							<div class="gr-head-info">
+								<strong>Al Haayaat Limited <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Website, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">Z</span>
+							<div class="gr-head-info">
+								<strong>Zaam Zaam Limited <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Website, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">B</span>
+							<div class="gr-head-info">
+								<strong>Bros Slice &amp; Grill <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Website, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">M</span>
+							<div class="gr-head-info">
+								<strong>Miranda's English Club <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Digital Marketing</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">T</span>
+							<div class="gr-head-info">
+								<strong>TRB Home Decor <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Digital Marketing</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">T</span>
+							<div class="gr-head-info">
+								<strong>TRB Fashion <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Digital Marketing</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">A</span>
+							<div class="gr-head-info">
+								<strong>AAHM <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Accounting, Marketing &amp; SEO</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">A</span>
+							<div class="gr-head-info">
+								<strong>Ahmed Hassan <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">M</span>
+							<div class="gr-head-info">
+								<strong>Muhammad Imran <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Abdullah Al Noman <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 5 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">O</span>
+							<div class="gr-head-info">
+								<strong>Omar Farooq <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">Y</span>
+							<div class="gr-head-info">
+								<strong>Yusuf Ibrahim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">J</span>
+							<div class="gr-head-info">
+								<strong>John Smith <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 18 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">M</span>
+							<div class="gr-head-info">
+								<strong>Michael Johnson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">D</span>
+							<div class="gr-head-info">
+								<strong>David Wilson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">D</span>
+							<div class="gr-head-info">
+								<strong>Daniel Brown <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 47 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">C</span>
+							<div class="gr-head-info">
+								<strong>Christopher Miller <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">R</span>
+							<div class="gr-head-info">
+								<strong>Rajesh Kumar <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">A</span>
+							<div class="gr-head-info">
+								<strong>Amit Sharma <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 8 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Arjun Patel <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">S</span>
+							<div class="gr-head-info">
+								<strong>Suresh Reddy <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">V</span>
+							<div class="gr-head-info">
+								<strong>Vivek Mishra <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 24 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">G</span>
+							<div class="gr-head-info">
+								<strong>Gurpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">H</span>
+							<div class="gr-head-info">
+								<strong>Harpreet Kaur <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">M</span>
+							<div class="gr-head-info">
+								<strong>Manpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 3 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">T</span>
+							<div class="gr-head-info">
+								<strong>Tenzin Dorje <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">S</span>
+							<div class="gr-head-info">
+								<strong>Sonam Wangchuk <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">K</span>
+							<div class="gr-head-info">
+								<strong>Karma Tshering <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 12 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">L</span>
+							<div class="gr-head-info">
+								<strong>Li Wei <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">Z</span>
+							<div class="gr-head-info">
+								<strong>Zhang Hao <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">K</span>
+							<div class="gr-head-info">
+								<strong>Kenji Tanaka <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 33 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">H</span>
+							<div class="gr-head-info">
+								<strong>Hiroshi Sato <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">M</span>
+							<div class="gr-head-info">
+								<strong>Min-Jun Kim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">N</span>
+							<div class="gr-head-info">
+								<strong>Nguyen Van An <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 5 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">I</span>
+							<div class="gr-head-info">
+								<strong>Ivan Petrov <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">C</span>
+							<div class="gr-head-info">
+								<strong>Carlos Rodriguez <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">J</span>
+							<div class="gr-head-info">
+								<strong>Jean Dupont <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 18 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">A</span>
+							<div class="gr-head-info">
+								<strong>Ahmed Hassan <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">M</span>
+							<div class="gr-head-info">
+								<strong>Muhammad Imran <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Abdullah Al Noman <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 47 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">O</span>
+							<div class="gr-head-info">
+								<strong>Omar Farooq <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">Y</span>
+							<div class="gr-head-info">
+								<strong>Yusuf Ibrahim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">J</span>
+							<div class="gr-head-info">
+								<strong>John Smith <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 8 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">M</span>
+							<div class="gr-head-info">
+								<strong>Michael Johnson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">D</span>
+							<div class="gr-head-info">
+								<strong>David Wilson <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">D</span>
+							<div class="gr-head-info">
+								<strong>Daniel Brown <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 24 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">C</span>
+							<div class="gr-head-info">
+								<strong>Christopher Miller <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">R</span>
+							<div class="gr-head-info">
+								<strong>Rajesh Kumar <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">A</span>
+							<div class="gr-head-info">
+								<strong>Amit Sharma <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 3 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Arjun Patel <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">S</span>
+							<div class="gr-head-info">
+								<strong>Suresh Reddy <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">V</span>
+							<div class="gr-head-info">
+								<strong>Vivek Mishra <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 12 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">G</span>
+							<div class="gr-head-info">
+								<strong>Gurpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">H</span>
+							<div class="gr-head-info">
+								<strong>Harpreet Kaur <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">M</span>
+							<div class="gr-head-info">
+								<strong>Manpreet Singh <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 33 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>They took the time to understand our business before suggesting anything. Appreciated that. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">T</span>
+							<div class="gr-head-info">
+								<strong>Tenzin Dorje <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Financial reporting is now something I actually look forward to reviewing. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">S</span>
+							<div class="gr-head-info">
+								<strong>Sonam Wangchuk <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>The marketing content they put together for us feels on-brand and consistent. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">K</span>
+							<div class="gr-head-info">
+								<strong>Karma Tshering <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 5 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Quick to respond, clear about timelines, and delivered what was promised. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">L</span>
+							<div class="gr-head-info">
+								<strong>Li Wei <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Our online presence looks completely different now — in a good way. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">Z</span>
+							<div class="gr-head-info">
+								<strong>Zhang Hao <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>Bank reconciliation used to take us days. Now it is handled without us thinking about it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff4a1c;">K</span>
+							<div class="gr-head-info">
+								<strong>Kenji Tanaka <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 18 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>The team explained everything in plain language, no jargon, easy to follow. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#2764e6;">H</span>
+							<div class="gr-head-info">
+								<strong>Hiroshi Sato <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>Search visibility improved within a couple of months of working together. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#13a76f;">M</span>
+							<div class="gr-head-info">
+								<strong>Min-Jun Kim <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Reliable support whenever we had questions about our accounts. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#0f8f88;">N</span>
+							<div class="gr-head-info">
+								<strong>Nguyen Van An <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 47 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 weeks ago</span>
+						<p>The website redesign brought in more enquiries than we expected. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#8e44ad;">I</span>
+							<div class="gr-head-info">
+								<strong>Ivan Petrov <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a month ago</span>
+						<p>Great experience working with the team — clear communication and solid results. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e67e22;">C</span>
+							<div class="gr-head-info">
+								<strong>Carlos Rodriguez <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 months ago</span>
+						<p>Our books have never been this organised. The accounting team is thorough and quick to respond. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#e91e63;">J</span>
+							<div class="gr-head-info">
+								<strong>Jean Dupont <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 8 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">6 months ago</span>
+						<p>The new website looks professional and loads fast. Exactly what we needed. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#00acc1;">A</span>
+							<div class="gr-head-info">
+								<strong>Ahmed Hassan <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Business Owner</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">a year ago</span>
+						<p>Our social media finally has a consistent look and posting schedule. Really happy with it. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#ff7a35;">M</span>
+							<div class="gr-head-info">
+								<strong>Muhammad Imran <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Verified Customer</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">2 years ago</span>
+						<p>We started ranking for keywords we could never reach before. Solid SEO work. <span class="more-link">&hellip;More</span></p>
+					</article>
+					<article class="quote-card-mini" aria-hidden="true">
+						<div class="gr-head">
+							<span class="avatar" style="background:#5b8bff;">A</span>
+							<div class="gr-head-info">
+								<strong>Abdullah Al Noman <span class="google-badge" title="Google Review"><svg viewBox="0 0 48 48" width="12" height="12"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span></strong>
+								<div class="gr-meta">Local Guide &middot; 24 reviews</div>
+							</div>
+							<span class="gr-dots">&#8942;</span>
+						</div>
+						<div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+						<span class="gr-time">3 years ago</span>
+						<p>Payroll used to be a headache every month — not anymore. Smooth and on time. <span class="more-link">&hellip;More</span></p>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ CTA / CONTACT ============ -->
+	<section class="cta" id="contact">
+		<div class="container">
+			<div class="cta-grid">
+				<div data-reveal="left">
+					<h2>Ready to build your next RealDeal project?</h2>
+					<p>Tell us what you need — bookkeeping, web design &amp; development, digital marketing or SEO — and we'll shape a focused plan.</p>
+					<ul class="cta-points">
+						<li><i class="fa-solid fa-check"></i> Free strategy consultation</li>
+						<li><i class="fa-solid fa-check"></i> Clear deliverables &amp; timeline</li>
+						<li><i class="fa-solid fa-check"></i> One accountable team</li>
+					</ul>
+					<a class="btn btn-light" href="mailto:contactrealdealteam@gmail.com"><i class="fa-solid fa-envelope"></i> contactrealdealteam@gmail.com</a>
+				</div>
+
+				<form class="proposal-form" id="proposalForm" data-reveal="right">
+					<h3>Request a free proposal</h3>
+					<p class="form-sub">We usually reply within one business day.</p>
+					<div class="form-grid">
+						<div class="field">
+							<label for="name">Name</label>
+							<input id="name" name="name" type="text" placeholder="Your name">
+						</div>
+						<div class="field">
+							<label for="phone">Phone</label>
+							<input id="phone" name="phone" type="tel" placeholder="Phone number">
+						</div>
+						<div class="field full">
+							<label for="service">Service</label>
+							<select id="service" name="service">
+								<option>Digital Marketing</option>
+								<optgroup label="Accounting and Bookkeeping">
+									<option>Financial Record Keeping</option>
+									<option>Accounts Payable</option>
+									<option>Accounts Receivable</option>
+									<option>Bank Reconciliation</option>
+									<option>Financial Reporting</option>
+									<option>Tax Preparation Support</option>
+									<option>Payroll Management</option>
+								</optgroup>
+								<optgroup label="Web Design &amp; Development">
+									<option>Website Design</option>
+									<option>Website Development</option>
+									<option>Ecommerce Website Development</option>
+								</optgroup>
+								<optgroup label="Digital Marketing">
+									<option>Facebook Marketing</option>
+									<option>Instagram Marketing</option>
+									<option>LinkedIn Marketing</option>
+									<option>Twitter (X) Marketing</option>
+									<option>Pinterest Marketing</option>
+									<option>YouTube Marketing</option>
+								</optgroup>
+								<optgroup label="Search Engine Optimization (SEO)">
+									<option>On-Page SEO</option>
+									<option>Off-Page SEO</option>
+									<option>Local SEO</option>
+									<option>Technical SEO</option>
+								</optgroup>
+								<option>Custom Package</option>
+							</select>
+						</div>
+						<div class="field full">
+							<label for="message">Project Details</label>
+							<textarea id="message" name="message" placeholder="Tell us about your business and what you want to improve."></textarea>
+						</div>
+					</div>
+					<button class="btn btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i> Send Project Request</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</main>
+
+<?php include 'footer.php'; ?>
+
+
+
+<script>
+(function () {
+	"use strict";
+
+	// Reveal on scroll
+	const revealItems = document.querySelectorAll("[data-reveal], .mask-reveal");
+	if ("IntersectionObserver" in window) {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("is-visible");
+					observer.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.14, rootMargin: "0px 0px -40px 0px" });
+
+		revealItems.forEach((item, index) => {
+			if (item.hasAttribute("data-reveal")) {
+				item.style.transitionDelay = (Math.min(index % 4, 3) * 80) + "ms";
+			}
+			observer.observe(item);
+		});
+
+		// Safety net: never leave content permanently hidden if the observer
+		// misses an element (fast scroll, nested transforms, etc.).
+		setTimeout(() => {
+			revealItems.forEach((item) => {
+				if (!item.classList.contains("is-visible")) {
+					item.classList.add("is-visible");
+					observer.unobserve(item);
+				}
+			});
+		}, 2500);
+	} else {
+		revealItems.forEach((item) => item.classList.add("is-visible"));
+	}
+
+	// Count-up metrics (respects reduced motion)
+	const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	const counters = document.querySelectorAll(".metric-value[data-count]");
+	if (counters.length && "IntersectionObserver" in window && !reduceMotion) {
+		const countObserver = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) return;
+				const el = entry.target;
+				const numEl = el.querySelector(".num");
+				const target = parseInt(el.getAttribute("data-count"), 10) || 0;
+				const duration = 1200;
+				const start = performance.now();
+				function tick(now) {
+					const p = Math.min((now - start) / duration, 1);
+					const eased = 1 - Math.pow(1 - p, 3);
+					numEl.textContent = Math.round(target * eased).toLocaleString();
+					if (p < 1) requestAnimationFrame(tick);
+				}
+				requestAnimationFrame(tick);
+				countObserver.unobserve(el);
+			});
+		}, { threshold: 0.5 });
+		counters.forEach((c) => countObserver.observe(c));
+	}
+
+	// Reel play affordance (placeholder — ready for real <video> embeds)
+	document.querySelectorAll(".reel").forEach((reel) => {
+		function activate() { reel.classList.add("is-playing"); }
+		reel.addEventListener("click", activate);
+		reel.addEventListener("keydown", (e) => {
+			if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); }
+		});
+	});
+
+	// Services scroll rocket journey (scoped to #servicesJourney only)
+	(function initServicesRocket() {
+		const journey = document.getElementById("servicesJourney");
+		const track = document.getElementById("svcRocketTrack");
+		const svg = document.getElementById("svcRocketSvg");
+		const pathBg = document.getElementById("svcPathBg");
+		const pathProgress = document.getElementById("svcPathProgress");
+		const dotsGroup = document.getElementById("svcPathDots");
+		const rocket = document.getElementById("svcRocket");
+		if (!journey || !track || !svg || !pathBg || !pathProgress || !rocket) return;
+
+		const rows = () => journey.querySelectorAll(".service-row");
+		const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+		let pathLength = 0;
+		let pathPoints = [];
+		let currentP = 0;
+		let targetP = 0;
+		let lastScrollY = window.scrollY;
+		let scrollDir = 1;
+		let rotation = 90;
+		let rafId = 0;
+		let ticking = false;
+
+		function clamp(v, min, max) { return Math.min(max, Math.max(min, v)); }
+		function lerp(a, b, t) { return a + (b - a) * t; }
+
+		function isMobile() {
+			return window.matchMedia("(max-width: 760px)").matches;
+		}
+
+		function buildPath() {
+			const rowEls = rows();
+			if (!rowEls.length) return;
+
+			const w = journey.clientWidth;
+			const h = journey.clientHeight;
+			if (w < 1 || h < 1) return;
+
+			svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+			track.classList.toggle("is-mobile", isMobile());
+
+			const jRect = journey.getBoundingClientRect();
+			const pts = [];
+
+			rowEls.forEach((row, i) => {
+				const r = row.getBoundingClientRect();
+				const y = r.top - jRect.top + r.height * 0.5;
+				let x;
+				if (isMobile()) {
+					x = w * 0.06;
+				} else {
+					x = i % 2 === 0 ? w * 0.535 : w * 0.465;
+				}
+				pts.push({ x, y, row });
+			});
+
+			const firstRow = rowEls[0].getBoundingClientRect();
+			const lastRow = rowEls[rowEls.length - 1].getBoundingClientRect();
+			const startY = firstRow.top - jRect.top + firstRow.height * 0.12;
+			const endY = lastRow.top - jRect.top + lastRow.height * 0.88;
+			const startX = pts[0].x;
+			const endX = pts[pts.length - 1].x;
+
+			let d = `M ${startX} ${startY}`;
+			d += ` L ${pts[0].x} ${pts[0].y}`;
+
+			for (let i = 1; i < pts.length; i++) {
+				const prev = pts[i - 1];
+				const cur = pts[i];
+				const midY = (prev.y + cur.y) / 2;
+				d += ` C ${prev.x} ${midY}, ${cur.x} ${midY}, ${cur.x} ${cur.y}`;
+			}
+
+			d += ` L ${endX} ${endY}`;
+
+			pathBg.setAttribute("d", d);
+			pathProgress.setAttribute("d", d);
+			pathLength = pathProgress.getTotalLength();
+			pathProgress.style.strokeDasharray = String(pathLength);
+			pathProgress.style.strokeDashoffset = String(pathLength * (1 - currentP));
+
+			pathPoints = pts;
+			dotsGroup.innerHTML = "";
+			pts.forEach((pt, i) => {
+				const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+				dot.setAttribute("class", "svc-path-dot");
+				dot.setAttribute("cx", String(pt.x));
+				dot.setAttribute("cy", String(pt.y));
+				dot.setAttribute("r", isMobile() ? "3" : "4");
+				dot.dataset.index = String(i);
+				dotsGroup.appendChild(dot);
+			});
+		}
+
+		function getScrollProgress() {
+			const jRect = journey.getBoundingClientRect();
+			const vh = window.innerHeight;
+			const rangeStart = vh * 0.72;
+			const rangeEnd = vh * 0.28;
+			const total = jRect.height - (rangeStart - rangeEnd);
+			if (total <= 0) return jRect.top > rangeStart ? 0 : 1;
+			const scrolled = rangeStart - jRect.top;
+			return clamp(scrolled / total, 0, 1);
+		}
+
+		function getTangentAngle(len) {
+			const delta = Math.max(2, pathLength * 0.008);
+			const a = Math.max(0, len - delta);
+			const b = Math.min(pathLength, len + delta);
+			const p1 = pathProgress.getPointAtLength(a);
+			const p2 = pathProgress.getPointAtLength(b);
+			let dx = p2.x - p1.x;
+			let dy = p2.y - p1.y;
+			if (scrollDir < 0) { dx = -dx; dy = -dy; }
+			if (Math.abs(dx) < 0.001 && Math.abs(dy) < 0.001) return rotation;
+			return Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+		}
+
+		function updateDots(p) {
+			const rowEls = rows();
+			const step = 1 / Math.max(rowEls.length - 1, 1);
+			dotsGroup.querySelectorAll(".svc-path-dot").forEach((dot, i) => {
+				dot.classList.toggle("is-lit", p >= step * i - 0.02);
+			});
+		}
+
+		function placeRocket(p, smooth) {
+			if (!pathLength) return;
+			const len = p * pathLength;
+			const point = pathProgress.getPointAtLength(len);
+			const targetAngle = getTangentAngle(len);
+			rotation = smooth ? lerp(rotation, targetAngle, 0.14) : targetAngle;
+
+			rocket.style.transform = `translate3d(${point.x}px, ${point.y}px, 0) rotate(${rotation}deg)`;
+			pathProgress.style.strokeDashoffset = String(pathLength * (1 - p));
+			updateDots(p);
+		}
+
+		function tick() {
+			const newScrollY = window.scrollY;
+			scrollDir = newScrollY > lastScrollY ? 1 : newScrollY < lastScrollY ? -1 : scrollDir;
+			lastScrollY = newScrollY;
+
+			targetP = getScrollProgress();
+			const moving = Math.abs(targetP - currentP) > 0.0004;
+			currentP = lerp(currentP, targetP, 0.11);
+
+			journey.classList.toggle("is-active", currentP > 0.02 && currentP < 0.98);
+			rocket.classList.toggle("is-moving", moving);
+			rocket.classList.toggle("is-idle", !moving);
+
+			placeRocket(currentP, true);
+
+			if (Math.abs(targetP - currentP) > 0.0001) {
+				rafId = requestAnimationFrame(tick);
+			} else {
+				ticking = false;
+			}
+		}
+
+		function requestTick() {
+			if (!ticking) {
+				ticking = true;
+				rafId = requestAnimationFrame(tick);
+			}
+		}
+
+		function onResize() {
+			buildPath();
+			placeRocket(currentP, false);
+			requestTick();
+		}
+
+		function init() {
+			if (reduceMotion.matches) {
+				track.classList.add("is-reduced");
+				buildPath();
+				placeRocket(0, false);
+				return;
+			}
+
+			buildPath();
+			currentP = targetP = getScrollProgress();
+			placeRocket(currentP, false);
+			requestTick();
+
+			window.addEventListener("scroll", requestTick, { passive: true });
+			window.addEventListener("resize", onResize, { passive: true });
+			reduceMotion.addEventListener("change", () => {
+				if (reduceMotion.matches) {
+					cancelAnimationFrame(rafId);
+					track.classList.add("is-reduced");
+				} else {
+					track.classList.remove("is-reduced");
+					onResize();
+				}
+			});
+
+			if ("ResizeObserver" in window) {
+				const ro = new ResizeObserver(onResize);
+				ro.observe(journey);
+				rows().forEach((row) => ro.observe(row));
+			}
+		}
+
+		if (document.readyState === "complete") {
+			init();
+		} else {
+			window.addEventListener("load", init, { once: true });
+		}
+	})();
+
+	// Proposal form feedback (front-end only; no backend change)
+	const proposalForm = document.getElementById("proposalForm");
+	if (proposalForm) {
+		proposalForm.addEventListener("submit", (event) => {
+			event.preventDefault();
+			const button = proposalForm.querySelector("button");
+			const original = button.innerHTML;
+			button.innerHTML = '<i class="fa-solid fa-check"></i> Request Ready To Send';
+			setTimeout(() => { button.innerHTML = original; }, 2400);
+		});
+	}
+})();
+</script>
+<script src="assets/site-nav.js?v=3" defer></script>
+</body>
+</html>

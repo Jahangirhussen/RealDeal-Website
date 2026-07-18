@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | RealDeal IT Center — Accounting and Bookkeeping, Web Design &amp; Development, Digital Marketing &amp; SEO</title>
+<meta name="description" content="Explore RealDeal IT Center's core services: Accounting and Bookkeeping, Web Design &amp; Development, Digital Marketing and SEO — organized into clear, outcome-driven packages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+	--rd-orange: #ff4a1c;
+	--rd-orange-2: #ff7a35;
+	--rd-ink: #0e1a24;
+	--rd-ink-2: #142533;
+	--rd-teal: #0f8f88;
+	--rd-blue: #2764e6;
+	--rd-green: #13a76f;
+	--rd-cream: #fff7f1;
+	--rd-paper: #ffffff;
+	--rd-soft: #f6f8fb;
+	--rd-line: rgba(14, 26, 36, 0.12);
+	--rd-muted: #63717d;
+	--rd-faint: #92a0ab;
+	--font-heading: "Poppins", sans-serif;
+	--font-body: "Inter", sans-serif;
+	--container: 1180px;
+	--radius: 8px;
+	--shadow: 0 22px 60px rgba(14, 26, 36, 0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+	font-family: var(--font-body);
+	background: var(--rd-paper);
+	color: var(--rd-muted);
+	font-size: 16px;
+	line-height: 1.65;
+	overflow-x: hidden;
+}
+body.menu-open { overflow: hidden; }
+section { scroll-margin-top: 100px; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+ul { list-style: none; }
+h1, h2, h3, h4 {
+	font-family: var(--font-heading);
+	color: var(--rd-ink);
+	font-weight: 800;
+	line-height: 1.08;
+}
+.container { width: min(100% - 48px, var(--container)); margin: 0 auto; padding: 0 25px; }
+
+.section-kicker {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 14px;
+	color: var(--rd-orange);
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+.section-kicker::before {
+	content: "";
+	width: 26px;
+	height: 2px;
+	background: currentColor;
+}
+.section-title {
+	max-width: 760px;
+	font-size: clamp(30px, 4vw, 48px);
+	margin-bottom: 18px;
+}
+.section-copy {
+	max-width: 700px;
+	color: var(--rd-muted);
+	font-size: 16px;
+}
+.section-head {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 30px;
+	margin-bottom: 36px;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	min-height: 48px;
+	padding: 0 20px;
+	border: 1px solid transparent;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 800;
+	cursor: pointer;
+	transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+	white-space: nowrap;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn-primary {
+	background: linear-gradient(135deg, var(--rd-orange), var(--rd-orange-2));
+	color: #fff;
+	box-shadow: 0 16px 34px rgba(255, 74, 28, 0.25);
+}
+.btn-primary:hover { box-shadow: 0 22px 42px rgba(255, 74, 28, 0.32); }
+.btn-secondary {
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.36);
+	backdrop-filter: blur(14px);
+}
+.btn-secondary:hover { background: #fff; color: var(--rd-ink); }
+.btn-dark { background: var(--rd-ink); color: #fff; }
+.btn-light { background: #fff; color: var(--rd-ink); border-color: rgba(255, 255, 255, 0.32); }
+.btn-outline {
+	background: #fff;
+	color: var(--rd-ink);
+	border-color: var(--rd-line);
+}
+.btn-outline:hover {
+	border-color: var(--rd-orange);
+	color: var(--rd-orange);
+}
+.icon-btn {
+	width: 44px;
+	height: 44px;
+	border: 1px solid var(--rd-line);
+	border-radius: 6px;
+	background: #fff;
+	color: var(--rd-ink);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(34px);
+	transition: opacity 700ms ease, transform 700ms ease;
+}
+[data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+[data-reveal="left"] { transform: translateX(-34px); }
+[data-reveal="right"] { transform: translateX(34px); }
+
+/* Header */
+.site-header {
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: 50;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	background: var(--rd-ink);
+	box-shadow: 0 12px 30px rgba(14, 26, 36, 0.24);
+}
+.site-header.scrolled {
+	background: var(--rd-ink);
+	border-color: rgba(255, 255, 255, 0.12);
+	box-shadow: 0 12px 30px rgba(14, 26, 36, 0.24);
+}
+.header-inner {
+	width: min(100% - 48px, var(--container));
+	min-height: 78px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 22px;
+}
+.brand { display: inline-flex; align-items: center; gap: 12px; min-width: max-content; }
+.brand-mark {
+	position: relative;
+	width: 58px;
+	height: 44px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.16));
+}
+.brand-mark::after {
+	content: "";
+	position: absolute;
+	right: -10px;
+	bottom: -8px;
+	width: 38px;
+	height: 22px;
+	border-bottom: 5px solid var(--rd-orange);
+	border-right: 5px solid var(--rd-orange);
+	transform: skewX(-24deg) rotate(-8deg);
+}
+.brand-letter {
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-heading);
+	font-size: 28px;
+	font-weight: 800;
+	line-height: 1;
+	transform: skewX(-10deg);
+	color: #fff;
+}
+.brand-letter:first-child {
+	background: var(--rd-orange);
+	clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+}
+.brand-letter:last-child {
+	background: var(--rd-ink);
+	clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+	margin-left: -5px;
+}
+.brand-text { display: grid; gap: 1px; color: #fff; }
+.brand-text strong { font-family: var(--font-heading); font-size: 16px; line-height: 1; }
+.brand-text span {
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 2.3px;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.72);
+}
+.site-header.scrolled .brand-text { color: #fff; }
+.site-header.scrolled .brand-text span { color: rgba(255, 255, 255, 0.72); }
+.main-nav ul { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.main-nav > ul > li > a {
+	display: inline-flex;
+	align-items: center;
+	height: 42px;
+	padding: 0 12px;
+	border-radius: 6px;
+	color: rgba(255, 255, 255, 0.86);
+	font-size: 14px;
+	font-weight: 700;
+	transition: background 160ms ease, color 160ms ease;
+}
+.main-nav > ul > li > a:hover,
+.main-nav > ul > li > a:focus-visible,
+.main-nav > ul > li > a.is-active {
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+.site-header.scrolled .main-nav > ul > li > a { color: rgba(255, 255, 255, 0.86); }
+.site-header.scrolled .main-nav > ul > li > a:hover,
+.site-header.scrolled .main-nav > ul > li > a:focus-visible,
+.site-header.scrolled .main-nav > ul > li > a.is-active {
+	background: rgba(255, 255, 255, 0.14);
+	color: #fff;
+}
+.header-actions { display: flex; align-items: center; gap: 10px; }
+.menu-toggle { display: none; }
+
+/* Page hero */
+.page-hero {
+	position: relative;
+	padding: 148px 0 88px;
+	background:
+		linear-gradient(90deg, rgba(8, 15, 22, 0.94) 0%, rgba(10, 20, 29, 0.86) 50%, rgba(10, 20, 29, 0.72) 100%),
+		url("images/seo-image.jpg") center / cover no-repeat;
+	isolation: isolate;
+}
+.page-hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(135deg, rgba(255, 74, 28, 0.24) 0%, transparent 40%),
+		repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 82px);
+	pointer-events: none;
+}
+.page-hero .container { position: relative; z-index: 1; }
+.page-hero-grid {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 44px;
+	align-items: end;
+}
+.page-hero-content { color: #fff; }
+.breadcrumb {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 20px;
+	font-size: 13px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.62);
+}
+.breadcrumb a { color: rgba(255, 255, 255, 0.82); transition: color 160ms ease; }
+.breadcrumb a:hover { color: var(--rd-orange-2); }
+.breadcrumb i { font-size: 10px; opacity: 0.5; }
+.page-hero h1 {
+	color: #fff;
+	font-size: clamp(38px, 6vw, 68px);
+	margin-bottom: 18px;
+}
+.page-hero-copy {
+	max-width: 620px;
+	font-size: clamp(16px, 2vw, 19px);
+	color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 28px;
+}
+.page-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.hero-stats {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+}
+.hero-stat {
+	padding: 22px;
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: var(--radius);
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(16px);
+}
+.hero-stat strong {
+	display: block;
+	color: #fff;
+	font-family: var(--font-heading);
+	font-size: 28px;
+	line-height: 1;
+	margin-bottom: 6px;
+}
+.hero-stat span {
+	font-size: 13px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.68);
+}
+
+/* Jump nav */
+.jump-nav-wrap {
+	padding: 14px 0;
+	background: rgba(255, 255, 255, 0.94);
+	border-bottom: 1px solid var(--rd-line);
+	backdrop-filter: blur(14px);
+}
+.jump-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.jump-nav a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 38px;
+	padding: 0 14px;
+	border: 1px solid var(--rd-line);
+	border-radius: 6px;
+	background: #fff;
+	color: var(--rd-ink);
+	font-size: 12.5px;
+	font-weight: 800;
+	transition: transform 160ms ease, border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+.jump-nav a i { font-size: 13px; color: var(--accent, var(--rd-orange)); }
+.jump-nav a:hover {
+	transform: translateY(-2px);
+	border-color: color-mix(in srgb, var(--accent, var(--rd-orange)) 45%, white);
+	color: var(--accent, var(--rd-orange));
+}
+
+/* Category sections */
+.category-section {
+	padding: 88px 0;
+}
+.category-section:nth-child(even) {
+	background: linear-gradient(180deg, #fff 0%, var(--rd-soft) 100%);
+}
+.category-header {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: 22px;
+	align-items: center;
+	margin-bottom: 36px;
+	padding-bottom: 28px;
+	border-bottom: 1px solid var(--rd-line);
+}
+.category-badge {
+	width: 64px;
+	height: 64px;
+	border-radius: 10px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: color-mix(in srgb, var(--accent) 13%, white);
+	color: var(--accent);
+	font-size: 26px;
+}
+.category-header h2 { font-size: clamp(26px, 3.5vw, 38px); margin-bottom: 8px; }
+.category-header p { color: var(--rd-muted); max-width: 560px; font-size: 15px; }
+.category-count {
+	padding: 10px 16px;
+	border-radius: 6px;
+	background: color-mix(in srgb, var(--accent) 10%, white);
+	color: var(--accent);
+	font-size: 13px;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+.service-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 18px;
+}
+.service-item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	border: 1px solid var(--rd-line);
+	border-radius: var(--radius);
+	background: #fff;
+	transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.service-item::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto;
+	height: 3px;
+	border-radius: var(--radius) var(--radius) 0 0;
+	background: linear-gradient(90deg, var(--accent), transparent);
+}
+.service-item:hover {
+	transform: translateY(-6px);
+	border-color: color-mix(in srgb, var(--accent) 42%, white);
+	box-shadow: var(--shadow);
+}
+.service-item-icon {
+	width: 42px;
+	height: 42px;
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 16px;
+	background: color-mix(in srgb, var(--accent) 12%, white);
+	color: var(--accent);
+	font-size: 18px;
+}
+.service-item h3 {
+	font-size: 17px;
+	margin-bottom: 10px;
+	line-height: 1.25;
+}
+.service-item > p {
+	flex: 1;
+	font-size: 14px;
+	color: var(--rd-muted);
+	margin-bottom: 16px;
+	line-height: 1.55;
+}
+.service-item ul { margin-bottom: 18px; }
+.service-item li {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin: 8px 0;
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--rd-ink);
+}
+.service-item li i {
+	margin-top: 3px;
+	font-size: 11px;
+	color: var(--accent);
+}
+.service-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: auto;
+	font-size: 13px;
+	font-weight: 800;
+	color: var(--accent);
+	transition: gap 180ms ease;
+}
+.service-link:hover { gap: 12px; }
+
+/* Package CTA */
+.package-banner {
+	margin: 0 0 88px;
+	padding: 32px 36px;
+	border: 1px solid rgba(255, 74, 28, 0.2);
+	border-radius: var(--radius);
+	background: linear-gradient(135deg, rgba(255, 74, 28, 0.08), rgba(15, 143, 136, 0.07));
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+.package-banner h3 {
+	font-size: clamp(22px, 3vw, 30px);
+	margin-bottom: 8px;
+}
+.package-banner p {
+	max-width: 560px;
+	color: var(--rd-muted);
+	font-size: 15px;
+}
+
+/* Why + CTA */
+.why-strip {
+	padding: 88px 0;
+	background:
+		linear-gradient(135deg, rgba(14, 26, 36, 0.96), rgba(18, 37, 51, 0.96)),
+		url("images/about-banner.jpg") center / cover no-repeat;
+	color: rgba(255, 255, 255, 0.72);
+}
+.why-strip .section-title { color: #fff; }
+.why-strip .section-copy { color: rgba(255, 255, 255, 0.7); }
+.why-cards {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	margin-top: 40px;
+}
+.why-card {
+	padding: 24px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: var(--radius);
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(12px);
+	transition: transform 220ms ease, background 220ms ease;
+}
+.why-card:hover {
+	transform: translateY(-6px);
+	background: rgba(255, 255, 255, 0.12);
+}
+.why-card i {
+	width: 48px;
+	height: 48px;
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 16px;
+	background: rgba(255, 74, 28, 0.16);
+	color: var(--rd-orange-2);
+	font-size: 20px;
+}
+.why-card h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
+.why-card p { font-size: 14px; color: rgba(255, 255, 255, 0.65); }
+
+.cta {
+	padding: 96px 0;
+	background:
+		linear-gradient(110deg, rgba(255, 74, 28, 0.92), rgba(255, 122, 53, 0.84)),
+		url("images/index-image-2.jpg") center / cover no-repeat;
+	color: #fff;
+	text-align: center;
+}
+.cta h2 {
+	color: #fff;
+	font-size: clamp(32px, 5vw, 54px);
+	margin-bottom: 16px;
+}
+.cta p {
+	max-width: 620px;
+	margin: 0 auto 28px;
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 17px;
+}
+.cta-actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 14px;
+}
+
+/* Footer */
+.site-footer {
+	padding: 72px 0 28px;
+	background: var(--rd-ink);
+	color: rgba(255, 255, 255, 0.68);
+}
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1.4fr repeat(3, 1fr);
+	gap: 36px;
+	margin-bottom: 42px;
+}
+.footer-brand p {
+	margin: 18px 0 22px;
+	font-size: 14px;
+	line-height: 1.7;
+}
+.footer-brand .brand-text { color: #fff; }
+.footer-brand .brand-text span { color: rgba(255, 255, 255, 0.58); }
+.socials { display: flex; gap: 10px; }
+.socials a {
+	width: 40px;
+	height: 40px;
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	border-radius: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transition: background 160ms ease, border-color 160ms ease;
+}
+.socials a:hover {
+	background: var(--rd-orange);
+	border-color: var(--rd-orange);
+}
+.footer-col h4 {
+	color: #fff;
+	font-size: 14px;
+	margin-bottom: 16px;
+}
+.footer-col li { margin: 10px 0; }
+.footer-col a {
+	font-size: 14px;
+	font-weight: 600;
+	transition: color 160ms ease;
+}
+.footer-col a:hover { color: var(--rd-orange-2); }
+.footer-bottom {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding-top: 24px;
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	font-size: 13px;
+}
+.footer-bottom a:hover { color: var(--rd-orange-2); }
+
+@media (max-width: 1080px) {
+	.service-grid { grid-template-columns: repeat(2, 1fr); }
+	.why-cards { grid-template-columns: repeat(2, 1fr); }
+	.page-hero-grid { grid-template-columns: 1fr; }
+	.category-header { grid-template-columns: auto 1fr; }
+	.category-count { grid-column: 1 / -1; justify-self: start; }
+}
+
+@media (max-width: 820px) {
+	.menu-toggle { display: inline-flex; }
+	.main-nav {
+		position: fixed;
+		inset: 78px 0 auto;
+		padding: 18px 24px 28px;
+		background: rgba(255, 255, 255, 0.98);
+		border-bottom: 1px solid var(--rd-line);
+		transform: translateY(-120%);
+		opacity: 0;
+		pointer-events: none;
+		transition: transform 220ms ease, opacity 220ms ease;
+	}
+	.main-nav.is-open {
+		transform: translateY(0);
+		opacity: 1;
+		pointer-events: auto;
+	}
+	.main-nav ul { flex-direction: column; align-items: stretch; }
+	.main-nav > ul > li > a,
+	.site-header.scrolled .main-nav > ul > li > a {
+		color: var(--rd-ink);
+		height: 48px;
+	}
+	.section-head { flex-direction: column; align-items: flex-start; }
+	.service-grid,
+	.why-cards,
+	.hero-stats { grid-template-columns: 1fr; }
+	.footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+	.footer-grid { grid-template-columns: 1fr; }
+	.package-banner { padding: 24px; }
+	.category-section { padding: 64px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-reveal] { opacity: 1; transform: none; }
+}
+</style>
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
+</head>
+<body>
+<?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
+
+
+
+
+<main id="top">
+	<section class="page-hero" aria-label="Services overview">
+		<div class="container">
+			<div class="page-hero-grid">
+				<div class="page-hero-content" data-reveal>
+					<nav class="breadcrumb" aria-label="Breadcrumb">
+						<a href="index.php">Home</a>
+						<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+						<span>Services</span>
+					</nav>
+					<h1>Every growth service your business needs — in one team.</h1>
+					<p class="page-hero-copy">From bookkeeping and web design to digital marketing and SEO — RealDeal organizes 20 core services into clear, outcome-driven packages built for measurable ROI.</p>
+					<div class="page-hero-actions">
+						<a class="btn btn-primary" href="contact.php"><i class="fa-solid fa-paper-plane"></i> Request a Proposal</a>
+						<a class="btn btn-secondary" href="#bookkeeping"><i class="fa-solid fa-compass"></i> Browse Catalog</a>
+					</div>
+				</div>
+				<div class="hero-stats" data-reveal="right">
+					<div class="hero-stat"><strong>20</strong><span>Specialized digital services</span></div>
+					<div class="hero-stat"><strong>4</strong><span>Core service categories</span></div>
+					<div class="hero-stat"><strong>360°</strong><span>Accounting and Bookkeeping, web &amp; marketing</span></div>
+					<div class="hero-stat"><strong>1</strong><span>Accountable growth partner</span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="jump-nav-wrap">
+		<div class="container">
+			<nav class="jump-nav" aria-label="Service categories">
+				<a href="#bookkeeping" style="--accent: var(--rd-teal);"><i class="fa-solid fa-calculator"></i> Accounting and Bookkeeping</a>
+				<a href="#web-design-development" style="--accent: var(--rd-orange);"><i class="fa-solid fa-laptop-code"></i> Web Design &amp; Development</a>
+				<a href="#digital-marketing" style="--accent: var(--rd-blue);"><i class="fa-solid fa-bullhorn"></i> Digital Marketing</a>
+				<a href="#seo" style="--accent: var(--rd-green);"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</a>
+			</nav>
+		</div>
+	</div>
+
+	<!-- Accounting and Bookkeeping -->
+	<section class="category-section" id="bookkeeping" style="--accent: var(--rd-teal);">
+		<div class="container">
+			<div class="category-header" data-reveal>
+				<div class="category-badge"><i class="fa-solid fa-calculator"></i></div>
+				<div>
+					<span class="section-kicker">Category 01</span>
+					<h2>Accounting and Bookkeeping</h2>
+					<p>Accurate books, payables, receivables, reconciliation, reporting, tax data and payroll handled by one dedicated team.</p>
+				</div>
+				<span class="category-count">7 services</span>
+				<a class="service-link" href="bookkeeping.php" style="margin-left:16px;">View category <i class="fa-solid fa-arrow-right"></i></a>
+			</div>
+			<div class="service-grid">
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-book"></i></div>
+					<h3>Financial Record Keeping</h3>
+					<p>Daily transaction recording and ledger maintenance so your books stay accurate and current.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Sales &amp; purchase entry, expense tracking</li>
+						<li><i class="fa-solid fa-check"></i> General ledger management &amp; account reconciliation</li>
+					</ul>
+					<a class="service-link" href="financial-record-keeping.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
+					<h3>Accounts Payable</h3>
+					<p>Vendor management that keeps bills paid on time without the manual chasing.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Bill recording</li>
+						<li><i class="fa-solid fa-check"></i> Payment scheduling</li>
+					</ul>
+					<a class="service-link" href="accounts-payable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+					<h3>Accounts Receivable</h3>
+					<p>Invoice management that gets you paid faster and keeps collections on track.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Invoice creation</li>
+						<li><i class="fa-solid fa-check"></i> Payment tracking</li>
+					</ul>
+					<a class="service-link" href="accounts-receivable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-building-columns"></i></div>
+					<h3>Bank Reconciliation</h3>
+					<p>Bank statement review that catches errors before they become problems.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Transaction matching</li>
+						<li><i class="fa-solid fa-check"></i> Error correction</li>
+					</ul>
+					<a class="service-link" href="bank-reconciliation.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-chart-pie"></i></div>
+					<h3>Financial Reporting</h3>
+					<p>Basic and monthly reports built for real decision-making.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Profit &amp; loss statement, balance sheet preparation</li>
+						<li><i class="fa-solid fa-check"></i> Cash flow report, expense summary report</li>
+					</ul>
+					<a class="service-link" href="financial-reporting.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+					<h3>Tax Preparation Support</h3>
+					<p>Tax data organization that keeps your filings accurate and audit-ready.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> VAT / GST tracking</li>
+						<li><i class="fa-solid fa-check"></i> Tax filing support data</li>
+					</ul>
+					<a class="service-link" href="tax-preparation-support.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+					<h3>Payroll Management</h3>
+					<p>Salary calculation so your team always gets paid accurately and on time.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Employee payroll processing</li>
+						<li><i class="fa-solid fa-check"></i> Payslip preparation</li>
+					</ul>
+					<a class="service-link" href="payroll-management.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Web Design & Development -->
+	<section class="category-section" id="web-design-development" style="--accent: var(--rd-orange);">
+		<div class="container">
+			<div class="category-header" data-reveal>
+				<div class="category-badge"><i class="fa-solid fa-laptop-code"></i></div>
+				<div>
+					<span class="section-kicker">Category 02</span>
+					<h2>Web Design &amp; Development</h2>
+					<p>Conversion-focused design, custom development and ecommerce builds on WooCommerce and Shopify.</p>
+				</div>
+				<span class="category-count">5 services</span>
+				<a class="service-link" href="web-design-development.php" style="margin-left:16px;">View category <i class="fa-solid fa-arrow-right"></i></a>
+			</div>
+			<div class="service-grid">
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-globe"></i></div>
+					<h3>Website Design</h3>
+					<p>UI/UX design, responsive layouts and landing pages built to build trust and guide visitors to action.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Wireframe &amp; prototype design</li>
+						<li><i class="fa-solid fa-check"></i> Mobile-friendly, sales &amp; lead-gen landing pages</li>
+					</ul>
+					<a class="service-link" href="website-design.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-code"></i></div>
+					<h3>Website Development</h3>
+					<p>Custom, WordPress, front-end and back-end development for business and portfolio sites.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Custom &amp; WordPress development, theme &amp; plugin builds</li>
+						<li><i class="fa-solid fa-check"></i> HTML/CSS/JS front-end, PHP/Node.js back-end &amp; database integration</li>
+					</ul>
+					<a class="service-link" href="website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+					<h3>Ecommerce Website Development</h3>
+					<p>WooCommerce and Shopify stores built to showcase products and reduce checkout friction.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> WooCommerce store setup, product upload, payment &amp; shipping</li>
+						<li><i class="fa-solid fa-check"></i> Shopify setup, app integration, SEO/speed optimization, migration</li>
+					</ul>
+					<a class="service-link" href="ecommerce-website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-wordpress"></i></div>
+					<h3>WooCommerce Development</h3>
+					<p>WordPress stores built and configured on WooCommerce, from catalog to checkout.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> WordPress store setup, product upload &amp; catalog organization</li>
+						<li><i class="fa-solid fa-check"></i> Payment gateway integration &amp; shipping configuration</li>
+					</ul>
+					<a class="service-link" href="woocommerce-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-shopify"></i></div>
+					<h3>Shopify Development</h3>
+					<p>Shopify stores set up, themed and configured end to end for a smooth checkout.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Store setup, theme customization &amp; product management</li>
+						<li><i class="fa-solid fa-check"></i> App integration, payments/shipping, SEO &amp; speed optimization</li>
+					</ul>
+					<a class="service-link" href="shopify-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Digital Marketing -->
+	<section class="category-section" id="digital-marketing" style="--accent: var(--rd-blue);">
+		<div class="container">
+			<div class="category-header" data-reveal>
+				<div class="category-badge"><i class="fa-solid fa-bullhorn"></i></div>
+				<div>
+					<span class="section-kicker">Category 03</span>
+					<h2>Digital Marketing</h2>
+					<p>Platform-specific strategy, content and growth campaigns across every major social channel.</p>
+				</div>
+				<span class="category-count">6 services</span>
+				<a class="service-link" href="digital-marketing.php" style="margin-left:16px;">View category <i class="fa-solid fa-arrow-right"></i></a>
+			</div>
+			<div class="service-grid">
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-facebook-f"></i></div>
+					<h3>Facebook Marketing</h3>
+					<p>Page setup, content marketing and ads management built for reach and retargeting.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Business page creation &amp; profile optimization</li>
+						<li><i class="fa-solid fa-check"></i> Ads campaign setup, audience targeting &amp; retargeting</li>
+					</ul>
+					<a class="service-link" href="facebook-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-instagram"></i></div>
+					<h3>Instagram Marketing</h3>
+					<p>Profile optimization, reel and story design, and organic growth strategy that builds an audience.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Business account setup &amp; bio/branding</li>
+						<li><i class="fa-solid fa-check"></i> Reel &amp; post design, hashtag strategy</li>
+					</ul>
+					<a class="service-link" href="instagram-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+					<h3>LinkedIn Marketing</h3>
+					<p>Professional profile setup and B2B content strategy that generates qualified leads.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Professional profile setup</li>
+						<li><i class="fa-solid fa-check"></i> Lead generation strategy, article &amp; post creation</li>
+					</ul>
+					<a class="service-link" href="linkedin-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-x-twitter"></i></div>
+					<h3>Twitter (X) Marketing</h3>
+					<p>Account setup, tweet planning and engagement growth that keeps your brand in the conversation.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Profile optimization</li>
+						<li><i class="fa-solid fa-check"></i> Tweet planning &amp; audience interaction</li>
+					</ul>
+					<a class="service-link" href="twitter-x-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-pinterest-p"></i></div>
+					<h3>Pinterest Marketing</h3>
+					<p>Business account setup and pin design that drives discovery-led traffic.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Business account creation</li>
+						<li><i class="fa-solid fa-check"></i> Pin design &amp; board management</li>
+					</ul>
+					<a class="service-link" href="pinterest-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-youtube"></i></div>
+					<h3>YouTube Marketing</h3>
+					<p>Channel setup, video SEO and subscriber growth strategy for long-term reach.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Channel branding &amp; optimization</li>
+						<li><i class="fa-solid fa-check"></i> SEO video optimization, thumbnail design</li>
+					</ul>
+					<a class="service-link" href="youtube-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- Search Engine Optimization (SEO) -->
+	<section class="category-section" id="seo" style="--accent: var(--rd-green);">
+		<div class="container">
+			<div class="category-header" data-reveal>
+				<div class="category-badge"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+				<div>
+					<span class="section-kicker">Category 04</span>
+					<h2>Search Engine Optimization (SEO)</h2>
+					<p>On-page, off-page, local and technical SEO that builds lasting organic visibility and rankings.</p>
+				</div>
+				<span class="category-count">10 services</span>
+				<a class="service-link" href="seo.php" style="margin-left:16px;">View category <i class="fa-solid fa-arrow-right"></i></a>
+			</div>
+			<div class="service-grid">
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-ranking-star"></i></div>
+					<h3>On-Page SEO</h3>
+					<p>Keyword research, content optimization and technical on-page fixes that help pages rank.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Keyword research, SEO content &amp; meta optimization</li>
+						<li><i class="fa-solid fa-check"></i> URL structure, internal linking &amp; image SEO</li>
+					</ul>
+					<a class="service-link" href="on-page-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-link"></i></div>
+					<h3>Off-Page SEO</h3>
+					<p>Backlink building and social bookmarking that strengthens domain authority and trust.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> High authority backlinks &amp; guest posting</li>
+						<li><i class="fa-solid fa-check"></i> Profile creation &amp; content distribution</li>
+					</ul>
+					<a class="service-link" href="off-page-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+					<h3>Local SEO</h3>
+					<p>Google Business Profile optimization and citation building for map pack visibility.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> GBP setup &amp; map ranking strategy</li>
+						<li><i class="fa-solid fa-check"></i> Local directory submission</li>
+					</ul>
+					<a class="service-link" href="local-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-gauge-high"></i></div>
+					<h3>Technical SEO</h3>
+					<p>NAP consistency, site speed, mobile optimization and crawling/indexing fixes.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Core Web Vitals &amp; mobile-friendly fixes</li>
+						<li><i class="fa-solid fa-check"></i> Sitemap setup &amp; robots.txt optimization</li>
+					</ul>
+					<a class="service-link" href="technical-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+					<h3>Ecommerce SEO</h3>
+					<p>Product and category page SEO built to turn search traffic into sales.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Product/category optimization &amp; structured data</li>
+						<li><i class="fa-solid fa-check"></i> Catalog-scale technical fixes</li>
+					</ul>
+					<a class="service-link" href="ecommerce-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-wordpress"></i></div>
+					<h3>WordPress SEO</h3>
+					<p>WordPress-specific SEO setup and optimization, plugin to content structure.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> SEO plugin setup &amp; permalink cleanup</li>
+						<li><i class="fa-solid fa-check"></i> Sitemap &amp; content optimization</li>
+					</ul>
+					<a class="service-link" href="wordpress-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-wordpress"></i></div>
+					<h3>WooCommerce SEO</h3>
+					<p>SEO built specifically for WooCommerce stores — schema, categories and safe fixes.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Product/review schema markup</li>
+						<li><i class="fa-solid fa-check"></i> Category &amp; attribute page optimization</li>
+					</ul>
+					<a class="service-link" href="woocommerce-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-brands fa-shopify"></i></div>
+					<h3>Shopify SEO</h3>
+					<p>SEO built for Shopify's structure — collections, products and theme-level fixes.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Collection &amp; product page SEO</li>
+						<li><i class="fa-solid fa-check"></i> Theme-level technical fixes</li>
+					</ul>
+					<a class="service-link" href="shopify-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+					<h3>SEO Audit</h3>
+					<p>A full diagnostic of your site's SEO health with a clear, prioritized action plan.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Technical, on-page &amp; off-page review</li>
+						<li><i class="fa-solid fa-check"></i> Prioritized action plan report</li>
+					</ul>
+					<a class="service-link" href="seo-audit.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+				<article class="service-item" data-reveal>
+					<div class="service-item-icon"><i class="fa-solid fa-link"></i></div>
+					<h3>Link Building</h3>
+					<p>Ethical, relevant link building that builds real domain authority.</p>
+					<ul>
+						<li><i class="fa-solid fa-check"></i> Outreach &amp; guest post placements</li>
+						<li><i class="fa-solid fa-check"></i> Digital PR &amp; toxic link monitoring</li>
+					</ul>
+					<a class="service-link" href="link-building.php">View details <i class="fa-solid fa-arrow-right"></i></a>
+				</article>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		<div class="package-banner" data-reveal>
+			<div>
+				<h3>Need a custom package?</h3>
+				<p>Combine any services above into one focused growth plan. Tell us your goals and we'll build a proposal with clear deliverables, timeline and pricing.</p>
+			</div>
+			<a class="btn btn-primary" href="contact.php"><i class="fa-solid fa-layer-group"></i> Build Custom Package</a>
+		</div>
+	</div>
+
+	<section class="why-strip" aria-label="Why choose RealDeal">
+		<div class="container">
+			<div data-reveal>
+				<span class="section-kicker">Why RealDeal</span>
+				<h2 class="section-title">One partner. Every channel. Clear results.</h2>
+				<p class="section-copy">Stop juggling multiple vendors. RealDeal delivers bookkeeping, web design &amp; development, digital marketing and SEO under one accountable team — with reporting you can actually use.</p>
+			</div>
+			<div class="why-cards">
+				<article class="why-card" data-reveal>
+					<i class="fa-solid fa-users"></i>
+					<h3>Dedicated team</h3>
+					<p>Specialists in SEO, PPC, design and dev working together on your account.</p>
+				</article>
+				<article class="why-card" data-reveal>
+					<i class="fa-solid fa-chart-simple"></i>
+					<h3>Transparent reporting</h3>
+					<p>Monthly dashboards tied to leads, revenue and ROI — not vanity metrics.</p>
+				</article>
+				<article class="why-card" data-reveal>
+					<i class="fa-solid fa-bolt"></i>
+					<h3>Fast execution</h3>
+					<p>Clear timelines, responsive communication and deliverables on schedule.</p>
+				</article>
+				<article class="why-card" data-reveal>
+					<i class="fa-solid fa-handshake"></i>
+					<h3>Business-first approach</h3>
+					<p>Every tactic is chosen for impact on your bottom line, not just activity.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta" aria-label="Get started">
+		<div class="container" data-reveal>
+			<h2>Ready to grow with the right services?</h2>
+			<p>Book a free strategy call. We'll review your goals, recommend the best service mix and send a clear proposal — no pressure.</p>
+			<div class="cta-actions">
+				<a class="btn btn-light" href="contact.php"><i class="fa-solid fa-calendar-check"></i> Book Free Consultation</a>
+				<a class="btn btn-secondary" href="index.php"><i class="fa-solid fa-house"></i> Back to Home</a>
+			</div>
+		</div>
+	</section>
+</main>
+
+<?php include 'footer.php'; ?>
+
+
+
+
+<script>
+const revealItems = document.querySelectorAll("[data-reveal]");
+const observer = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add("is-visible");
+			observer.unobserve(entry.target);
+		}
+	});
+}, { threshold: 0.12 });
+
+revealItems.forEach((item, index) => {
+	item.style.transitionDelay = `${Math.min(index % 4, 3) * 80}ms`;
+	observer.observe(item);
+});
+</script>
+<script src="assets/site-nav.js?v=3" defer></script>
+</body>
+</html>
