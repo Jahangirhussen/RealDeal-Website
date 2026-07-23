@@ -160,7 +160,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .quote-card-mini p { font-size: 13px; line-height: 1.55; color: rgba(255,255,255,.82); margin-bottom: 0; }
 .quote-card-mini p .more-link { color: #8ab4f8; font-weight: 700; }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>

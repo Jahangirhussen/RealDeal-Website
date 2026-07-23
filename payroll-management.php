@@ -47,7 +47,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .main-nav > ul > li > a:hover { background:rgba(255,255,255,.1); color:#fff; }
 .main-nav > ul > li > a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
 .menu-toggle { display:none; width:44px; height:44px; border:1px solid var(--rd-line); border-radius:6px; background:#fff; cursor:pointer; }
-.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
+.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -60,7 +60,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .detail-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:start; }
 .benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 .benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; }
-.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
+.benefit-icon { width:108px; height:108px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
+.benefit-icon .fa-icon-img { width:84px; height:84px; object-fit:contain; margin:auto; }
 .benefit-card h3 { font-size:17px; margin-bottom:8px; }
 .benefit-card p { font-size:14px; }
 .include-list li { display:flex; gap:10px; margin:12px 0; font-weight:700; color:var(--rd-ink); font-size:15px; }
@@ -97,7 +98,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 @media(max-width:960px) { .detail-grid,.benefit-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 @media(max-width:820px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .main-nav { display:none; position:fixed; inset:78px 16px auto; padding:14px; background:#fff; border:1px solid var(--rd-line); border-radius:var(--radius); box-shadow:var(--shadow); } .main-nav.is-open { display:block; } .main-nav ul { flex-direction:column; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
@@ -111,7 +112,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="bookkeeping.php">Accounting and Bookkeeping</a><span>/</span>
 				<span>Payroll Management</span>
 			</nav>
-			<div class="hero-badge"><i class="fa-solid fa-money-check-dollar"></i> Accounting and Bookkeeping</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/salary.gif" alt="Payroll management icon"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/salary.gif" alt="Payroll management icon"> Accounting and Bookkeeping</div>
 			<h1>Payroll Management</h1>
 			<p class="lead">Accurate salary calculation and payslip preparation so your team always gets paid correctly and on time.</p>
 			<div class="hero-actions">
@@ -127,7 +129,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Payroll Management?</h2>
 					<p>Payroll mistakes damage trust fast. Payroll Management is our disciplined salary calculation process — running employee payroll processing accurately every cycle and preparing clear payslips — so your team gets paid correctly and on time, every single pay period.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Employee payroll processing</h3><p>Wages calculated and processed accurately, every pay cycle.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Payslip preparation</h3><p>Clear, itemized payslips prepared and delivered on schedule.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Accurate deductions</h3><p>Tax, benefits and other withholdings calculated correctly each time.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Reliable pay cycles</h3><p>Payroll that runs on schedule, cycle after cycle, without surprises.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Employee payroll processing</h3><p>Wages calculated and processed accurately, every pay cycle.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Payslip preparation</h3><p>Clear, itemized payslips prepared and delivered on schedule.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Accurate deductions</h3><p>Tax, benefits and other withholdings calculated correctly each time.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Reliable pay cycles</h3><p>Payroll that runs on schedule, cycle after cycle, without surprises.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -152,7 +154,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><i class="fa-solid fa-circle-check"></i> Employee payroll processing every pay cycle</li><li><i class="fa-solid fa-circle-check"></i> Salary and deduction calculation</li><li><i class="fa-solid fa-circle-check"></i> Payslip preparation and delivery</li><li><i class="fa-solid fa-circle-check"></i> Direct deposit coordination</li><li><i class="fa-solid fa-circle-check"></i> New hire and termination payroll updates</li><li><i class="fa-solid fa-circle-check"></i> Monthly payroll summary reporting</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Employee payroll processing every pay cycle</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary and deduction calculation</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payslip preparation and delivery</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Direct deposit coordination</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> New hire and termination payroll updates</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly payroll summary reporting</li></ul>
 		</div>
 	</section>
 	<section class="detail-section">

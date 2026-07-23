@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include __DIR__ . '/gtm-head.php'; ?>
+<?php include __DIR__ . '/gtag.php'; ?>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog | RealDeal IT Center — Growth, Accounting and Bookkeeping &amp; Marketing Insights</title>
 <meta name="description" content="Practical bookkeeping, web design, digital marketing and SEO guidance from RealDeal IT Center — filter by category, tag or author.">
-<link rel="canonical" href="https://jahangirhussen.github.io/RealDeal_Home/blogs/">
+<link rel="canonical" href="https://realdealitcenter.com/wp-content/realdeal-pages/blogs/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blog | RealDeal IT Center">
 <meta property="og:description" content="Practical bookkeeping, web design, digital marketing and SEO guidance from RealDeal IT Center.">
-<meta property="og:url" content="https://jahangirhussen.github.io/RealDeal_Home/blogs/">
+<meta property="og:url" content="https://realdealitcenter.com/wp-content/realdeal-pages/blogs/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,6 +98,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 <link rel="stylesheet" href="../assets/site-nav.css?v=3">
 </head>
 <body>
+<?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include '../header.php'; ?>
 
 
@@ -395,44 +399,10 @@ const BLOG_DATA = [
 ];
 
 function loadBlogData() {
-	function fetchPage(pageNum) {
-		return fetch('/wp-json/wp/v2/posts?per_page=100&page=' + pageNum + '&_embed&orderby=date&order=desc')
-			.then(function (res) { return res.ok ? res.json() : []; })
-			.catch(function () { return []; });
-	}
-	return fetchPage(1).then(function (page1) {
-		if (page1.length < 100) return page1;
-		return fetchPage(2).then(function (page2) {
-			if (page2.length < 100) return page1.concat(page2);
-			return fetchPage(3).then(function (page3) { return page1.concat(page2, page3); });
-		});
-	}).then(function (posts) {
-		if (!posts || !posts.length) return BLOG_DATA;
-		return posts
-			.map(function (p) {
-					const media = p._embedded && p._embedded['wp:featuredmedia'] && p._embedded['wp:featuredmedia'][0];
-					const terms = p._embedded && p._embedded['wp:term'] ? [].concat.apply([], p._embedded['wp:term']) : [];
-					const catTerm = terms.find(function (t) { return t.taxonomy === 'category' && t.name !== 'Uncategorized'; });
-					const tagTerms = terms.filter(function (t) { return t.taxonomy === 'post_tag'; }).map(function (t) { return t.name; });
-					const authorName = p._embedded && p._embedded.author && p._embedded.author[0] ? p._embedded.author[0].name : 'RealDeal Editorial Team';
-					const excerptText = (p.excerpt && p.excerpt.rendered ? p.excerpt.rendered : '').replace(/<[^>]+>/g, '').trim();
-					return {
-						slug: p.slug,
-						title: (p.title && p.title.rendered) || p.slug,
-						excerpt: excerptText || (p.title && p.title.rendered) || '',
-						image: media ? media.source_url : '../images/index-image.jpg',
-						category: catTerm ? catTerm.name : 'Blog',
-						tags: tagTerms.length ? tagTerms : ['Blog'],
-						author: authorName,
-						date: (p.date || '').slice(0, 10),
-						readingTime: Math.max(3, Math.round((p.content && p.content.rendered ? p.content.rendered.replace(/<[^>]+>/g, '').split(/\s+/).length : 600) / 200)),
-						popular: false,
-						featured: false,
-						detailUrl: p.link
-					};
-				});
-		})
-		.catch(function () { return BLOG_DATA; });
+	// Static site: articles live as .php files in this folder (detailUrl above).
+	// Intentionally not fetching /wp-json/wp/v2/posts — those are unrelated
+	// WordPress-native posts and would link to the wrong (theme) templates.
+	return Promise.resolve(BLOG_DATA);
 }
 
 const CATEGORY_ACCENTS = { "Accounting and Bookkeeping":"var(--rd-teal)", "Web Design & Development":"var(--rd-orange)", "Digital Marketing":"var(--rd-blue)", "SEO":"var(--rd-green)" };
@@ -568,7 +538,7 @@ const CATEGORY_ACCENTS = { "Accounting and Bookkeeping":"var(--rd-teal)", "Web D
 				"image": item.image,
 				"datePublished": item.date,
 				"author": { "@type": "Organization", "name": item.author },
-				"url": "https://jahangirhussen.github.io/RealDeal_Home/blogs/" + item.detailUrl
+				"url": "https://realdealitcenter.com/wp-content/realdeal-pages/blogs/" + item.detailUrl
 			}))
 		};
 		document.getElementById("blog-schema").textContent = JSON.stringify(schema);

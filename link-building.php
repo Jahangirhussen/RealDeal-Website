@@ -37,7 +37,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("HERO_IMG") center/cover; color:#fff; }
+.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("HERO_IMG") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -84,7 +84,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<style>
 	.benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 	.benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; }
-	.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
+	.benefit-icon { width:108px; height:108px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
+.benefit-icon .fa-icon-img { width:84px; height:84px; object-fit:contain; margin:auto; }
 	.benefit-card h3 { font-size:17px; margin-bottom:8px; }
 	.benefit-card p { font-size:14px; }
 	.include-list li { display:flex; gap:10px; margin:12px 0; font-weight:700; color:var(--rd-ink); font-size:15px; }
@@ -105,7 +106,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="seo.php">SEO</a><span>/</span>
 				<span>Link Building</span>
 			</nav>
-			<div class="hero-badge"><i class="fa-solid fa-link"></i> SEO</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building icon"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building icon"> SEO</div>
 			<h1>Link Building</h1>
 			<p class="lead">Ethical, relevant link building that builds real domain authority — no spam, no shortcuts.</p>
 			<div class="hero-actions">
@@ -121,7 +123,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Link Building?</h2>
 					<p>Link Building earns high-quality, relevant backlinks that signal authority to search engines — through outreach, guest content and digital PR, focused on links that hold up over time rather than quick, risky shortcuts.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Quality over quantity</h3><p>Fewer, more relevant links instead of a flood of low-value ones.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>White-hat only</h3><p>No paid link schemes or tactics that risk a future penalty.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Relevant outreach</h3><p>Links earned from sites genuinely related to your industry.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Tracked and reported</h3><p>Every link earned is tracked and reported transparently.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Quality over quantity</h3><p>Fewer, more relevant links instead of a flood of low-value ones.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>White-hat only</h3><p>No paid link schemes or tactics that risk a future penalty.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Relevant outreach</h3><p>Links earned from sites genuinely related to your industry.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Tracked and reported</h3><p>Every link earned is tracked and reported transparently.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -143,7 +145,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><i class="fa-solid fa-circle-check"></i> Backlink profile audit and strategy</li><li><i class="fa-solid fa-circle-check"></i> Outreach and relationship-based link building</li><li><i class="fa-solid fa-circle-check"></i> Guest post placements on relevant sites</li><li><i class="fa-solid fa-circle-check"></i> Digital PR and mention-to-link recovery</li><li><i class="fa-solid fa-circle-check"></i> Monthly link acquisition report</li><li><i class="fa-solid fa-circle-check"></i> Ongoing toxic link monitoring</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Backlink profile audit and strategy</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Outreach and relationship-based link building</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Guest post placements on relevant sites</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Digital PR and mention-to-link recovery</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly link acquisition report</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Ongoing toxic link monitoring</li></ul>
 		</div>
 	</section>
 	<section class="detail-section alt" style="max-width:800px;margin:0 auto;">

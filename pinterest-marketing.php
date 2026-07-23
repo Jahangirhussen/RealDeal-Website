@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include __DIR__ . '/gtm-head.php'; ?>
+<?php include __DIR__ . '/gtag.php'; ?>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pinterest Marketing | RealDeal IT Center</title>
@@ -47,7 +50,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .main-nav > ul > li > a:hover { background:rgba(255,255,255,.1); color:#fff; }
 .main-nav > ul > li > a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
 .menu-toggle { display:none; width:44px; height:44px; border:1px solid var(--rd-line); border-radius:6px; background:#fff; cursor:pointer; }
-.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
+.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -60,7 +63,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .detail-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:start; }
 .benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 .benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; }
-.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
+.benefit-icon { width:108px; height:108px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
+.benefit-icon .fa-icon-img { width:84px; height:84px; object-fit:contain; margin:auto; }
 .benefit-card h3 { font-size:17px; margin-bottom:8px; }
 .benefit-card p { font-size:14px; }
 .include-list li { display:flex; gap:10px; margin:12px 0; font-weight:700; color:var(--rd-ink); font-size:15px; }
@@ -97,9 +101,10 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 @media(max-width:960px) { .detail-grid,.benefit-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 @media(max-width:820px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .main-nav { display:none; position:fixed; inset:78px 16px auto; padding:14px; background:#fff; border:1px solid var(--rd-line); border-radius:var(--radius); box-shadow:var(--shadow); } .main-nav.is-open { display:block; } .main-nav ul { flex-direction:column; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
+<?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 
 <main>
@@ -111,7 +116,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="digital-marketing.php">Digital Marketing</a><span>/</span>
 				<span>Pinterest Marketing</span>
 			</nav>
-			<div class="hero-badge"><i class="fa-solid fa-hashtag"></i> Digital Marketing</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/pinterest.svg" alt="Pinterest logo"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/brands/pinterest.svg" alt="Pinterest logo"> Digital Marketing</div>
 			<h1>Pinterest Marketing</h1>
 			<p class="lead">Business account setup, pin design and board management that turn Pinterest into a long-term source of discovery and traffic.</p>
 			<div class="hero-actions">
@@ -127,7 +133,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Pinterest Marketing?</h2>
 					<p>Pinterest works differently from other platforms — pins keep driving traffic long after they're published. We set up a business account built for search visibility, design pins that get saved and clicked, and organize boards so your content keeps working for months.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Search-ready account</h3><p>A business account structured for Pinterest's search and discovery engine.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Click-worthy pin design</h3><p>Pins designed to stand out in feed and search results.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Organized boards</h3><p>Boards structured to keep content discoverable and relevant.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Long-term traffic</h3><p>Content built to keep driving clicks to your site well beyond launch.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Search-ready account</h3><p>A business account structured for Pinterest's search and discovery engine.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Click-worthy pin design</h3><p>Pins designed to stand out in feed and search results.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Organized boards</h3><p>Boards structured to keep content discoverable and relevant.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Long-term traffic</h3><p>Content built to keep driving clicks to your site well beyond launch.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -152,7 +158,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><i class="fa-solid fa-circle-check"></i> Business account creation</li><li><i class="fa-solid fa-circle-check"></i> Profile and keyword optimization</li><li><i class="fa-solid fa-circle-check"></i> Pin design and production</li><li><i class="fa-solid fa-circle-check"></i> Board management and organization</li><li><i class="fa-solid fa-circle-check"></i> Content calendar management</li><li><i class="fa-solid fa-circle-check"></i> Monthly traffic and engagement report</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business account creation</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profile and keyword optimization</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Pin design and production</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Board management and organization</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Content calendar management</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly traffic and engagement report</li></ul>
 		</div>
 	</section>
 	<section class="detail-section">

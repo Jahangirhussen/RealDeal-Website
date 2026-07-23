@@ -109,7 +109,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 .benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; transition:transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
 .benefit-card:hover { transform:translateY(-4px); border-color:var(--rd-orange); box-shadow:0 16px 36px rgba(255,74,28,.16); }
-.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
+.benefit-icon { width:110px; height:110px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
+.benefit-icon .fa-icon-img { width:90px; height:90px; object-fit:contain; margin:auto; }
 .benefit-card h3 { font-size:17px; margin-bottom:8px; }
 .benefit-card p { font-size:14px; }
 
@@ -161,7 +162,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 @media(max-width:960px) { .benefit-grid,.footer-grid,.role-list { grid-template-columns:1fr; } .form-grid { grid-template-columns:1fr; } }
 @media(max-width:640px) { .benefit-grid { grid-template-columns:1fr; } .apply-card { padding:24px; } .role-item { padding:26px 20px 20px; } .role-badge { left:14px; padding:8px 14px; font-size:13px; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
@@ -174,7 +175,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="index.php">Home</a><span>/</span>
 				<span>Career</span>
 			</nav>
-			<div class="hero-badge"><i class="fa-solid fa-briefcase"></i> Careers at RealDeal</div>
+			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/briefcase.gif" alt="Careers"> Careers at RealDeal</div>
 			<h1>Build your career with a growth-focused agency</h1>
 			<p class="lead">Join a team that values execution, transparency and results. We're always looking for talented marketers, designers and developers.</p>
 			<div class="hero-actions">
@@ -189,10 +190,10 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<span class="section-kicker">Why RealDeal</span>
 			<h2 class="section-title">Why people choose to build their career here</h2>
 			<div class="benefit-grid">
-				<article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-arrow-trend-up"></i></div><h3>Real ownership</h3><p>Own campaigns and client relationships directly — not buried under layers of approval.</p></article>
-				<article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-house-laptop"></i></div><h3>Flexible work</h3><p>Remote-friendly setup built around output, not hours logged at a desk.</p></article>
-				<article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-graduation-cap"></i></div><h3>Room to grow</h3><p>Learning support and exposure to every channel, not just one narrow lane.</p></article>
-				<article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-people-group"></i></div><h3>Collaborative culture</h3><p>Specialists across SEO, PPC, design and dev who actually work together.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/trending.gif" alt="Growth"></div><h3>Real ownership</h3><p>Own campaigns and client relationships directly — not buried under layers of approval.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/remote-work.gif" alt="Flexible work"></div><h3>Flexible work</h3><p>Remote-friendly setup built around output, not hours logged at a desk.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/graduation-cap.gif" alt="Learning"></div><h3>Room to grow</h3><p>Learning support and exposure to every channel, not just one narrow lane.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/team.gif" alt="Collaboration"></div><h3>Collaborative culture</h3><p>Specialists across SEO, PPC, design and dev who actually work together.</p></article>
 			</div>
 		</div>
 	</section>
@@ -203,7 +204,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<h2 class="section-title">Current openings</h2>
 			<div class="role-list">
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-users-gear"></i> Administration &amp; HR</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/hr.gif" alt="HR"> Administration &amp; HR</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -212,14 +213,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">We are looking for an organised Administration &amp; HR Executive to support office operations, recruitment, employee records, onboarding, and daily administrative tasks while helping maintain a productive and professional workplace.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-calculator"></i> Junior Accountant</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/calculator.gif" alt="Accounting"> Junior Accountant</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -228,14 +229,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Are you a detail-oriented accounting professional looking to grow your career? Join RealDeal IT Center as a Junior Accountant and assist with financial reporting, bookkeeping, reconciliations, invoicing, and maintaining accurate financial records while working alongside an experienced finance team.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-book"></i> Bookkeeping Executive</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/book.gif" alt="Bookkeeping"> Bookkeeping Executive</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -244,14 +245,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">RealDeal IT Center is seeking a Bookkeeping Executive to manage day-to-day financial transactions, maintain accurate records, reconcile accounts, and support the finance department in delivering reliable financial information.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-code"></i> Junior Web Developer</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/browser.gif" alt="Web Development"> Junior Web Developer</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -260,14 +261,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Are you passionate about web development and eager to build your career? Join RealDeal IT Center as a Junior Web Developer and help develop, maintain, and optimize modern websites using HTML, CSS, JavaScript, WordPress, and other web technologies.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-bullhorn"></i> Digital Marketing Executive</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital Marketing"> Digital Marketing Executive</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -276,14 +277,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">RealDeal IT Center is looking for a creative and results-driven Digital Marketing Executive to plan, execute, and optimize online marketing campaigns across SEO, social media, paid advertising, email marketing, and content creation.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Executive</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/seo-search.gif" alt="SEO"> SEO Executive</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -292,14 +293,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Join our growing SEO team as an SEO Executive and help improve website visibility through keyword research, on-page optimisation, technical SEO, link building, and performance reporting for a wide range of clients.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-bullhorn"></i> Digital Marketing Manager</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital Marketing"> Digital Marketing Manager</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -308,14 +309,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Are you an experienced digital marketing professional ready to lead impactful campaigns? Join RealDeal IT Center to manage SEO, PPC, social media, content marketing, and digital strategies that deliver measurable growth for our clients.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Manager</span>
+					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/seo-search.gif" alt="SEO"> SEO Manager</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -324,8 +325,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">RealDeal IT Center is hiring an SEO Manager to lead our search engine optimisation strategy, improve website rankings, analyse performance data, and drive sustainable organic growth through technical and content-focused SEO initiatives.</p>
 					<div class="role-checks">
-						<span><i class="fa-solid fa-location-dot"></i> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><i class="fa-solid fa-circle-check"></i> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
@@ -341,7 +342,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<form class="apply-card" id="applyForm" method="post" enctype="multipart/form-data" action="careers.php#apply" novalidate>
 				<input type="hidden" name="rd_career_apply" value="1">
 				<?php if ($rd_apply_success): ?>
-				<div id="rdApplySuccessMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#e9f9f1;border:2px solid #13a76f;color:#0e1a24;font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(19,167,111,.25);"><i class="fa-solid fa-circle-check" style="color:#13a76f;"></i> Application sent successfully. We'll be in touch soon.</div>
+				<div id="rdApplySuccessMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#e9f9f1;border:2px solid #13a76f;color:#0e1a24;font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(19,167,111,.25);"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Application sent successfully. We'll be in touch soon.</div>
 				<?php endif; ?>
 				<?php if ($rd_apply_error): ?>
 				<div id="rdApplyErrorMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#fdeceb;border:2px solid #ff4a1c;color:#0e1a24;font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(255,74,28,.25);"><i class="fa-solid fa-circle-exclamation" style="color:#ff4a1c;"></i> <?php echo esc_html($rd_apply_error); ?></div>

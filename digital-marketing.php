@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include __DIR__ . '/gtm-head.php'; ?>
+<?php include __DIR__ . '/gtag.php'; ?>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Marketing | RealDeal IT Center</title>
@@ -76,9 +79,10 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
+<?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 <main>
 	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
@@ -88,7 +92,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="services.php">Services</a><span>/</span>
 				<span>Digital Marketing</span>
 			</nav>
-			<div class="hero-badge"><i class="fa-solid fa-bullhorn"></i> Service Category</div>
+			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital marketing icon"> Service Category</div>
 			<h1>Digital Marketing</h1>
 			<p class="lead">Platform-native content and advertising across every social channel that moves your audience.</p>
 			<div class="hero-actions">
@@ -99,12 +103,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	</section>
 	<style>
 	.category-header { display:flex; align-items:center; gap:20px; margin-bottom:32px; flex-wrap:wrap; }
-	.category-badge { width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:color-mix(in srgb, var(--accent) 14%, white); color:var(--accent); font-size:22px; flex-shrink:0; }
+	.category-badge { width:110px; height:110px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:transparent; color:var(--accent); font-size:22px; flex-shrink:0; }
+	.category-badge .fa-icon-img { width:90px; height:90px; object-fit:contain; margin:auto; }
 	.category-count { margin-left:auto; padding:6px 14px; border-radius:99px; background:var(--rd-soft); font-size:13px; font-weight:800; color:var(--rd-ink); }
 	.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 	.service-item { position:relative; padding:24px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; transition:transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
 	.service-item:hover { transform:translateY(-4px); border-color:var(--rd-orange); box-shadow:0 20px 45px rgba(255,74,28,.14); }
-	.service-item-icon { width:42px; height:42px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:color-mix(in srgb, var(--accent, var(--rd-orange)) 12%, white); color:var(--accent, var(--rd-orange)); font-size:18px; }
+	.service-item-icon { width:90px; height:90px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--accent, var(--rd-orange)); font-size:18px; align-self:center; }
+	.service-item-icon .fa-icon-img { width:72px; height:72px; object-fit:contain; margin:auto; }
 	.service-item h3 { font-size:17px; margin-bottom:8px; }
 	.service-item p { font-size:14px; margin-bottom:12px; }
 	.service-item ul { margin-bottom:14px; }
@@ -117,7 +123,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<section class="detail-section">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><i class="fa-solid fa-bullhorn"></i></div>
+				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital Marketing"></div>
 				<div>
 					<span class="section-kicker">Category 03</span>
 					<h2>Digital Marketing</h2>
@@ -127,62 +133,62 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><i class="fa-brands fa-facebook-f"></i></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/facebook.svg" alt="Facebook"></div>
 					<h3>Facebook Marketing</h3>
 					<p>Page setup, content marketing and ads management built for reach and retargeting.</p>
 					<ul>
-						<li><i class="fa-solid fa-check"></i> Business page creation &amp; profile optimization</li>
-						<li><i class="fa-solid fa-check"></i> Ads campaign setup, audience targeting &amp; retargeting</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business page creation &amp; profile optimization</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Ads campaign setup, audience targeting &amp; retargeting</li>
 					</ul>
 					<a class="service-link" href="facebook-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><i class="fa-brands fa-instagram"></i></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/instagram.svg" alt="Instagram"></div>
 					<h3>Instagram Marketing</h3>
 					<p>Profile optimization, reel and story design, and organic growth strategy that builds an audience.</p>
 					<ul>
-						<li><i class="fa-solid fa-check"></i> Business account setup &amp; bio/branding</li>
-						<li><i class="fa-solid fa-check"></i> Reel &amp; post design, hashtag strategy</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business account setup &amp; bio/branding</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Reel &amp; post design, hashtag strategy</li>
 					</ul>
 					<a class="service-link" href="instagram-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/linkedin.svg" alt="LinkedIn"></div>
 					<h3>LinkedIn Marketing</h3>
 					<p>Professional profile setup and B2B content strategy that generates qualified leads.</p>
 					<ul>
-						<li><i class="fa-solid fa-check"></i> Professional profile setup</li>
-						<li><i class="fa-solid fa-check"></i> Lead generation strategy, article &amp; post creation</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Professional profile setup</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Lead generation strategy, article &amp; post creation</li>
 					</ul>
 					<a class="service-link" href="linkedin-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><i class="fa-brands fa-x-twitter"></i></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/twitter-x.svg" alt="X (Twitter)"></div>
 					<h3>Twitter (X) Marketing</h3>
 					<p>Account setup, tweet planning and engagement growth that keeps your brand in the conversation.</p>
 					<ul>
-						<li><i class="fa-solid fa-check"></i> Profile optimization</li>
-						<li><i class="fa-solid fa-check"></i> Tweet planning &amp; audience interaction</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profile optimization</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Tweet planning &amp; audience interaction</li>
 					</ul>
 					<a class="service-link" href="twitter-x-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><i class="fa-brands fa-pinterest-p"></i></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/pinterest.svg" alt="Pinterest"></div>
 					<h3>Pinterest Marketing</h3>
 					<p>Business account setup and pin design that drives discovery-led traffic.</p>
 					<ul>
-						<li><i class="fa-solid fa-check"></i> Business account creation</li>
-						<li><i class="fa-solid fa-check"></i> Pin design &amp; board management</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business account creation</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Pin design &amp; board management</li>
 					</ul>
 					<a class="service-link" href="pinterest-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><i class="fa-brands fa-youtube"></i></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/youtube.svg" alt="YouTube"></div>
 					<h3>YouTube Marketing</h3>
 					<p>Channel setup, video SEO and subscriber growth strategy for long-term reach.</p>
 					<ul>
-						<li><i class="fa-solid fa-check"></i> Channel branding &amp; optimization</li>
-						<li><i class="fa-solid fa-check"></i> SEO video optimization, thumbnail design</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Channel branding &amp; optimization</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> SEO video optimization, thumbnail design</li>
 					</ul>
 					<a class="service-link" href="youtube-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>

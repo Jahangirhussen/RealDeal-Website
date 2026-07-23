@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include __DIR__ . '/gtm-head.php'; ?>
+<?php include __DIR__ . '/gtag.php'; ?>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Packages | RealDeal IT Center</title>
@@ -94,9 +97,10 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 
 @media(max-width:960px) { .pricing-grid,.include-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
+<?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 
 
@@ -131,11 +135,11 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<p>For new or local businesses building their first real online presence.</p>
 					<div class="pricing-price"><strong>$799</strong><span>/ month</span></div>
 					<ul class="pricing-features">
-						<li><i class="fa-solid fa-circle-check"></i> Local SEO &amp; Google Business Profile</li>
-						<li><i class="fa-solid fa-circle-check"></i> On-page SEO for up to 10 pages</li>
-						<li><i class="fa-solid fa-circle-check"></i> Monthly bookkeeping &amp; financial reporting</li>
-						<li><i class="fa-solid fa-circle-check"></i> Facebook &amp; Instagram marketing</li>
-						<li><i class="fa-solid fa-circle-check"></i> Monthly performance report</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Local SEO &amp; Google Business Profile</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> On-page SEO for up to 10 pages</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly bookkeeping &amp; financial reporting</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Facebook &amp; Instagram marketing</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly performance report</li>
 					</ul>
 					<a class="btn btn-outline" href="contact.php">Start With Foundation</a>
 				</article>
@@ -146,12 +150,12 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<p>For businesses ready to combine SEO, web development and marketing into one plan.</p>
 					<div class="pricing-price"><strong>$1,899</strong><span>/ month</span></div>
 					<ul class="pricing-features">
-						<li><i class="fa-solid fa-circle-check"></i> Full on-page, off-page &amp; technical SEO</li>
-						<li><i class="fa-solid fa-circle-check"></i> Website design &amp; development</li>
-						<li><i class="fa-solid fa-circle-check"></i> Multi-platform digital marketing</li>
-						<li><i class="fa-solid fa-circle-check"></i> Accounts payable &amp; receivable management</li>
-						<li><i class="fa-solid fa-circle-check"></i> Payroll management</li>
-						<li><i class="fa-solid fa-circle-check"></i> Dedicated account manager</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Full on-page, off-page &amp; technical SEO</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Website design &amp; development</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Multi-platform digital marketing</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Accounts payable &amp; receivable management</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payroll management</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Dedicated account manager</li>
 					</ul>
 					<a class="btn btn-primary" href="contact.php">Start With Accelerate</a>
 				</article>
@@ -161,12 +165,12 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<p>For multi-location or ecommerce brands needing full coverage across bookkeeping, web, marketing and SEO.</p>
 					<div class="pricing-price"><strong>Custom</strong><span>quote</span></div>
 					<ul class="pricing-features">
-						<li><i class="fa-solid fa-circle-check"></i> Every service in our catalog, combined</li>
-						<li><i class="fa-solid fa-circle-check"></i> Ecommerce website development (WooCommerce &amp; Shopify)</li>
-						<li><i class="fa-solid fa-circle-check"></i> Full bookkeeping &amp; tax preparation support</li>
-						<li><i class="fa-solid fa-circle-check"></i> Multi-channel digital marketing</li>
-						<li><i class="fa-solid fa-circle-check"></i> Custom reporting dashboards</li>
-						<li><i class="fa-solid fa-circle-check"></i> Priority support &amp; strategy calls</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Every service in our catalog, combined</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Ecommerce website development (WooCommerce &amp; Shopify)</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Full bookkeeping &amp; tax preparation support</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Multi-channel digital marketing</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Custom reporting dashboards</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Priority support &amp; strategy calls</li>
 					</ul>
 					<a class="btn btn-outline" href="contact.php">Request Custom Quote</a>
 				</article>
@@ -180,14 +184,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<h2 class="section-title">What's included no matter which plan you choose</h2>
 			<div class="include-grid">
 				<ul class="include-list">
-					<li><i class="fa-solid fa-circle-check"></i> One accountable team across every channel</li>
-					<li><i class="fa-solid fa-circle-check"></i> Transparent monthly reporting</li>
-					<li><i class="fa-solid fa-circle-check"></i> No long-term lock-in contracts</li>
+					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> One accountable team across every channel</li>
+					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Transparent monthly reporting</li>
+					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> No long-term lock-in contracts</li>
 				</ul>
 				<ul class="include-list">
-					<li><i class="fa-solid fa-circle-check"></i> Direct access to your account team</li>
-					<li><i class="fa-solid fa-circle-check"></i> Clear scope and deliverables upfront</li>
-					<li><i class="fa-solid fa-circle-check"></i> Room to scale up as you grow</li>
+					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Direct access to your account team</li>
+					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Clear scope and deliverables upfront</li>
+					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Room to scale up as you grow</li>
 				</ul>
 			</div>
 		</div>

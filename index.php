@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include __DIR__ . '/gtm-head.php'; ?>
+<?php include __DIR__ . '/gtag.php'; ?>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RealDeal IT Center | Accounting and Bookkeeping, Web Design &amp; Development, Digital Marketing &amp; SEO Agency</title>
@@ -8,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Poppins:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="assets/site-nav.css?v=3">
+<link rel="stylesheet" href="assets/site-nav.css?v=13">
 <style>
 :root {
 	--rd-orange: #ff4a1c;
@@ -502,6 +505,64 @@ h1, h2, h3, h4 {
 	inset: 0;
 	background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.55));
 }
+
+/* Floating service-icon card (replaces the reel photo + extra cards) */
+.hero-visual-simple { min-height: 380px; }
+
+.hv-icons-solo {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 380px;
+	background: linear-gradient(160deg, #12202c, #0b1017);
+	overflow: hidden;
+}
+
+.hv-icon-bubble {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	box-shadow: none;
+	color: var(--rd-orange);
+	animation: flyAround ease-in-out infinite;
+}
+
+.hv-icon-bubble img { width: 42px; height: 42px; }
+
+@keyframes flyAround {
+	0%   { transform: translate(0, 0) rotate(0deg); }
+	25%  { transform: translate(10px, -14px) rotate(8deg); }
+	50%  { transform: translate(-8px, -22px) rotate(-6deg); }
+	75%  { transform: translate(-14px, -6px) rotate(6deg); }
+	100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.hv-icon-1  { top: 6%;  left: 6%;  animation-duration: 7s;   }
+.hv-icon-2  { top: 10%; left: 42%; animation-duration: 8.2s; animation-delay: .2s; }
+.hv-icon-3  { top: 8%;  left: 78%; animation-duration: 6.6s; animation-delay: .4s; }
+.hv-icon-4  { top: 30%; left: 20%; animation-duration: 7.8s; animation-delay: .6s; }
+.hv-icon-5  { top: 28%; left: 58%; animation-duration: 7.2s; animation-delay: .8s; }
+.hv-icon-6  { top: 26%; left: 88%; animation-duration: 8.6s; animation-delay: 1s;  }
+.hv-icon-7  { top: 50%; left: 4%;  animation-duration: 6.9s; animation-delay: 1.2s;}
+.hv-icon-8  { top: 48%; left: 36%; animation-duration: 7.5s; animation-delay: 1.4s;}
+.hv-icon-9  { top: 46%; left: 68%; animation-duration: 8s;   animation-delay: 1.6s;}
+.hv-icon-10 { top: 44%; left: 90%; animation-duration: 6.4s; animation-delay: 1.8s;}
+.hv-icon-11 { top: 66%; left: 14%; animation-duration: 7.3s; animation-delay: 2s;  }
+.hv-icon-12 { top: 64%; left: 46%; animation-duration: 8.4s; animation-delay: .1s; }
+.hv-icon-13 { top: 68%; left: 76%; animation-duration: 6.7s; animation-delay: .3s; }
+.hv-icon-14 { top: 84%; left: 8%;  animation-duration: 7.9s; animation-delay: .5s; }
+.hv-icon-15 { top: 86%; left: 30%; animation-duration: 6.5s; animation-delay: .7s; }
+.hv-icon-16 { top: 82%; left: 56%; animation-duration: 8.1s; animation-delay: .9s; }
+.hv-icon-17 { top: 88%; left: 82%; animation-duration: 7.1s; animation-delay: 1.1s;}
+.hv-icon-18 { top: 18%; left: 30%; animation-duration: 6.8s; animation-delay: 1.3s;}
+.hv-icon-19 { top: 20%; left: 66%; animation-duration: 7.6s; animation-delay: 1.5s;}
+.hv-icon-20 { top: 38%; left: 8%;  animation-duration: 8.3s; animation-delay: 1.7s;}
+.hv-icon-21 { top: 58%; left: 60%; animation-duration: 6.3s; animation-delay: 1.9s;}
+.hv-icon-22 { top: 76%; left: 44%; animation-duration: 7.4s; animation-delay: .15s;}
+.hv-icon-23 { top: 12%; left: 16%; animation-duration: 8.5s; animation-delay: .35s;}
 
 .hv-reel .reel-play {
 	position: absolute;
@@ -1681,6 +1742,8 @@ h1, h2, h3, h4 {
 .showreel .container { position: relative; z-index: 2; }
 .showreel .section-title { color: #fff; }
 .showreel .section-copy { color: rgba(255, 255, 255, 0.66); }
+.showreel .section-head { flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+.showreel .section-copy { max-width: 560px; margin: 0 auto; }
 
 .reel-scroller {
 	display: grid;
@@ -1730,6 +1793,18 @@ h1, h2, h3, h4 {
 }
 
 .reel:hover img { transform: scale(1.08); }
+
+.reel-video-embed { position: absolute; inset: 0; overflow: hidden; }
+.reel-video-embed iframe {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 316%;
+	height: 100%;
+	border: 0;
+	pointer-events: none;
+	transform: translateX(-50%);
+}
 
 .reel::after {
 	content: "";
@@ -2330,6 +2405,7 @@ h1, h2, h3, h4 {
 </style>
 </head>
 <body>
+<?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 
 
@@ -2360,34 +2436,32 @@ h1, h2, h3, h4 {
 				</div>
 
 				<!-- Premium visual composition (CSS + imagery) -->
-				<div class="hero-visual" data-reveal="right" aria-hidden="true">
-					<div class="hv-card hv-dash">
-						<div class="hv-dash-head">
-							<small>Campaign performance</small>
-							<span class="hv-badge-up"><i class="fa-solid fa-arrow-up"></i> +38%</span>
-						</div>
-						<div class="hv-metric">3.4x ROAS</div>
-						<div class="hv-metric-sub">Search + social, last 30 days</div>
-						<div class="hv-chart">
-							<span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-						</div>
+				<div class="hero-visual hero-visual-simple" data-reveal="right" aria-hidden="true">
+					<div class="hv-card hv-icons hv-icons-solo">
+						<div class="hv-icon-bubble hv-icon-1"><img src="assets/icons-animated/calculator.gif" alt="Accounting"></div>
+						<div class="hv-icon-bubble hv-icon-2"><img src="assets/icons-animated/browser.gif" alt="Web Development"></div>
+						<div class="hv-icon-bubble hv-icon-3"><img src="assets/icons-animated/bar-chart.gif" alt="SEO"></div>
+						<div class="hv-icon-bubble hv-icon-4"><img src="assets/icons-animated/chat.gif" alt="Digital Marketing"></div>
+						<div class="hv-icon-bubble hv-icon-5"><img src="assets/icons-animated/briefcase.gif" alt="Business"></div>
+						<div class="hv-icon-bubble hv-icon-6"><img src="assets/icons-animated/building.gif" alt="Company"></div>
+						<div class="hv-icon-bubble hv-icon-7"><img src="assets/icons-animated/calendar.gif" alt="Planning"></div>
+						<div class="hv-icon-bubble hv-icon-8"><img src="assets/icons-animated/cart.gif" alt="Ecommerce"></div>
+						<div class="hv-icon-bubble hv-icon-9"><img src="assets/icons-animated/checklist.gif" alt="Checklist"></div>
+						<div class="hv-icon-bubble hv-icon-10"><img src="assets/icons-animated/computer.gif" alt="Web Dev"></div>
+						<div class="hv-icon-bubble hv-icon-11"><img src="assets/icons-animated/design.gif" alt="Design"></div>
+						<div class="hv-icon-bubble hv-icon-12"><img src="assets/icons-animated/diagram.gif" alt="Strategy"></div>
+						<div class="hv-icon-bubble hv-icon-13"><img src="assets/icons-animated/finance.gif" alt="Finance"></div>
+						<div class="hv-icon-bubble hv-icon-14"><img src="assets/icons-animated/gears.gif" alt="Operations"></div>
+						<div class="hv-icon-bubble hv-icon-15"><img src="assets/icons-animated/globe.gif" alt="Global"></div>
+						<div class="hv-icon-bubble hv-icon-16"><img src="assets/icons-animated/location.gif" alt="Local"></div>
+						<div class="hv-icon-bubble hv-icon-17"><img src="assets/icons-animated/play.gif" alt="Media"></div>
+						<div class="hv-icon-bubble hv-icon-18"><img src="assets/icons-animated/rocket.gif" alt="Growth"></div>
+						<div class="hv-icon-bubble hv-icon-19"><img src="assets/icons-animated/seo-search.gif" alt="SEO"></div>
+						<div class="hv-icon-bubble hv-icon-20"><img src="assets/icons-animated/share.gif" alt="Marketing"></div>
+						<div class="hv-icon-bubble hv-icon-21"><img src="assets/icons-animated/target.gif" alt="Goals"></div>
+						<div class="hv-icon-bubble hv-icon-22"><img src="assets/icons-animated/trending.gif" alt="Analytics"></div>
+						<div class="hv-icon-bubble hv-icon-23"><img src="assets/icons-animated/book.gif" alt="Learning"></div>
 					</div>
-
-					<div class="hv-card hv-reel">
-						<img src="images/index-image-3.jpg" alt="" loading="eager" decoding="async" width="300" height="533">
-						<div class="reel-play"><i class="fa-solid fa-play"></i></div>
-						<span class="reel-tag"><i class="fa-solid fa-bolt"></i> Launch reel</span>
-					</div>
-
-					<div class="hv-card hv-social">
-						<div class="ig"><i class="fa-brands fa-instagram"></i></div>
-						<div>
-							<strong>+48K</strong>
-							<span>reach this week</span>
-						</div>
-					</div>
-
-					<div class="hv-chip"><i class="fa-solid fa-magnifying-glass-chart"></i> Ranking #1–3</div>
 				</div>
 			</div>
 		</div>
@@ -2767,12 +2841,13 @@ h1, h2, h3, h4 {
 			</div>
 
 			<div class="reel-scroller" data-reveal>
-				<article class="reel" tabindex="0" role="button" aria-label="Play cafe launch reel">
-					<img src="images/index-image-11.jpg" alt="Cafe launch campaign reel" loading="lazy" decoding="async" width="300" height="533">
-					<div class="reel-top"><span class="reel-cat">Cafe launch</span><span class="reel-stat"><i class="fa-solid fa-heart"></i> 48K</span></div>
-					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
-					<div class="reel-meta"><h3>Local brand buzz</h3><p>Launch reels, food shots &amp; retargeting.</p></div>
-				</article>
+				<a class="reel" href="portfolio/al-haayaat-limited-business-operations-transformation.php" aria-label="View Al Haayaat Limited case study">
+					<div class="reel-video-embed">
+						<iframe src="https://www.youtube.com/embed/DlDrDyNR_QM?autoplay=1&mute=1&loop=1&playlist=DlDrDyNR_QM&controls=0&modestbranding=1&playsinline=1&rel=0" title="Al Haayaat work reel" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+					</div>
+					<div class="reel-top"><span class="reel-cat">Client work</span><span class="reel-stat"><i class="fa-solid fa-heart"></i> 48K</span></div>
+					<div class="reel-meta"><h3>Al Haayaat Limited</h3><p>Business operations transformation, in action.</p></div>
+				</a>
 
 				<article class="reel" tabindex="0" role="button" aria-label="Play service ad reel">
 					<img src="images/index-service-ad-creative-reel.jpg" alt="Service ad creative reel" loading="lazy" decoding="async" width="300" height="533">
@@ -2788,12 +2863,13 @@ h1, h2, h3, h4 {
 					<div class="reel-meta"><h3>Explain &amp; convert</h3><p>Simple demos that pre-sell the offer.</p></div>
 				</article>
 
-				<article class="reel" tabindex="0" role="button" aria-label="Play SEO growth reel">
-					<img src="images/index-image-2.jpg" alt="SEO growth reel" loading="lazy" decoding="async" width="300" height="533">
-					<div class="reel-top"><span class="reel-cat">SEO growth</span><span class="reel-stat"><i class="fa-solid fa-magnifying-glass-chart"></i> +64%</span></div>
-					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
-					<div class="reel-meta"><h3>Ranking that compounds</h3><p>Search dashboards and keyword wins, shown in seconds.</p></div>
-				</article>
+				<a class="reel" href="portfolio/al-haayaat-limited-business-operations-transformation.php" aria-label="View Al Haayaat Limited case study">
+					<div class="reel-video-embed">
+						<iframe src="https://www.youtube.com/embed/3SrbAOZ5V48?autoplay=1&mute=1&loop=1&playlist=3SrbAOZ5V48&controls=0&modestbranding=1&playsinline=1&rel=0" title="Al Haayaat output reel" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+					</div>
+					<div class="reel-top"><span class="reel-cat">Result</span><span class="reel-stat"><i class="fa-solid fa-magnifying-glass-chart"></i> Output</span></div>
+					<div class="reel-meta"><h3>The finished system</h3><p>Final output, shown live.</p></div>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -4716,9 +4792,9 @@ h1, h2, h3, h4 {
 					<h2>Ready to build your next RealDeal project?</h2>
 					<p>Tell us what you need — bookkeeping, web design &amp; development, digital marketing or SEO — and we'll shape a focused plan.</p>
 					<ul class="cta-points">
-						<li><i class="fa-solid fa-check"></i> Free strategy consultation</li>
-						<li><i class="fa-solid fa-check"></i> Clear deliverables &amp; timeline</li>
-						<li><i class="fa-solid fa-check"></i> One accountable team</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Free strategy consultation</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Clear deliverables &amp; timeline</li>
+						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> One accountable team</li>
 					</ul>
 					<a class="btn btn-light" href="mailto:contactrealdealteam@gmail.com"><i class="fa-solid fa-envelope"></i> contactrealdealteam@gmail.com</a>
 				</div>
@@ -5076,7 +5152,7 @@ h1, h2, h3, h4 {
 			event.preventDefault();
 			const button = proposalForm.querySelector("button");
 			const original = button.innerHTML;
-			button.innerHTML = '<i class="fa-solid fa-check"></i> Request Ready To Send';
+			button.innerHTML = '<img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Request Ready To Send';
 			setTimeout(() => { button.innerHTML = original; }, 2400);
 		});
 	}

@@ -37,7 +37,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("HERO_IMG") center/cover; color:#fff; }
+.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("HERO_IMG") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -84,7 +84,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<style>
 	.benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 	.benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; }
-	.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
+	.benefit-icon { width:108px; height:108px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
+.benefit-icon .fa-icon-img { width:84px; height:84px; object-fit:contain; margin:auto; }
 	.benefit-card h3 { font-size:17px; margin-bottom:8px; }
 	.benefit-card p { font-size:14px; }
 	.include-list li { display:flex; gap:10px; margin:12px 0; font-weight:700; color:var(--rd-ink); font-size:15px; }
@@ -105,7 +106,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="seo.php">SEO</a><span>/</span>
 				<span>WordPress SEO</span>
 			</nav>
-			<div class="hero-badge"><i class="fa-brands fa-wordpress"></i> SEO</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress logo"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress logo"> SEO</div>
 			<h1>WordPress SEO</h1>
 			<p class="lead">WordPress-specific SEO setup and optimization, from plugin configuration to content structure.</p>
 			<div class="hero-actions">
@@ -121,7 +123,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is WordPress SEO?</h2>
 					<p>WordPress SEO covers the platform-specific work of getting a WordPress site fully search-optimized — proper SEO plugin configuration, clean permalink structure, sitemap setup and content optimization built around how WordPress actually works.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Proper plugin setup</h3><p>SEO plugin configured correctly instead of left on risky defaults.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Clean site structure</h3><p>Permalinks, categories and tags organized for both users and search engines.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Content optimization</h3><p>Posts and pages optimized for target keywords as they're published.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Ongoing technical health</h3><p>Sitemap, indexing and crawl issues monitored and fixed.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Proper plugin setup</h3><p>SEO plugin configured correctly instead of left on risky defaults.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Clean site structure</h3><p>Permalinks, categories and tags organized for both users and search engines.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Content optimization</h3><p>Posts and pages optimized for target keywords as they're published.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Ongoing technical health</h3><p>Sitemap, indexing and crawl issues monitored and fixed.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -143,7 +145,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><i class="fa-solid fa-circle-check"></i> SEO plugin installation and configuration</li><li><i class="fa-solid fa-circle-check"></i> Permalink structure and URL cleanup</li><li><i class="fa-solid fa-circle-check"></i> XML sitemap setup and submission</li><li><i class="fa-solid fa-circle-check"></i> On-page optimization for key pages and posts</li><li><i class="fa-solid fa-circle-check"></i> Category and tag structure review</li><li><i class="fa-solid fa-circle-check"></i> Monthly technical health check</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> SEO plugin installation and configuration</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Permalink structure and URL cleanup</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> XML sitemap setup and submission</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> On-page optimization for key pages and posts</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Category and tag structure review</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly technical health check</li></ul>
 		</div>
 	</section>
 	<section class="detail-section alt" style="max-width:800px;margin:0 auto;">

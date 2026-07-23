@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php include __DIR__ . '/gtm-head.php'; ?>
+<?php include __DIR__ . '/gtag.php'; ?>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Signs It's Time to Outsource Your Accounting and Bookkeeping | RealDeal IT Center Blog</title>
@@ -79,6 +82,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 <link rel="stylesheet" href="../assets/site-nav.css?v=3">
 </head>
 <body>
+<?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'blog'; $header_mode = 'hero'; include '../header.php'; ?>
 <main>
 	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('../images/index-image.jpg') center/cover;">
