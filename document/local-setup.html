@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>Local Host Run Guide</title>
+<style>
+  @page { margin: 24mm 18mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Noto Sans Bengali', Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  .cover {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: #fff;
+    padding: 60px 40px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  .cover h1 { font-size: 30px; margin: 0 0 10px; }
+  .cover p { font-size: 14px; opacity: .85; margin: 0; }
+  h2 {
+    color: #1e3a8a;
+    border-bottom: 3px solid #1e3a8a;
+    padding-bottom: 6px;
+    margin-top: 34px;
+    font-size: 19px;
+  }
+  .step {
+    background: #f8fafc;
+    border-left: 4px solid #1e3a8a;
+    padding: 12px 16px;
+    margin: 12px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .step .no {
+    display: inline-block;
+    background: #1e3a8a;
+    color: #fff;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    line-height: 22px;
+    margin-right: 8px;
+  }
+  code, pre {
+    font-family: 'Consolas', monospace;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    display: block;
+    margin: 8px 0;
+    font-size: 13px;
+    overflow-x: auto;
+  }
+  .note {
+    background: #fef9c3;
+    border-left: 4px solid #ca8a04;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    margin: 10px 0;
+    font-size: 13.5px;
+  }
+  ul { padding-left: 20px; }
+  .footer {
+    margin-top: 40px;
+    font-size: 11px;
+    color: #94a3b8;
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>RealDeal Home — Local Host Run Guide</h1>
+  <p>PHP project locally run korar step-by-step guide (Bangla + English)</p>
+</div>
+
+<h2>Requirement / প্রয়োজনীয় জিনিস</h2>
+<ul>
+  <li>PHP installed thakte hobe PC te (this machine e already ache: <strong>PHP 8.3.32</strong>)</li>
+  <li>Kono extra database ba config file lagbe na — plain PHP + static assets project</li>
+</ul>
+
+<h2>Run Steps / চালানোর ধাপ</h2>
+
+<div class="step"><span class="no">1</span> Terminal open koro, project folder e jao:
+<code>cd "e:\RealDeal_Home - Final - Breackup"</code>
+</div>
+
+<div class="step"><span class="no">2</span> PHP built-in server start koro:
+<code>php -S localhost:8000</code>
+</div>
+
+<div class="step"><span class="no">3</span> Browser e open koro:
+<code>http://localhost:8000</code>
+</div>
+
+<div class="step"><span class="no">4</span> Server stop korte terminal e press koro:
+<code>Ctrl + C</code>
+</div>
+
+<h2>Extra Notes / অতিরিক্ত তথ্য</h2>
+<div class="note">Port 8000 busy thakle onno port use koro: <code style="display:inline;padding:2px 6px;">php -S localhost:8080</code></div>
+<div class="note">Kono specific page direct URL diye access hobe — example: <code style="display:inline;padding:2px 6px;">http://localhost:8000/about.php</code></div>
+
+<div class="footer">RealDeal Home Project — Internal Setup Document</div>
+
+</body>
+</html>
