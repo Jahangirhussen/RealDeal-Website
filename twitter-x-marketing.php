@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include __DIR__ . '/gtm-head.php'; ?>
-<?php include __DIR__ . '/gtag.php'; ?>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Twitter (X) Marketing | RealDeal IT Center</title>
@@ -50,7 +47,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .main-nav > ul > li > a:hover { background:rgba(255,255,255,.1); color:#fff; }
 .main-nav > ul > li > a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
 .menu-toggle { display:none; width:44px; height:44px; border:1px solid var(--rd-line); border-radius:6px; background:#fff; cursor:pointer; }
-.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
+.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -63,8 +60,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .detail-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:start; }
 .benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 .benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; }
-.benefit-icon { width:108px; height:108px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
-.benefit-icon .fa-icon-img { width:84px; height:84px; object-fit:contain; margin:auto; }
+.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
 .benefit-card h3 { font-size:17px; margin-bottom:8px; }
 .benefit-card p { font-size:14px; }
 .include-list li { display:flex; gap:10px; margin:12px 0; font-weight:700; color:var(--rd-ink); font-size:15px; }
@@ -101,10 +97,9 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 @media(max-width:960px) { .detail-grid,.benefit-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 @media(max-width:820px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .main-nav { display:none; position:fixed; inset:78px 16px auto; padding:14px; background:#fff; border:1px solid var(--rd-line); border-radius:var(--radius); box-shadow:var(--shadow); } .main-nav.is-open { display:block; } .main-nav ul { flex-direction:column; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=13">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
 </head>
 <body>
-<?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 
 <main>
@@ -116,8 +111,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="digital-marketing.php">Digital Marketing</a><span>/</span>
 				<span>Twitter (X) Marketing</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/twitter-x.svg" alt="X (Twitter) logo"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/brands/twitter-x.svg" alt="X (Twitter) logo"> Digital Marketing</div>
+			<div class="hero-badge"><i class="fa-solid fa-hashtag"></i> Digital Marketing</div>
 			<h1>Twitter (X) Marketing</h1>
 			<p class="lead">Profile setup, tweet planning and real-time audience interaction that keep your brand part of the conversation.</p>
 			<div class="hero-actions">
@@ -133,7 +127,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Twitter (X) Marketing?</h2>
 					<p>X moves fast, and relevance depends on being part of the conversation, not just broadcasting to it. We optimize your profile, plan tweets around timely topics and your brand voice, and actively engage with your audience to build a following that interacts, not just scrolls past.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Optimized profile</h3><p>A profile built for quick recognition and credibility in a fast-moving feed.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Planned, timely content</h3><p>Tweets planned around your brand voice and relevant conversations.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Active engagement</h3><p>Real interaction with your audience, not just one-way posting.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Real-time visibility</h3><p>A presence that keeps your brand relevant in real-time discussions.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Optimized profile</h3><p>A profile built for quick recognition and credibility in a fast-moving feed.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Planned, timely content</h3><p>Tweets planned around your brand voice and relevant conversations.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Active engagement</h3><p>Real interaction with your audience, not just one-way posting.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Real-time visibility</h3><p>A presence that keeps your brand relevant in real-time discussions.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -158,7 +152,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Account setup and profile optimization</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Tweet planning and content calendar</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Audience interaction and reply management</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Trend and conversation monitoring</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Brand voice consistency</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly engagement and growth report</li></ul>
+			<ul class="include-list"><li><i class="fa-solid fa-circle-check"></i> Account setup and profile optimization</li><li><i class="fa-solid fa-circle-check"></i> Tweet planning and content calendar</li><li><i class="fa-solid fa-circle-check"></i> Audience interaction and reply management</li><li><i class="fa-solid fa-circle-check"></i> Trend and conversation monitoring</li><li><i class="fa-solid fa-circle-check"></i> Brand voice consistency</li><li><i class="fa-solid fa-circle-check"></i> Monthly engagement and growth report</li></ul>
 		</div>
 	</section>
 	<section class="detail-section">

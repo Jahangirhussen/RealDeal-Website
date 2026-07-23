@@ -44,8 +44,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:-64px; position:relative; z-index:2; }
 .info-card { padding:32px 28px; border:1px solid var(--rd-line); border-radius:14px; background:#fff; box-shadow:var(--shadow); display:flex; flex-direction:column; transition:transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
 .info-card:hover { transform:translateY(-4px); border-color:var(--rd-orange); box-shadow:0 20px 45px rgba(255,74,28,.18); }
-.info-icon { width:110px; height:110px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; background:transparent; color:var(--rd-orange); font-size:22px; box-shadow:none; }
-.info-icon .fa-icon-img { width:90px; height:90px; object-fit:contain; margin:auto; }
+.info-icon { width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; background:rgba(255,74,28,.1); color:var(--rd-orange); font-size:22px; }
 .info-card h3 { font-size:19px; margin-bottom:10px; }
 .info-card p { font-size:14px; margin-bottom:22px; }
 .info-card .btn { margin-top:auto; width:100%; }
@@ -91,7 +90,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 
 @media(max-width:960px) { .info-grid { grid-template-columns:1fr; margin-top:32px; } .contact-grid { grid-template-columns:1fr; } .service-check-grid { grid-template-columns:1fr; } .footer-grid { grid-template-columns:1fr 1fr; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=13">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
@@ -110,19 +109,19 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<div class="container">
 		<div class="info-grid">
 			<article class="info-card">
-				<div class="info-icon"><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"></div>
+				<div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
 				<h3>Head Office</h3>
 				<p>103, Hossain's Tower, 2nd floor<br>Sector 07, Uttara Model Town<br>Dhaka-1230</p>
 				<a class="btn btn-outline" href="#map">Find Us</a>
 			</article>
 			<article class="info-card">
-				<div class="info-icon"><img class="fa-icon-img" src="assets/icons-animated/headset.gif" alt="Support"></div>
+				<div class="info-icon"><i class="fa-solid fa-headset"></i></div>
 				<h3>Contact Us</h3>
 				<p>Email Us: contactrealdealteam@gmail.com<br>Call Us: <a href="tel:+8801733162490">01733162490</a></p>
 				<a class="btn btn-outline" href="tel:+8801733162490">Talk To Us</a>
 			</article>
 			<article class="info-card">
-				<div class="info-icon"><img class="fa-icon-img" src="assets/icons-animated/support.gif" alt="Help"></div>
+				<div class="info-icon"><i class="fa-solid fa-life-ring"></i></div>
 				<h3>Customer Support</h3>
 				<p>By filling out our contact form or emailing, you can expect a timely response from one of our experienced professionals.</p>
 				<a class="btn btn-outline" href="mailto:contactrealdealteam@gmail.com">Contact Support</a>
@@ -135,9 +134,9 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<div class="contact-grid">
 				<div class="contact-visual">
 					<div class="contact-visual-icons">
-						<span><img class="fa-icon-img" src="assets/icons-animated/phone.gif" alt="Phone"> 01733162490</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/envelope.gif" alt="Email"> contactrealdealteam@gmail.com</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/chat.gif" alt="Live chat"> Live chat &amp; 24h response</span>
+						<span><i class="fa-solid fa-phone"></i> 01733162490</span>
+						<span><i class="fa-solid fa-envelope"></i> contactrealdealteam@gmail.com</span>
+						<span><i class="fa-solid fa-comments"></i> Live chat &amp; 24h response</span>
 					</div>
 					<h3>Let Us Hear From You!</h3>
 					<p>Our team is full of creative problem-solvers who are eager to hear your thoughts and contribute their own expertise.</p>
@@ -215,7 +214,7 @@ if (contactForm) {
 		if (!contactForm.reportValidity()) return;
 		const btn = contactForm.querySelector("button[type=submit]");
 		const original = btn.innerHTML;
-		btn.innerHTML = '<img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Message Sent';
+		btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent';
 		btn.disabled = true;
 		setTimeout(() => {
 			contactForm.reset();

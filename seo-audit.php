@@ -37,7 +37,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("HERO_IMG") center/cover; color:#fff; }
+.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("HERO_IMG") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -84,8 +84,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<style>
 	.benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 	.benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; }
-	.benefit-icon { width:108px; height:108px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
-.benefit-icon .fa-icon-img { width:84px; height:84px; object-fit:contain; margin:auto; }
+	.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
 	.benefit-card h3 { font-size:17px; margin-bottom:8px; }
 	.benefit-card p { font-size:14px; }
 	.include-list li { display:flex; gap:10px; margin:12px 0; font-weight:700; color:var(--rd-ink); font-size:15px; }
@@ -106,8 +105,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="seo.php">SEO</a><span>/</span>
 				<span>SEO Audit</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/checklist.gif" alt="SEO audit icon"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/checklist.gif" alt="SEO audit icon"> SEO</div>
+			<div class="hero-badge"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO</div>
 			<h1>SEO Audit</h1>
 			<p class="lead">A full diagnostic of your site's SEO health — technical, on-page and off-page — with a clear, prioritized action plan.</p>
 			<div class="hero-actions">
@@ -123,7 +121,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is SEO Audit?</h2>
 					<p>An SEO Audit is a comprehensive review of your site's current search performance and health, covering technical issues, on-page optimization and backlink profile, delivered as a clear, prioritized report so you know exactly what to fix first.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Full-site diagnostic</h3><p>Technical, on-page and off-page factors all reviewed in one pass.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Prioritized action plan</h3><p>Issues ranked by impact so you fix what matters most first.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Plain-language reporting</h3><p>Findings explained clearly, not buried in jargon.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>A baseline for future work</h3><p>A clear starting point for any SEO campaign that follows.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Full-site diagnostic</h3><p>Technical, on-page and off-page factors all reviewed in one pass.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Prioritized action plan</h3><p>Issues ranked by impact so you fix what matters most first.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Plain-language reporting</h3><p>Findings explained clearly, not buried in jargon.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>A baseline for future work</h3><p>A clear starting point for any SEO campaign that follows.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -145,7 +143,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Full technical SEO crawl and review</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> On-page optimization review across key pages</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Backlink profile and off-page review</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Competitor comparison snapshot</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Prioritized action plan report</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Findings walkthrough call</li></ul>
+			<ul class="include-list"><li><i class="fa-solid fa-circle-check"></i> Full technical SEO crawl and review</li><li><i class="fa-solid fa-circle-check"></i> On-page optimization review across key pages</li><li><i class="fa-solid fa-circle-check"></i> Backlink profile and off-page review</li><li><i class="fa-solid fa-circle-check"></i> Competitor comparison snapshot</li><li><i class="fa-solid fa-circle-check"></i> Prioritized action plan report</li><li><i class="fa-solid fa-circle-check"></i> Findings walkthrough call</li></ul>
 		</div>
 	</section>
 	<section class="detail-section alt" style="max-width:800px;margin:0 auto;">

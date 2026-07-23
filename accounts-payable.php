@@ -47,7 +47,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .main-nav > ul > li > a:hover { background:rgba(255,255,255,.1); color:#fff; }
 .main-nav > ul > li > a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
 .menu-toggle { display:none; width:44px; height:44px; border:1px solid var(--rd-line); border-radius:6px; background:#fff; cursor:pointer; }
-.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
+.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -60,8 +60,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .detail-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:40px; align-items:start; }
 .benefit-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:32px; }
 .benefit-card { padding:22px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; }
-.benefit-icon { width:108px; height:108px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
-.benefit-icon .fa-icon-img { width:84px; height:84px; object-fit:contain; margin:auto; }
+.benefit-icon { width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:rgba(255,74,28,.12); color:var(--rd-orange); }
 .benefit-card h3 { font-size:17px; margin-bottom:8px; }
 .benefit-card p { font-size:14px; }
 .include-list li { display:flex; gap:10px; margin:12px 0; font-weight:700; color:var(--rd-ink); font-size:15px; }
@@ -98,7 +97,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 @media(max-width:960px) { .detail-grid,.benefit-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 @media(max-width:820px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .main-nav { display:none; position:fixed; inset:78px 16px auto; padding:14px; background:#fff; border:1px solid var(--rd-line); border-radius:var(--radius); box-shadow:var(--shadow); } .main-nav.is-open { display:block; } .main-nav ul { flex-direction:column; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=13">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
@@ -112,8 +111,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="bookkeeping.php">Accounting and Bookkeeping</a><span>/</span>
 				<span>Accounts Payable</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/money-transfer.gif" alt="Accounts payable icon"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/money-transfer.gif" alt="Accounts payable icon"> Accounting and Bookkeeping</div>
+			<div class="hero-badge"><i class="fa-solid fa-money-bill-transfer"></i> Accounting and Bookkeeping</div>
 			<h1>Accounts Payable</h1>
 			<p class="lead">Structured vendor management that keeps every bill recorded, scheduled and paid on time.</p>
 			<div class="hero-actions">
@@ -129,7 +127,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Accounts Payable?</h2>
 					<p>Late or missed vendor payments quietly erode supplier trust and can trigger late fees. Accounts Payable is our structured approach to vendor management — recording every bill accurately as it arrives and scheduling payments so they go out on time, every time, without last-minute scrambling.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Bill recording</h3><p>Every vendor bill logged and matched to the right account as it comes in.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Payment scheduling</h3><p>Due dates tracked and payments queued so nothing is ever late.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Vendor relationships protected</h3><p>Consistent, on-time payments that keep suppliers happy and terms favorable.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Cash flow visibility</h3><p>A clear, current picture of exactly what you owe and when.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Bill recording</h3><p>Every vendor bill logged and matched to the right account as it comes in.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Payment scheduling</h3><p>Due dates tracked and payments queued so nothing is ever late.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Vendor relationships protected</h3><p>Consistent, on-time payments that keep suppliers happy and terms favorable.</p></article><article class="benefit-card"><div class="benefit-icon"><i class="fa-solid fa-check"></i></div><h3>Cash flow visibility</h3><p>A clear, current picture of exactly what you owe and when.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -154,7 +152,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Vendor bill recording and coding to the right account</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment scheduling against due dates and terms</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Vendor master file setup and maintenance</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payables aging report management</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment terms and dispute support</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly accounts payable summary</li></ul>
+			<ul class="include-list"><li><i class="fa-solid fa-circle-check"></i> Vendor bill recording and coding to the right account</li><li><i class="fa-solid fa-circle-check"></i> Payment scheduling against due dates and terms</li><li><i class="fa-solid fa-circle-check"></i> Vendor master file setup and maintenance</li><li><i class="fa-solid fa-circle-check"></i> Payables aging report management</li><li><i class="fa-solid fa-circle-check"></i> Payment terms and dispute support</li><li><i class="fa-solid fa-circle-check"></i> Monthly accounts payable summary</li></ul>
 		</div>
 	</section>
 	<section class="detail-section">

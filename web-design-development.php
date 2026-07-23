@@ -76,7 +76,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=13">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
@@ -88,7 +88,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="services.php">Services</a><span>/</span>
 				<span>Web Design & Development</span>
 			</nav>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/computer.gif" alt="Web design and development icon"> Service Category</div>
+			<div class="hero-badge"><i class="fa-solid fa-laptop-code"></i> Service Category</div>
 			<h1>Web Design & Development</h1>
 			<p class="lead">Conversion-focused websites, custom builds, WooCommerce and Shopify stores engineered for speed and results.</p>
 			<div class="hero-actions">
@@ -99,14 +99,12 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	</section>
 	<style>
 	.category-header { display:flex; align-items:center; gap:20px; margin-bottom:32px; flex-wrap:wrap; }
-	.category-badge { width:110px; height:110px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:transparent; color:var(--accent); font-size:22px; flex-shrink:0; }
-	.category-badge .fa-icon-img { width:90px; height:90px; object-fit:contain; margin:auto; }
+	.category-badge { width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:color-mix(in srgb, var(--accent) 14%, white); color:var(--accent); font-size:22px; flex-shrink:0; }
 	.category-count { margin-left:auto; padding:6px 14px; border-radius:99px; background:var(--rd-soft); font-size:13px; font-weight:800; color:var(--rd-ink); }
 	.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 	.service-item { position:relative; padding:24px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; transition:transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
 	.service-item:hover { transform:translateY(-4px); border-color:var(--rd-orange); box-shadow:0 20px 45px rgba(255,74,28,.14); }
-	.service-item-icon { width:90px; height:90px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--accent, var(--rd-orange)); font-size:18px; align-self:center; }
-	.service-item-icon .fa-icon-img { width:72px; height:72px; object-fit:contain; margin:auto; }
+	.service-item-icon { width:42px; height:42px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:color-mix(in srgb, var(--accent, var(--rd-orange)) 12%, white); color:var(--accent, var(--rd-orange)); font-size:18px; }
 	.service-item h3 { font-size:17px; margin-bottom:8px; }
 	.service-item p { font-size:14px; margin-bottom:12px; }
 	.service-item ul { margin-bottom:14px; }
@@ -119,7 +117,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<section class="detail-section">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/computer.gif" alt="Web Development"></div>
+				<div class="category-badge"><i class="fa-solid fa-laptop-code"></i></div>
 				<div>
 					<span class="section-kicker">Category 02</span>
 					<h2>Web Design &amp; Development</h2>
@@ -129,52 +127,52 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/design.gif" alt="Website design"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-globe"></i></div>
 					<h3>Website Design</h3>
 					<p>UI/UX design, responsive layouts and landing pages built to build trust and guide visitors to action.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Wireframe &amp; prototype design</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Mobile-friendly, sales &amp; lead-gen landing pages</li>
+						<li><i class="fa-solid fa-check"></i> Wireframe &amp; prototype design</li>
+						<li><i class="fa-solid fa-check"></i> Mobile-friendly, sales &amp; lead-gen landing pages</li>
 					</ul>
 					<a class="service-link" href="website-design.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/browser.gif" alt="Website development"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-code"></i></div>
 					<h3>Website Development</h3>
 					<p>Custom, WordPress, front-end and back-end development for business and portfolio sites.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Custom &amp; WordPress development, theme &amp; plugin builds</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> HTML/CSS/JS front-end, PHP/Node.js back-end &amp; database integration</li>
+						<li><i class="fa-solid fa-check"></i> Custom &amp; WordPress development, theme &amp; plugin builds</li>
+						<li><i class="fa-solid fa-check"></i> HTML/CSS/JS front-end, PHP/Node.js back-end &amp; database integration</li>
 					</ul>
 					<a class="service-link" href="website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/cart.gif" alt="Ecommerce"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-cart-shopping"></i></div>
 					<h3>Ecommerce Website Development</h3>
 					<p>WooCommerce and Shopify stores built to showcase products and reduce checkout friction.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> WooCommerce store setup, product upload, payment &amp; shipping</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Shopify setup, app integration, SEO/speed optimization, migration</li>
+						<li><i class="fa-solid fa-check"></i> WooCommerce store setup, product upload, payment &amp; shipping</li>
+						<li><i class="fa-solid fa-check"></i> Shopify setup, app integration, SEO/speed optimization, migration</li>
 					</ul>
 					<a class="service-link" href="ecommerce-website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-wordpress"></i></div>
 					<h3>WooCommerce Development</h3>
 					<p>WordPress stores built and configured on WooCommerce, from catalog to checkout.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> WordPress store setup, product upload &amp; catalog organization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment gateway integration &amp; shipping configuration</li>
+						<li><i class="fa-solid fa-check"></i> WordPress store setup, product upload &amp; catalog organization</li>
+						<li><i class="fa-solid fa-check"></i> Payment gateway integration &amp; shipping configuration</li>
 					</ul>
 					<a class="service-link" href="woocommerce-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/shopify.svg" alt="Shopify"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-shopify"></i></div>
 					<h3>Shopify Development</h3>
 					<p>Shopify stores set up, themed and configured end to end for a smooth checkout.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Store setup, theme customization &amp; product management</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> App integration, payments/shipping, SEO &amp; speed optimization</li>
+						<li><i class="fa-solid fa-check"></i> Store setup, theme customization &amp; product management</li>
+						<li><i class="fa-solid fa-check"></i> App integration, payments/shipping, SEO &amp; speed optimization</li>
 					</ul>
 					<a class="service-link" href="shopify-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>

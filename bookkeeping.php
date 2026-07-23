@@ -76,7 +76,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=13">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
@@ -88,7 +88,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="services.php">Services</a><span>/</span>
 				<span>Accounting and Bookkeeping</span>
 			</nav>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/calculator.gif" alt="Bookkeeping icon"> Service Category</div>
+			<div class="hero-badge"><i class="fa-solid fa-calculator"></i> Service Category</div>
 			<h1>Accounting and Bookkeeping</h1>
 			<p class="lead">Accurate books, payables, receivables, reconciliation, reporting, tax data and payroll handled by one dedicated team.</p>
 			<div class="hero-actions">
@@ -99,14 +99,12 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	</section>
 	<style>
 	.category-header { display:flex; align-items:center; gap:20px; margin-bottom:32px; flex-wrap:wrap; }
-	.category-badge { width:110px; height:110px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:transparent; color:var(--accent); font-size:22px; flex-shrink:0; }
-	.category-badge .fa-icon-img { width:90px; height:90px; object-fit:contain; margin:auto; }
+	.category-badge { width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center; background:color-mix(in srgb, var(--accent) 14%, white); color:var(--accent); font-size:22px; flex-shrink:0; }
 	.category-count { margin-left:auto; padding:6px 14px; border-radius:99px; background:var(--rd-soft); font-size:13px; font-weight:800; color:var(--rd-ink); }
 	.service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 	.service-item { position:relative; padding:24px; border:1px solid var(--rd-line); border-radius:var(--radius); background:#fff; transition:transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
 	.service-item:hover { transform:translateY(-4px); border-color:var(--rd-orange); box-shadow:0 20px 45px rgba(255,74,28,.14); }
-	.service-item-icon { width:90px; height:90px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--accent, var(--rd-orange)); font-size:18px; align-self:center; }
-	.service-item-icon .fa-icon-img { width:72px; height:72px; object-fit:contain; margin:auto; }
+	.service-item-icon { width:42px; height:42px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:color-mix(in srgb, var(--accent, var(--rd-orange)) 12%, white); color:var(--accent, var(--rd-orange)); font-size:18px; }
 	.service-item h3 { font-size:17px; margin-bottom:8px; }
 	.service-item p { font-size:14px; margin-bottom:12px; }
 	.service-item ul { margin-bottom:14px; }
@@ -119,7 +117,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<section class="detail-section">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/calculator.gif" alt="Accounting"></div>
+				<div class="category-badge"><i class="fa-solid fa-calculator"></i></div>
 				<div>
 					<span class="section-kicker">Category 01</span>
 					<h2>Accounting and Bookkeeping</h2>
@@ -129,72 +127,72 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/book.gif" alt="Financial record keeping"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-book"></i></div>
 					<h3>Financial Record Keeping</h3>
 					<p>Daily transaction recording and ledger maintenance so your books stay accurate and current.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Sales &amp; purchase entry, expense tracking</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> General ledger management &amp; account reconciliation</li>
+						<li><i class="fa-solid fa-check"></i> Sales &amp; purchase entry, expense tracking</li>
+						<li><i class="fa-solid fa-check"></i> General ledger management &amp; account reconciliation</li>
 					</ul>
 					<a class="service-link" href="financial-record-keeping.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/money-transfer.gif" alt="Accounts payable"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
 					<h3>Accounts Payable</h3>
 					<p>Vendor management that keeps bills paid on time without the manual chasing.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Bill recording</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment scheduling</li>
+						<li><i class="fa-solid fa-check"></i> Bill recording</li>
+						<li><i class="fa-solid fa-check"></i> Payment scheduling</li>
 					</ul>
 					<a class="service-link" href="accounts-payable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/invoice-dollar.gif" alt="Accounts receivable"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
 					<h3>Accounts Receivable</h3>
 					<p>Invoice management that gets you paid faster and keeps collections on track.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Invoice creation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment tracking</li>
+						<li><i class="fa-solid fa-check"></i> Invoice creation</li>
+						<li><i class="fa-solid fa-check"></i> Payment tracking</li>
 					</ul>
 					<a class="service-link" href="accounts-receivable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/bank-columns.gif" alt="Bank reconciliation"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-building-columns"></i></div>
 					<h3>Bank Reconciliation</h3>
 					<p>Bank statement review that catches errors before they become problems.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Transaction matching</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Error correction</li>
+						<li><i class="fa-solid fa-check"></i> Transaction matching</li>
+						<li><i class="fa-solid fa-check"></i> Error correction</li>
 					</ul>
 					<a class="service-link" href="bank-reconciliation.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/pie-chart.gif" alt="Financial reporting"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-chart-pie"></i></div>
 					<h3>Financial Reporting</h3>
 					<p>Basic and monthly reports built for real decision-making.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profit &amp; loss statement, balance sheet preparation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Cash flow report, expense summary report</li>
+						<li><i class="fa-solid fa-check"></i> Profit &amp; loss statement, balance sheet preparation</li>
+						<li><i class="fa-solid fa-check"></i> Cash flow report, expense summary report</li>
 					</ul>
 					<a class="service-link" href="financial-reporting.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/receipt.gif" alt="Tax preparation support"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-scale-balanced"></i></div>
 					<h3>Tax Preparation Support</h3>
 					<p>Tax data organization that keeps your filings accurate and audit-ready.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> VAT / GST tracking</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Tax filing support data</li>
+						<li><i class="fa-solid fa-check"></i> VAT / GST tracking</li>
+						<li><i class="fa-solid fa-check"></i> Tax filing support data</li>
 					</ul>
 					<a class="service-link" href="tax-preparation-support.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/salary.gif" alt="Payroll management"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
 					<h3>Payroll Management</h3>
 					<p>Salary calculation so your team always gets paid accurately and on time.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Employee payroll processing</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payslip preparation</li>
+						<li><i class="fa-solid fa-check"></i> Employee payroll processing</li>
+						<li><i class="fa-solid fa-check"></i> Payslip preparation</li>
 					</ul>
 					<a class="service-link" href="payroll-management.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>

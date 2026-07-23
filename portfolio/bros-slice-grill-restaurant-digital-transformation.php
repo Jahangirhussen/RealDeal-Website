@@ -8,9 +8,6 @@ $cs_live_url         = 'https://brossliceandgrill.co.uk/';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include __DIR__ . '/../gtm-head.php'; ?>
-<?php include __DIR__ . '/../gtag.php'; ?>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bros Slice & Grill Case Study | RealDeal IT Center</title>
@@ -176,7 +173,6 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 <link rel="stylesheet" href="../assets/site-nav.css?v=5">
 </head>
 <body>
-<?php include __DIR__ . '/../gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include '../header.php'; ?>
 
 <main>
@@ -325,15 +321,6 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 						</div>
 					</div>
 					<?php endif; ?>
-
-					<!-- Project Video -->
-					<div>
-						<span class="section-kicker">Project Video</span>
-						<h2 class="section-title">Website look, after the work</h2>
-						<div style="position:relative; aspect-ratio:16/9; border-radius:var(--radius-lg); overflow:hidden; margin-top:22px;">
-							<iframe src="https://www.youtube.com/embed/DlDrDyNR_QM" title="Bros Slice & Grill website walkthrough" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-						</div>
-					</div>
 
 					<!-- 7. Project Gallery -->
 					<div>

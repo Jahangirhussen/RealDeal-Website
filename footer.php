@@ -2,9 +2,8 @@
 $rd_dir    = strtr(dirname($_SERVER['SCRIPT_NAME']), '\\', '/');
 $rd_folder = basename($rd_dir);
 $rd_base   = in_array($rd_folder, ['blogs', 'portfolio'], true) ? '../' : '';
-if (!empty($rd_force_root)) { $rd_base = '/'; $rd_folder = ''; }
 $rd_portfolio = $rd_folder === 'portfolio' ? 'index.php' : $rd_base . 'portfolio/index.php';
-$rd_blog      = $rd_folder === 'blogs' ? 'index.php' : '/blogs/';
+$rd_blog      = $rd_folder === 'blogs' ? 'index.php' : $rd_base . 'blogs/index.php';
 $rd_home      = $rd_base !== '' ? $rd_base : '/';
 ?>
 <footer class="site-footer">

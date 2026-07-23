@@ -383,13 +383,13 @@ h1, h2, h3, h4 {
 	border-bottom: 1px solid var(--rd-line);
 }
 .category-badge {
-	width: 150px;
-	height: 150px;
+	width: 64px;
+	height: 64px;
 	border-radius: 10px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	background: transparent;
+	background: color-mix(in srgb, var(--accent) 13%, white);
 	color: var(--accent);
 	font-size: 26px;
 }
@@ -433,18 +433,15 @@ h1, h2, h3, h4 {
 	border-color: color-mix(in srgb, var(--accent) 42%, white);
 	box-shadow: var(--shadow);
 }
-.category-badge .fa-icon-img { width: 130px; height: 130px; object-fit: contain; margin: auto; }
-.service-item-icon .fa-icon-img { width: 100px; height: 100px; object-fit: contain; margin: auto; }
-.service-item-icon { align-self: center; }
 .service-item-icon {
-	width: 120px;
-	height: 120px;
+	width: 42px;
+	height: 42px;
 	border-radius: 8px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 16px;
-	background: transparent;
+	background: color-mix(in srgb, var(--accent) 12%, white);
 	color: var(--accent);
 	font-size: 18px;
 }
@@ -687,7 +684,7 @@ h1, h2, h3, h4 {
 	[data-reveal] { opacity: 1; transform: none; }
 }
 </style>
-<link rel="stylesheet" href="assets/site-nav.css?v=13">
+<link rel="stylesheet" href="assets/site-nav.css?v=3">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
@@ -737,7 +734,7 @@ h1, h2, h3, h4 {
 	<section class="category-section" id="bookkeeping" style="--accent: var(--rd-teal);">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/calculator.gif" alt="Accounting"></div>
+				<div class="category-badge"><i class="fa-solid fa-calculator"></i></div>
 				<div>
 					<span class="section-kicker">Category 01</span>
 					<h2>Accounting and Bookkeeping</h2>
@@ -748,72 +745,72 @@ h1, h2, h3, h4 {
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/book.gif" alt="Financial record keeping"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-book"></i></div>
 					<h3>Financial Record Keeping</h3>
 					<p>Daily transaction recording and ledger maintenance so your books stay accurate and current.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Sales &amp; purchase entry, expense tracking</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> General ledger management &amp; account reconciliation</li>
+						<li><i class="fa-solid fa-check"></i> Sales &amp; purchase entry, expense tracking</li>
+						<li><i class="fa-solid fa-check"></i> General ledger management &amp; account reconciliation</li>
 					</ul>
 					<a class="service-link" href="financial-record-keeping.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/money-transfer.gif" alt="Accounts payable"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-money-bill-transfer"></i></div>
 					<h3>Accounts Payable</h3>
 					<p>Vendor management that keeps bills paid on time without the manual chasing.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Bill recording</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment scheduling</li>
+						<li><i class="fa-solid fa-check"></i> Bill recording</li>
+						<li><i class="fa-solid fa-check"></i> Payment scheduling</li>
 					</ul>
 					<a class="service-link" href="accounts-payable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/invoice-dollar.gif" alt="Accounts receivable"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
 					<h3>Accounts Receivable</h3>
 					<p>Invoice management that gets you paid faster and keeps collections on track.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Invoice creation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment tracking</li>
+						<li><i class="fa-solid fa-check"></i> Invoice creation</li>
+						<li><i class="fa-solid fa-check"></i> Payment tracking</li>
 					</ul>
 					<a class="service-link" href="accounts-receivable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/bank-columns.gif" alt="Bank reconciliation"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-building-columns"></i></div>
 					<h3>Bank Reconciliation</h3>
 					<p>Bank statement review that catches errors before they become problems.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Transaction matching</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Error correction</li>
+						<li><i class="fa-solid fa-check"></i> Transaction matching</li>
+						<li><i class="fa-solid fa-check"></i> Error correction</li>
 					</ul>
 					<a class="service-link" href="bank-reconciliation.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/pie-chart.gif" alt="Financial reporting"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-chart-pie"></i></div>
 					<h3>Financial Reporting</h3>
 					<p>Basic and monthly reports built for real decision-making.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profit &amp; loss statement, balance sheet preparation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Cash flow report, expense summary report</li>
+						<li><i class="fa-solid fa-check"></i> Profit &amp; loss statement, balance sheet preparation</li>
+						<li><i class="fa-solid fa-check"></i> Cash flow report, expense summary report</li>
 					</ul>
 					<a class="service-link" href="financial-reporting.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/receipt.gif" alt="Tax preparation support"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-scale-balanced"></i></div>
 					<h3>Tax Preparation Support</h3>
 					<p>Tax data organization that keeps your filings accurate and audit-ready.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> VAT / GST tracking</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Tax filing support data</li>
+						<li><i class="fa-solid fa-check"></i> VAT / GST tracking</li>
+						<li><i class="fa-solid fa-check"></i> Tax filing support data</li>
 					</ul>
 					<a class="service-link" href="tax-preparation-support.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/salary.gif" alt="Payroll management"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
 					<h3>Payroll Management</h3>
 					<p>Salary calculation so your team always gets paid accurately and on time.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Employee payroll processing</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payslip preparation</li>
+						<li><i class="fa-solid fa-check"></i> Employee payroll processing</li>
+						<li><i class="fa-solid fa-check"></i> Payslip preparation</li>
 					</ul>
 					<a class="service-link" href="payroll-management.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
@@ -825,7 +822,7 @@ h1, h2, h3, h4 {
 	<section class="category-section" id="web-design-development" style="--accent: var(--rd-orange);">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/computer.gif" alt="Web Development"></div>
+				<div class="category-badge"><i class="fa-solid fa-laptop-code"></i></div>
 				<div>
 					<span class="section-kicker">Category 02</span>
 					<h2>Web Design &amp; Development</h2>
@@ -836,52 +833,52 @@ h1, h2, h3, h4 {
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/design.gif" alt="Website design"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-globe"></i></div>
 					<h3>Website Design</h3>
 					<p>UI/UX design, responsive layouts and landing pages built to build trust and guide visitors to action.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Wireframe &amp; prototype design</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Mobile-friendly, sales &amp; lead-gen landing pages</li>
+						<li><i class="fa-solid fa-check"></i> Wireframe &amp; prototype design</li>
+						<li><i class="fa-solid fa-check"></i> Mobile-friendly, sales &amp; lead-gen landing pages</li>
 					</ul>
 					<a class="service-link" href="website-design.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/browser.gif" alt="Website development"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-code"></i></div>
 					<h3>Website Development</h3>
 					<p>Custom, WordPress, front-end and back-end development for business and portfolio sites.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Custom &amp; WordPress development, theme &amp; plugin builds</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> HTML/CSS/JS front-end, PHP/Node.js back-end &amp; database integration</li>
+						<li><i class="fa-solid fa-check"></i> Custom &amp; WordPress development, theme &amp; plugin builds</li>
+						<li><i class="fa-solid fa-check"></i> HTML/CSS/JS front-end, PHP/Node.js back-end &amp; database integration</li>
 					</ul>
 					<a class="service-link" href="website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/cart.gif" alt="Ecommerce"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-cart-shopping"></i></div>
 					<h3>Ecommerce Website Development</h3>
 					<p>WooCommerce and Shopify stores built to showcase products and reduce checkout friction.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> WooCommerce store setup, product upload, payment &amp; shipping</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Shopify setup, app integration, SEO/speed optimization, migration</li>
+						<li><i class="fa-solid fa-check"></i> WooCommerce store setup, product upload, payment &amp; shipping</li>
+						<li><i class="fa-solid fa-check"></i> Shopify setup, app integration, SEO/speed optimization, migration</li>
 					</ul>
 					<a class="service-link" href="ecommerce-website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-wordpress"></i></div>
 					<h3>WooCommerce Development</h3>
 					<p>WordPress stores built and configured on WooCommerce, from catalog to checkout.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> WordPress store setup, product upload &amp; catalog organization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment gateway integration &amp; shipping configuration</li>
+						<li><i class="fa-solid fa-check"></i> WordPress store setup, product upload &amp; catalog organization</li>
+						<li><i class="fa-solid fa-check"></i> Payment gateway integration &amp; shipping configuration</li>
 					</ul>
 					<a class="service-link" href="woocommerce-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/shopify.svg" alt="Shopify"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-shopify"></i></div>
 					<h3>Shopify Development</h3>
 					<p>Shopify stores set up, themed and configured end to end for a smooth checkout.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Store setup, theme customization &amp; product management</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> App integration, payments/shipping, SEO &amp; speed optimization</li>
+						<li><i class="fa-solid fa-check"></i> Store setup, theme customization &amp; product management</li>
+						<li><i class="fa-solid fa-check"></i> App integration, payments/shipping, SEO &amp; speed optimization</li>
 					</ul>
 					<a class="service-link" href="shopify-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
@@ -893,7 +890,7 @@ h1, h2, h3, h4 {
 	<section class="category-section" id="digital-marketing" style="--accent: var(--rd-blue);">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital Marketing"></div>
+				<div class="category-badge"><i class="fa-solid fa-bullhorn"></i></div>
 				<div>
 					<span class="section-kicker">Category 03</span>
 					<h2>Digital Marketing</h2>
@@ -904,62 +901,62 @@ h1, h2, h3, h4 {
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/facebook.svg" alt="Facebook"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-facebook-f"></i></div>
 					<h3>Facebook Marketing</h3>
 					<p>Page setup, content marketing and ads management built for reach and retargeting.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business page creation &amp; profile optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Ads campaign setup, audience targeting &amp; retargeting</li>
+						<li><i class="fa-solid fa-check"></i> Business page creation &amp; profile optimization</li>
+						<li><i class="fa-solid fa-check"></i> Ads campaign setup, audience targeting &amp; retargeting</li>
 					</ul>
 					<a class="service-link" href="facebook-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/instagram.svg" alt="Instagram"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-instagram"></i></div>
 					<h3>Instagram Marketing</h3>
 					<p>Profile optimization, reel and story design, and organic growth strategy that builds an audience.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business account setup &amp; bio/branding</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Reel &amp; post design, hashtag strategy</li>
+						<li><i class="fa-solid fa-check"></i> Business account setup &amp; bio/branding</li>
+						<li><i class="fa-solid fa-check"></i> Reel &amp; post design, hashtag strategy</li>
 					</ul>
 					<a class="service-link" href="instagram-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/linkedin.svg" alt="LinkedIn"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-linkedin-in"></i></div>
 					<h3>LinkedIn Marketing</h3>
 					<p>Professional profile setup and B2B content strategy that generates qualified leads.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Professional profile setup</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Lead generation strategy, article &amp; post creation</li>
+						<li><i class="fa-solid fa-check"></i> Professional profile setup</li>
+						<li><i class="fa-solid fa-check"></i> Lead generation strategy, article &amp; post creation</li>
 					</ul>
 					<a class="service-link" href="linkedin-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/twitter-x.svg" alt="X (Twitter)"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-x-twitter"></i></div>
 					<h3>Twitter (X) Marketing</h3>
 					<p>Account setup, tweet planning and engagement growth that keeps your brand in the conversation.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profile optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Tweet planning &amp; audience interaction</li>
+						<li><i class="fa-solid fa-check"></i> Profile optimization</li>
+						<li><i class="fa-solid fa-check"></i> Tweet planning &amp; audience interaction</li>
 					</ul>
 					<a class="service-link" href="twitter-x-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/pinterest.svg" alt="Pinterest"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-pinterest-p"></i></div>
 					<h3>Pinterest Marketing</h3>
 					<p>Business account setup and pin design that drives discovery-led traffic.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business account creation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Pin design &amp; board management</li>
+						<li><i class="fa-solid fa-check"></i> Business account creation</li>
+						<li><i class="fa-solid fa-check"></i> Pin design &amp; board management</li>
 					</ul>
 					<a class="service-link" href="pinterest-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/youtube.svg" alt="YouTube"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-youtube"></i></div>
 					<h3>YouTube Marketing</h3>
 					<p>Channel setup, video SEO and subscriber growth strategy for long-term reach.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Channel branding &amp; optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> SEO video optimization, thumbnail design</li>
+						<li><i class="fa-solid fa-check"></i> Channel branding &amp; optimization</li>
+						<li><i class="fa-solid fa-check"></i> SEO video optimization, thumbnail design</li>
 					</ul>
 					<a class="service-link" href="youtube-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
@@ -971,7 +968,7 @@ h1, h2, h3, h4 {
 	<section class="category-section" id="seo" style="--accent: var(--rd-green);">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/seo-search.gif" alt="SEO"></div>
+				<div class="category-badge"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
 				<div>
 					<span class="section-kicker">Category 04</span>
 					<h2>Search Engine Optimization (SEO)</h2>
@@ -982,102 +979,102 @@ h1, h2, h3, h4 {
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/document.gif" alt="On-page SEO"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-ranking-star"></i></div>
 					<h3>On-Page SEO</h3>
 					<p>Keyword research, content optimization and technical on-page fixes that help pages rank.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Keyword research, SEO content &amp; meta optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> URL structure, internal linking &amp; image SEO</li>
+						<li><i class="fa-solid fa-check"></i> Keyword research, SEO content &amp; meta optimization</li>
+						<li><i class="fa-solid fa-check"></i> URL structure, internal linking &amp; image SEO</li>
 					</ul>
 					<a class="service-link" href="on-page-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-link"></i></div>
 					<h3>Off-Page SEO</h3>
 					<p>Backlink building and social bookmarking that strengthens domain authority and trust.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> High authority backlinks &amp; guest posting</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profile creation &amp; content distribution</li>
+						<li><i class="fa-solid fa-check"></i> High authority backlinks &amp; guest posting</li>
+						<li><i class="fa-solid fa-check"></i> Profile creation &amp; content distribution</li>
 					</ul>
 					<a class="service-link" href="off-page-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Local SEO"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-location-dot"></i></div>
 					<h3>Local SEO</h3>
 					<p>Google Business Profile optimization and citation building for map pack visibility.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> GBP setup &amp; map ranking strategy</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Local directory submission</li>
+						<li><i class="fa-solid fa-check"></i> GBP setup &amp; map ranking strategy</li>
+						<li><i class="fa-solid fa-check"></i> Local directory submission</li>
 					</ul>
 					<a class="service-link" href="local-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/speedometer.gif" alt="Technical SEO"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-gauge-high"></i></div>
 					<h3>Technical SEO</h3>
 					<p>NAP consistency, site speed, mobile optimization and crawling/indexing fixes.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Core Web Vitals &amp; mobile-friendly fixes</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Sitemap setup &amp; robots.txt optimization</li>
+						<li><i class="fa-solid fa-check"></i> Core Web Vitals &amp; mobile-friendly fixes</li>
+						<li><i class="fa-solid fa-check"></i> Sitemap setup &amp; robots.txt optimization</li>
 					</ul>
 					<a class="service-link" href="technical-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/cart.gif" alt="Ecommerce"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-cart-shopping"></i></div>
 					<h3>Ecommerce SEO</h3>
 					<p>Product and category page SEO built to turn search traffic into sales.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Product/category optimization &amp; structured data</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Catalog-scale technical fixes</li>
+						<li><i class="fa-solid fa-check"></i> Product/category optimization &amp; structured data</li>
+						<li><i class="fa-solid fa-check"></i> Catalog-scale technical fixes</li>
 					</ul>
 					<a class="service-link" href="ecommerce-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-wordpress"></i></div>
 					<h3>WordPress SEO</h3>
 					<p>WordPress-specific SEO setup and optimization, plugin to content structure.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> SEO plugin setup &amp; permalink cleanup</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Sitemap &amp; content optimization</li>
+						<li><i class="fa-solid fa-check"></i> SEO plugin setup &amp; permalink cleanup</li>
+						<li><i class="fa-solid fa-check"></i> Sitemap &amp; content optimization</li>
 					</ul>
 					<a class="service-link" href="wordpress-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-wordpress"></i></div>
 					<h3>WooCommerce SEO</h3>
 					<p>SEO built specifically for WooCommerce stores — schema, categories and safe fixes.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Product/review schema markup</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Category &amp; attribute page optimization</li>
+						<li><i class="fa-solid fa-check"></i> Product/review schema markup</li>
+						<li><i class="fa-solid fa-check"></i> Category &amp; attribute page optimization</li>
 					</ul>
 					<a class="service-link" href="woocommerce-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/shopify.svg" alt="Shopify"></div>
+					<div class="service-item-icon"><i class="fa-brands fa-shopify"></i></div>
 					<h3>Shopify SEO</h3>
 					<p>SEO built for Shopify's structure — collections, products and theme-level fixes.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Collection &amp; product page SEO</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Theme-level technical fixes</li>
+						<li><i class="fa-solid fa-check"></i> Collection &amp; product page SEO</li>
+						<li><i class="fa-solid fa-check"></i> Theme-level technical fixes</li>
 					</ul>
 					<a class="service-link" href="shopify-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/checklist.gif" alt="SEO audit"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
 					<h3>SEO Audit</h3>
 					<p>A full diagnostic of your site's SEO health with a clear, prioritized action plan.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Technical, on-page &amp; off-page review</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Prioritized action plan report</li>
+						<li><i class="fa-solid fa-check"></i> Technical, on-page &amp; off-page review</li>
+						<li><i class="fa-solid fa-check"></i> Prioritized action plan report</li>
 					</ul>
 					<a class="service-link" href="seo-audit.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building"></div>
+					<div class="service-item-icon"><i class="fa-solid fa-link"></i></div>
 					<h3>Link Building</h3>
 					<p>Ethical, relevant link building that builds real domain authority.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Outreach &amp; guest post placements</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Digital PR &amp; toxic link monitoring</li>
+						<li><i class="fa-solid fa-check"></i> Outreach &amp; guest post placements</li>
+						<li><i class="fa-solid fa-check"></i> Digital PR &amp; toxic link monitoring</li>
 					</ul>
 					<a class="service-link" href="link-building.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
