@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include __DIR__ . '/gtm-head.php'; ?>
-<?php include __DIR__ . '/gtag.php'; ?>
+<?php include __DIR__ . '/../gtm-head.php'; ?>
+<?php include __DIR__ . '/../gtag.php'; ?>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,7 +82,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 <link rel="stylesheet" href="../assets/site-nav.css?v=3">
 </head>
 <body>
-<?php include __DIR__ . '/gtm-body.php'; ?>
+<?php include __DIR__ . '/../gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include '../header.php'; ?>
 
 <main>
