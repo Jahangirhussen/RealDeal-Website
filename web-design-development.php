@@ -75,20 +75,21 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 <main>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
 				<a href="services.php">Services</a><span>/</span>
 				<span>Web Design & Development</span>
 			</nav>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/computer.gif" alt="Web design and development icon"> Service Category</div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/computer.gif" alt="Web design and development icon"> Service Category</div>
 			<h1>Web Design & Development</h1>
 			<p class="lead">Conversion-focused websites, custom builds, WooCommerce and Shopify stores engineered for speed and results.</p>
 			<div class="hero-actions">
@@ -119,7 +120,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<section class="detail-section">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/computer.gif" alt="Web Development"></div>
+				<div class="category-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/computer.gif" alt="Web Development"></div>
 				<div>
 					<span class="section-kicker">Category 02</span>
 					<h2>Web Design &amp; Development</h2>
@@ -129,52 +130,52 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/design.gif" alt="Website design"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/design.gif" alt="Website design"></div>
 					<h3>Website Design</h3>
 					<p>UI/UX design, responsive layouts and landing pages built to build trust and guide visitors to action.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Wireframe &amp; prototype design</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Mobile-friendly, sales &amp; lead-gen landing pages</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Wireframe &amp; prototype design</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Mobile-friendly, sales &amp; lead-gen landing pages</li>
 					</ul>
 					<a class="service-link" href="website-design.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/browser.gif" alt="Website development"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/browser.gif" alt="Website development"></div>
 					<h3>Website Development</h3>
 					<p>Custom, WordPress, front-end and back-end development for business and portfolio sites.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Custom &amp; WordPress development, theme &amp; plugin builds</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> HTML/CSS/JS front-end, PHP/Node.js back-end &amp; database integration</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Custom &amp; WordPress development, theme &amp; plugin builds</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> HTML/CSS/JS front-end, PHP/Node.js back-end &amp; database integration</li>
 					</ul>
 					<a class="service-link" href="website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/cart.gif" alt="Ecommerce"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/cart.gif" alt="Ecommerce"></div>
 					<h3>Ecommerce Website Development</h3>
 					<p>WooCommerce and Shopify stores built to showcase products and reduce checkout friction.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> WooCommerce store setup, product upload, payment &amp; shipping</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Shopify setup, app integration, SEO/speed optimization, migration</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> WooCommerce store setup, product upload, payment &amp; shipping</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Shopify setup, app integration, SEO/speed optimization, migration</li>
 					</ul>
 					<a class="service-link" href="ecommerce-website-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/wordpress-icon.png" alt="WordPress"></div>
 					<h3>WooCommerce Development</h3>
 					<p>WordPress stores built and configured on WooCommerce, from catalog to checkout.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> WordPress store setup, product upload &amp; catalog organization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment gateway integration &amp; shipping configuration</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> WordPress store setup, product upload &amp; catalog organization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Payment gateway integration &amp; shipping configuration</li>
 					</ul>
 					<a class="service-link" href="woocommerce-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/shopify.svg" alt="Shopify"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/shopify-icon.png" alt="Shopify"></div>
 					<h3>Shopify Development</h3>
 					<p>Shopify stores set up, themed and configured end to end for a smooth checkout.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Store setup, theme customization &amp; product management</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> App integration, payments/shipping, SEO &amp; speed optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Store setup, theme customization &amp; product management</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> App integration, payments/shipping, SEO &amp; speed optimization</li>
 					</ul>
 					<a class="service-link" href="shopify-development.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>

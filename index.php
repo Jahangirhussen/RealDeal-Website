@@ -1,3 +1,47 @@
+<?php
+$rd_proposal_success = false;
+$rd_proposal_error = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['rd_proposal_submit'])) {
+    $full_name = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
+    $sender_email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+    $phone = isset($_POST['phone']) ? sanitize_text_field($_POST['phone']) : '';
+    $service = isset($_POST['service']) ? sanitize_text_field($_POST['service']) : '';
+    $message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
+
+    if (is_email($sender_email)) {
+        $from_header = 'From: RealDeal IT Center <wordpress@realdealitcenter.com>';
+
+        $internal_body  = '<p>New proposal request from the homepage.</p>';
+        $internal_body .= '<p><strong>Name:</strong> ' . esc_html($full_name !== '' ? $full_name : 'Not provided') . '<br>';
+        $internal_body .= '<strong>Email:</strong> ' . esc_html($sender_email) . '<br>';
+        $internal_body .= '<strong>Phone:</strong> ' . esc_html($phone !== '' ? $phone : 'Not provided') . '<br>';
+        $internal_body .= '<strong>Service:</strong> ' . esc_html($service !== '' ? $service : 'Not specified') . '</p>';
+        $internal_body .= '<p><strong>Project details:</strong><br>' . nl2br(esc_html($message !== '' ? $message : 'Not provided')) . '</p>';
+
+        wp_mail(
+            'contactrealdealteam@gmail.com',
+            'New Proposal Request from ' . ($full_name !== '' ? $full_name : $sender_email),
+            $internal_body,
+            array('Content-Type: text/html; charset=UTF-8', $from_header, 'Reply-To: ' . $sender_email)
+        );
+
+        $confirm_body  = '<p>Hi ' . esc_html($full_name !== '' ? $full_name : 'there') . ',</p>';
+        $confirm_body .= '<p>Thanks for requesting a free proposal from RealDeal IT Center. We have received your details and will get back to you within one business day.</p>';
+        $confirm_body .= '<p>Best regards,<br>RealDeal IT Center</p>';
+
+        wp_mail(
+            $sender_email,
+            'We received your proposal request — RealDeal IT Center',
+            $confirm_body,
+            array('Content-Type: text/html; charset=UTF-8', $from_header)
+        );
+
+        $rd_proposal_success = true;
+    } else {
+        $rd_proposal_error = 'Please enter a valid email address before submitting.';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1962,7 +2006,7 @@ h1, h2, h3, h4 {
 	padding: 104px 0;
 	background:
 		linear-gradient(135deg, rgba(14, 26, 36, 0.95), rgba(18, 37, 51, 0.95)),
-		url("images/index-image.jpg") center / cover no-repeat;
+		url("https://realdealitcenter.com/wp-content/uploads/2026/07/index-image.webp") center / cover no-repeat;
 	color: rgba(255, 255, 255, 0.72);
 }
 
@@ -2081,7 +2125,7 @@ h1, h2, h3, h4 {
 	padding: 108px 0;
 	background:
 		linear-gradient(115deg, rgba(255, 74, 28, 0.94), rgba(255, 122, 53, 0.88)),
-		url("images/index-image-2.jpg") center / cover no-repeat;
+		url("https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-2.webp") center / cover no-repeat;
 	color: #fff;
 }
 
@@ -2402,6 +2446,7 @@ h1, h2, h3, h4 {
 	.svc-rocket.is-moving .svc-flame-glow { animation: none !important; }
 	.svc-rocket { display: none; }
 }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 </head>
 <body>
@@ -2438,29 +2483,29 @@ h1, h2, h3, h4 {
 				<!-- Premium visual composition (CSS + imagery) -->
 				<div class="hero-visual hero-visual-simple" data-reveal="right" aria-hidden="true">
 					<div class="hv-card hv-icons hv-icons-solo">
-						<div class="hv-icon-bubble hv-icon-1"><img src="assets/icons-animated/calculator.gif" alt="Accounting"></div>
-						<div class="hv-icon-bubble hv-icon-2"><img src="assets/icons-animated/browser.gif" alt="Web Development"></div>
-						<div class="hv-icon-bubble hv-icon-3"><img src="assets/icons-animated/bar-chart.gif" alt="SEO"></div>
-						<div class="hv-icon-bubble hv-icon-4"><img src="assets/icons-animated/chat.gif" alt="Digital Marketing"></div>
-						<div class="hv-icon-bubble hv-icon-5"><img src="assets/icons-animated/briefcase.gif" alt="Business"></div>
-						<div class="hv-icon-bubble hv-icon-6"><img src="assets/icons-animated/building.gif" alt="Company"></div>
-						<div class="hv-icon-bubble hv-icon-7"><img src="assets/icons-animated/calendar.gif" alt="Planning"></div>
-						<div class="hv-icon-bubble hv-icon-8"><img src="assets/icons-animated/cart.gif" alt="Ecommerce"></div>
-						<div class="hv-icon-bubble hv-icon-9"><img src="assets/icons-animated/checklist.gif" alt="Checklist"></div>
-						<div class="hv-icon-bubble hv-icon-10"><img src="assets/icons-animated/computer.gif" alt="Web Dev"></div>
-						<div class="hv-icon-bubble hv-icon-11"><img src="assets/icons-animated/design.gif" alt="Design"></div>
-						<div class="hv-icon-bubble hv-icon-12"><img src="assets/icons-animated/diagram.gif" alt="Strategy"></div>
-						<div class="hv-icon-bubble hv-icon-13"><img src="assets/icons-animated/finance.gif" alt="Finance"></div>
-						<div class="hv-icon-bubble hv-icon-14"><img src="assets/icons-animated/gears.gif" alt="Operations"></div>
-						<div class="hv-icon-bubble hv-icon-15"><img src="assets/icons-animated/globe.gif" alt="Global"></div>
-						<div class="hv-icon-bubble hv-icon-16"><img src="assets/icons-animated/location.gif" alt="Local"></div>
-						<div class="hv-icon-bubble hv-icon-17"><img src="assets/icons-animated/play.gif" alt="Media"></div>
-						<div class="hv-icon-bubble hv-icon-18"><img src="assets/icons-animated/rocket.gif" alt="Growth"></div>
-						<div class="hv-icon-bubble hv-icon-19"><img src="assets/icons-animated/seo-search.gif" alt="SEO"></div>
-						<div class="hv-icon-bubble hv-icon-20"><img src="assets/icons-animated/share.gif" alt="Marketing"></div>
-						<div class="hv-icon-bubble hv-icon-21"><img src="assets/icons-animated/target.gif" alt="Goals"></div>
-						<div class="hv-icon-bubble hv-icon-22"><img src="assets/icons-animated/trending.gif" alt="Analytics"></div>
-						<div class="hv-icon-bubble hv-icon-23"><img src="assets/icons-animated/book.gif" alt="Learning"></div>
+						<div class="hv-icon-bubble hv-icon-1"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/calculator.gif" alt="Accounting"></div>
+						<div class="hv-icon-bubble hv-icon-2"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/browser.gif" alt="Web Development"></div>
+						<div class="hv-icon-bubble hv-icon-3"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/bar-chart.gif" alt="SEO"></div>
+						<div class="hv-icon-bubble hv-icon-4"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/chat.gif" alt="Digital Marketing"></div>
+						<div class="hv-icon-bubble hv-icon-5"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/briefcase.gif" alt="Business"></div>
+						<div class="hv-icon-bubble hv-icon-6"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/building.gif" alt="Company"></div>
+						<div class="hv-icon-bubble hv-icon-7"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/calendar.gif" alt="Planning"></div>
+						<div class="hv-icon-bubble hv-icon-8"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/cart.gif" alt="Ecommerce"></div>
+						<div class="hv-icon-bubble hv-icon-9"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/checklist.gif" alt="Checklist"></div>
+						<div class="hv-icon-bubble hv-icon-10"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/computer.gif" alt="Web Dev"></div>
+						<div class="hv-icon-bubble hv-icon-11"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/design.gif" alt="Design"></div>
+						<div class="hv-icon-bubble hv-icon-12"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/diagram.gif" alt="Strategy"></div>
+						<div class="hv-icon-bubble hv-icon-13"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/finance.gif" alt="Finance"></div>
+						<div class="hv-icon-bubble hv-icon-14"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/gears.gif" alt="Operations"></div>
+						<div class="hv-icon-bubble hv-icon-15"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/globe.gif" alt="Global"></div>
+						<div class="hv-icon-bubble hv-icon-16"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Local"></div>
+						<div class="hv-icon-bubble hv-icon-17"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/play.gif" alt="Media"></div>
+						<div class="hv-icon-bubble hv-icon-18"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/rocket.gif" alt="Growth"></div>
+						<div class="hv-icon-bubble hv-icon-19"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-search.gif" alt="SEO"></div>
+						<div class="hv-icon-bubble hv-icon-20"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/share.gif" alt="Marketing"></div>
+						<div class="hv-icon-bubble hv-icon-21"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/target.gif" alt="Goals"></div>
+						<div class="hv-icon-bubble hv-icon-22"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/trending.gif" alt="Analytics"></div>
+						<div class="hv-icon-bubble hv-icon-23"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/book.gif" alt="Learning"></div>
 					</div>
 				</div>
 			</div>
@@ -2516,12 +2561,12 @@ h1, h2, h3, h4 {
 					<span class="hub-node"><i class="fa-solid fa-laptop-code"></i></span>
 					<span class="hub-node"><i class="fa-solid fa-store"></i></span>
 					<div class="hub-preview">
-						<div class="hub-thumb"><img src="images/seo-image.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-chart-line"></i></div>
-						<div class="hub-thumb"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-bullseye"></i></div>
-						<div class="hub-thumb"><img src="images/index-social-media-marketing.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-hashtag"></i></div>
-						<div class="hub-thumb"><img src="images/index-image-4.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-palette"></i></div>
-						<div class="hub-thumb"><img src="images/index-image-5.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-code"></i></div>
-						<div class="hub-thumb"><img src="images/index-image-6.jpg" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-cart-shopping"></i></div>
+						<div class="hub-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-chart-line"></i></div>
+						<div class="hub-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-2.webp" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-bullseye"></i></div>
+						<div class="hub-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-social-media-marketing.webp" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-hashtag"></i></div>
+						<div class="hub-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-4.webp" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-palette"></i></div>
+						<div class="hub-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-5.webp" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-code"></i></div>
+						<div class="hub-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-6.webp" alt="" loading="lazy" width="80" height="80"><i class="fa-solid fa-cart-shopping"></i></div>
 					</div>
 				</div>
 			</div>
@@ -2592,9 +2637,9 @@ h1, h2, h3, h4 {
 					<h3>Accounting and Bookkeeping</h3>
 					<p>Accurate books, payroll, tax filing and financial reporting handled by one dedicated team, alongside your growth work.</p>
 					<div class="svc-thumb-row">
-						<div class="svc-thumb"><img src="images/index-image.jpg" alt="" loading="lazy" width="200" height="125"><span>Accounting and Bookkeeping</span></div>
-						<div class="svc-thumb"><img src="images/index-image-8.jpg" alt="" loading="lazy" width="200" height="125"><span>Payroll</span></div>
-						<div class="svc-thumb"><img src="images/index-image-7.jpg" alt="" loading="lazy" width="200" height="125"><span>Tax Prep</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image.webp" alt="" loading="lazy" width="200" height="125"><span>Accounting and Bookkeeping</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-8.webp" alt="" loading="lazy" width="200" height="125"><span>Payroll</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-7.webp" alt="" loading="lazy" width="200" height="125"><span>Tax Prep</span></div>
 					</div>
 					<div class="svc-tags">
 						<a href="financial-record-keeping.php">Financial Records</a><a href="accounts-payable.php">Payable</a><a href="accounts-receivable.php">Receivable</a><a href="bank-reconciliation.php">Reconciliation</a><a href="financial-reporting.php">Reporting</a><a href="payroll-management.php">Payroll</a>
@@ -2604,11 +2649,11 @@ h1, h2, h3, h4 {
 				<div class="service-media mask-reveal">
 					<a class="media-link" href="bookkeeping.php" aria-label="Explore bookkeeping services"></a>
 					<div class="service-media-inner">
-						<img src="images/index-image.jpg" alt="Accounting and Bookkeeping and financial reporting" loading="lazy" decoding="async" width="900" height="675">
+						<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image.webp" alt="Accounting and Bookkeeping and financial reporting" loading="lazy" decoding="async" width="900" height="675">
 					</div>
 					<div class="media-title"><span>Accounting and Bookkeeping</span></div>
-					<div class="media-deco media-deco-a"><img src="images/index-image-7.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-calculator"></i></div>
-					<div class="media-deco media-deco-b"><strong>100% audit-ready</strong><img src="images/index-image-8.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-deco media-deco-a"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-7.webp" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-calculator"></i></div>
+					<div class="media-deco media-deco-b"><strong>100% audit-ready</strong><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-8.webp" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
 						<span class="media-pill"><i class="fa-solid fa-calculator"></i> Accounting and Bookkeeping</span>
 						<div class="media-widget">
@@ -2628,9 +2673,9 @@ h1, h2, h3, h4 {
 					<h3>Web Design &amp; Development</h3>
 					<p>Conversion-focused websites, custom builds and ecommerce pages engineered for speed and results.</p>
 					<div class="svc-thumb-row">
-						<div class="svc-thumb"><img src="images/index-image-5.jpg" alt="" loading="lazy" width="200" height="125"><span>Desktop</span></div>
-						<div class="svc-thumb"><img src="images/index-image-9.jpg" alt="" loading="lazy" width="200" height="125"><span>Mobile</span></div>
-						<div class="svc-thumb"><img src="images/index-image-10.jpg" alt="" loading="lazy" width="200" height="125"><span>Ecommerce</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-5.webp" alt="" loading="lazy" width="200" height="125"><span>Desktop</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-9.webp" alt="" loading="lazy" width="200" height="125"><span>Mobile</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-10.webp" alt="" loading="lazy" width="200" height="125"><span>Ecommerce</span></div>
 					</div>
 					<div class="svc-tags">
 						<a href="website-design.php">Website Design</a><a href="website-development.php">Website Development</a><a href="ecommerce-website-development.php">Ecommerce Website Development</a>
@@ -2640,11 +2685,11 @@ h1, h2, h3, h4 {
 				<div class="service-media mask-reveal">
 					<a class="media-link" href="web-design-development.php" aria-label="Explore web services"></a>
 					<div class="service-media-inner">
-						<img src="images/index-image-5.jpg" alt="Website design mockup" loading="lazy" decoding="async" width="900" height="675">
+						<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-5.webp" alt="Website design mockup" loading="lazy" decoding="async" width="900" height="675">
 					</div>
 					<div class="media-title"><span>Web Design &amp; Development</span></div>
-					<div class="media-deco media-deco-a"><img src="images/index-image-9.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-mobile-screen"></i></div>
-					<div class="media-deco media-deco-b"><strong>98 speed</strong><img src="images/index-image-10.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-deco media-deco-a"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-9.webp" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-mobile-screen"></i></div>
+					<div class="media-deco media-deco-b"><strong>98 speed</strong><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-10.webp" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
 						<span class="media-pill"><i class="fa-solid fa-laptop-code"></i> Built to convert</span>
 						<div class="media-widget">
@@ -2665,9 +2710,9 @@ h1, h2, h3, h4 {
 					<h3>Digital Marketing</h3>
 					<p>Platform-native content and community management across every social channel that moves your audience.</p>
 					<div class="svc-thumb-row">
-						<div class="svc-thumb"><img src="images/index-image-11.jpg" alt="" loading="lazy" width="200" height="125"><span>Reels</span></div>
-						<div class="svc-thumb"><img src="images/index-image-12.jpg" alt="" loading="lazy" width="200" height="125"><span>Posts</span></div>
-						<div class="svc-thumb"><img src="images/index-image-15.jpg" alt="" loading="lazy" width="200" height="125"><span>Community</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-11.webp" alt="" loading="lazy" width="200" height="125"><span>Reels</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-12.webp" alt="" loading="lazy" width="200" height="125"><span>Posts</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-15.webp" alt="" loading="lazy" width="200" height="125"><span>Community</span></div>
 					</div>
 					<div class="svc-tags">
 						<a href="facebook-marketing.php">Facebook</a><a href="instagram-marketing.php">Instagram</a><a href="linkedin-marketing.php">LinkedIn</a><a href="twitter-x-marketing.php">Twitter (X)</a><a href="pinterest-marketing.php">Pinterest</a><a href="youtube-marketing.php">YouTube</a>
@@ -2677,21 +2722,21 @@ h1, h2, h3, h4 {
 				<div class="service-media mask-reveal">
 					<a class="media-link" href="digital-marketing.php" aria-label="Explore digital marketing services"></a>
 					<div class="service-media-inner">
-						<img src="images/index-social-media-marketing.jpg" alt="Social media marketing" loading="lazy" decoding="async" width="900" height="675">
+						<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-social-media-marketing.webp" alt="Social media marketing" loading="lazy" decoding="async" width="900" height="675">
 					</div>
 					<div class="media-title"><span>Digital Marketing</span></div>
-					<div class="media-deco media-deco-a"><img src="images/index-image-11.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-brands fa-instagram"></i></div>
-					<div class="media-deco media-deco-b"><strong>48K reach</strong><img src="images/index-image-12.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-deco media-deco-a"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-11.webp" alt="" loading="lazy" width="76" height="72"><i class="fa-brands fa-instagram"></i></div>
+					<div class="media-deco media-deco-b"><strong>48K reach</strong><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-12.webp" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
 						<span class="media-pill"><i class="fa-solid fa-share-nodes"></i> Content that converts</span>
 						<div class="media-widget">
 							<div class="mw-grid">
-								<span style="background-image:url('images/index-image-12.jpg')"></span>
-								<span style="background-image:url('images/index-image-14.jpg')"></span>
-								<span style="background-image:url('images/index-image-15.jpg')"></span>
-								<span style="background-image:url('images/index-image-16.jpg')"></span>
-								<span style="background-image:url('images/index-image-17.jpg')"></span>
-								<span style="background-image:url('images/index-image-18.jpg')"></span>
+								<span style="background-image:url('https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-12.webp')"></span>
+								<span style="background-image:url('https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-14.webp')"></span>
+								<span style="background-image:url('https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-15.webp')"></span>
+								<span style="background-image:url('https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-16.webp')"></span>
+								<span style="background-image:url('https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-17.webp')"></span>
+								<span style="background-image:url('https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-18.webp')"></span>
 							</div>
 						</div>
 					</div>
@@ -2706,9 +2751,9 @@ h1, h2, h3, h4 {
 					<h3>Search Engine Optimization (SEO)</h3>
 					<p>Search visibility, analytics and strategy that compound into long-term organic growth and qualified traffic.</p>
 					<div class="svc-thumb-row">
-						<div class="svc-thumb"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="200" height="125"><span>Analytics</span></div>
-						<div class="svc-thumb"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="200" height="125"><span>Keywords</span></div>
-						<div class="svc-thumb"><img src="images/local-seo-trends-image.jpg" alt="" loading="lazy" width="200" height="125"><span>Content</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-2.webp" alt="" loading="lazy" width="200" height="125"><span>Analytics</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-2.webp" alt="" loading="lazy" width="200" height="125"><span>Keywords</span></div>
+						<div class="svc-thumb"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/local-seo-trends-image.webp" alt="" loading="lazy" width="200" height="125"><span>Content</span></div>
 					</div>
 					<div class="svc-tags">
 						<a href="on-page-seo.php">On-Page SEO</a><a href="off-page-seo.php">Off-Page SEO</a><a href="local-seo.php">Local SEO</a><a href="technical-seo.php">Technical SEO</a>
@@ -2718,11 +2763,11 @@ h1, h2, h3, h4 {
 				<div class="service-media mask-reveal">
 					<a class="media-link" href="seo.php" aria-label="Explore SEO services"></a>
 					<div class="service-media-inner">
-						<img src="images/seo-image.jpg" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="900" height="675">
+						<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="900" height="675">
 					</div>
 					<div class="media-title"><span>Search Engine Optimization (SEO)</span></div>
-					<div class="media-deco media-deco-a"><img src="images/index-image-2.jpg" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-chart-line"></i></div>
-					<div class="media-deco media-deco-b"><strong>Rankings up</strong><img src="images/index-image-20.jpg" alt="" loading="lazy" width="94" height="72"></div>
+					<div class="media-deco media-deco-a"><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-2.webp" alt="" loading="lazy" width="76" height="72"><i class="fa-solid fa-chart-line"></i></div>
+					<div class="media-deco media-deco-b"><strong>Rankings up</strong><img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-20.webp" alt="" loading="lazy" width="94" height="72"></div>
 					<div class="media-overlay">
 						<span class="media-pill"><i class="fa-solid fa-magnifying-glass-chart"></i> Organic growth</span>
 						<div class="media-widget">
@@ -2781,7 +2826,7 @@ h1, h2, h3, h4 {
 
 			<div class="work-grid">
 				<article class="work-card work-a" data-reveal>
-					<img src="images/index-restaurant-growth-campaign.jpg" alt="Restaurant growth campaign" loading="lazy" decoding="async" width="1000" height="700">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-restaurant-growth-campaign.webp" alt="Restaurant growth campaign" loading="lazy" decoding="async" width="1000" height="700">
 					<div class="work-body">
 						<span class="work-cat"><i class="fa-solid fa-bullhorn"></i> Marketing Campaign</span>
 						<h3>Restaurant growth package</h3>
@@ -2791,7 +2836,7 @@ h1, h2, h3, h4 {
 				</article>
 
 				<article class="work-card work-b" data-reveal>
-					<img src="images/index-image-2.jpg" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="700" height="400">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-2.webp" alt="SEO analytics dashboard" loading="lazy" decoding="async" width="700" height="400">
 					<div class="work-body">
 						<span class="work-cat"><i class="fa-solid fa-chart-line"></i> SEO &amp; Analytics</span>
 						<h3>Search visibility dashboard</h3>
@@ -2800,7 +2845,7 @@ h1, h2, h3, h4 {
 				</article>
 
 				<article class="work-card work-c" data-reveal>
-					<img src="images/index-image-8.jpg" alt="Accounting and Bookkeeping and payroll reporting" loading="lazy" decoding="async" width="700" height="400">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-8.webp" alt="Accounting and Bookkeeping and payroll reporting" loading="lazy" decoding="async" width="700" height="400">
 					<div class="work-body">
 						<span class="work-cat"><i class="fa-solid fa-calculator"></i> Accounting and Bookkeeping</span>
 						<h3>Financial reporting &amp; payroll</h3>
@@ -2809,7 +2854,7 @@ h1, h2, h3, h4 {
 				</article>
 
 				<article class="work-card work-d" data-reveal>
-					<img src="images/index-image-5.jpg" alt="WordPress ecommerce build" loading="lazy" decoding="async" width="800" height="400">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-5.webp" alt="WordPress ecommerce build" loading="lazy" decoding="async" width="800" height="400">
 					<div class="work-body">
 						<span class="work-cat"><i class="fa-solid fa-laptop-code"></i> Web Design</span>
 						<h3>WordPress &amp; ecommerce build</h3>
@@ -2818,7 +2863,7 @@ h1, h2, h3, h4 {
 				</article>
 
 				<article class="work-card work-e" data-reveal>
-					<img src="images/index-social-media-marketing.jpg" alt="Multi-platform social growth" loading="lazy" decoding="async" width="800" height="400">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-social-media-marketing.webp" alt="Multi-platform social growth" loading="lazy" decoding="async" width="800" height="400">
 					<div class="work-body">
 						<span class="work-cat"><i class="fa-solid fa-share-nodes"></i> Digital Marketing</span>
 						<h3>Multi-platform social growth</h3>
@@ -2850,14 +2895,14 @@ h1, h2, h3, h4 {
 				</a>
 
 				<article class="reel" tabindex="0" role="button" aria-label="Play service ad reel">
-					<img src="images/index-service-ad-creative-reel.jpg" alt="Service ad creative reel" loading="lazy" decoding="async" width="300" height="533">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-service-ad-creative-reel.webp" alt="Service ad creative reel" loading="lazy" decoding="async" width="300" height="533">
 					<div class="reel-top"><span class="reel-cat">Ad creative</span><span class="reel-stat"><i class="fa-solid fa-arrow-trend-up"></i> +31%</span></div>
 					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
 					<div class="reel-meta"><h3>Trust in seconds</h3><p>Fast hooks and bold motion design.</p></div>
 				</article>
 
 				<article class="reel" tabindex="0" role="button" aria-label="Play product demo reel">
-					<img src="images/index-product-demo-reel.jpg" alt="Product demo reel" loading="lazy" decoding="async" width="300" height="533">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-product-demo-reel.webp" alt="Product demo reel" loading="lazy" decoding="async" width="300" height="533">
 					<div class="reel-top"><span class="reel-cat">Product demo</span><span class="reel-stat"><i class="fa-solid fa-message"></i> Leads</span></div>
 					<div class="reel-play"><span><i class="fa-solid fa-play"></i></span></div>
 					<div class="reel-meta"><h3>Explain &amp; convert</h3><p>Simple demos that pre-sell the offer.</p></div>
@@ -4792,20 +4837,31 @@ h1, h2, h3, h4 {
 					<h2>Ready to build your next RealDeal project?</h2>
 					<p>Tell us what you need — bookkeeping, web design &amp; development, digital marketing or SEO — and we'll shape a focused plan.</p>
 					<ul class="cta-points">
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Free strategy consultation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Clear deliverables &amp; timeline</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> One accountable team</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Free strategy consultation</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Clear deliverables &amp; timeline</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> One accountable team</li>
 					</ul>
 					<a class="btn btn-light" href="mailto:contactrealdealteam@gmail.com"><i class="fa-solid fa-envelope"></i> contactrealdealteam@gmail.com</a>
 				</div>
 
-				<form class="proposal-form" id="proposalForm" data-reveal="right">
+				<form class="proposal-form" id="proposalForm" method="post" action="index.php#contact" data-reveal="right">
+					<input type="hidden" name="rd_proposal_submit" value="1">
 					<h3>Request a free proposal</h3>
 					<p class="form-sub">We usually reply within one business day.</p>
+					<?php if ($rd_proposal_success): ?>
+					<div id="rdProposalSuccessMsg" style="padding:18px 20px;margin-bottom:18px;border-radius:10px;background:#e9f9f1;border:2px solid #13a76f;color:#0e1a24;font-weight:800;font-size:15px;box-shadow:0 10px 30px rgba(19,167,111,.25);"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Request sent successfully. We'll be in touch within one business day.</div>
+					<?php endif; ?>
+					<?php if ($rd_proposal_error): ?>
+					<div id="rdProposalErrorMsg" style="padding:18px 20px;margin-bottom:18px;border-radius:10px;background:#fdeceb;border:2px solid #ff4a1c;color:#0e1a24;font-weight:800;font-size:15px;box-shadow:0 10px 30px rgba(255,74,28,.25);"><i class="fa-solid fa-circle-exclamation" style="color:#ff4a1c;"></i> <?php echo esc_html($rd_proposal_error); ?></div>
+					<?php endif; ?>
 					<div class="form-grid">
 						<div class="field">
 							<label for="name">Name</label>
 							<input id="name" name="name" type="text" placeholder="Your name">
+						</div>
+						<div class="field">
+							<label for="email">Email <span class="req">*</span></label>
+							<input id="email" name="email" type="email" placeholder="you@email.com" required>
 						</div>
 						<div class="field">
 							<label for="phone">Phone</label>
@@ -5145,17 +5201,26 @@ h1, h2, h3, h4 {
 		}
 	})();
 
-	// Proposal form feedback (front-end only; no backend change)
+	// Proposal form submission
 	const proposalForm = document.getElementById("proposalForm");
 	if (proposalForm) {
 		proposalForm.addEventListener("submit", (event) => {
-			event.preventDefault();
+			if (!proposalForm.reportValidity()) { event.preventDefault(); return; }
 			const button = proposalForm.querySelector("button");
-			const original = button.innerHTML;
-			button.innerHTML = '<img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Request Ready To Send';
-			setTimeout(() => { button.innerHTML = original; }, 2400);
+			button.disabled = true;
+			button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 		});
 	}
+	['rdProposalSuccessMsg', 'rdProposalErrorMsg'].forEach(function (id) {
+		const el = document.getElementById(id);
+		if (el) {
+			setTimeout(function () {
+				el.style.transition = 'opacity 400ms ease';
+				el.style.opacity = '0';
+				setTimeout(function () { el.style.display = 'none'; }, 400);
+			}, 4000);
+		}
+	});
 })();
 </script>
 <script src="assets/site-nav.js?v=3" defer></script>

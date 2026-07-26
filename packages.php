@@ -35,7 +35,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/about-banner.jpg") center/cover; color:#fff; }
+.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/about-banner.webp") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -96,6 +96,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 
 @media(max-width:960px) { .pricing-grid,.include-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
@@ -135,11 +136,11 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<p>For new or local businesses building their first real online presence.</p>
 					<div class="pricing-price"><strong>$799</strong><span>/ month</span></div>
 					<ul class="pricing-features">
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Local SEO &amp; Google Business Profile</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> On-page SEO for up to 10 pages</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly bookkeeping &amp; financial reporting</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Facebook &amp; Instagram marketing</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly performance report</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Local SEO &amp; Google Business Profile</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> On-page SEO for up to 10 pages</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Monthly bookkeeping &amp; financial reporting</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Facebook &amp; Instagram marketing</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Monthly performance report</li>
 					</ul>
 					<a class="btn btn-outline" href="contact.php">Start With Foundation</a>
 				</article>
@@ -150,12 +151,12 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<p>For businesses ready to combine SEO, web development and marketing into one plan.</p>
 					<div class="pricing-price"><strong>$1,899</strong><span>/ month</span></div>
 					<ul class="pricing-features">
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Full on-page, off-page &amp; technical SEO</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Website design &amp; development</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Multi-platform digital marketing</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Accounts payable &amp; receivable management</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payroll management</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Dedicated account manager</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Full on-page, off-page &amp; technical SEO</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Website design &amp; development</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Multi-platform digital marketing</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Accounts payable &amp; receivable management</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Payroll management</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Dedicated account manager</li>
 					</ul>
 					<a class="btn btn-primary" href="contact.php">Start With Accelerate</a>
 				</article>
@@ -165,12 +166,12 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<p>For multi-location or ecommerce brands needing full coverage across bookkeeping, web, marketing and SEO.</p>
 					<div class="pricing-price"><strong>Custom</strong><span>quote</span></div>
 					<ul class="pricing-features">
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Every service in our catalog, combined</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Ecommerce website development (WooCommerce &amp; Shopify)</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Full bookkeeping &amp; tax preparation support</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Multi-channel digital marketing</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Custom reporting dashboards</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Priority support &amp; strategy calls</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Every service in our catalog, combined</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Ecommerce website development (WooCommerce &amp; Shopify)</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Full bookkeeping &amp; tax preparation support</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Multi-channel digital marketing</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Custom reporting dashboards</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Priority support &amp; strategy calls</li>
 					</ul>
 					<a class="btn btn-outline" href="contact.php">Request Custom Quote</a>
 				</article>
@@ -184,14 +185,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<h2 class="section-title">What's included no matter which plan you choose</h2>
 			<div class="include-grid">
 				<ul class="include-list">
-					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> One accountable team across every channel</li>
-					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Transparent monthly reporting</li>
-					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> No long-term lock-in contracts</li>
+					<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> One accountable team across every channel</li>
+					<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Transparent monthly reporting</li>
+					<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> No long-term lock-in contracts</li>
 				</ul>
 				<ul class="include-list">
-					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Direct access to your account team</li>
-					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Clear scope and deliverables upfront</li>
-					<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Room to scale up as you grow</li>
+					<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Direct access to your account team</li>
+					<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Clear scope and deliverables upfront</li>
+					<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Room to scale up as you grow</li>
 				</ul>
 			</div>
 		</div>

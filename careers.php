@@ -95,7 +95,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
+.service-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -111,6 +111,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .benefit-card:hover { transform:translateY(-4px); border-color:var(--rd-orange); box-shadow:0 16px 36px rgba(255,74,28,.16); }
 .benefit-icon { width:110px; height:110px; border-radius:8px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; background:transparent; color:var(--rd-orange); box-shadow:none; }
 .benefit-icon .fa-icon-img { width:90px; height:90px; object-fit:contain; margin:auto; }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 .benefit-card h3 { font-size:17px; margin-bottom:8px; }
 .benefit-card p { font-size:14px; }
 
@@ -175,7 +176,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="index.php">Home</a><span>/</span>
 				<span>Career</span>
 			</nav>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/briefcase.gif" alt="Careers"> Careers at RealDeal</div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/briefcase.gif" alt="Careers"> Careers at RealDeal</div>
 			<h1>Build your career with a growth-focused agency</h1>
 			<p class="lead">Join a team that values execution, transparency and results. We're always looking for talented marketers, designers and developers.</p>
 			<div class="hero-actions">
@@ -190,10 +191,10 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<span class="section-kicker">Why RealDeal</span>
 			<h2 class="section-title">Why people choose to build their career here</h2>
 			<div class="benefit-grid">
-				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/trending.gif" alt="Growth"></div><h3>Real ownership</h3><p>Own campaigns and client relationships directly — not buried under layers of approval.</p></article>
-				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/remote-work.gif" alt="Flexible work"></div><h3>Flexible work</h3><p>Remote-friendly setup built around output, not hours logged at a desk.</p></article>
-				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/graduation-cap.gif" alt="Learning"></div><h3>Room to grow</h3><p>Learning support and exposure to every channel, not just one narrow lane.</p></article>
-				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/team.gif" alt="Collaboration"></div><h3>Collaborative culture</h3><p>Specialists across SEO, PPC, design and dev who actually work together.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/trending.gif" alt="Growth"></div><h3>Real ownership</h3><p>Own campaigns and client relationships directly — not buried under layers of approval.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/remote-work.gif" alt="Flexible work"></div><h3>Flexible work</h3><p>Remote-friendly setup built around output, not hours logged at a desk.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/graduation-cap.gif" alt="Learning"></div><h3>Room to grow</h3><p>Learning support and exposure to every channel, not just one narrow lane.</p></article>
+				<article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/team.gif" alt="Collaboration"></div><h3>Collaborative culture</h3><p>Specialists across SEO, PPC, design and dev who actually work together.</p></article>
 			</div>
 		</div>
 	</section>
@@ -204,7 +205,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<h2 class="section-title">Current openings</h2>
 			<div class="role-list">
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/hr.gif" alt="HR"> Administration &amp; HR</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/hr.gif" alt="HR"> Administration &amp; HR</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -213,14 +214,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">We are looking for an organised Administration &amp; HR Executive to support office operations, recruitment, employee records, onboarding, and daily administrative tasks while helping maintain a productive and professional workplace.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/calculator.gif" alt="Accounting"> Junior Accountant</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/calculator.gif" alt="Accounting"> Junior Accountant</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -229,14 +230,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Are you a detail-oriented accounting professional looking to grow your career? Join RealDeal IT Center as a Junior Accountant and assist with financial reporting, bookkeeping, reconciliations, invoicing, and maintaining accurate financial records while working alongside an experienced finance team.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/book.gif" alt="Bookkeeping"> Bookkeeping Executive</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/book.gif" alt="Bookkeeping"> Bookkeeping Executive</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -245,14 +246,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">RealDeal IT Center is seeking a Bookkeeping Executive to manage day-to-day financial transactions, maintain accurate records, reconcile accounts, and support the finance department in delivering reliable financial information.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/browser.gif" alt="Web Development"> Junior Web Developer</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/browser.gif" alt="Web Development"> Junior Web Developer</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -261,14 +262,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Are you passionate about web development and eager to build your career? Join RealDeal IT Center as a Junior Web Developer and help develop, maintain, and optimize modern websites using HTML, CSS, JavaScript, WordPress, and other web technologies.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital Marketing"> Digital Marketing Executive</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/megaphone.gif" alt="Digital Marketing"> Digital Marketing Executive</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -277,14 +278,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">RealDeal IT Center is looking for a creative and results-driven Digital Marketing Executive to plan, execute, and optimize online marketing campaigns across SEO, social media, paid advertising, email marketing, and content creation.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/seo-search.gif" alt="SEO"> SEO Executive</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-search.gif" alt="SEO"> SEO Executive</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -293,14 +294,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Join our growing SEO team as an SEO Executive and help improve website visibility through keyword research, on-page optimisation, technical SEO, link building, and performance reporting for a wide range of clients.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital Marketing"> Digital Marketing Manager</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/megaphone.gif" alt="Digital Marketing"> Digital Marketing Manager</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -309,14 +310,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">Are you an experienced digital marketing professional ready to lead impactful campaigns? Join RealDeal IT Center to manage SEO, PPC, social media, content marketing, and digital strategies that deliver measurable growth for our clients.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
 
 				<article class="role-item">
-					<span class="role-badge"><img class="fa-icon-img" src="assets/icons-animated/seo-search.gif" alt="SEO"> SEO Manager</span>
+					<span class="role-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-search.gif" alt="SEO"> SEO Manager</span>
 					<div class="role-socials">
 						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 						<a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
@@ -325,8 +326,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					</div>
 					<p class="role-desc">RealDeal IT Center is hiring an SEO Manager to lead our search engine optimisation strategy, improve website rankings, analyse performance data, and drive sustainable organic growth through technical and content-focused SEO initiatives.</p>
 					<div class="role-checks">
-						<span><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Salary: Negotiable</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"> Greater Manchester (Office / Hybrid Options Available)</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Salary: Negotiable</span>
 					</div>
 					<a class="btn btn-primary" href="#apply">Apply Now</a>
 				</article>
@@ -342,7 +343,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<form class="apply-card" id="applyForm" method="post" enctype="multipart/form-data" action="careers.php#apply" novalidate>
 				<input type="hidden" name="rd_career_apply" value="1">
 				<?php if ($rd_apply_success): ?>
-				<div id="rdApplySuccessMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#e9f9f1;border:2px solid #13a76f;color:#0e1a24;font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(19,167,111,.25);"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Application sent successfully. We'll be in touch soon.</div>
+				<div id="rdApplySuccessMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#e9f9f1;border:2px solid #13a76f;color:#0e1a24;font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(19,167,111,.25);"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Application sent successfully. We'll be in touch soon.</div>
 				<?php endif; ?>
 				<?php if ($rd_apply_error): ?>
 				<div id="rdApplyErrorMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#fdeceb;border:2px solid #ff4a1c;color:#0e1a24;font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(255,74,28,.25);"><i class="fa-solid fa-circle-exclamation" style="color:#ff4a1c;"></i> <?php echo esc_html($rd_apply_error); ?></div>

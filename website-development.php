@@ -47,7 +47,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .main-nav > ul > li > a:hover { background:rgba(255,255,255,.1); color:#fff; }
 .main-nav > ul > li > a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
 .menu-toggle { display:none; width:44px; height:44px; border:1px solid var(--rd-line); border-radius:6px; background:#fff; cursor:pointer; }
-.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
+.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -97,6 +97,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.benefit-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 @media(max-width:820px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .main-nav { display:none; position:fixed; inset:78px 16px auto; padding:14px; background:#fff; border:1px solid var(--rd-line); border-radius:var(--radius); box-shadow:var(--shadow); } .main-nav.is-open { display:block; } .main-nav ul { flex-direction:column; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
@@ -112,8 +113,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="web-design-development.php">Web Design &amp; Development</a><span>/</span>
 				<span>Website Development</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/browser.gif" alt="Website development icon"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/browser.gif" alt="Website development icon"> Web Design &amp; Development</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/browser.gif" alt="Website development icon"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/browser.gif" alt="Website development icon"> Web Design &amp; Development</div>
 			<h1>Website Development</h1>
 			<p class="lead">From custom-built business sites to WordPress builds and full front-end/back-end development — we build the site, not just the design.</p>
 			<div class="hero-actions">
@@ -129,7 +130,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Website Development?</h2>
 					<p>Website Development is where design becomes a working site. We build custom business and portfolio websites from scratch, customize WordPress themes and plugins, and handle every layer of front-end and back-end development — from semantic HTML and responsive CSS to JavaScript interactivity, PHP and Node.js back-ends, and database integration. The result is a fast, secure, maintainable site built on the right technology for your business.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Built for your business</h3><p>Custom business and portfolio sites structured around your services, not a generic template.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>WordPress done right</h3><p>Theme customization and custom plugin development so WordPress fits your workflow.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Clean front-end code</h3><p>Semantic HTML, styled CSS and JavaScript interactivity built for speed and maintainability.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Reliable back-end architecture</h3><p>PHP or Node.js back-ends with proper database integration for data that scales with you.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Built for your business</h3><p>Custom business and portfolio sites structured around your services, not a generic template.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>WordPress done right</h3><p>Theme customization and custom plugin development so WordPress fits your workflow.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Clean front-end code</h3><p>Semantic HTML, styled CSS and JavaScript interactivity built for speed and maintainability.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Reliable back-end architecture</h3><p>PHP or Node.js back-ends with proper database integration for data that scales with you.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -154,13 +155,13 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
 			<h4 style="margin-bottom:6px;">Custom Website Development</h4>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business Website development tailored to your services, structure and lead flow</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Portfolio Website development built to showcase work, case studies and results</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Business Website development tailored to your services, structure and lead flow</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Portfolio Website development built to showcase work, case studies and results</li></ul>
 			<h4 style="margin:22px 0 6px;">WordPress Development</h4>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Theme Customization to match your brand and layout needs exactly</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Plugin Development for custom functionality WordPress doesn't offer out of the box</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Theme Customization to match your brand and layout needs exactly</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Plugin Development for custom functionality WordPress doesn't offer out of the box</li></ul>
 			<h4 style="margin:22px 0 6px;">Front-end Development</h4>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> HTML Structure built clean, semantic and accessible</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> CSS Styling for pixel-accurate, fully responsive design</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> JavaScript Functionality for interactive components and dynamic page behavior</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> HTML Structure built clean, semantic and accessible</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> CSS Styling for pixel-accurate, fully responsive design</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> JavaScript Functionality for interactive components and dynamic page behavior</li></ul>
 			<h4 style="margin:22px 0 6px;">Back-end Development</h4>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> PHP Development for server-side logic, forms and WordPress-based back-ends</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Node.js Development for modern, scalable custom back-end services</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Database Integration connecting your site to MySQL, PostgreSQL or MongoDB</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> PHP Development for server-side logic, forms and WordPress-based back-ends</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Node.js Development for modern, scalable custom back-end services</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Database Integration connecting your site to MySQL, PostgreSQL or MongoDB</li></ul>
 		</div>
 	</section>
 	<section class="detail-section">

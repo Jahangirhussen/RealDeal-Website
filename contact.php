@@ -1,3 +1,47 @@
+<?php
+$rd_contact_success = false;
+$rd_contact_error = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['rd_contact_submit'])) {
+    $full_name = isset($_POST['full_name']) ? sanitize_text_field($_POST['full_name']) : '';
+    $sender_email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
+    $message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
+    $services = (isset($_POST['services']) && is_array($_POST['services'])) ? array_map('sanitize_text_field', $_POST['services']) : array();
+
+    if (is_email($sender_email)) {
+        $from_header = 'From: RealDeal IT Center <wordpress@realdealitcenter.com>';
+
+        $internal_body  = '<p>New contact form submission.</p>';
+        $internal_body .= '<p><strong>Name:</strong> ' . esc_html($full_name !== '' ? $full_name : 'Not provided') . '<br>';
+        $internal_body .= '<strong>Email:</strong> ' . esc_html($sender_email) . '</p>';
+        if (!empty($services)) {
+            $internal_body .= '<p><strong>Services interested in:</strong><br>' . nl2br(esc_html(implode("\n", $services))) . '</p>';
+        }
+        $internal_body .= '<p><strong>Message:</strong><br>' . nl2br(esc_html($message !== '' ? $message : 'Not provided')) . '</p>';
+
+        wp_mail(
+            'contactrealdealteam@gmail.com',
+            'New Contact Form Message from ' . ($full_name !== '' ? $full_name : $sender_email),
+            $internal_body,
+            array('Content-Type: text/html; charset=UTF-8', $from_header, 'Reply-To: ' . $sender_email)
+        );
+
+        $confirm_body  = '<p>Hi ' . esc_html($full_name !== '' ? $full_name : 'there') . ',</p>';
+        $confirm_body .= '<p>Thanks for reaching out to RealDeal IT Center. We have received your message and will get back to you within one business day.</p>';
+        $confirm_body .= '<p>Best regards,<br>RealDeal IT Center</p>';
+
+        wp_mail(
+            $sender_email,
+            'We received your message — RealDeal IT Center',
+            $confirm_body,
+            array('Content-Type: text/html; charset=UTF-8', $from_header)
+        );
+
+        $rd_contact_success = true;
+    } else {
+        $rd_contact_error = 'Please enter a valid email address before submitting.';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +79,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .detail-section.alt { background:linear-gradient(180deg,#fff,var(--rd-soft)); }
 
 /* Hero */
-.contact-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/about-banner.jpg") center/cover; color:#fff; text-align:center; }
+.contact-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/about-banner.webp") center/cover; color:#fff; text-align:center; }
 .contact-hero .inner { max-width:820px; margin:0 auto; padding:44px 40px; border:1px solid rgba(255,255,255,.14); border-radius:16px; background:rgba(255,255,255,.05); backdrop-filter:blur(10px); }
 .contact-hero h1 { color:#fff; font-size:clamp(32px,4.6vw,46px); margin-bottom:18px; }
 .contact-hero p { color:rgba(255,255,255,.78); font-size:16px; max-width:680px; margin:0 auto; }
@@ -90,6 +134,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 
 @media(max-width:960px) { .info-grid { grid-template-columns:1fr; margin-top:32px; } .contact-grid { grid-template-columns:1fr; } .service-check-grid { grid-template-columns:1fr; } .footer-grid { grid-template-columns:1fr 1fr; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
@@ -110,19 +155,19 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<div class="container">
 		<div class="info-grid">
 			<article class="info-card">
-				<div class="info-icon"><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Location"></div>
+				<div class="info-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Location"></div>
 				<h3>Head Office</h3>
 				<p>103, Hossain's Tower, 2nd floor<br>Sector 07, Uttara Model Town<br>Dhaka-1230</p>
 				<a class="btn btn-outline" href="#map">Find Us</a>
 			</article>
 			<article class="info-card">
-				<div class="info-icon"><img class="fa-icon-img" src="assets/icons-animated/headset.gif" alt="Support"></div>
+				<div class="info-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/headset.gif" alt="Support"></div>
 				<h3>Contact Us</h3>
 				<p>Email Us: contactrealdealteam@gmail.com<br>Call Us: <a href="tel:+8801733162490">01733162490</a></p>
 				<a class="btn btn-outline" href="tel:+8801733162490">Talk To Us</a>
 			</article>
 			<article class="info-card">
-				<div class="info-icon"><img class="fa-icon-img" src="assets/icons-animated/support.gif" alt="Help"></div>
+				<div class="info-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/support.gif" alt="Help"></div>
 				<h3>Customer Support</h3>
 				<p>By filling out our contact form or emailing, you can expect a timely response from one of our experienced professionals.</p>
 				<a class="btn btn-outline" href="mailto:contactrealdealteam@gmail.com">Contact Support</a>
@@ -135,9 +180,9 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<div class="contact-grid">
 				<div class="contact-visual">
 					<div class="contact-visual-icons">
-						<span><img class="fa-icon-img" src="assets/icons-animated/phone.gif" alt="Phone"> 01733162490</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/envelope.gif" alt="Email"> contactrealdealteam@gmail.com</span>
-						<span><img class="fa-icon-img" src="assets/icons-animated/chat.gif" alt="Live chat"> Live chat &amp; 24h response</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/phone.gif" alt="Phone"> 01733162490</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/envelope.gif" alt="Email"> contactrealdealteam@gmail.com</span>
+						<span><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/chat.gif" alt="Live chat"> Live chat &amp; 24h response</span>
 					</div>
 					<h3>Let Us Hear From You!</h3>
 					<p>Our team is full of creative problem-solvers who are eager to hear your thoughts and contribute their own expertise.</p>
@@ -145,37 +190,44 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<div class="contact-form-wrap">
 					<h2>Send us a message</h2>
 					<p>Fill in the form below and we'll get back to you within one business day.</p>
-					<form id="contactForm">
-						<div class="field"><label>Name</label><input type="text" placeholder="Name"></div>
-						<div class="field"><label>Email <span class="req">*</span></label><input type="email" placeholder="Email" required></div>
+					<form id="contactForm" method="post" action="contact.php#contactForm">
+						<input type="hidden" name="rd_contact_submit" value="1">
+						<?php if ($rd_contact_success): ?>
+						<div id="rdContactSuccessMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#e9f9f1;border:2px solid #13a76f;color:#0e1a24;font-weight:800;font-size:16px;box-shadow:0 10px 30px rgba(19,167,111,.25);"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Message sent successfully. We'll be in touch within one business day.</div>
+						<?php endif; ?>
+						<?php if ($rd_contact_error): ?>
+						<div id="rdContactErrorMsg" style="padding:22px 24px;margin-bottom:20px;border-radius:10px;background:#fdeceb;border:2px solid #ff4a1c;color:#0e1a24;font-weight:800;font-size:16px;box-shadow:0 10px 30px rgba(255,74,28,.25);"><i class="fa-solid fa-circle-exclamation" style="color:#ff4a1c;"></i> <?php echo esc_html($rd_contact_error); ?></div>
+						<?php endif; ?>
+						<div class="field"><label>Name</label><input type="text" name="full_name" placeholder="Name"></div>
+						<div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" placeholder="Email" required></div>
 						<div class="field">
 							<label>What Service we can Provide you?</label>
 							<div class="service-check-grid">
-								<label><input type="checkbox"> Full Package: Growth Accelerate</label>
-								<label><input type="checkbox"> Full Package: Enterprise Custom</label>
-								<label><input type="checkbox"> Financial Record Keeping</label>
-								<label><input type="checkbox"> Accounts Payable</label>
-								<label><input type="checkbox"> Accounts Receivable</label>
-								<label><input type="checkbox"> Bank Reconciliation</label>
-								<label><input type="checkbox"> Financial Reporting</label>
-								<label><input type="checkbox"> Tax Preparation Support</label>
-								<label><input type="checkbox"> Payroll Management</label>
-								<label><input type="checkbox"> Website Design</label>
-								<label><input type="checkbox"> Website Development</label>
-								<label><input type="checkbox"> Ecommerce Website Development</label>
-								<label><input type="checkbox"> Facebook Marketing</label>
-								<label><input type="checkbox"> Instagram Marketing</label>
-								<label><input type="checkbox"> LinkedIn Marketing</label>
-								<label><input type="checkbox"> Twitter (X) Marketing</label>
-								<label><input type="checkbox"> Pinterest Marketing</label>
-								<label><input type="checkbox"> YouTube Marketing</label>
-								<label><input type="checkbox"> On-Page SEO</label>
-								<label><input type="checkbox"> Off-Page SEO</label>
-								<label><input type="checkbox"> Local SEO</label>
-								<label><input type="checkbox"> Technical SEO</label>
+								<label><input type="checkbox" name="services[]" value="Full Package: Growth Accelerate"> Full Package: Growth Accelerate</label>
+								<label><input type="checkbox" name="services[]" value="Full Package: Enterprise Custom"> Full Package: Enterprise Custom</label>
+								<label><input type="checkbox" name="services[]" value="Financial Record Keeping"> Financial Record Keeping</label>
+								<label><input type="checkbox" name="services[]" value="Accounts Payable"> Accounts Payable</label>
+								<label><input type="checkbox" name="services[]" value="Accounts Receivable"> Accounts Receivable</label>
+								<label><input type="checkbox" name="services[]" value="Bank Reconciliation"> Bank Reconciliation</label>
+								<label><input type="checkbox" name="services[]" value="Financial Reporting"> Financial Reporting</label>
+								<label><input type="checkbox" name="services[]" value="Tax Preparation Support"> Tax Preparation Support</label>
+								<label><input type="checkbox" name="services[]" value="Payroll Management"> Payroll Management</label>
+								<label><input type="checkbox" name="services[]" value="Website Design"> Website Design</label>
+								<label><input type="checkbox" name="services[]" value="Website Development"> Website Development</label>
+								<label><input type="checkbox" name="services[]" value="Ecommerce Website Development"> Ecommerce Website Development</label>
+								<label><input type="checkbox" name="services[]" value="Facebook Marketing"> Facebook Marketing</label>
+								<label><input type="checkbox" name="services[]" value="Instagram Marketing"> Instagram Marketing</label>
+								<label><input type="checkbox" name="services[]" value="LinkedIn Marketing"> LinkedIn Marketing</label>
+								<label><input type="checkbox" name="services[]" value="Twitter (X) Marketing"> Twitter (X) Marketing</label>
+								<label><input type="checkbox" name="services[]" value="Pinterest Marketing"> Pinterest Marketing</label>
+								<label><input type="checkbox" name="services[]" value="YouTube Marketing"> YouTube Marketing</label>
+								<label><input type="checkbox" name="services[]" value="On-Page SEO"> On-Page SEO</label>
+								<label><input type="checkbox" name="services[]" value="Off-Page SEO"> Off-Page SEO</label>
+								<label><input type="checkbox" name="services[]" value="Local SEO"> Local SEO</label>
+								<label><input type="checkbox" name="services[]" value="Technical SEO"> Technical SEO</label>
 							</div>
 						</div>
-						<div class="field"><label>Write Your Message</label><textarea placeholder="Write..."></textarea></div>
+						<div class="field"><label>Write Your Message</label><textarea name="message" placeholder="Write..."></textarea></div>
 						<button type="submit" class="btn btn-primary">Send Message</button>
 					</form>
 				</div>
@@ -211,19 +263,25 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
 	contactForm.addEventListener("submit", (event) => {
-		event.preventDefault();
-		if (!contactForm.reportValidity()) return;
+		if (!contactForm.reportValidity()) { event.preventDefault(); return; }
 		const btn = contactForm.querySelector("button[type=submit]");
-		const original = btn.innerHTML;
-		btn.innerHTML = '<img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Message Sent';
 		btn.disabled = true;
-		setTimeout(() => {
-			contactForm.reset();
-			btn.innerHTML = original;
-			btn.disabled = false;
-		}, 2600);
+		btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 	});
 }
+(function () {
+	var ids = ['rdContactSuccessMsg', 'rdContactErrorMsg'];
+	ids.forEach(function (id) {
+		var el = document.getElementById(id);
+		if (el) {
+			setTimeout(function () {
+				el.style.transition = 'opacity 400ms ease';
+				el.style.opacity = '0';
+				setTimeout(function () { el.style.display = 'none'; }, 400);
+			}, 4000);
+		}
+	});
+})();
 </script>
 <script src="assets/site-nav.js?v=3" defer></script>
 </body>

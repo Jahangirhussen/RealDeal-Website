@@ -47,7 +47,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .main-nav > ul > li > a:hover { background:rgba(255,255,255,.1); color:#fff; }
 .main-nav > ul > li > a.is-active { background:rgba(255,74,28,.1); color:var(--rd-orange); }
 .menu-toggle { display:none; width:44px; height:44px; border:1px solid var(--rd-line); border-radius:6px; background:#fff; cursor:pointer; }
-.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/seo-image.jpg") center/cover; color:#fff; }
+.service-hero { position:relative; padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
 .breadcrumb a { color:rgba(255,255,255,.88); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 14px; margin-bottom:20px; border:1px solid rgba(255,255,255,.2); border-radius:6px; background:rgba(255,255,255,.08); font-size:13px; font-weight:800; }
@@ -97,6 +97,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.benefit-grid,.process-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
 @media(max-width:820px) { .menu-toggle { display:inline-flex; align-items:center; justify-content:center; } .main-nav { display:none; position:fixed; inset:78px 16px auto; padding:14px; background:#fff; border:1px solid var(--rd-line); border-radius:var(--radius); box-shadow:var(--shadow); } .main-nav.is-open { display:block; } .main-nav ul { flex-direction:column; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
@@ -112,8 +113,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="bookkeeping.php">Accounting and Bookkeeping</a><span>/</span>
 				<span>Bank Reconciliation</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/bank-columns.gif" alt="Bank reconciliation icon"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/bank-columns.gif" alt="Bank reconciliation icon"> Accounting and Bookkeeping</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/bank-columns.gif" alt="Bank reconciliation icon"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/bank-columns.gif" alt="Bank reconciliation icon"> Accounting and Bookkeeping</div>
 			<h1>Bank Reconciliation</h1>
 			<p class="lead">Thorough bank statement review that catches and corrects errors so your account balances always tie out.</p>
 			<div class="hero-actions">
@@ -129,7 +130,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Bank Reconciliation?</h2>
 					<p>Your books are only as reliable as they are reconciled. Bank Reconciliation is the careful process of reviewing every bank statement, matching each transaction against your recorded books, and correcting any discrepancy before it snowballs into a bigger problem — so your balances are always accurate and trustworthy.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Bank statement review</h3><p>Every statement checked line by line against your recorded transactions.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Transaction matching</h3><p>Deposits, withdrawals and fees matched precisely to your books.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Error correction</h3><p>Discrepancies, duplicates and missed entries identified and fixed fast.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Fraud detection</h3><p>Unusual or unauthorized transactions flagged before they become bigger issues.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Bank statement review</h3><p>Every statement checked line by line against your recorded transactions.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Transaction matching</h3><p>Deposits, withdrawals and fees matched precisely to your books.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Error correction</h3><p>Discrepancies, duplicates and missed entries identified and fixed fast.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Fraud detection</h3><p>Unusual or unauthorized transactions flagged before they become bigger issues.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -154,7 +155,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly bank statement review across all accounts</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Transaction-by-transaction matching against your books</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Error correction for discrepancies and duplicates</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Outstanding check and deposit tracking</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Bank fee and unauthorized transaction flagging</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly reconciliation summary report</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Monthly bank statement review across all accounts</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Transaction-by-transaction matching against your books</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Error correction for discrepancies and duplicates</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Outstanding check and deposit tracking</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Bank fee and unauthorized transaction flagging</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Monthly reconciliation summary report</li></ul>
 		</div>
 	</section>
 	<section class="detail-section">

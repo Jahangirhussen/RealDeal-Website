@@ -85,7 +85,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 <?php include __DIR__ . '/../gtm-body.php'; ?>
 <?php $active_nav = 'blog'; $header_mode = 'hero'; include '../header.php'; ?>
 <main>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('../images/local-seo-trends-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/local-seo-trends-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="../index.php">Home</a><span>/</span>
@@ -152,7 +152,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
   "@type": "BlogPosting",
   "headline": "Local SEO Mistakes",
   "description": "Local SEO Mistakes — a practical look at local seo for growing businesses.",
-  "image": "../images/local-seo-trends-image.jpg",
+  "image": "../https://realdealitcenter.com/wp-content/uploads/2026/07/local-seo-trends-image.webp",
   "author": {
     "@type": "Organization",
     "name": "RealDeal Editorial Team"

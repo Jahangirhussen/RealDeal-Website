@@ -75,6 +75,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=2">
 </head>
@@ -98,7 +99,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	.faq-item p { padding:0 18px 16px; font-size:14px; }
 	@media(max-width:960px) { .benefit-grid { grid-template-columns:1fr; } }
 	</style>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
@@ -106,8 +107,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="seo.php">SEO</a><span>/</span>
 				<span>Link Building</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building icon"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building icon"> SEO</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/link-chain.gif" alt="Link building icon"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/link-chain.gif" alt="Link building icon"> SEO</div>
 			<h1>Link Building</h1>
 			<p class="lead">Ethical, relevant link building that builds real domain authority — no spam, no shortcuts.</p>
 			<div class="hero-actions">
@@ -123,7 +124,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is Link Building?</h2>
 					<p>Link Building earns high-quality, relevant backlinks that signal authority to search engines — through outreach, guest content and digital PR, focused on links that hold up over time rather than quick, risky shortcuts.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Quality over quantity</h3><p>Fewer, more relevant links instead of a flood of low-value ones.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>White-hat only</h3><p>No paid link schemes or tactics that risk a future penalty.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Relevant outreach</h3><p>Links earned from sites genuinely related to your industry.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Tracked and reported</h3><p>Every link earned is tracked and reported transparently.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Quality over quantity</h3><p>Fewer, more relevant links instead of a flood of low-value ones.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>White-hat only</h3><p>No paid link schemes or tactics that risk a future penalty.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Relevant outreach</h3><p>Links earned from sites genuinely related to your industry.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Tracked and reported</h3><p>Every link earned is tracked and reported transparently.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -145,7 +146,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Backlink profile audit and strategy</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Outreach and relationship-based link building</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Guest post placements on relevant sites</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Digital PR and mention-to-link recovery</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly link acquisition report</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Ongoing toxic link monitoring</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Backlink profile audit and strategy</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Outreach and relationship-based link building</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Guest post placements on relevant sites</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Digital PR and mention-to-link recovery</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Monthly link acquisition report</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Ongoing toxic link monitoring</li></ul>
 		</div>
 	</section>
 	<section class="detail-section alt" style="max-width:800px;margin:0 auto;">

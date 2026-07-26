@@ -75,6 +75,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=2">
 </head>
@@ -98,7 +99,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	.faq-item p { padding:0 18px 16px; font-size:14px; }
 	@media(max-width:960px) { .benefit-grid { grid-template-columns:1fr; } }
 	</style>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
@@ -106,8 +107,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="seo.php">SEO</a><span>/</span>
 				<span>WordPress SEO</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress logo"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress logo"> SEO</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/wordpress-icon.png" alt="WordPress logo"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/wordpress-icon.png" alt="WordPress logo"> SEO</div>
 			<h1>WordPress SEO</h1>
 			<p class="lead">WordPress-specific SEO setup and optimization, from plugin configuration to content structure.</p>
 			<div class="hero-actions">
@@ -123,7 +124,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is WordPress SEO?</h2>
 					<p>WordPress SEO covers the platform-specific work of getting a WordPress site fully search-optimized — proper SEO plugin configuration, clean permalink structure, sitemap setup and content optimization built around how WordPress actually works.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Proper plugin setup</h3><p>SEO plugin configured correctly instead of left on risky defaults.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Clean site structure</h3><p>Permalinks, categories and tags organized for both users and search engines.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Content optimization</h3><p>Posts and pages optimized for target keywords as they're published.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Ongoing technical health</h3><p>Sitemap, indexing and crawl issues monitored and fixed.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Proper plugin setup</h3><p>SEO plugin configured correctly instead of left on risky defaults.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Clean site structure</h3><p>Permalinks, categories and tags organized for both users and search engines.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Content optimization</h3><p>Posts and pages optimized for target keywords as they're published.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Ongoing technical health</h3><p>Sitemap, indexing and crawl issues monitored and fixed.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -145,7 +146,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> SEO plugin installation and configuration</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Permalink structure and URL cleanup</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> XML sitemap setup and submission</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> On-page optimization for key pages and posts</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Category and tag structure review</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly technical health check</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> SEO plugin installation and configuration</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Permalink structure and URL cleanup</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> XML sitemap setup and submission</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> On-page optimization for key pages and posts</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Category and tag structure review</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Monthly technical health check</li></ul>
 		</div>
 	</section>
 	<section class="detail-section alt" style="max-width:800px;margin:0 auto;">

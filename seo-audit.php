@@ -75,6 +75,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=2">
 </head>
@@ -98,7 +99,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	.faq-item p { padding:0 18px 16px; font-size:14px; }
 	@media(max-width:960px) { .benefit-grid { grid-template-columns:1fr; } }
 	</style>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
@@ -106,8 +107,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="seo.php">SEO</a><span>/</span>
 				<span>SEO Audit</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/checklist.gif" alt="SEO audit icon"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/checklist.gif" alt="SEO audit icon"> SEO</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/checklist.gif" alt="SEO audit icon"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/checklist.gif" alt="SEO audit icon"> SEO</div>
 			<h1>SEO Audit</h1>
 			<p class="lead">A full diagnostic of your site's SEO health — technical, on-page and off-page — with a clear, prioritized action plan.</p>
 			<div class="hero-actions">
@@ -123,7 +124,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is SEO Audit?</h2>
 					<p>An SEO Audit is a comprehensive review of your site's current search performance and health, covering technical issues, on-page optimization and backlink profile, delivered as a clear, prioritized report so you know exactly what to fix first.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Full-site diagnostic</h3><p>Technical, on-page and off-page factors all reviewed in one pass.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Prioritized action plan</h3><p>Issues ranked by impact so you fix what matters most first.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Plain-language reporting</h3><p>Findings explained clearly, not buried in jargon.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>A baseline for future work</h3><p>A clear starting point for any SEO campaign that follows.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Full-site diagnostic</h3><p>Technical, on-page and off-page factors all reviewed in one pass.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Prioritized action plan</h3><p>Issues ranked by impact so you fix what matters most first.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Plain-language reporting</h3><p>Findings explained clearly, not buried in jargon.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>A baseline for future work</h3><p>A clear starting point for any SEO campaign that follows.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -145,7 +146,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Full technical SEO crawl and review</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> On-page optimization review across key pages</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Backlink profile and off-page review</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Competitor comparison snapshot</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Prioritized action plan report</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Findings walkthrough call</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Full technical SEO crawl and review</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> On-page optimization review across key pages</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Backlink profile and off-page review</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Competitor comparison snapshot</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Prioritized action plan report</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Findings walkthrough call</li></ul>
 		</div>
 	</section>
 	<section class="detail-section alt" style="max-width:800px;margin:0 auto;">

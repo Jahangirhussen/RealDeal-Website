@@ -75,20 +75,21 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 <main>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
 				<a href="services.php">Services</a><span>/</span>
 				<span>Search Engine Optimization (SEO)</span>
 			</nav>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/seo-search.gif" alt="SEO icon"> Service Category</div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-search.gif" alt="SEO icon"> Service Category</div>
 			<h1>Search Engine Optimization (SEO)</h1>
 			<p class="lead">Search visibility, analytics and strategy that compound into long-term organic growth and qualified traffic.</p>
 			<div class="hero-actions">
@@ -119,7 +120,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<section class="detail-section">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/seo-search.gif" alt="SEO"></div>
+				<div class="category-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-search.gif" alt="SEO"></div>
 				<div>
 					<span class="section-kicker">Category 04</span>
 					<h2>Search Engine Optimization (SEO)</h2>
@@ -129,102 +130,102 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/document.gif" alt="On-page SEO"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/document.gif" alt="On-page SEO"></div>
 					<h3>On-Page SEO</h3>
 					<p>Keyword research, content optimization and technical on-page fixes that help pages rank.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Keyword research, SEO content &amp; meta optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> URL structure, internal linking &amp; image SEO</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Keyword research, SEO content &amp; meta optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> URL structure, internal linking &amp; image SEO</li>
 					</ul>
 					<a class="service-link" href="on-page-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/link-chain.gif" alt="Link building"></div>
 					<h3>Off-Page SEO</h3>
 					<p>Backlink building and social bookmarking that strengthens domain authority and trust.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> High authority backlinks &amp; guest posting</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profile creation &amp; content distribution</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> High authority backlinks &amp; guest posting</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Profile creation &amp; content distribution</li>
 					</ul>
 					<a class="service-link" href="off-page-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/location.gif" alt="Local SEO"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/location.gif" alt="Local SEO"></div>
 					<h3>Local SEO</h3>
 					<p>Google Business Profile optimization and citation building for map pack visibility.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> GBP setup &amp; map ranking strategy</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Local directory submission</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> GBP setup &amp; map ranking strategy</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Local directory submission</li>
 					</ul>
 					<a class="service-link" href="local-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/speedometer.gif" alt="Technical SEO"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/speedometer.gif" alt="Technical SEO"></div>
 					<h3>Technical SEO</h3>
 					<p>NAP consistency, site speed, mobile optimization and crawling/indexing fixes.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Core Web Vitals &amp; mobile-friendly fixes</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Sitemap setup &amp; robots.txt optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Core Web Vitals &amp; mobile-friendly fixes</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Sitemap setup &amp; robots.txt optimization</li>
 					</ul>
 					<a class="service-link" href="technical-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/cart.gif" alt="Ecommerce SEO"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/cart.gif" alt="Ecommerce SEO"></div>
 					<h3>Ecommerce SEO</h3>
 					<p>Product and category page SEO built to turn search traffic into sales.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Product/category optimization &amp; structured data</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Catalog-scale technical fixes</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Product/category optimization &amp; structured data</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Catalog-scale technical fixes</li>
 					</ul>
 					<a class="service-link" href="ecommerce-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/wordpress-icon.png" alt="WordPress"></div>
 					<h3>WordPress SEO</h3>
 					<p>WordPress-specific SEO setup and optimization, plugin to content structure.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> SEO plugin setup &amp; permalink cleanup</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Sitemap &amp; content optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> SEO plugin setup &amp; permalink cleanup</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Sitemap &amp; content optimization</li>
 					</ul>
 					<a class="service-link" href="wordpress-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/wordpress-icon.png" alt="WordPress"></div>
 					<h3>WooCommerce SEO</h3>
 					<p>SEO built specifically for WooCommerce stores — schema, categories and safe fixes.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Product/review schema markup</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Category &amp; attribute page optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Product/review schema markup</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Category &amp; attribute page optimization</li>
 					</ul>
 					<a class="service-link" href="woocommerce-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/shopify.svg" alt="Shopify"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/shopify-icon.png" alt="Shopify"></div>
 					<h3>Shopify SEO</h3>
 					<p>SEO built for Shopify's structure — collections, products and theme-level fixes.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Collection &amp; product page SEO</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Theme-level technical fixes</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Collection &amp; product page SEO</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Theme-level technical fixes</li>
 					</ul>
 					<a class="service-link" href="shopify-seo.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/checklist.gif" alt="SEO audit"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/checklist.gif" alt="SEO audit"></div>
 					<h3>SEO Audit</h3>
 					<p>A full diagnostic of your site's SEO health with a clear, prioritized action plan.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Technical, on-page &amp; off-page review</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Prioritized action plan report</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Technical, on-page &amp; off-page review</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Prioritized action plan report</li>
 					</ul>
 					<a class="service-link" href="seo-audit.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/link-chain.gif" alt="Link building"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/link-chain.gif" alt="Link building"></div>
 					<h3>Link Building</h3>
 					<p>Ethical, relevant link building that builds real domain authority.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Outreach &amp; guest post placements</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Digital PR &amp; toxic link monitoring</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Outreach &amp; guest post placements</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Digital PR &amp; toxic link monitoring</li>
 					</ul>
 					<a class="service-link" href="link-building.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>

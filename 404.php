@@ -57,7 +57,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="error-links">
 			<a href="/services.php">Services</a>
 			<a href="/packages.php">Packages</a>
-			<a href="/portfolio/index.php">Portfolio</a>
+			<a href="/portfolio">Portfolio</a>
 			<a href="/contact.php">Contact us</a>
 		</div>
 	</div>

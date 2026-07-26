@@ -48,7 +48,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.service-hero { padding:150px 0 70px; background:linear-gradient(135deg,rgba(14,26,36,.96),rgba(20,37,51,.94)),url("../images/aahm-import-trading-business-growth-cover.jpg") center/cover; color:#fff; }
+.service-hero { padding:150px 0 70px; background:linear-gradient(135deg,rgba(14,26,36,.96),rgba(20,37,51,.94)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/aahm-import-trading-business-growth-cover.webp") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; font-size:13px; font-weight:600; color:rgba(255,255,255,.55); }
 .breadcrumb a { color:rgba(255,255,255,.85); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 16px; margin-bottom:22px; border:1px solid rgba(255,255,255,.18); border-radius:99px; background:rgba(255,255,255,.06); font-size:12.5px; font-weight:800; letter-spacing:.3px; }
@@ -185,7 +185,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="../index.php">Home</a><span>/</span>
-				<a href="index.php">Portfolio</a><span>/</span>
+				<a href="../portfolio">Portfolio</a><span>/</span>
 				<span>AAHM</span>
 			</nav>
 			<div class="hero-badge"><i class="fa-solid fa-star"></i> Case Study</div>
@@ -193,7 +193,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<p class="lead">How we support AAHM, a raw material import and delivery business sourcing from multiple countries, with accounting, digital marketing and SEO.</p>
 			<div class="hero-actions">
 				<a class="btn btn-primary" href="../contact.php"><i class="fa-solid fa-paper-plane"></i> Start a Similar Project</a>
-				<a class="btn btn-outline" href="index.php" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);">Back to Portfolio</a>
+				<a class="btn btn-outline" href="../portfolio" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);">Back to Portfolio</a>
 			</div>
 			<div class="hero-meta">
 				<div>Client<strong>AAHM</strong></div>
@@ -319,9 +319,9 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 						<span class="section-kicker">Project Gallery</span>
 						<h2 class="section-title">A look at the work</h2>
 						<div class="cs-gallery">
-							<img src="../images/aahm-import-trading-business-growth-cover.jpg" alt="Import shipping" loading="lazy">
-							<img src="../images/aahm-import-trading-business-growth-warehouse-logistics.jpg" alt="Warehouse logistics" loading="lazy">
-							<img src="../images/seo-image.jpg" alt="Reporting view" loading="lazy">
+							<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/aahm-import-trading-business-growth-cover.webp" alt="Import shipping" loading="lazy">
+							<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/aahm-import-trading-business-growth-warehouse-logistics.webp" alt="Warehouse logistics" loading="lazy">
+							<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp" alt="Reporting view" loading="lazy">
 						</div>
 					</div>
 
@@ -363,15 +363,15 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 						<h2 class="section-title">More case studies</h2>
 						<div class="cs-related-grid">
 							<a class="cs-related-card" href="al-haayaat-limited-business-operations-transformation.php">
-								<img src="../images/aahm-import-trading-business-growth-al-haayaat-limited.jpg" alt="Al Haayaat Limited">
+								<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/aahm-import-trading-business-growth-al-haayaat-limited.webp" alt="Al Haayaat Limited">
 								<div class="cs-related-card-body"><span>Accounting, Web, Marketing &amp; SEO</span><h4>Al Haayaat Limited</h4></div>
 							</a>
 							<a class="cs-related-card" href="zaam-zaam-limited-trading-supply-optimization.php">
-								<img src="../images/zaam-zaam-limited-trading-supply-optimization-cover.jpg" alt="Zaam Zaam Limited">
+								<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/zaam-zaam-limited-trading-supply-optimization-cover.webp" alt="Zaam Zaam Limited">
 								<div class="cs-related-card-body"><span>Accounting, Web, Marketing &amp; SEO</span><h4>Zaam Zaam Limited</h4></div>
 							</a>
 							<a class="cs-related-card" href="bros-slice-grill-restaurant-digital-transformation.php">
-								<img src="../images/index-image-18.jpg" alt="Bros Slice & Grill">
+								<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-18.webp" alt="Bros Slice & Grill">
 								<div class="cs-related-card-body"><span>Accounting, Web, Marketing &amp; SEO</span><h4>Bros Slice &amp; Grill</h4></div>
 							</a>
 						</div>
@@ -426,7 +426,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
   "@type": "CreativeWork",
   "name": "AAHM — Import & Trading Business Growth",
   "description": "How we support AAHM, a raw material import and delivery business sourcing from multiple countries, with accounting, digital marketing and SEO.",
-  "image": "../images/aahm-import-trading-business-growth-cover.jpg",
+  "image": "../https://realdealitcenter.com/wp-content/uploads/2026/07/aahm-import-trading-business-growth-cover.webp",
   "url": "https://jahangirhussen.github.io/RealDeal_Home/portfolio/aahm-import-trading-business-growth/",
   "about": "AAHM"
 }

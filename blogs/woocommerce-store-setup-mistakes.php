@@ -86,7 +86,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 <?php $active_nav = 'home'; $header_mode = 'hero'; include '../header.php'; ?>
 
 <main>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('../images/woocommerce-seo-guide-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/woocommerce-seo-guide-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="../index.php">Home</a><span>/</span>
@@ -164,7 +164,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
   "@type": "BlogPosting",
   "headline": "10 WooCommerce Store Setup Mistakes That Cost You Sales",
   "description": "Most WooCommerce stores lose sales to small setup mistakes long before traffic or ads become the problem.",
-  "image": "../images/woocommerce-seo-guide-image.jpg",
+  "image": "../https://realdealitcenter.com/wp-content/uploads/2026/07/woocommerce-seo-guide-image.webp",
   "author": {
     "@type": "Organization",
     "name": "RealDeal Editorial Team"

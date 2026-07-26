@@ -78,6 +78,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
@@ -85,14 +86,14 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 <?php include __DIR__ . '/gtm-body.php'; ?>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 <main>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
 				<a href="services.php">Services</a><span>/</span>
 				<span>Digital Marketing</span>
 			</nav>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital marketing icon"> Service Category</div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/megaphone.gif" alt="Digital marketing icon"> Service Category</div>
 			<h1>Digital Marketing</h1>
 			<p class="lead">Platform-native content and advertising across every social channel that moves your audience.</p>
 			<div class="hero-actions">
@@ -123,7 +124,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<section class="detail-section">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/megaphone.gif" alt="Digital Marketing"></div>
+				<div class="category-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/megaphone.gif" alt="Digital Marketing"></div>
 				<div>
 					<span class="section-kicker">Category 03</span>
 					<h2>Digital Marketing</h2>
@@ -133,62 +134,62 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/facebook.svg" alt="Facebook"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/facebook-icon.png" alt="Facebook"></div>
 					<h3>Facebook Marketing</h3>
 					<p>Page setup, content marketing and ads management built for reach and retargeting.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business page creation &amp; profile optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Ads campaign setup, audience targeting &amp; retargeting</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Business page creation &amp; profile optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Ads campaign setup, audience targeting &amp; retargeting</li>
 					</ul>
 					<a class="service-link" href="facebook-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/instagram.svg" alt="Instagram"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/instagram-icon.png" alt="Instagram"></div>
 					<h3>Instagram Marketing</h3>
 					<p>Profile optimization, reel and story design, and organic growth strategy that builds an audience.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business account setup &amp; bio/branding</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Reel &amp; post design, hashtag strategy</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Business account setup &amp; bio/branding</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Reel &amp; post design, hashtag strategy</li>
 					</ul>
 					<a class="service-link" href="instagram-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/linkedin.svg" alt="LinkedIn"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/linkedin-icon.png" alt="LinkedIn"></div>
 					<h3>LinkedIn Marketing</h3>
 					<p>Professional profile setup and B2B content strategy that generates qualified leads.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Professional profile setup</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Lead generation strategy, article &amp; post creation</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Professional profile setup</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Lead generation strategy, article &amp; post creation</li>
 					</ul>
 					<a class="service-link" href="linkedin-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/twitter-x.svg" alt="X (Twitter)"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/twitter-x-icon.png" alt="X (Twitter)"></div>
 					<h3>Twitter (X) Marketing</h3>
 					<p>Account setup, tweet planning and engagement growth that keeps your brand in the conversation.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profile optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Tweet planning &amp; audience interaction</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Profile optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Tweet planning &amp; audience interaction</li>
 					</ul>
 					<a class="service-link" href="twitter-x-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/pinterest.svg" alt="Pinterest"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/pinterest-icon.png" alt="Pinterest"></div>
 					<h3>Pinterest Marketing</h3>
 					<p>Business account setup and pin design that drives discovery-led traffic.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Business account creation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Pin design &amp; board management</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Business account creation</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Pin design &amp; board management</li>
 					</ul>
 					<a class="service-link" href="pinterest-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/youtube.svg" alt="YouTube"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/youtube-icon.png" alt="YouTube"></div>
 					<h3>YouTube Marketing</h3>
 					<p>Channel setup, video SEO and subscriber growth strategy for long-term reach.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Channel branding &amp; optimization</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> SEO video optimization, thumbnail design</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Channel branding &amp; optimization</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> SEO video optimization, thumbnail design</li>
 					</ul>
 					<a class="service-link" href="youtube-marketing.php">Get a quote <i class="fa-solid fa-arrow-right"></i></a>
 				</article>

@@ -75,20 +75,21 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=13">
 </head>
 <body>
 <?php $active_nav = 'home'; $header_mode = 'hero'; include 'header.php'; ?>
 <main>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
 				<a href="services.php">Services</a><span>/</span>
 				<span>Accounting and Bookkeeping</span>
 			</nav>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/calculator.gif" alt="Bookkeeping icon"> Service Category</div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/calculator.gif" alt="Bookkeeping icon"> Service Category</div>
 			<h1>Accounting and Bookkeeping</h1>
 			<p class="lead">Accurate books, payables, receivables, reconciliation, reporting, tax data and payroll handled by one dedicated team.</p>
 			<div class="hero-actions">
@@ -119,7 +120,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	<section class="detail-section">
 		<div class="container">
 			<div class="category-header" data-reveal>
-				<div class="category-badge"><img class="fa-icon-img" src="assets/icons-animated/calculator.gif" alt="Accounting"></div>
+				<div class="category-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/calculator.gif" alt="Accounting"></div>
 				<div>
 					<span class="section-kicker">Category 01</span>
 					<h2>Accounting and Bookkeeping</h2>
@@ -129,72 +130,72 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			</div>
 			<div class="service-grid">
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/book.gif" alt="Financial record keeping"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/book.gif" alt="Financial record keeping"></div>
 					<h3>Financial Record Keeping</h3>
 					<p>Daily transaction recording and ledger maintenance so your books stay accurate and current.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Sales &amp; purchase entry, expense tracking</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> General ledger management &amp; account reconciliation</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Sales &amp; purchase entry, expense tracking</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> General ledger management &amp; account reconciliation</li>
 					</ul>
 					<a class="service-link" href="financial-record-keeping.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/money-transfer.gif" alt="Accounts payable"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/money-transfer.gif" alt="Accounts payable"></div>
 					<h3>Accounts Payable</h3>
 					<p>Vendor management that keeps bills paid on time without the manual chasing.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Bill recording</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment scheduling</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Bill recording</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Payment scheduling</li>
 					</ul>
 					<a class="service-link" href="accounts-payable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/invoice-dollar.gif" alt="Accounts receivable"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/invoice-dollar.gif" alt="Accounts receivable"></div>
 					<h3>Accounts Receivable</h3>
 					<p>Invoice management that gets you paid faster and keeps collections on track.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Invoice creation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payment tracking</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Invoice creation</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Payment tracking</li>
 					</ul>
 					<a class="service-link" href="accounts-receivable.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/bank-columns.gif" alt="Bank reconciliation"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/bank-columns.gif" alt="Bank reconciliation"></div>
 					<h3>Bank Reconciliation</h3>
 					<p>Bank statement review that catches errors before they become problems.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Transaction matching</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Error correction</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Transaction matching</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Error correction</li>
 					</ul>
 					<a class="service-link" href="bank-reconciliation.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/pie-chart.gif" alt="Financial reporting"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/pie-chart.gif" alt="Financial reporting"></div>
 					<h3>Financial Reporting</h3>
 					<p>Basic and monthly reports built for real decision-making.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Profit &amp; loss statement, balance sheet preparation</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Cash flow report, expense summary report</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Profit &amp; loss statement, balance sheet preparation</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Cash flow report, expense summary report</li>
 					</ul>
 					<a class="service-link" href="financial-reporting.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/receipt.gif" alt="Tax preparation support"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/receipt.gif" alt="Tax preparation support"></div>
 					<h3>Tax Preparation Support</h3>
 					<p>Tax data organization that keeps your filings accurate and audit-ready.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> VAT / GST tracking</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Tax filing support data</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> VAT / GST tracking</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Tax filing support data</li>
 					</ul>
 					<a class="service-link" href="tax-preparation-support.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>
 				<article class="service-item" data-reveal>
-					<div class="service-item-icon"><img class="fa-icon-img" src="assets/icons-animated/salary.gif" alt="Payroll management"></div>
+					<div class="service-item-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/salary.gif" alt="Payroll management"></div>
 					<h3>Payroll Management</h3>
 					<p>Salary calculation so your team always gets paid accurately and on time.</p>
 					<ul>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Employee payroll processing</li>
-						<li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Payslip preparation</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Employee payroll processing</li>
+						<li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Payslip preparation</li>
 					</ul>
 					<a class="service-link" href="payroll-management.php">View details <i class="fa-solid fa-arrow-right"></i></a>
 				</article>

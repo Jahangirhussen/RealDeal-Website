@@ -35,7 +35,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .detail-section.alt { background:linear-gradient(180deg,#fff,var(--rd-soft)); }
 
 /* Hero */
-.about-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("images/about-banner.jpg") center/cover; color:#fff; }
+.about-hero { padding:138px 0 64px; background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/about-banner.webp") center/cover; color:#fff; }
 .about-hero .inner { max-width:920px; margin:0 auto; padding:44px 48px; border:1px solid rgba(255,255,255,.14); border-radius:16px; background:rgba(255,255,255,.05); backdrop-filter:blur(10px); }
 .about-hero h1 { color:#fff; font-size:clamp(30px,4.4vw,44px); margin-bottom:22px; }
 .about-hero p { color:rgba(255,255,255,.78); font-size:15.5px; margin-bottom:16px; }
@@ -217,7 +217,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<a class="btn btn-primary" href="contact.php">Get a Free Consultation</a>
 				</div>
 				<div class="who-media">
-					<img src="images/about-realdeal-team-collaborating.jpg" alt="RealDeal team collaborating">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/about-realdeal-team-collaborating.webp" alt="RealDeal team collaborating">
 					<div class="who-badge"><span>EST.</span><strong>2018</strong></div>
 					<div class="who-caption">
 						<h4>Together, We'll Grow Your Business</h4>

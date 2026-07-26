@@ -75,6 +75,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) { .detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; } }
+.fa-icon-img { width:16px; height:16px; object-fit:contain; vertical-align:-2px; display:inline-block; }
 </style>
 <link rel="stylesheet" href="assets/site-nav.css?v=2">
 </head>
@@ -98,7 +99,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 	.faq-item p { padding:0 18px 16px; font-size:14px; }
 	@media(max-width:960px) { .benefit-grid { grid-template-columns:1fr; } }
 	</style>
-	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('images/seo-image.jpg') center/cover;">
+	<section class="service-hero" style="background:linear-gradient(135deg,rgba(14,26,36,.97),rgba(20,37,51,.92)),url('https://realdealitcenter.com/wp-content/uploads/2026/07/seo-image.webp') center/cover;">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="index.php">Home</a><span>/</span>
@@ -106,8 +107,8 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 				<a href="seo.php">SEO</a><span>/</span>
 				<span>WooCommerce SEO</span>
 			</nav>
-			<div class="service-hero-icon"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress logo"></div>
-			<div class="hero-badge"><img class="fa-icon-img" src="assets/icons-animated/brands/wordpress.svg" alt="WordPress logo"> SEO</div>
+			<div class="service-hero-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/wordpress-icon.png" alt="WordPress logo"></div>
+			<div class="hero-badge"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/wordpress-icon.png" alt="WordPress logo"> SEO</div>
 			<h1>WooCommerce SEO</h1>
 			<p class="lead">SEO built specifically for WooCommerce stores — product schema, category pages and checkout-safe technical fixes.</p>
 			<div class="hero-actions">
@@ -123,7 +124,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 					<span class="section-kicker">Overview</span>
 					<h2 class="section-title">What is WooCommerce SEO?</h2>
 					<p>WooCommerce SEO combines ecommerce SEO fundamentals with the platform-specific details of WooCommerce — product schema markup, category and attribute pages, and technical fixes that respect how WooCommerce generates URLs and pages.</p>
-					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>WooCommerce-specific schema</h3><p>Product, review and pricing structured data set up correctly.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Category and attribute SEO</h3><p>Product category and filter pages optimized without creating duplicate content.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Safe technical fixes</h3><p>Changes made without breaking cart, checkout or plugin functionality.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"></div><h3>Scales with your catalog</h3><p>A repeatable process for optimizing new products as you add them.</p></article></div>
+					<div class="benefit-grid"><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>WooCommerce-specific schema</h3><p>Product, review and pricing structured data set up correctly.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Category and attribute SEO</h3><p>Product category and filter pages optimized without creating duplicate content.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Safe technical fixes</h3><p>Changes made without breaking cart, checkout or plugin functionality.</p></article><article class="benefit-card"><div class="benefit-icon"><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"></div><h3>Scales with your catalog</h3><p>A repeatable process for optimizing new products as you add them.</p></article></div>
 				</div>
 				<aside class="sidebar">
 					<div class="sidebar-card">
@@ -145,7 +146,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<span class="section-kicker">Deliverables</span>
 			<h2 class="section-title">What's included</h2>
-			<ul class="include-list"><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> WooCommerce SEO audit</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Product and review schema markup</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Category and attribute page optimization</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Duplicate content prevention for variations and filters</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> XML sitemap and indexing review</li><li><img class="fa-icon-img" src="assets/icons-animated/check.gif" alt="Check"> Monthly ranking and traffic reporting</li></ul>
+			<ul class="include-list"><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> WooCommerce SEO audit</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Product and review schema markup</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Category and attribute page optimization</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Duplicate content prevention for variations and filters</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> XML sitemap and indexing review</li><li><img class="fa-icon-img" src="https://realdealitcenter.com/wp-content/uploads/2026/07/check.gif" alt="Check"> Monthly ranking and traffic reporting</li></ul>
 		</div>
 	</section>
 	<section class="detail-section alt" style="max-width:800px;margin:0 auto;">
