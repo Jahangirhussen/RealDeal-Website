@@ -3,8 +3,8 @@ $rd_dir    = strtr(dirname($_SERVER['SCRIPT_NAME']), '\\', '/');
 $rd_folder = basename($rd_dir);
 $rd_base   = in_array($rd_folder, ['blogs', 'portfolio'], true) ? '../' : '';
 if (!empty($rd_force_root)) { $rd_base = '/'; $rd_folder = ''; }
-$rd_portfolio = $rd_folder === 'portfolio' ? 'index.php' : $rd_base . 'portfolio/index.php';
-$rd_blog      = $rd_folder === 'blogs' ? 'index.php' : '/blogs/';
+$rd_portfolio = $rd_base . 'portfolio';
+$rd_blog      = $rd_base . 'blogs';
 $rd_home      = $rd_base !== '' ? $rd_base : '/';
 ?>
 <footer class="site-footer">
@@ -12,7 +12,7 @@ $rd_home      = $rd_base !== '' ? $rd_base : '/';
 		<div class="footer-grid">
 			<div class="footer-brand">
 				<a class="brand brand-logo" href="<?php echo $rd_home; ?>" aria-label="RealDeal IT Center home">
-					<img src="<?php echo $rd_base; ?>assets/logo/logo-dark-navy.png" alt="RealDeal IT Center" class="brand-logo-img">
+					<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/logo-dark-navy.webp" alt="RealDeal IT Center" class="brand-logo-img">
 				</a>
 				<p>RealDeal IT Center helps businesses grow with bookkeeping, web design &amp; development, digital marketing and SEO services delivered by one focused team.</p>
 				<div class="socials">

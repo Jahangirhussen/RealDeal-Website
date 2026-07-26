@@ -50,7 +50,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .btn-primary { background:linear-gradient(135deg,var(--rd-orange),var(--rd-orange-2)); color:#fff; box-shadow:0 16px 34px rgba(255,74,28,.25); }
 .btn-dark { background:var(--rd-ink); color:#fff; }
 .btn-outline { background:#fff; color:var(--rd-ink); border-color:var(--rd-line); }
-.service-hero { padding:150px 0 70px; background:linear-gradient(135deg,rgba(14,26,36,.96),rgba(20,37,51,.94)),url("../images/aahm-import-trading-business-growth-al-haayaat-limited.jpg") center/cover; color:#fff; }
+.service-hero { padding:150px 0 70px; background:linear-gradient(135deg,rgba(14,26,36,.96),rgba(20,37,51,.94)),url("https://realdealitcenter.com/wp-content/uploads/2026/07/aahm-import-trading-business-growth-al-haayaat-limited.webp") center/cover; color:#fff; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px; font-size:13px; font-weight:600; color:rgba(255,255,255,.55); }
 .breadcrumb a { color:rgba(255,255,255,.85); } .breadcrumb a:hover { color:var(--rd-orange-2); }
 .hero-badge { display:inline-flex; align-items:center; gap:10px; padding:8px 16px; margin-bottom:22px; border:1px solid rgba(255,255,255,.18); border-radius:99px; background:rgba(255,255,255,.06); font-size:12.5px; font-weight:800; letter-spacing:.3px; }
@@ -63,8 +63,10 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
 .detail-section { padding:76px 0; }
 .detail-section.alt { background:var(--rd-soft); }
-.detail-grid { display:grid; grid-template-columns:1.35fr .65fr; gap:56px; align-items:start; }
+.detail-grid { display:grid; grid-template-columns:1fr; gap:32px; align-items:start; }
 .detail-grid > * { min-width:0; }
+.detail-grid .article-body { order:2; }
+.detail-grid .sidebar { order:1; position:static; display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 .article-body > * + * { margin-top:64px; }
 .article-body p { margin-bottom:16px; font-size:15.5px; }
 .article-body h3 { margin:0 0 12px; font-size:20px; }
@@ -153,7 +155,30 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 
 /* Tech used */
 .cs-tech-grid { display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
-.cs-tech-grid span { padding:8px 16px; border-radius:99px; background:#fff; border:1px solid var(--rd-line); font-size:12.5px; font-weight:700; color:var(--rd-ink); }
+.cs-tech-grid span, .cs-tech-grid a { padding:8px 16px; border-radius:99px; background:#fff; border:1px solid var(--rd-line); font-size:12.5px; font-weight:700; color:var(--rd-ink); }
+.cs-tech-grid a { display:inline-flex; align-items:center; gap:8px; transition:border-color .18s ease, color .18s ease; }
+.cs-tech-grid a:hover { border-color:var(--rd-orange); color:var(--rd-orange); }
+.cs-tech-grid a i { color:var(--rd-orange); }
+
+/* PDF viewer: small tabs on left, big scrollable/zoomable viewer on right */
+.pdf-viewer-layout { display:grid; grid-template-columns:1fr 150px; gap:14px; margin-top:22px; align-items:start; }
+.pdf-viewer-layout .pdf-tabs { order:2; }
+.pdf-viewer-layout .pdf-viewer-frame { order:1; }
+.pdf-tabs { display:flex; flex-direction:column; gap:6px; }
+.pdf-tab { font:inherit; cursor:pointer; padding:8px 10px; border-radius:8px; background:#fff; border:1px solid var(--rd-line); font-size:12px; font-weight:700; color:var(--rd-ink); display:flex; align-items:center; gap:7px; text-align:left; transition:border-color .18s ease, color .18s ease, background .18s ease; }
+.pdf-tab i { color:var(--rd-orange); font-size:12px; }
+.pdf-tab:hover { border-color:var(--rd-orange); color:var(--rd-orange); }
+.pdf-tab.active { background:var(--rd-orange); border-color:var(--rd-orange); color:#fff; }
+.pdf-tab.active i { color:#fff; }
+.pdf-viewer-frame { border:1px solid var(--rd-line); border-radius:var(--radius-lg); box-shadow:var(--shadow); background:var(--rd-soft); padding:24px; }
+.pdf-viewer-frame .pdf-a4-box { width:100%; height:85vh; overflow-y:auto; overflow-x:hidden; border:1px solid var(--rd-line); border-radius:8px; background:#fff; }
+.pdf-a4-box .pdf-page-canvas { display:block; margin:0 auto 12px; }
+.pdf-a4-box .pdf-page-canvas:last-child { margin-bottom:0; }
+.pdf-a4-box .pdf-loading { display:flex; align-items:center; justify-content:center; height:100%; color:var(--rd-muted); font-size:13px; font-weight:700; }
+@media(max-width:640px) {
+	.pdf-viewer-layout { grid-template-columns:1fr; }
+	.pdf-tabs { flex-direction:row; flex-wrap:wrap; }
+}
 
 /* Testimonial */
 .cs-testimonial { padding:32px; border-radius:var(--radius-lg); background:linear-gradient(150deg,var(--rd-ink),var(--rd-ink-2)); color:#fff; }
@@ -179,7 +204,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 .footer-col a { font-size:14px; } .footer-col a:hover { color:var(--rd-orange-2); }
 .footer-bottom { display:flex; justify-content:space-between; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; }
 @media(max-width:960px) {
-	.detail-grid,.footer-grid { grid-template-columns:1fr; } .sidebar { position:static; }
+	.footer-grid { grid-template-columns:1fr; } .sidebar { grid-template-columns:1fr; }
 	.cs-check-grid,.cs-before-after,.cs-service-item { grid-template-columns:1fr; }
 	.cs-challenge-grid,.cs-results-grid,.cs-gallery,.cs-related-grid { grid-template-columns:repeat(2,1fr); }
 	.cs-steps { grid-template-columns:repeat(3,1fr); }
@@ -203,7 +228,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
 				<a href="../index.php">Home</a><span>/</span>
-				<a href="index.php">Portfolio</a><span>/</span>
+				<a href="../portfolio">Portfolio</a><span>/</span>
 				<span>Al Haayaat Limited</span>
 			</nav>
 			<div class="hero-badge"><i class="fa-solid fa-star"></i> Case Study</div>
@@ -211,7 +236,7 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 			<p class="lead">How we transformed manual accounting and disorganized operations into a fully automated business management system for Al Haayaat Limited.</p>
 			<div class="hero-actions">
 				<a class="btn btn-primary" href="../contact.php"><i class="fa-solid fa-paper-plane"></i> Start a Similar Project</a>
-				<a class="btn btn-outline" href="index.php" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);">Back to Portfolio</a>
+				<a class="btn btn-outline" href="../portfolio" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);">Back to Portfolio</a>
 				<?php if ($cs_has_live_url): ?>
 				<a class="btn btn-outline" href="<?php echo htmlspecialchars($cs_live_url, ENT_QUOTES); ?>" target="_blank" rel="noopener" style="background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.25);"><i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Live Site</a>
 				<?php endif; ?>
@@ -354,14 +379,23 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 						</div>
 					</div>
 
-					<!-- 7. Final Project Gallery -->
+					<!-- 7. Project Gallery — live PDF snapshots of the site -->
 					<div>
 						<span class="section-kicker">Project Gallery</span>
 						<h2 class="section-title">A look at the final result</h2>
-						<div class="cs-gallery">
-							<img src="../images/aahm-import-trading-business-growth-al-haayaat-limited.jpg" alt="Dashboard overview" loading="lazy">
-							<img src="../images/index-image-2.jpg" alt="Operations workflow" loading="lazy">
-							<img src="../images/seo-image.jpg" alt="Reporting view" loading="lazy">
+						<p class="section-copy">Full-page snapshots of the live Al Haayaat Shopify store. Select a page to view it below.</p>
+						<div class="pdf-viewer-layout">
+							<div class="pdf-tabs" id="pdf-tabs">
+								<button type="button" class="pdf-tab active" data-pdf="../assets/pdf/al-haayaat/al-haayaat-home.pdf"><i class="fa-solid fa-file-pdf"></i> Home</button>
+								<button type="button" class="pdf-tab" data-pdf="../assets/pdf/al-haayaat/al-haayaat-about-us.pdf"><i class="fa-solid fa-file-pdf"></i> About Us</button>
+								<button type="button" class="pdf-tab" data-pdf="../assets/pdf/al-haayaat/al-haayaat-products.pdf"><i class="fa-solid fa-file-pdf"></i> Products</button>
+								<button type="button" class="pdf-tab" data-pdf="../assets/pdf/al-haayaat/al-haayaat-collections.pdf"><i class="fa-solid fa-file-pdf"></i> Collections</button>
+								<button type="button" class="pdf-tab" data-pdf="../assets/pdf/al-haayaat/al-haayaat-search.pdf"><i class="fa-solid fa-file-pdf"></i> Search</button>
+								<button type="button" class="pdf-tab" data-pdf="../assets/pdf/al-haayaat/al-haayaat-contact-us.pdf"><i class="fa-solid fa-file-pdf"></i> Contact Us</button>
+							</div>
+							<div class="pdf-viewer-frame">
+								<div class="pdf-a4-box" id="pdf-viewer"></div>
+							</div>
 						</div>
 					</div>
 
@@ -404,15 +438,15 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
 						<h2 class="section-title">More case studies</h2>
 						<div class="cs-related-grid">
 							<a class="cs-related-card" href="zaam-zaam-limited-trading-supply-optimization.php">
-								<img src="../images/zaam-zaam-limited-trading-supply-optimization-cover.jpg" alt="Zaam Zaam Limited">
+								<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/zaam-zaam-limited-trading-supply-optimization-cover.webp" alt="Zaam Zaam Limited">
 								<div class="cs-related-card-body"><span>Accounting and Bookkeeping</span><h4>Zaam Zaam Limited</h4></div>
 							</a>
 							<a class="cs-related-card" href="bros-slice-grill-restaurant-digital-transformation.php">
-								<img src="../images/index-image-18.jpg" alt="Bros Slice & Grill">
+								<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/index-image-18.webp" alt="Bros Slice & Grill">
 								<div class="cs-related-card-body"><span>Accounting and Bookkeeping</span><h4>Bros Slice &amp; Grill</h4></div>
 							</a>
 							<a class="cs-related-card" href="mirandas-english-club-social-media-growth.php">
-								<img src="../images/mirandas-english-club-social-media-growth-cover.jpg" alt="Miranda's English Club">
+								<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/mirandas-english-club-social-media-growth-cover.webp" alt="Miranda's English Club">
 								<div class="cs-related-card-body"><span>Digital Marketing</span><h4>Miranda's English Club</h4></div>
 							</a>
 						</div>
@@ -469,10 +503,77 @@ h1,h2,h3,h4 { font-family:var(--font-heading); color:var(--rd-ink); font-weight:
   "@type": "CreativeWork",
   "name": "Al Haayaat Limited — Business Operations Transformation",
   "description": "How we transformed manual accounting and disorganized operations into a fully automated business management system for Al Haayaat Limited.",
-  "image": "../images/aahm-import-trading-business-growth-al-haayaat-limited.jpg",
+  "image": "../https://realdealitcenter.com/wp-content/uploads/2026/07/aahm-import-trading-business-growth-al-haayaat-limited.webp",
   "url": "https://jahangirhussen.github.io/RealDeal_Home/portfolio/al-haayaat-limited-business-operations-transformation/",
   "about": "Al Haayaat Limited"
 }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function(){
+	var A4_WIDTH_PT = 595.28; // A4 portrait width in PDF points
+	var viewerEl = document.getElementById('pdf-viewer');
+	var currentTask = null;
+
+	pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+	function renderPdf(url) {
+		if (currentTask) { currentTask.destroy(); currentTask = null; }
+		viewerEl.innerHTML = '<div class="pdf-loading">Loading…</div>';
+
+		var loadingTask = pdfjsLib.getDocument(url);
+		currentTask = loadingTask;
+
+		loadingTask.promise.then(function(pdf){
+			viewerEl.innerHTML = '';
+			var containerWidth = viewerEl.clientWidth;
+
+			var renderPage = function(pageNum){
+				return pdf.getPage(pageNum).then(function(page){
+					var baseViewport = page.getViewport({ scale: 1 });
+					var fitWidthScale = containerWidth / baseViewport.width;
+
+					// Smaller than A4: scale up to fill container width.
+					// A4 or larger: never scale beyond container (cap at 1 = normal size).
+					var scale = baseViewport.width < A4_WIDTH_PT
+						? fitWidthScale
+						: Math.min(1, fitWidthScale);
+
+					var viewport = page.getViewport({ scale: scale });
+					var canvas = document.createElement('canvas');
+					canvas.className = 'pdf-page-canvas';
+					var context = canvas.getContext('2d');
+					canvas.width = viewport.width;
+					canvas.height = viewport.height;
+					viewerEl.appendChild(canvas);
+
+					return page.render({ canvasContext: context, viewport: viewport }).promise;
+				});
+			};
+
+			var chain = Promise.resolve();
+			for (var i = 1; i <= pdf.numPages; i++) {
+				(function(pageNum){
+					chain = chain.then(function(){ return renderPage(pageNum); });
+				})(i);
+			}
+			return chain;
+		}).catch(function(err){
+			viewerEl.innerHTML = '<div class="pdf-loading">Could not load PDF.</div>';
+			console.error(err);
+		});
+	}
+
+	document.getElementById('pdf-tabs').addEventListener('click', function(e){
+		var btn = e.target.closest('.pdf-tab');
+		if (!btn) return;
+		document.querySelectorAll('.pdf-tab').forEach(function(t){ t.classList.remove('active'); });
+		btn.classList.add('active');
+		renderPdf(btn.dataset.pdf);
+	});
+
+	renderPdf(document.querySelector('.pdf-tab.active').dataset.pdf);
+})();
 </script>
 <script src="../assets/site-nav.js?v=5" defer></script>
 </body>

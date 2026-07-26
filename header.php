@@ -2,18 +2,18 @@
 $rd_dir    = strtr(dirname($_SERVER['SCRIPT_NAME']), '\\', '/');
 $rd_folder = basename($rd_dir);
 $rd_base   = in_array($rd_folder, ['blogs', 'portfolio'], true) ? '../' : '';
-$rd_portfolio = $rd_folder === 'portfolio' ? 'index.php' : $rd_base . 'portfolio/index.php';
-$rd_blog      = $rd_folder === 'blogs' ? 'index.php' : $rd_base . 'blogs/index.php';
+$rd_portfolio = $rd_base . 'portfolio';
+$rd_blog      = $rd_base . 'blogs';
 $rd_home      = $rd_base !== '' ? $rd_base : '/';
 if (!isset($active_nav))  { $active_nav = 'home'; }
 if (!isset($header_mode)) { $header_mode = 'hero'; }
 $rd_is = function ($key) use ($active_nav) { return $active_nav === $key ? ' class="is-active" aria-current="page"' : ''; };
 ?>
-<script src="<?php echo $rd_base; ?>assets/whatsapp-config.js"></script>
+<script src="<?php echo $rd_base; ?>assets/whatsapp-config.js" defer></script>
 <header class="site-header<?php echo $header_mode !== 'hero' ? ' header-solid' : ''; ?>" id="siteHeader">
 	<div class="header-inner">
 		<a class="brand brand-logo" href="<?php echo $rd_home; ?>#top" aria-label="RealDeal IT Center home">
-			<img src="<?php echo $rd_base; ?>assets/logo/logo-dark-navy.png" alt="RealDeal IT Center" class="brand-logo-img">
+			<img src="https://realdealitcenter.com/wp-content/uploads/2026/07/logo-dark-navy.webp" alt="RealDeal IT Center" class="brand-logo-img">
 		</a>
 		<nav class="main-nav" id="mainNav" aria-label="Primary navigation"><ul>
 			<li><a href="<?php echo $rd_home; ?>"<?php echo $rd_is('home'); ?>>Home</a></li>
